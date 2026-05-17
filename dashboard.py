@@ -16,24 +16,22 @@ stats = {
     "traditional_hits": 0,
     "semantic_hits": 0,
     "total_misses": 0,
-    "time_saved_ms": 0,
 }
 history = []
 
 
 def create_dashboard() -> Layout:
-    table = Table(
-        title="🔴 Live Telemetry: Semantic vs Traditional Performance", expand=True
-    )
-    table.add_column("Timestamp", justify="left", style="dim", width=10)
+    table = Table(title="🔴 Live Telemetry: End-to-End Latency Tracking", expand=True)
+    table.add_column("Time", justify="left", style="dim", width=10)
     table.add_column("Query", style="cyan", no_wrap=True)
-    table.add_column("Exact (Trad)", justify="center", width=12)
-    table.add_column("Vector (Sem)", justify="center", width=12)
-    table.add_column("Distance", justify="right", width=10)
-    table.add_column("Trad Latency", justify="right", style="green", width=14)
-    table.add_column("Sem Latency", justify="right", style="magenta", width=14)
+    table.add_column("Trad Hit", justify="center", width=10)
+    table.add_column("Sem Hit", justify="center", width=10)
+    table.add_column("Dist", justify="right", width=8)
+    table.add_column("Trad Lat", justify="right", style="green", width=10)
+    table.add_column("Sem Lat", justify="right", style="magenta", width=10)
+    table.add_column("Total Lat (User)", justify="right", style="yellow", width=16)
 
-    for event in history[-15:]:
+    for event in history[-12:]:
         exact_ui = (
             "[bold green]HIT[/bold green]"
             if event["exact_match_hit"]
@@ -44,14 +42,34 @@ def create_dashboard() -> Layout:
             if event["semantic_match_hit"]
             else "[dim red]MISS[/dim red]"
         )
-        dist_str = "-" if event["exact_match_hit"] else f"{event['distance_score']:.4f}"
+        dist_str = "-" if event["exact_match_hit"] else f"{event['distance_score']:.3f}"
         time_str = event["timestamp"].split("T")[1][:8]
 
-        trad_lat = f"{float(event.get('trad_latency_ms', 0)):.4f}ms"
-        sem_lat = f"{float(event.get('sem_latency_ms', 0)):.4f}ms"
+        trad_lat = f"{float(event.get('trad_latency_ms', 0.0)):.2f}ms"
+        sem_lat = f"{float(event.get('sem_latency_ms', 0.0)):.2f}ms"
+
+        # Color code the total latency
+        total_float = float(event.get("total_latency_ms", 0.0))
+        if total_float > 1000:
+            total_lat_ui = f"[bold red]{total_float:.2f}ms[/bold red]"  # Cloud penalty
+        elif total_float > 100:
+            total_lat_ui = (
+                f"[bold yellow]{total_float:.2f}ms[/bold yellow]"  # Local SLM penalty
+            )
+        else:
+            total_lat_ui = (
+                f"[bold green]{total_float:.2f}ms[/bold green]"  # Cache Hit Speed
+            )
 
         table.add_row(
-            time_str, event["query"], exact_ui, sem_ui, dist_str, trad_lat, sem_lat
+            time_str,
+            event["query"],
+            exact_ui,
+            sem_ui,
+            dist_str,
+            trad_lat,
+            sem_lat,
+            total_lat_ui,
         )
 
     trad_rate = (
@@ -67,16 +85,15 @@ def create_dashboard() -> Layout:
 
     metrics_text = (
         f"Total Queries Processed:  [bold white]{stats['total_queries']}[/bold white]\n\n"
-        f"Traditional Hit Rate:     [bold red]{trad_rate:.1f}%[/bold red]  ({stats['traditional_hits']} hits)\n"
-        f"Semantic Hit Rate:        [bold green]{sem_rate:.1f}%[/bold green]  ({stats['semantic_hits']} hits)\n\n"
-        f"Estimated Latency Saved:  [bold yellow]{stats['time_saved_ms'] / 1000:.2f} seconds[/bold yellow]"
+        f"Traditional Hit Rate:     [bold red]{trad_rate:.1f}%[/bold red]\n"
+        f"Semantic Hit Rate:        [bold green]{sem_rate:.1f}%[/bold green]\n"
     )
 
     layout = Layout()
     layout.split_column(
         Layout(
             Panel(Align.center(metrics_text), title="Thesis Metrics (Accumulative)"),
-            size=10,
+            size=8,
         ),
         Layout(table),
     )
@@ -90,7 +107,7 @@ def main():
     consumer = Consumer(
         {
             "bootstrap.servers": KAFKA_SERVER,
-            "group.id": "fscgrpc-dashboard-viewer",
+            "group.id": "fscgrpc-dashboard-viewer-v2",
             "auto.offset.reset": "latest",
         }
     )
@@ -100,12 +117,8 @@ def main():
         try:
             while True:
                 msg = consumer.poll(1.0)
-                if msg is None:
+                if msg is None or msg.error():
                     continue
-                if msg.error():
-                    if msg.error().code() == KafkaError._PARTITION_EOF:
-                        continue
-                    break
 
                 payload = json.loads(msg.value().decode("utf-8"))
                 history.append(payload)
@@ -116,13 +129,10 @@ def main():
                     stats["semantic_hits"] += 1
                 elif payload["semantic_match_hit"]:
                     stats["semantic_hits"] += 1
-                    # Base saving calculations on the semantic lookup speed
-                    stats["time_saved_ms"] += 1500 - payload.get("sem_latency_ms", 15)
                 else:
                     stats["total_misses"] += 1
 
                 live.update(create_dashboard())
-
         except KeyboardInterrupt:
             pass
         finally:
