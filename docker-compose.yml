@@ -25,6 +25,8 @@ services:
       ]
     ports:
       - "9092:9092"
-
+    volumes:
+      - kafka_data:/var/lib/redpanda/data
 volumes:
   redis_data:
+  kafka_data:
