@@ -48,18 +48,13 @@ def create_dashboard() -> Layout:
         trad_lat = f"{float(event.get('trad_latency_ms', 0.0)):.2f}ms"
         sem_lat = f"{float(event.get('sem_latency_ms', 0.0)):.2f}ms"
 
-        # Color code the total latency
         total_float = float(event.get("total_latency_ms", 0.0))
         if total_float > 1000:
-            total_lat_ui = f"[bold red]{total_float:.2f}ms[/bold red]"  # Cloud penalty
+            total_lat_ui = f"[bold red]{total_float:.2f}ms[/bold red]"
         elif total_float > 100:
-            total_lat_ui = (
-                f"[bold yellow]{total_float:.2f}ms[/bold yellow]"  # Local SLM penalty
-            )
+            total_lat_ui = f"[bold yellow]{total_float:.2f}ms[/bold yellow]"
         else:
-            total_lat_ui = (
-                f"[bold green]{total_float:.2f}ms[/bold green]"  # Cache Hit Speed
-            )
+            total_lat_ui = f"[bold green]{total_float:.2f}ms[/bold green]"
 
         table.add_row(
             time_str,

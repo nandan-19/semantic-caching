@@ -6,7 +6,7 @@ services:
     volumes:
       - redis_data:/data
     environment:
-      - REDIS_ARGS="--save 60 1"
+      - REDIS_ARGS="--appendonly yes"
 
   kafka-bus:
     image: docker.redpanda.com/redpandadata/redpanda:latest
