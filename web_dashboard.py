@@ -6,29 +6,25 @@ from flask import Flask, jsonify, render_template_string
 
 app = Flask(__name__)
 
-# Global state for advanced comparative telemetry
 history = []
 stats = {
     "total": 0,
     "exact_hits": 0,
     "trad_misses": 0,
-    # AST Comparison (Out of the Traditional Misses)
-    "fixed_hits": 0,  # Simulated baseline (0.20)
-    "shannon_hits": 0,  # Math heuristic
-    "model_hits": 0,  # Qwen classification
-    # Latency Tracking for Averages
+    "fixed_hits": 0,
+    "shannon_hits": 0,
+    "model_hits": 0,
     "sum_trad_ms": 0,
     "sum_sem_ms": 0,
     "sum_total_ms": 0,
 }
 
 
-# --- KAFKA BACKGROUND THREAD ---
 def consume_kafka():
     consumer = Consumer(
         {
             "bootstrap.servers": "127.0.0.1:9092",
-            "group.id": "web-dashboard-v4",
+            "group.id": "web-dashboard-v5",
             "auto.offset.reset": "latest",
         }
     )
@@ -40,8 +36,6 @@ def consume_kafka():
             payload = json.loads(msg.value().decode("utf-8"))
 
             stats["total"] += 1
-
-            # Track Latencies
             stats["sum_trad_ms"] += float(payload.get("trad_latency_ms", 0))
             stats["sum_sem_ms"] += float(payload.get("sem_latency_ms", 0))
             stats["sum_total_ms"] += float(payload.get("total_latency_ms", 0))
@@ -52,18 +46,15 @@ def consume_kafka():
                 stats["trad_misses"] += 1
                 dist = float(payload.get("distance_score", 2.0))
 
-                # 1. Baseline Control (Fixed 0.20 Threshold)
                 if dist <= 0.20:
                     stats["fixed_hits"] += 1
-
-                # 2. Shannon AST Hit Check
                 if dist <= float(payload.get("shannon_thresh", 0.20)):
                     stats["shannon_hits"] += 1
-
-                # 3. Model AST Hit Check
                 if dist <= float(payload.get("model_thresh", 0.20)):
                     stats["model_hits"] += 1
 
+            # CAPTURE THE RESPONSE TEXT FROM REDIS / OLLAMA
+            # Go intercepts send this through the standard Kafka payload
             history.insert(0, payload)
             if len(history) > 50:
                 history.pop()
@@ -73,10 +64,8 @@ thread = threading.Thread(target=consume_kafka, daemon=True)
 thread.start()
 
 
-# --- WEB ENDPOINTS ---
 @app.route("/api/data")
 def get_data():
-    # Calculate Averages safely
     t = stats["total"] if stats["total"] > 0 else 1
     avg_latencies = {
         "trad": round(stats["sum_trad_ms"] / t, 2),
@@ -132,33 +121,22 @@ def index():
 
             <h2 class="text-lg font-bold text-gray-300 mt-8">Semantic Rescue Logic (Head-to-Head)</h2>
             <div class="grid grid-cols-3 gap-4">
-                <div class="bg-gray-800 p-4 rounded-lg border border-gray-600 shadow relative overflow-hidden">
+                <div class="bg-gray-800 p-4 rounded-lg border border-gray-600 shadow">
                     <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Fixed Baseline (0.20)</div>
-                    <div class="flex items-end gap-2 mt-1">
-                        <div class="text-4xl font-bold text-gray-300" id="stat-fixed">0</div>
-                        <div class="text-sm text-gray-500 mb-1">rescued</div>
-                    </div>
-                    <div class="text-xs text-gray-500 mt-2">Dumb threshold. High poisoning risk.</div>
+                    <div class="flex items-end gap-2 mt-1"><div class="text-4xl font-bold text-gray-300" id="stat-fixed">0</div><div class="text-sm text-gray-500 mb-1">rescued</div></div>
                 </div>
-                <div class="bg-gray-800 p-4 rounded-lg border border-purple-900/50 shadow relative overflow-hidden">
+                <div class="bg-gray-800 p-4 rounded-lg border border-purple-900/50 shadow">
                     <div class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Shannon Entropy AST</div>
-                    <div class="flex items-end gap-2 mt-1">
-                        <div class="text-4xl font-bold text-purple-400" id="stat-shannon">0</div>
-                        <div class="text-sm text-gray-500 mb-1">rescued</div>
-                    </div>
-                    <div class="text-xs text-gray-500 mt-2">Math-driven. Zero latency overhead.</div>
+                    <div class="flex items-end gap-2 mt-1"><div class="text-4xl font-bold text-purple-400" id="stat-shannon">0</div><div class="text-sm text-gray-500 mb-1">rescued</div></div>
                 </div>
-                <div class="bg-gray-800 p-4 rounded-lg border border-cyan-900/50 shadow relative overflow-hidden">
+                <div class="bg-gray-800 p-4 rounded-lg border border-cyan-900/50 shadow">
                     <div class="text-xs font-semibold text-cyan-400 uppercase tracking-wider">Qwen Model AST</div>
-                    <div class="flex items-end gap-2 mt-1">
-                        <div class="text-4xl font-bold text-cyan-400" id="stat-model">0</div>
-                        <div class="text-sm text-gray-500 mb-1">rescued</div>
-                    </div>
-                    <div class="text-xs text-gray-500 mt-2">LLM intent-driven. Heavy latency block.</div>
+                    <div class="flex items-end gap-2 mt-1"><div class="text-4xl font-bold text-cyan-400" id="stat-model">0</div><div class="text-sm text-gray-500 mb-1">rescued</div></div>
                 </div>
             </div>
 
-            <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden border border-gray-700 mt-6">
+            <p class="text-xs text-gray-500 italic mt-4">💡 Hint: Click any query row below to view the full response text returned by the model or cache index.</p>
+            <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden border border-gray-700">
                 <table class="w-full text-sm text-left">
                     <thead class="text-xs text-gray-400 uppercase bg-gray-700/50">
                         <tr>
@@ -177,31 +155,42 @@ def index():
         </div>
 
         <script>
+            let activeRowId = null;
+
+            function toggleDrawer(id) {
+                const drawer = document.getElementById(`drawer-${id}`);
+                if (drawer.classList.contains('hidden')) {
+                    drawer.classList.remove('hidden');
+                    activeRowId = id;
+                } else {
+                    drawer.classList.add('hidden');
+                    activeRowId = null;
+                }
+            }
+
             async function fetchData() {
                 try {
                     const res = await fetch('/api/data');
                     const data = await res.json();
 
-                    // Update Core Stats
                     document.getElementById('stat-total').innerText = data.stats.total;
                     document.getElementById('stat-exact').innerText = data.stats.exact_hits;
                     document.getElementById('stat-miss').innerText = data.stats.trad_misses;
-
-                    // Update AST Comparatives
                     document.getElementById('stat-fixed').innerText = data.stats.fixed_hits;
                     document.getElementById('stat-shannon').innerText = data.stats.shannon_hits;
                     document.getElementById('stat-model').innerText = data.stats.model_hits;
-
-                    // Update Averages
                     document.getElementById('avg-trad').innerText = data.avgs.trad;
                     document.getElementById('avg-sem').innerHTML = data.avgs.sem + '<span class="text-lg">ms</span>';
                     document.getElementById('avg-total').innerText = data.avgs.total;
 
-                    // Update Table
                     const tbody = document.getElementById('table-body');
-                    tbody.innerHTML = '';
 
-                    data.history.forEach(event => {
+                    // Maintain scroll view states while polling replaces data
+                    const savedActiveId = activeRowId;
+
+                    let newBodyContent = "";
+
+                    data.history.forEach((event, index) => {
                         let statusHtml = '<span class="px-2 py-1 bg-red-900/50 text-red-400 rounded text-xs font-bold">MISS</span>';
                         if (event.exact_match_hit) statusHtml = '<span class="px-2 py-1 bg-green-900/50 text-green-400 rounded text-xs font-bold">EXACT</span>';
                         else if (event.semantic_match_hit) statusHtml = '<span class="px-2 py-1 bg-blue-900/50 text-blue-400 rounded text-xs font-bold">VECTOR</span>';
@@ -213,18 +202,42 @@ def index():
                         if (totalLat > 1000) latColor = "text-red-500 font-bold";
                         else if (totalLat > 100) latColor = "text-yellow-500 font-bold";
 
-                        const row = `
-                            <tr class="hover:bg-gray-700/20 transition-colors">
+                        let shannonHit = (!event.exact_match_hit && parseFloat(dist) <= parseFloat(event.shannon_thresh));
+                        let modelHit = (!event.exact_match_hit && parseFloat(dist) <= parseFloat(event.model_thresh));
+
+                        let shannonClass = shannonHit ? "text-green-400 font-bold bg-green-950/30 px-2 py-0.5 rounded border border-green-900/40" : "text-purple-400";
+                        let modelClass = modelHit ? "text-green-400 font-bold bg-green-950/30 px-2 py-0.5 rounded border border-green-900/40" : "text-cyan-400";
+
+                        // Check if this specific drawer was open prior to this poll frame
+                        let drawerHiddenClass = (savedActiveId == index) ? "" : "hidden";
+
+                        // Fallback fallback handling if response field isn't packed in kafka pipeline yet
+                        let modelResponseText = event.response || "No response string transmitted by message bus.";
+
+                        newBodyContent += `
+                            <tr class="hover:bg-gray-700/40 cursor-pointer transition-colors" onclick="toggleDrawer(${index})">
                                 <td class="px-6 py-3 font-medium text-gray-200 truncate max-w-xs">${event.query}</td>
                                 <td class="px-6 py-3 text-center">${statusHtml}</td>
                                 <td class="px-4 py-3 text-right text-gray-400">${dist}</td>
-                                <td class="px-4 py-3 text-right text-purple-400">${parseFloat(event.shannon_thresh || 0).toFixed(2)}</td>
-                                <td class="px-4 py-3 text-right text-cyan-400">${parseFloat(event.model_thresh || 0).toFixed(2)}</td>
+                                <td class="px-4 py-3 text-right"><span class="${shannonClass}">${parseFloat(event.shannon_thresh || 0).toFixed(2)}</span></td>
+                                <td class="px-4 py-3 text-right"><span class="${modelClass}">${parseFloat(event.model_thresh || 0).toFixed(2)}</span></td>
                                 <td class="px-6 py-3 text-right ${latColor}">${totalLat.toFixed(1)}</td>
                             </tr>
+                            <tr id="drawer-${index}" class="${drawerHiddenClass} bg-gray-850/50">
+                                <td colspan="6" class="px-8 py-4 border-l-2 border-blue-500 bg-gray-900/40 text-gray-300">
+                                    <div class="space-y-2">
+                                        <div><span class="text-xs font-bold text-blue-400 uppercase">Full User Prompt:</span> <span class="text-gray-100">${event.query}</span></div>
+                                        <div>
+                                            <span class="text-xs font-bold text-purple-400 uppercase">Pipeline Resolution Payload:</span>
+                                            <pre class="mt-1 p-3 bg-gray-950 rounded text-xs overflow-x-auto font-mono text-green-400 border border-gray-800 whitespace-pre-wrap">${modelResponseText}</pre>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
                         `;
-                        tbody.innerHTML += row;
                     });
+
+                    tbody.innerHTML = newBodyContent;
                 } catch (err) {}
             }
             setInterval(fetchData, 1000);
@@ -237,8 +250,4 @@ def index():
 
 
 if __name__ == "__main__":
-    import logging
-
-    log = logging.getLogger("werkzeug")
-    log.setLevel(logging.ERROR)
     app.run(host="0.0.0.0", port=5000, debug=False)
