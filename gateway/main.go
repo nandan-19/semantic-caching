@@ -166,7 +166,7 @@ func semanticCacheInterceptor(
 	// TRACK A: EXACT HIT
 	if exactErr == nil && exactRes != "" {
 		telemetry.ExactMatchHit = true
-		telemetry.Response = exactRes // <-- Captured
+		telemetry.Response = exactRes 
 		telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
 		go publishTelemetry(telemetry)
 		return &pb.QueryResponse{Answer: exactRes, Cached: true}, nil

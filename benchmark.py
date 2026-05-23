@@ -35,6 +35,7 @@ prompts = [
     "Show me a recursive Fibonacci function in C",
     "Iterative Fibonacci sequence in C",
     "How to reverse a string in JavaScript",
+    "How to reverse a string in JavaScript",
     "JavaScript string reversal method",
     # --- MATH / FORMULAIC (High Entropy -> Strict Threshold) ---
     "Calculate derivative of 4x^3 + 2x",
