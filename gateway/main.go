@@ -166,7 +166,7 @@ func semanticCacheInterceptor(
 	// TRACK A: EXACT HIT
 	if exactErr == nil && exactRes != "" {
 		telemetry.ExactMatchHit = true
-		telemetry.Response = exactRes 
+		telemetry.Response = exactRes
 		telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
 		go publishTelemetry(telemetry)
 		return &pb.QueryResponse{Answer: exactRes, Cached: true}, nil
@@ -186,7 +186,7 @@ func semanticCacheInterceptor(
 					// TRACK B: SEMANTIC HIT
 					if scoreFloat <= appliedThreshold {
 						telemetry.SemanticMatchHit = true
-						telemetry.Response = cachedResponse // <-- Captured
+						telemetry.Response = cachedResponse 
 						rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": cachedResponse, "vector": vectorBytes})
 
 						telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
