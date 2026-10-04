@@ -14,9 +14,13 @@ stats = {
     "fixed_hits": 0,
     "shannon_hits": 0,
     "model_hits": 0,
+    "laya_called": 0,
+    "laya_approved": 0,
+    "laya_rejected": 0,
     "sum_trad_ms": 0,
     "sum_sem_ms": 0,
     "sum_total_ms": 0,
+    "sum_laya_ms": 0,
 }
 
 
@@ -39,6 +43,13 @@ def consume_kafka():
             stats["sum_trad_ms"] += float(payload.get("trad_latency_ms", 0))
             stats["sum_sem_ms"] += float(payload.get("sem_latency_ms", 0))
             stats["sum_total_ms"] += float(payload.get("total_latency_ms", 0))
+            if payload.get("laya_called"):
+                stats["laya_called"] += 1
+                stats["sum_laya_ms"] += float(payload.get("laya_latency_ms", 0))
+                if payload.get("laya_decision") == "approved":
+                    stats["laya_approved"] += 1
+                else:
+                    stats["laya_rejected"] += 1
 
             if payload.get("exact_match_hit"):
                 stats["exact_hits"] += 1
@@ -71,6 +82,7 @@ def get_data():
         "trad": round(stats["sum_trad_ms"] / t, 2),
         "sem": round(stats["sum_sem_ms"] / t, 2),
         "total": round(stats["sum_total_ms"] / t, 2),
+        "laya": round(stats["sum_laya_ms"] / stats["laya_called"], 2) if stats["laya_called"] else 0,
     }
     return jsonify({"stats": stats, "history": history, "avgs": avg_latencies})
 
@@ -120,7 +132,7 @@ def index():
             </div>
 
             <h2 class="text-lg font-bold text-gray-300 mt-8">Semantic Rescue Logic (Head-to-Head)</h2>
-            <div class="grid grid-cols-3 gap-4">
+            <div class="grid grid-cols-4 gap-4">
                 <div class="bg-gray-800 p-4 rounded-lg border border-gray-600 shadow">
                     <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Fixed Baseline (0.20)</div>
                     <div class="flex items-end gap-2 mt-1"><div class="text-4xl font-bold text-gray-300" id="stat-fixed">0</div><div class="text-sm text-gray-500 mb-1">rescued</div></div>
@@ -132,6 +144,11 @@ def index():
                 <div class="bg-gray-800 p-4 rounded-lg border border-cyan-900/50 shadow">
                     <div class="text-xs font-semibold text-cyan-400 uppercase tracking-wider">Qwen Model AST</div>
                     <div class="flex items-end gap-2 mt-1"><div class="text-4xl font-bold text-cyan-400" id="stat-model">0</div><div class="text-sm text-gray-500 mb-1">rescued</div></div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg border border-emerald-900/50 shadow">
+                    <div class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Laya Safety Gate</div>
+                    <div class="flex items-end gap-2 mt-1"><div class="text-4xl font-bold text-emerald-400" id="stat-laya">0/0</div><div class="text-sm text-gray-500 mb-1">approved</div></div>
+                    <div class="text-xs text-gray-500 mt-1">Avg verifier latency: <span id="avg-laya" class="text-emerald-400">0</span>ms</div>
                 </div>
             </div>
 
@@ -145,6 +162,7 @@ def index():
                             <th class="px-4 py-4 text-right">Distance</th>
                             <th class="px-4 py-4 text-right text-purple-400">Shannon AST</th>
                             <th class="px-4 py-4 text-right text-cyan-400">Model AST</th>
+                            <th class="px-4 py-4 text-center text-emerald-400">Laya Gate</th>
                             <th class="px-6 py-4 text-right text-yellow-400">Total (ms)</th>
                         </tr>
                     </thead>
@@ -179,6 +197,8 @@ def index():
                     document.getElementById('stat-fixed').innerText = data.stats.fixed_hits;
                     document.getElementById('stat-shannon').innerText = data.stats.shannon_hits;
                     document.getElementById('stat-model').innerText = data.stats.model_hits;
+                    document.getElementById('stat-laya').innerText = `${data.stats.laya_approved}/${data.stats.laya_called}`;
+                    document.getElementById('avg-laya').innerText = data.avgs.laya;
                     document.getElementById('avg-trad').innerText = data.avgs.trad;
                     document.getElementById('avg-sem').innerHTML = data.avgs.sem + '<span class="text-lg">ms</span>';
                     document.getElementById('avg-total').innerText = data.avgs.total;
@@ -207,6 +227,13 @@ def index():
 
                         let shannonClass = shannonHit ? "text-green-400 font-bold bg-green-950/30 px-2 py-0.5 rounded border border-green-900/40" : "text-purple-400";
                         let modelClass = modelHit ? "text-green-400 font-bold bg-green-950/30 px-2 py-0.5 rounded border border-green-900/40" : "text-cyan-400";
+                        let layaHtml = '<span class="text-gray-600">—</span>';
+                        if (event.laya_called) {
+                            const approved = event.laya_decision === 'approved';
+                            const color = approved ? 'text-emerald-400 bg-emerald-950/30 border-emerald-900/40' : 'text-red-400 bg-red-950/30 border-red-900/40';
+                            const probability = parseFloat(event.laya_probability || 0).toFixed(2);
+                            layaHtml = `<span class="px-2 py-0.5 rounded border text-xs font-bold ${color}">${event.laya_decision.toUpperCase()} ${probability}</span>`;
+                        }
 
                         // Check if this specific drawer was open prior to this poll frame
                         let drawerHiddenClass = (savedActiveId == index) ? "" : "hidden";
@@ -221,16 +248,18 @@ def index():
                                 <td class="px-4 py-3 text-right text-gray-400">${dist}</td>
                                 <td class="px-4 py-3 text-right"><span class="${shannonClass}">${parseFloat(event.shannon_thresh || 0).toFixed(2)}</span></td>
                                 <td class="px-4 py-3 text-right"><span class="${modelClass}">${parseFloat(event.model_thresh || 0).toFixed(2)}</span></td>
+                                <td class="px-4 py-3 text-center">${layaHtml}</td>
                                 <td class="px-6 py-3 text-right ${latColor}">${totalLat.toFixed(1)}</td>
                             </tr>
                             <tr id="drawer-${index}" class="${drawerHiddenClass} bg-gray-850/50">
-                                <td colspan="6" class="px-8 py-4 border-l-2 border-blue-500 bg-gray-900/40 text-gray-300">
+                                <td colspan="7" class="px-8 py-4 border-l-2 border-blue-500 bg-gray-900/40 text-gray-300">
                                     <div class="space-y-2">
                                         <div><span class="text-xs font-bold text-blue-400 uppercase">Full User Prompt:</span> <span class="text-gray-100">${event.query}</span></div>
                                         <div>
                                             <span class="text-xs font-bold text-purple-400 uppercase">Pipeline Resolution Payload:</span>
                                             <pre class="mt-1 p-3 bg-gray-950 rounded text-xs overflow-x-auto font-mono text-green-400 border border-gray-800 whitespace-pre-wrap">${modelResponseText}</pre>
                                         </div>
+                                        ${event.laya_called ? `<div><span class="text-xs font-bold text-emerald-400 uppercase">Laya verification:</span> ${event.laya_decision} — probability ${parseFloat(event.laya_probability || 0).toFixed(3)} / threshold ${parseFloat(event.laya_threshold || 0).toFixed(2)} (${parseFloat(event.laya_latency_ms || 0).toFixed(1)}ms)</div>` : ''}
                                     </div>
                                 </td>
                             </tr>

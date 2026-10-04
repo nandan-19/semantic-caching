@@ -24,21 +24,26 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tapi.proto\x12\x0esemantic_cache\",\n\x0bTextRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\"#\n\x11\x45mbeddingResponse\x12\x0e\n\x06vector\x18\x01 \x03(\x02\"/\n\rQueryResponse\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\t\x12\x0e\n\x06\x63\x61\x63hed\x18\x02 \x01(\x08\x32`\n\x0e\x45ncoderService\x12N\n\x0cGetEmbedding\x12\x1b.semantic_cache.TextRequest\x1a!.semantic_cache.EmbeddingResponse2\\\n\x0e\x43oreAppService\x12J\n\x0cProcessQuery\x12\x1b.semantic_cache.TextRequest\x1a\x1d.semantic_cache.QueryResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\tapi.proto\x12\x0esemantic_cache\",\n\x0bTextRequest\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\"#\n\x11\x45mbeddingResponse\x12\x0e\n\x06vector\x18\x01 \x03(\x02\"\\\n\x18\x43\x61\x63heVerificationRequest\x12\x11\n\tnew_query\x18\x01 \x01(\t\x12\x14\n\x0c\x63\x61\x63hed_query\x18\x02 \x01(\t\x12\x17\n\x0f\x63\x61\x63hed_response\x18\x03 \x01(\t\"0\n\x19\x43\x61\x63heVerificationResponse\x12\x13\n\x0bprobability\x18\x01 \x01(\x02\"/\n\rQueryResponse\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\t\x12\x0e\n\x06\x63\x61\x63hed\x18\x02 \x01(\x08\x32\xcd\x01\n\x0e\x45ncoderService\x12N\n\x0cGetEmbedding\x12\x1b.semantic_cache.TextRequest\x1a!.semantic_cache.EmbeddingResponse\x12k\n\x14VerifyCachedResponse\x12(.semantic_cache.CacheVerificationRequest\x1a).semantic_cache.CacheVerificationResponse2\\\n\x0e\x43oreAppService\x12J\n\x0cProcessQuery\x12\x1b.semantic_cache.TextRequest\x1a\x1d.semantic_cache.QueryResponseB.Z,github.com/THETITAN220/FSCgRPC/gateway/protob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  DESCRIPTOR._loaded_options = None
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'Z,github.com/THETITAN220/FSCgRPC/gateway/proto'
   _globals['_TEXTREQUEST']._serialized_start=29
   _globals['_TEXTREQUEST']._serialized_end=73
   _globals['_EMBEDDINGRESPONSE']._serialized_start=75
   _globals['_EMBEDDINGRESPONSE']._serialized_end=110
-  _globals['_QUERYRESPONSE']._serialized_start=112
-  _globals['_QUERYRESPONSE']._serialized_end=159
-  _globals['_ENCODERSERVICE']._serialized_start=161
-  _globals['_ENCODERSERVICE']._serialized_end=257
-  _globals['_COREAPPSERVICE']._serialized_start=259
-  _globals['_COREAPPSERVICE']._serialized_end=351
+  _globals['_CACHEVERIFICATIONREQUEST']._serialized_start=112
+  _globals['_CACHEVERIFICATIONREQUEST']._serialized_end=204
+  _globals['_CACHEVERIFICATIONRESPONSE']._serialized_start=206
+  _globals['_CACHEVERIFICATIONRESPONSE']._serialized_end=254
+  _globals['_QUERYRESPONSE']._serialized_start=256
+  _globals['_QUERYRESPONSE']._serialized_end=303
+  _globals['_ENCODERSERVICE']._serialized_start=306
+  _globals['_ENCODERSERVICE']._serialized_end=511
+  _globals['_COREAPPSERVICE']._serialized_start=513
+  _globals['_COREAPPSERVICE']._serialized_end=605
 # @@protoc_insertion_point(module_scope)

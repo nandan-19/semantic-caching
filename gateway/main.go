@@ -32,6 +32,11 @@ var rdb *redis.Client
 var kafkaWriter *kafka.Writer
 var netClient = &http.Client{Timeout: 60 * time.Second}
 
+const (
+	layaAcceptanceThreshold = 0.80
+	layaTimeout             = 5 * time.Second
+)
+
 // 1. ADDED "Response" field to ship text to the dashboard
 type TelemetryEvent struct {
 	Timestamp        string  `json:"timestamp"`
@@ -46,6 +51,11 @@ type TelemetryEvent struct {
 	TotalLatencyMs   float64 `json:"total_latency_ms"`
 	ShannonThresh    float64 `json:"shannon_thresh"`
 	ModelThresh      float64 `json:"model_thresh"`
+	LayaCalled       bool    `json:"laya_called"`
+	LayaProbability  float64 `json:"laya_probability"`
+	LayaThreshold    float64 `json:"laya_threshold"`
+	LayaDecision     string  `json:"laya_decision"`
+	LayaLatencyMs    float64 `json:"laya_latency_ms"`
 }
 
 type server struct {
@@ -118,6 +128,10 @@ func getModelThreshold(query string, modelName string) float64 {
 	return 0.35
 }
 
+func layaApproved(verifyErr error, probability float64) bool {
+	return verifyErr == nil && probability >= layaAcceptanceThreshold
+}
+
 func semanticCacheInterceptor(
 	ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler,
 ) (interface{}, error) {
@@ -128,7 +142,7 @@ func semanticCacheInterceptor(
 	}
 
 	queryStr := textReq.GetText()
-	
+
 	modelName := "qwen2.5:1.5b"
 	if md, ok := metadata.FromIncomingContext(ctx); ok {
 		if vals := md.Get("x-model-name"); len(vals) > 0 {
@@ -176,13 +190,15 @@ func semanticCacheInterceptor(
 	}
 
 	appliedThreshold := shannonVal
+	var auditCachedQuery, auditCachedResponse, auditVerifierError string
 
 	// TRACK A: EXACT HIT
 	if exactErr == nil && exactRes != "" {
 		telemetry.ExactMatchHit = true
-		telemetry.Response = exactRes 
+		telemetry.Response = exactRes
 		telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
 		go publishTelemetry(telemetry)
+		go publishLayaAudit(telemetry, auditCachedQuery, auditCachedResponse, auditVerifierError)
 		return &pb.QueryResponse{Answer: exactRes, Cached: true}, nil
 	}
 
@@ -195,17 +211,48 @@ func semanticCacheInterceptor(
 				if matchData, ok := resSlice[2].([]interface{}); ok && len(matchData) >= 6 {
 					scoreFloat, _ := strconv.ParseFloat(fmt.Sprintf("%s", matchData[1]), 64)
 					cachedResponse := fmt.Sprintf("%s", matchData[3])
+					cachedQuery := fmt.Sprintf("%s", matchData[5])
+					auditCachedQuery = cachedQuery
+					auditCachedResponse = cachedResponse
 					telemetry.DistanceScore = scoreFloat
 
-					// TRACK B: SEMANTIC HIT
+					// Laya is only consulted after the existing Shannon gate admits a candidate.
 					if scoreFloat <= appliedThreshold {
-						telemetry.SemanticMatchHit = true
-						telemetry.Response = cachedResponse // <-- Captured
-						rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": cachedResponse, "vector": vectorBytes})
+						telemetry.LayaCalled = true
+						telemetry.LayaThreshold = layaAcceptanceThreshold
+						layaStart := time.Now()
+						layaCtx, cancel := context.WithTimeout(ctx, layaTimeout)
+						verification, verifyErr := encoderClient.VerifyCachedResponse(layaCtx, &pb.CacheVerificationRequest{
+							NewQuery:       queryStr,
+							CachedQuery:    cachedQuery,
+							CachedResponse: cachedResponse,
+						})
+						cancel()
+						telemetry.LayaLatencyMs = float64(time.Since(layaStart).Microseconds()) / 1000.0
+						probability := 0.0
+						if verification != nil {
+							probability = float64(verification.GetProbability())
+						}
+						telemetry.LayaProbability = probability
+						if verifyErr != nil {
+							auditVerifierError = verifyErr.Error()
+						}
+						if layaApproved(verifyErr, probability) {
+							telemetry.LayaDecision = "approved"
+							telemetry.SemanticMatchHit = true
+							telemetry.Response = cachedResponse // <-- Captured
+							rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": cachedResponse, "vector": vectorBytes})
 
-						telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
-						go publishTelemetry(telemetry)
-						return &pb.QueryResponse{Answer: cachedResponse, Cached: true}, nil
+							telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
+							go publishTelemetry(telemetry)
+							go publishLayaAudit(telemetry, auditCachedQuery, auditCachedResponse, auditVerifierError)
+							return &pb.QueryResponse{Answer: cachedResponse, Cached: true}, nil
+						}
+						if verifyErr != nil {
+							telemetry.LayaDecision = "unavailable"
+						} else {
+							telemetry.LayaDecision = "rejected"
+						}
 					}
 				}
 			}
@@ -213,8 +260,8 @@ func semanticCacheInterceptor(
 
 		// TRACK C: SLM FALLBACK
 		reqBody, _ := json.Marshal(map[string]interface{}{
-			"model": modelName, 
-			"prompt": queryStr, 
+			"model":  modelName,
+			"prompt": queryStr,
 			"stream": false,
 			"options": map[string]interface{}{
 				"num_predict": 75,
@@ -232,6 +279,7 @@ func semanticCacheInterceptor(
 				rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": finalAns, "vector": vectorBytes})
 				telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
 				go publishTelemetry(telemetry)
+				go publishLayaAudit(telemetry, auditCachedQuery, auditCachedResponse, auditVerifierError)
 				return &pb.QueryResponse{Answer: finalAns, Cached: false}, nil
 			}
 		}
@@ -243,6 +291,7 @@ func semanticCacheInterceptor(
 	telemetry.Response = queryResp.Answer // <-- Captured
 	telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
 	go publishTelemetry(telemetry)
+	go publishLayaAudit(telemetry, auditCachedQuery, auditCachedResponse, auditVerifierError)
 	return queryResp, nil
 }
 
@@ -253,6 +302,8 @@ func main() {
 	rdb = redis.NewClient(&redis.Options{Addr: "127.0.0.1:6380", Protocol: 2})
 	kafkaWriter = &kafka.Writer{Addr: kafka.TCP("127.0.0.1:9092"), Topic: "cache-telemetry", Balancer: &kafka.LeastBytes{}}
 	defer kafkaWriter.Close()
+	layaAuditWriter = &kafka.Writer{Addr: kafka.TCP("127.0.0.1:9092"), Topic: layaAuditTopic, Balancer: &kafka.LeastBytes{}}
+	defer layaAuditWriter.Close()
 	lis, _ := net.Listen("tcp", ":50051")
 	s := grpc.NewServer(grpc.UnaryInterceptor(semanticCacheInterceptor))
 	pb.RegisterCoreAppServiceServer(s, &server{})

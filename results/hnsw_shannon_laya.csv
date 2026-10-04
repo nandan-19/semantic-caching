@@ -1,0 +1,43 @@
+Timestamp,Query,Model,Exact_Hit,Semantic_Hit,Distance_Score,Trad_Latency_Ms,Sem_Latency_Ms,Total_Latency_Ms,Shannon_Thresh,Model_Thresh,Laya_Called,Laya_Probability,Laya_Threshold,Laya_Decision,Laya_Latency_Ms
+2026-10-04T20:56:31+05:30,Hey there! Can you tell me what the capital of France is?,qwen2.5:1.5b,False,False,2,8.905,264.348,7846.112,0.25,0.35,False,0,0.8,,0
+2026-10-04T20:56:33+05:30,Hey there! Can you tell me what the capital of France is?,qwen2.5:1.5b,True,False,2,1.653,39.682,604.022,0.25,0.35,False,0,0.8,,0
+2026-10-04T20:56:35+05:30,What's the capital city of France btw?,qwen2.5:1.5b,False,False,0.130730092525,1.646,22.243,1653.011,0.25,0.35,True,0.7670999765396118,0.8,miss,730.256
+2026-10-04T20:56:38+05:30,Hey there! Can you tell me what the capital of Germany is?,qwen2.5:1.5b,False,False,0.270708501339,2.34,24.941,934.182,0.25,0.35,False,0,0.8,,0
+2026-10-04T20:56:41+05:30,"yo, I need to bake a chocolate cake today. any good recipes?",qwen2.5:1.5b,False,False,0.887757778168,10.704,53.296,3183.153,0.25,0.35,False,0,0.8,,0
+2026-10-04T20:56:45+05:30,"yo, I need to bake a chocolate cake today. any good recipes?",qwen2.5:1.5b,True,False,2,1.605,29.138,463.495,0.25,0.35,False,0,0.8,,0
+2026-10-04T20:56:47+05:30,Could you help me figure out how to bake a chocolate cake?,qwen2.5:1.5b,False,False,0.187233626842,2.209,52.178,2465.963,0.25,0.15,True,0.6344000101089478,0.8,miss,882.23
+2026-10-04T20:56:51+05:30,"yo, I need to bake a vanilla cake today. any good recipes?",qwen2.5:1.5b,False,False,0.168067336082,3.077,27.996,4034.591,0.25,0.35,True,0.4408999979496002,0.8,miss,903.83
+2026-10-04T20:56:56+05:30,Can somebody explain the rules of soccer to me like I'm 5?,qwen2.5:1.5b,False,False,0.818535923958,2.252,23.09,3213.376,0.15,0.35,False,0,0.8,,0
+2026-10-04T20:57:01+05:30,Can somebody explain the rules of soccer to me like I'm 5?,qwen2.5:1.5b,True,False,2,2.471,52.555,552.575,0.15,0.35,False,0,0.8,,0
+2026-10-04T20:57:03+05:30,"I don't get soccer, what are the basic rules?",qwen2.5:1.5b,False,False,0.102182626724,2.381,30.146,4109.458,0.25,0.35,True,0.7924000024795532,0.8,miss,910.754
+2026-10-04T20:57:09+05:30,Can somebody explain the rules of basketball to me like I'm 5?,qwen2.5:1.5b,False,False,0.213048577309,2.212,31.001,3225.648,0.15,0.15,False,0,0.8,,0
+2026-10-04T20:57:14+05:30,"I'm super curious, what's literally the tallest mountain on Earth?",qwen2.5:1.5b,False,False,0.724201023579,29.454,701.714,3653.766,0.15,0.15,False,0,0.8,,0
+2026-10-04T20:57:20+05:30,"I'm super curious, what's literally the tallest mountain on Earth?",qwen2.5:1.5b,True,False,2,2.628,188.793,651.704,0.15,0.15,False,0,0.8,,0
+2026-10-04T20:57:23+05:30,Which mountain is the absolute highest in the world?,qwen2.5:1.5b,False,True,0.161337316036,3.813,35.751,1573.733,0.25,0.15,True,0.8654999732971191,0.8,hit,1012.284
+2026-10-04T20:57:26+05:30,"I'm super curious, what's literally the longest river on Earth?",qwen2.5:1.5b,False,False,0.443373501301,2.63,30.185,3265.132,0.15,0.15,False,0,0.8,,0
+2026-10-04T20:57:31+05:30,Does anyone know exactly how far the moon is from us?,qwen2.5:1.5b,False,False,0.619124174118,5.776,145.304,3336.113,0.25,0.15,False,0,0.8,,0
+2026-10-04T20:57:35+05:30,Does anyone know exactly how far the moon is from us?,qwen2.5:1.5b,True,False,2,2.235,37.796,467.791,0.25,0.15,False,0,0.8,,0
+2026-10-04T20:57:37+05:30,What is the distance between Earth and the moon roughly?,qwen2.5:1.5b,False,True,0.184323310852,2.192,29.498,1258.097,0.25,0.15,True,0.8234999775886536,0.8,hit,808.025
+2026-10-04T20:57:40+05:30,Does anyone know exactly how far the sun is from us?,qwen2.5:1.5b,False,False,0.25816732645,2.863,36.048,3352.161,0.25,0.15,False,0,0.8,,0
+2026-10-04T20:57:45+05:30,"I forgot my history class stuff, who was the very first US president?",qwen2.5:1.5b,False,False,0.83330899477,2.731,35.399,2201.673,0.15,0.15,False,0,0.8,,0
+2026-10-04T20:57:48+05:30,"I forgot my history class stuff, who was the very first US president?",qwen2.5:1.5b,True,False,2,2.793,30.679,598.531,0.15,0.35,False,0,0.8,,0
+2026-10-04T20:57:50+05:30,Name the 1st president of the United States for me.,qwen2.5:1.5b,False,False,0.306011736393,1.689,25.56,1915.798,0.25,0.35,False,0,0.8,,0
+2026-10-04T20:57:53+05:30,"I forgot my history class stuff, who was the very second US president?",qwen2.5:1.5b,False,False,0.117716312408,2.262,26.137,2747.971,0.15,0.15,True,0.625,0.8,miss,721.784
+2026-10-04T20:57:57+05:30,"Quick question, what are the primary colors again?",qwen2.5:1.5b,False,False,0.815259635448,2.775,29.313,2127.873,0.15,0.35,False,0,0.8,,0
+2026-10-04T20:58:01+05:30,"Quick question, what are the primary colors again?",qwen2.5:1.5b,True,False,2,2.039,37.746,425.493,0.15,0.35,False,0,0.8,,0
+2026-10-04T20:58:03+05:30,I need a list of all the primary colors pls.,qwen2.5:1.5b,False,True,0.155257999897,2.358,35.942,1683.022,0.25,0.35,True,0.8266000151634216,0.8,hit,1269.984
+2026-10-04T20:58:06+05:30,"Quick question, what are the secondary colors again?",qwen2.5:1.5b,False,False,0.0882515907288,2.063,137.779,2295.216,0.15,0.35,True,0.2689000070095062,0.8,miss,742.587
+2026-10-04T20:58:10+05:30,"I don't have time to read, give me a quick summary of Harry Potter!",qwen2.5:1.5b,False,False,0.740246415138,1.636,34.371,3274.452,0.15,0.15,False,0,0.8,,0
+2026-10-04T20:58:14+05:30,"I don't have time to read, give me a quick summary of Harry Potter!",qwen2.5:1.5b,True,False,2,1.691,33.675,481.246,0.15,0.35,False,0,0.8,,0
+2026-10-04T20:58:16+05:30,Can you summarize the Harry Potter plot real quick?,qwen2.5:1.5b,False,False,0.146870553493,2.179,45.261,4356.517,0.15,0.35,True,0.7663000226020813,0.8,miss,1115.957
+2026-10-04T20:58:22+05:30,"I don't have time to read, give me a quick summary of Lord of the Rings!",qwen2.5:1.5b,False,False,0.291543483734,0.733,70.118,3171.536,0.15,0.35,False,0,0.8,,0
+2026-10-04T20:58:27+05:30,"Traveling soon, how do I say a basic 'hello' in Spanish?",qwen2.5:1.5b,False,False,0.807978034019,2.575,36.804,2123.47,0.15,0.35,False,0,0.8,,0
+2026-10-04T20:58:30+05:30,"Traveling soon, how do I say a basic 'hello' in Spanish?",qwen2.5:1.5b,True,False,2,2.212,24.177,492.698,0.15,0.35,False,0,0.8,,0
+2026-10-04T20:58:32+05:30,What's the Spanish translation for hello?,qwen2.5:1.5b,False,True,0.16443759203,1.652,23.721,1137.952,0.25,0.35,True,0.8230000138282776,0.8,hit,732.048
+2026-10-04T20:58:35+05:30,"Traveling soon, how do I say a basic 'goodbye' in Spanish?",qwen2.5:1.5b,False,False,0.174903869629,1.649,52.341,3176.159,0.15,0.35,False,0,0.8,,0
+2026-10-04T20:58:39+05:30,At exactly what temperature does water start to freeze?,qwen2.5:1.5b,False,False,0.721052289009,2.718,37.39,2936.064,0.25,0.15,False,0,0.8,,0
+2026-10-04T20:58:44+05:30,At exactly what temperature does water start to freeze?,qwen2.5:1.5b,True,False,2,6.361,26.592,515.253,0.25,0.15,False,0,0.8,,0
+2026-10-04T20:58:45+05:30,What is the literal freezing point of water in Celsius?,qwen2.5:1.5b,False,True,0.19761967659,2.165,54.031,1336.432,0.25,0.15,True,0.8687999844551086,0.8,hit,813.576
+2026-10-04T20:58:48+05:30,At exactly what temperature does water start to boil?,qwen2.5:1.5b,False,False,0.283652126789,2.22,22.385,3246.565,0.25,0.15,False,0,0.8,,0
+2026-10-04T20:58:53+05:30,I can't sleep. Can you tell me a nice bedtime story?,qwen2.5:1.5b,False,False,0.660081803799,2.471,27.955,3270.987,0.25,0.35,False,0,0.8,,0
+2026-10-04T20:58:58+05:30,I can't sleep. Can you tell me a nice bedtime story?,qwen2.5:1.5b,True,False,2,1.684,25.618,478.492,0.25,0.35,False,0,0.8,,0

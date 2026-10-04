@@ -5,6 +5,7 @@ option go_package = "github.com/THETITAN220/FSCgRPC/gateway/proto";
 
 service EncoderService{
     rpc GetEmbedding (TextRequest) returns (EmbeddingResponse);
+    rpc VerifyCachedResponse (CacheVerificationRequest) returns (CacheVerificationResponse);
 }
 
 service CoreAppService{
@@ -18,6 +19,18 @@ message TextRequest{
 
 message EmbeddingResponse{
     repeated float vector = 1;
+}
+
+message CacheVerificationRequest {
+    string new_query = 1;
+    string cached_query = 2;
+    string cached_response = 3;
+    string verification_stage = 4;
+}
+
+message CacheVerificationResponse {
+    float probability = 1;
+    string decision = 2;
 }
 
 message QueryResponse{

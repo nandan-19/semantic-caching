@@ -39,12 +39,23 @@ class EncoderServiceStub(object):
                 request_serializer=api__pb2.TextRequest.SerializeToString,
                 response_deserializer=api__pb2.EmbeddingResponse.FromString,
                 _registered_method=True)
+        self.VerifyCachedResponse = channel.unary_unary(
+                '/semantic_cache.EncoderService/VerifyCachedResponse',
+                request_serializer=api__pb2.CacheVerificationRequest.SerializeToString,
+                response_deserializer=api__pb2.CacheVerificationResponse.FromString,
+                _registered_method=True)
 
 
 class EncoderServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def GetEmbedding(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def VerifyCachedResponse(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -57,6 +68,11 @@ def add_EncoderServiceServicer_to_server(servicer, server):
                     servicer.GetEmbedding,
                     request_deserializer=api__pb2.TextRequest.FromString,
                     response_serializer=api__pb2.EmbeddingResponse.SerializeToString,
+            ),
+            'VerifyCachedResponse': grpc.unary_unary_rpc_method_handler(
+                    servicer.VerifyCachedResponse,
+                    request_deserializer=api__pb2.CacheVerificationRequest.FromString,
+                    response_serializer=api__pb2.CacheVerificationResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -86,6 +102,33 @@ class EncoderService(object):
             '/semantic_cache.EncoderService/GetEmbedding',
             api__pb2.TextRequest.SerializeToString,
             api__pb2.EmbeddingResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def VerifyCachedResponse(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/semantic_cache.EncoderService/VerifyCachedResponse',
+            api__pb2.CacheVerificationRequest.SerializeToString,
+            api__pb2.CacheVerificationResponse.FromString,
             options,
             channel_credentials,
             insecure,
