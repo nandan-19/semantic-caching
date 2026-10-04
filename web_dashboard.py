@@ -53,9 +53,12 @@ def consume_kafka():
                 if dist <= float(payload.get("model_thresh", 0.20)):
                     stats["model_hits"] += 1
 
+            # CAPTURE THE RESPONSE TEXT FROM REDIS / OLLAMA
+            # Go intercepts send this through the standard Kafka payload
             history.insert(0, payload)
             if len(history) > 50:
                 history.pop()
+
 
 thread = threading.Thread(target=consume_kafka, daemon=True)
 thread.start()

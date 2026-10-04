@@ -1,0 +1,62 @@
+Timestamp,Query,Model,Exact_Hit,Semantic_Hit,Distance_Score,Trad_Latency_Ms,Sem_Latency_Ms,Total_Latency_Ms,Shannon_Thresh,Model_Thresh
+2026-05-29T22:16:46+05:30,Does anyone know if there is water on Mars?,qwen2.5:1.5b,False,False,2,2.501,32.829,17396.421,0.25,0.15
+2026-05-29T22:16:57+05:30,Does anyone know if there is water on Mars?,qwen2.5:1.5b,False,False,0.672511994839,3.134,26.76,7379.348,0.25,0.15
+2026-05-29T22:17:06+05:30,Does anyone know if there is water on Mars?,qwen2.5:1.5b,True,False,2,2.499,40.39,530.862,0.25,0.15
+2026-05-29T22:17:08+05:30,Has water ever been discovered on the planet Mars?,qwen2.5:1.5b,False,True,0.150875270367,3.118,41.914,657.185,0.25,0.15
+2026-05-29T22:17:10+05:30,Does anyone know if there is water on Venus?,qwen2.5:1.5b,False,False,0.268117427826,2.787,44.896,8732.748,0.25,0.15
+2026-05-29T22:17:20+05:30,"I'm totally new, how do I start a Docker container?",qwen2.5:1.5b,False,False,0.743172645569,3.063,44.938,18270.907,0.25,0.15
+2026-05-29T22:17:39+05:30,"I'm totally new, how do I start a Docker container?",qwen2.5:1.5b,True,False,2,2.432,32.759,590.839,0.25,0.15
+2026-05-29T22:17:41+05:30,What's the command to run a new container in Docker?,qwen2.5:1.5b,False,True,0.238583385944,2.274,43.52,572.243,0.25,0.35
+2026-05-29T22:17:43+05:30,"I'm totally new, how do I stop a Docker container?",qwen2.5:1.5b,False,False,0.289717972279,3.285,45.713,13876.31,0.15,0.15
+2026-05-29T22:17:58+05:30,"Pls help, what exactly is a Kubernetes pod?",qwen2.5:1.5b,False,False,0.660550475121,1.721,36.79,5793.552,0.15,0.15
+2026-05-29T22:18:05+05:30,"Pls help, what exactly is a Kubernetes pod?",qwen2.5:1.5b,True,False,2,3.937,36.03,532.167,0.15,0.15
+2026-05-29T22:18:07+05:30,Can someone explain the concept of a Pod in K8s?,qwen2.5:1.5b,False,True,0.168242752552,2.447,42.171,508.295,0.25,0.15
+2026-05-29T22:18:09+05:30,"Pls help, what exactly is a Kubernetes node?",qwen2.5:1.5b,False,False,0.154821753502,2.235,33.727,8793.024,0.15,0.15
+2026-05-29T22:18:19+05:30,Math homework: what is the integral of x squared?,qwen2.5:1.5b,False,False,0.395701885223,5.267,45.801,6323.512,0.15,0.15
+2026-05-29T22:18:27+05:30,Math homework: what is the integral of x squared?,qwen2.5:1.5b,True,False,2,4.416,39.018,527.858,0.15,0.15
+2026-05-29T22:18:29+05:30,Can you integrate x^2 with respect to x for me?,qwen2.5:1.5b,False,False,0.260882616043,4.654,37.893,4648.811,0.25,0.15
+2026-05-29T22:18:35+05:30,Math homework: what is the derivative of x squared?,qwen2.5:1.5b,False,False,0.315445661545,2.896,32.859,3411.979,0.25,0.15
+2026-05-29T22:18:40+05:30,How do I find the transpose of a 3x3 matrix?,qwen2.5:1.5b,False,False,0.295051574707,3.751,49.913,11262.049,0.25,0.15
+2026-05-29T22:18:52+05:30,How do I find the transpose of a 3x3 matrix?,qwen2.5:1.5b,True,False,2,2.432,31.426,529.269,0.25,0.15
+2026-05-29T22:18:54+05:30,What are the steps to transpose a 3 by 3 matrix?,qwen2.5:1.5b,False,True,0.12900352478,2.384,120.052,727.983,0.25,0.15
+2026-05-29T22:18:56+05:30,How do I find the inverse of a 3x3 matrix?,qwen2.5:1.5b,False,True,0.0140402317047,2.96,48.696,668.066,0.25,0.15
+2026-05-29T22:18:58+05:30,"Quick geography question, what's the capital of Canada?",qwen2.5:1.5b,False,False,0.430034279823,3.759,42.62,1175.332,0.15,0.15
+2026-05-29T22:19:01+05:30,"Quick geography question, what's the capital of Canada?",qwen2.5:1.5b,True,False,2,2.227,38.685,556.815,0.15,0.15
+2026-05-29T22:19:02+05:30,What city is the official capital of Canada?,qwen2.5:1.5b,False,True,0.158707499504,2.286,34.822,458.205,0.25,0.35
+2026-05-29T22:19:04+05:30,"Quick geography question, what's the capital of Mexico?",qwen2.5:1.5b,False,False,0.426154375076,3.639,31.799,1376.363,0.15,0.35
+2026-05-29T22:19:07+05:30,"I'm visiting soon, what is the capital of Japan?",qwen2.5:1.5b,False,False,0.374229490757,2.872,40.037,1245.306,0.25,0.35
+2026-05-29T22:19:09+05:30,"I'm visiting soon, what is the capital of Japan?",qwen2.5:1.5b,True,False,2,3.248,36.851,554.682,0.25,0.15
+2026-05-29T22:19:11+05:30,Name the capital city of Japan for me.,qwen2.5:1.5b,False,True,0.189333021641,2.801,43.477,647.396,0.25,0.15
+2026-05-29T22:19:13+05:30,"I'm visiting soon, what is the capital of China?",qwen2.5:1.5b,False,False,0.318358123302,2.239,29.531,1090.649,0.25,0.15
+2026-05-29T22:19:16+05:30,History test tomorrow! What year did World War 2 end?,qwen2.5:1.5b,False,False,0.589168310165,2.813,42.676,1925.555,0.25,0.15
+2026-05-29T22:19:19+05:30,History test tomorrow! What year did World War 2 end?,qwen2.5:1.5b,True,False,2,2.562,35.938,666.264,0.25,0.15
+2026-05-29T22:19:21+05:30,In what year did the Second World War officially finish?,qwen2.5:1.5b,False,True,0.245523333549,2.984,39.299,603.907,0.25,0.35
+2026-05-29T22:19:23+05:30,History test tomorrow! What year did World War 1 end?,qwen2.5:1.5b,False,True,0.0505135059357,2.797,43.224,653.265,0.25,0.15
+2026-05-29T22:19:25+05:30,When exactly did humans first land on the moon?,qwen2.5:1.5b,False,False,0.481524705887,3.146,50.201,3767.397,0.25,0.15
+2026-05-29T22:19:30+05:30,When exactly did humans first land on the moon?,qwen2.5:1.5b,True,False,2,2.825,32.646,528.34,0.25,0.15
+2026-05-29T22:19:32+05:30,What date did the Apollo 11 moon landing happen?,qwen2.5:1.5b,False,False,0.311526060104,3.372,42.059,2153.216,0.25,0.15
+2026-05-29T22:19:35+05:30,When exactly did humans first land on Mars?,qwen2.5:1.5b,False,False,0.262570798397,2.876,44.584,6732.142,0.25,0.15
+2026-05-29T22:19:43+05:30,"I'm hungry, what's the secret to fluffy scrambled eggs?",qwen2.5:1.5b,False,False,0.620968639851,3.38,40.654,8120.046,0.15,0.15
+2026-05-29T22:19:53+05:30,"I'm hungry, what's the secret to fluffy scrambled eggs?",qwen2.5:1.5b,True,False,2,4.96,36.261,586.097,0.15,0.15
+2026-05-29T22:19:54+05:30,"How do you make the best, fluffiest scrambled eggs?",qwen2.5:1.5b,False,False,0.184547543526,3.73,44.114,16825.527,0.15,0.15
+2026-05-29T22:20:13+05:30,"I'm hungry, what's the secret to fluffy boiled eggs?",qwen2.5:1.5b,False,True,0.0879643559456,2.341,35.862,694.56,0.15,0.15
+2026-05-29T22:20:15+05:30,Biology question: what does DNA stand for?,qwen2.5:1.5b,False,False,0.713402867317,3.804,43.486,10183.082,0.15,0.35
+2026-05-29T22:20:27+05:30,Biology question: what does DNA stand for?,qwen2.5:1.5b,True,False,2,2.261,31.558,1102.872,0.15,0.35
+2026-05-29T22:20:29+05:30,What is the full scientific name for DNA?,qwen2.5:1.5b,False,True,0.230862140656,2.276,30.314,611.666,0.25,0.15
+2026-05-29T22:20:30+05:30,Biology question: what does RNA stand for?,qwen2.5:1.5b,False,False,0.30850058794,2.284,35.247,4405.714,0.15,0.35
+2026-05-29T22:20:36+05:30,What is the very first element on the periodic table?,qwen2.5:1.5b,False,False,0.694884300232,3.49,42.556,1290.272,0.25,0.35
+2026-05-29T22:20:39+05:30,What is the very first element on the periodic table?,qwen2.5:1.5b,True,False,2,3.467,41.898,431.55,0.25,0.35
+2026-05-29T22:20:40+05:30,Name element number 1 on the periodic table.,qwen2.5:1.5b,False,True,0.175589442253,2.451,31.578,399.318,0.25,0.35
+2026-05-29T22:20:42+05:30,What is the very last element on the periodic table?,qwen2.5:1.5b,False,True,0.131780803204,3.436,33.317,588.456,0.25,0.35
+2026-05-29T22:20:44+05:30,"I keep hearing about it, what actually is a blockchain?",qwen2.5:1.5b,False,False,0.692955732346,3.153,49.71,8307.164,0.25,0.15
+2026-05-29T22:20:54+05:30,"I keep hearing about it, what actually is a blockchain?",qwen2.5:1.5b,True,False,2,10.194,34.809,539.506,0.25,0.15
+2026-05-29T22:20:56+05:30,Explain the concept of blockchain technology simply.,qwen2.5:1.5b,False,False,0.262395918369,3.607,42.85,11276.008,0.15,0.15
+2026-05-29T22:21:08+05:30,"I keep hearing about it, what actually is a cryptocurrency?",qwen2.5:1.5b,False,False,0.337588965893,2.093,40.402,14342.903,0.15,0.15
+2026-05-29T22:21:24+05:30,Art history: why did Vincent Van Gogh cut off his ear?,qwen2.5:1.5b,False,False,0.589603304863,2.795,39.916,9155.547,0.15,0.15
+2026-05-29T22:21:34+05:30,Art history: why did Vincent Van Gogh cut off his ear?,qwen2.5:1.5b,True,False,2,1.816,28.143,442.677,0.15,0.35
+2026-05-29T22:21:36+05:30,What's the real story behind Van Gogh losing his ear?,qwen2.5:1.5b,False,True,0.147189557552,2.232,30.564,604.566,0.25,0.15
+2026-05-29T22:21:38+05:30,Art history: why did Vincent Van Gogh paint sunflowers?,qwen2.5:1.5b,False,False,0.349016785622,2.871,35.696,7441.871,0.15,0.15
+2026-05-29T22:21:47+05:30,How often are the Summer Olympic games held?,qwen2.5:1.5b,False,False,0.75230050087,1.629,21.181,3154.487,0.15,0.35
+2026-05-29T22:21:51+05:30,How often are the Summer Olympic games held?,qwen2.5:1.5b,True,False,2,1.653,21.158,461.126,0.15,0.35
+2026-05-29T22:21:53+05:30,What is the time gap between each Summer Olympics?,qwen2.5:1.5b,False,True,0.243780791759,2.045,40.598,457.56,0.25,0.35
+2026-05-29T22:21:55+05:30,How often are the Winter Olympic games held?,qwen2.5:1.5b,False,True,0.113715529442,2.174,25.833,469.145,0.15,0.35

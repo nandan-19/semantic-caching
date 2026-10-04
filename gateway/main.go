@@ -22,6 +22,7 @@ import (
 	"github.com/segmentio/kafka-go"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
+	"google.golang.org/grpc/metadata"
 
 	pb "github.com/THETITAN220/FSCgRPC/gateway/proto"
 )
@@ -35,6 +36,7 @@ var netClient = &http.Client{Timeout: 60 * time.Second}
 type TelemetryEvent struct {
 	Timestamp        string  `json:"timestamp"`
 	Query            string  `json:"query"`
+	Model            string  `json:"model"`
 	Response         string  `json:"response"`
 	ExactMatchHit    bool    `json:"exact_match_hit"`
 	SemanticMatchHit bool    `json:"semantic_match_hit"`
@@ -88,10 +90,10 @@ func getShannonThreshold(query string) float64 {
 	return 0.35
 }
 
-func getModelThreshold(query string) float64 {
-	prompt := fmt.Sprintf("Classify this prompt as 'TECHNICAL' or 'CONVERSATIONAL'. Answer ONLY with one word: %s", query)
+func getModelThreshold(query string, modelName string) float64 {
+	prompt := fmt.Sprintf("Classify this prompt as 'TECHNICAL', 'MATH', or 'CONVERSATIONAL'. Answer ONLY with one word: %s", query)
 	reqBody, _ := json.Marshal(map[string]interface{}{
-		"model":  "qwen2.5:1.5b",
+		"model":  modelName,
 		"prompt": prompt,
 		"stream": false,
 	})
@@ -107,8 +109,11 @@ func getModelThreshold(query string) float64 {
 	json.Unmarshal(bodyBytes, &result)
 
 	ans, ok := result["response"].(string)
-	if ok && strings.Contains(strings.ToUpper(ans), "TECHNICAL") {
-		return 0.15
+	if ok {
+		ansUpper := strings.ToUpper(ans)
+		if strings.Contains(ansUpper, "TECHNICAL") || strings.Contains(ansUpper, "MATH") {
+			return 0.15
+		}
 	}
 	return 0.35
 }
@@ -123,6 +128,14 @@ func semanticCacheInterceptor(
 	}
 
 	queryStr := textReq.GetText()
+	
+	modelName := "qwen2.5:1.5b"
+	if md, ok := metadata.FromIncomingContext(ctx); ok {
+		if vals := md.Get("x-model-name"); len(vals) > 0 {
+			modelName = vals[0]
+		}
+	}
+
 	exactKey := fmt.Sprintf("cache:%s", hex.EncodeToString(func(b [32]byte) []byte { return b[:] }(sha256.Sum256([]byte(queryStr)))))
 
 	var exactRes string
@@ -147,13 +160,14 @@ func semanticCacheInterceptor(
 		semLatency = float64(time.Since(t).Microseconds()) / 1000.0
 	}()
 	go func() { defer wg.Done(); shannonVal = getShannonThreshold(queryStr) }()
-	go func() { defer wg.Done(); modelVal = getModelThreshold(queryStr) }()
+	go func() { defer wg.Done(); modelVal = getModelThreshold(queryStr, modelName) }()
 
 	wg.Wait()
 
 	telemetry := TelemetryEvent{
 		Timestamp:     time.Now().Format(time.RFC3339),
 		Query:         queryStr,
+		Model:         modelName,
 		DistanceScore: 2.0,
 		TradLatencyMs: exactLatency,
 		SemLatencyMs:  semLatency,
@@ -166,7 +180,7 @@ func semanticCacheInterceptor(
 	// TRACK A: EXACT HIT
 	if exactErr == nil && exactRes != "" {
 		telemetry.ExactMatchHit = true
-		telemetry.Response = exactRes
+		telemetry.Response = exactRes 
 		telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
 		go publishTelemetry(telemetry)
 		return &pb.QueryResponse{Answer: exactRes, Cached: true}, nil
@@ -186,7 +200,7 @@ func semanticCacheInterceptor(
 					// TRACK B: SEMANTIC HIT
 					if scoreFloat <= appliedThreshold {
 						telemetry.SemanticMatchHit = true
-						telemetry.Response = cachedResponse 
+						telemetry.Response = cachedResponse // <-- Captured
 						rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": cachedResponse, "vector": vectorBytes})
 
 						telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
@@ -197,8 +211,15 @@ func semanticCacheInterceptor(
 			}
 		}
 
-		// TRACK C: QWEN SLM FALLBACK
-		reqBody, _ := json.Marshal(map[string]interface{}{"model": "qwen2.5:1.5b", "prompt": queryStr, "stream": false})
+		// TRACK C: SLM FALLBACK
+		reqBody, _ := json.Marshal(map[string]interface{}{
+			"model": modelName, 
+			"prompt": queryStr, 
+			"stream": false,
+			"options": map[string]interface{}{
+				"num_predict": 75,
+			},
+		})
 		if httpResp, err := netClient.Post("http://127.0.0.1:11434/api/generate", "application/json", bytes.NewBuffer(reqBody)); err == nil && httpResp.StatusCode == http.StatusOK {
 			defer httpResp.Body.Close()
 			bodyBytes, _ := io.ReadAll(httpResp.Body)
@@ -229,7 +250,7 @@ func main() {
 	conn, _ := grpc.NewClient("localhost:50052", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	defer conn.Close()
 	encoderClient = pb.NewEncoderServiceClient(conn)
-	rdb = redis.NewClient(&redis.Options{Addr: "127.0.0.1:6379", Protocol: 2})
+	rdb = redis.NewClient(&redis.Options{Addr: "127.0.0.1:6380", Protocol: 2})
 	kafkaWriter = &kafka.Writer{Addr: kafka.TCP("127.0.0.1:9092"), Topic: "cache-telemetry", Balancer: &kafka.LeastBytes{}}
 	defer kafkaWriter.Close()
 	lis, _ := net.Listen("tcp", ":50051")

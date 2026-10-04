@@ -1,0 +1,301 @@
+query,category
+"Hey there! Can you tell me what the capital of France is?","conversational"
+"Hey there! Can you tell me what the capital of France is?","duplicate"
+"What's the capital city of France btw?","conversational"
+"Hey there! Can you tell me what the capital of Germany is?","trap"
+"yo, I need to bake a chocolate cake today. any good recipes?","conversational"
+"yo, I need to bake a chocolate cake today. any good recipes?","duplicate"
+"Could you help me figure out how to bake a chocolate cake?","conversational"
+"yo, I need to bake a vanilla cake today. any good recipes?","trap"
+"Can somebody explain the rules of soccer to me like I'm 5?","conversational"
+"Can somebody explain the rules of soccer to me like I'm 5?","duplicate"
+"I don't get soccer, what are the basic rules?","conversational"
+"Can somebody explain the rules of basketball to me like I'm 5?","trap"
+"I'm super curious, what's literally the tallest mountain on Earth?","conversational"
+"I'm super curious, what's literally the tallest mountain on Earth?","duplicate"
+"Which mountain is the absolute highest in the world?","conversational"
+"I'm super curious, what's literally the longest river on Earth?","trap"
+"Does anyone know exactly how far the moon is from us?","conversational"
+"Does anyone know exactly how far the moon is from us?","duplicate"
+"What is the distance between Earth and the moon roughly?","conversational"
+"Does anyone know exactly how far the sun is from us?","trap"
+"I forgot my history class stuff, who was the very first US president?","conversational"
+"I forgot my history class stuff, who was the very first US president?","duplicate"
+"Name the 1st president of the United States for me.","conversational"
+"I forgot my history class stuff, who was the very second US president?","trap"
+"Quick question, what are the primary colors again?","conversational"
+"Quick question, what are the primary colors again?","duplicate"
+"I need a list of all the primary colors pls.","conversational"
+"Quick question, what are the secondary colors again?","trap"
+"I don't have time to read, give me a quick summary of Harry Potter!","conversational"
+"I don't have time to read, give me a quick summary of Harry Potter!","duplicate"
+"Can you summarize the Harry Potter plot real quick?","conversational"
+"I don't have time to read, give me a quick summary of Lord of the Rings!","trap"
+"Traveling soon, how do I say a basic 'hello' in Spanish?","conversational"
+"Traveling soon, how do I say a basic 'hello' in Spanish?","duplicate"
+"What's the Spanish translation for hello?","conversational"
+"Traveling soon, how do I say a basic 'goodbye' in Spanish?","trap"
+"At exactly what temperature does water start to freeze?","conversational"
+"At exactly what temperature does water start to freeze?","duplicate"
+"What is the literal freezing point of water in Celsius?","conversational"
+"At exactly what temperature does water start to boil?","trap"
+"I can't sleep. Can you tell me a nice bedtime story?","conversational"
+"I can't sleep. Can you tell me a nice bedtime story?","duplicate"
+"Tell me a relaxing story to help me fall asleep.","conversational"
+"I can't sleep. Can you tell me a terrifying ghost story?","trap"
+"Wow Tokyo is huge, how many people actually live there?","conversational"
+"Wow Tokyo is huge, how many people actually live there?","duplicate"
+"What's the current population of Tokyo right now?","conversational"
+"Wow London is huge, how many people actually live there?","trap"
+"I have a wedding in an hour, how do I tie a necktie??","conversational"
+"I have a wedding in an hour, how do I tie a necktie??","duplicate"
+"Please explain step by step how to tie a tie.","conversational"
+"I have a wedding in an hour, how do I tie a bowtie??","trap"
+"Science question: just how fast does light actually travel?","conversational"
+"Science question: just how fast does light actually travel?","duplicate"
+"What is the exact speed of light in a vacuum?","conversational"
+"Science question: just how fast does sound actually travel?","trap"
+"Trivia time! Who was the guy who invented the telephone?","conversational"
+"Trivia time! Who was the guy who invented the telephone?","duplicate"
+"Who gets the credit for inventing the very first telephone?","conversational"
+"Trivia time! Who was the guy who invented the television?","trap"
+"Can you explain the whole photosynthesis process simply?","conversational"
+"Can you explain the whole photosynthesis process simply?","duplicate"
+"How exactly does photosynthesis work in plants?","conversational"
+"Can you explain the whole cellular respiration process simply?","trap"
+"It blows my mind, how do massive airplanes actually fly?","conversational"
+"It blows my mind, how do massive airplanes actually fly?","duplicate"
+"What keeps heavy airplanes up in the air?","conversational"
+"It blows my mind, how do massive helicopters actually fly?","trap"
+"I feel sick, what are the most common symptoms of the flu?","conversational"
+"I feel sick, what are the most common symptoms of the flu?","duplicate"
+"How do I know if I have the flu based on symptoms?","conversational"
+"I feel sick, what are the most common symptoms of a cold?","trap"
+"My friend loves Coldplay, what is the lead singer's name?","conversational"
+"My friend loves Coldplay, what is the lead singer's name?","duplicate"
+"Who is the frontman for the band Coldplay?","conversational"
+"My friend loves U2, what is the lead singer's name?","trap"
+"Need caffeine! How do you brew the absolute perfect cup of coffee?","conversational"
+"Need caffeine! How do you brew the absolute perfect cup of coffee?","duplicate"
+"What's the secret to making really good coffee at home?","conversational"
+"Need caffeine! How do you brew the absolute perfect cup of tea?","trap"
+"I'm a huge history nerd, tell me about the Roman Empire.","conversational"
+"I'm a huge history nerd, tell me about the Roman Empire.","duplicate"
+"Can you give me a brief history lesson on the Roman Empire?","conversational"
+"I'm a huge history nerd, tell me about the Greek Empire.","trap"
+"That movie was confusing. What was the actual plot of Inception?","conversational"
+"That movie was confusing. What was the actual plot of Inception?","duplicate"
+"Explain the storyline of the movie Inception to me.","conversational"
+"That movie was confusing. What was the actual plot of Interstellar?","trap"
+"Stuck on the road! Can you tell me the steps to change a flat tire?","conversational"
+"Stuck on the road! Can you tell me the steps to change a flat tire?","duplicate"
+"How do I go about replacing a flat tire on my car?","conversational"
+"Stuck on the road! Can you tell me the steps to jump a car battery?","trap"
+"Everyone says I should meditate, but what are the actual benefits?","conversational"
+"Everyone says I should meditate, but what are the actual benefits?","duplicate"
+"Why is daily meditation considered good for your health?","conversational"
+"Everyone says I should do yoga, but what are the actual benefits?","trap"
+"Art trivia: Who was the painter responsible for the Mona Lisa?","conversational"
+"Art trivia: Who was the painter responsible for the Mona Lisa?","duplicate"
+"Who exactly painted the famous Mona Lisa portrait?","conversational"
+"Art trivia: Who was the painter responsible for Starry Night?","trap"
+"Hey man, I desperately need a Python script to sort an array.","technical"
+"Hey man, I desperately need a Python script to sort an array.","duplicate"
+"Could you provide some python code that sorts an array?","technical"
+"Hey man, I desperately need a Golang script to sort an array.","trap"
+"What's the standard way to reverse a string in JS nowadays?","technical"
+"What's the standard way to reverse a string in JS nowadays?","duplicate"
+"I need a javascript function that can reverse any string.","technical"
+"What's the standard way to reverse a string in Java nowadays?","trap"
+"Pls walk me through creating a basic REST API using Node.js.","technical"
+"Pls walk me through creating a basic REST API using Node.js.","duplicate"
+"How do I set up a simple RESTful API with Node?","technical"
+"Pls walk me through creating a basic REST API using Django.","trap"
+"I'm stuck. How do I connect to a MySQL database from PHP?","technical"
+"I'm stuck. How do I connect to a MySQL database from PHP?","duplicate"
+"Can you show me the PHP code to establish a MySQL connection?","technical"
+"I'm stuck. How do I connect to a PostgreSQL database from PHP?","trap"
+"What library should I use to read a CSV file in Python?","technical"
+"What library should I use to read a CSV file in Python?","duplicate"
+"Show me an example of parsing a CSV document in python.","technical"
+"What library should I use to read a CSV file in R?","trap"
+"Can you write a quick Golang snippet to send an HTTP GET request?","technical"
+"Can you write a quick Golang snippet to send an HTTP GET request?","duplicate"
+"How do I perform a basic GET request using Go's net/http?","technical"
+"Can you write a quick Golang snippet to send an HTTP POST request?","trap"
+"I'm doing iOS dev, how do I parse JSON data in Swift safely?","technical"
+"I'm doing iOS dev, how do I parse JSON data in Swift safely?","duplicate"
+"What's the best way to decode JSON objects in Swift?","technical"
+"I'm doing iOS dev, how do I parse XML data in Swift safely?","trap"
+"For my CS class, how do I implement a queue data structure in C++?","technical"
+"For my CS class, how do I implement a queue data structure in C++?","duplicate"
+"Provide a C++ implementation of a standard queue.","technical"
+"For my CS class, how do I implement a stack data structure in C++?","trap"
+"In Rust, what's the idiomatic way to find the max value in an array?","technical"
+"In Rust, what's the idiomatic way to find the max value in an array?","duplicate"
+"How do you get the maximum element of a slice or array in Rust?","technical"
+"In Rust, what's the idiomatic way to find the min value in an array?","trap"
+"Need a quick one-liner Python script to reverse a list in place.","technical"
+"Need a quick one-liner Python script to reverse a list in place.","duplicate"
+"How can I reverse the elements of a python list easily?","technical"
+"Need a quick one-liner Golang script to reverse a slice in place.","trap"
+"Can you show me a recursive factorial function written in C?","technical"
+"Can you show me a recursive factorial function written in C?","duplicate"
+"I need a C program that calculates factorial using recursion.","technical"
+"Can you show me an iterative factorial function written in C?","trap"
+"Hey, what is the easiest method to sort an array in JavaScript?","technical"
+"Hey, what is the easiest method to sort an array in JavaScript?","duplicate"
+"How do I order the elements of a JS array alphabetically or numerically?","technical"
+"Hey, what is the easiest method to sort an array in Java?","trap"
+"I want to try GraphQL. How do I create a server for it in Node.js?","technical"
+"I want to try GraphQL. How do I create a server for it in Node.js?","duplicate"
+"What's the setup process for a Node JS GraphQL API?","technical"
+"I want to try GraphQL. How do I create a server for it in Django?","trap"
+"Using PHP, how exactly do I connect to my MongoDB cluster?","technical"
+"Using PHP, how exactly do I connect to my MongoDB cluster?","duplicate"
+"Give me the PHP syntax for establishing a MongoDB connection.","technical"
+"Using PHP, how exactly do I connect to my Redis cluster?","trap"
+"Is there a built-in way to read and parse a JSON file in Python?","technical"
+"Is there a built-in way to read and parse a JSON file in Python?","duplicate"
+"How do I load data from a .json file directly into a python dict?","technical"
+"Is there a built-in way to read and parse a JSON file in R?","trap"
+"I need a Go example showing how to send an HTTP PUT request.","technical"
+"I need a Go example showing how to send an HTTP PUT request.","duplicate"
+"How can I execute a PUT request in Golang?","technical"
+"I need a Go example showing how to send an HTTP DELETE request.","trap"
+"Does Swift have a good way to parse YAML configuration files?","technical"
+"Does Swift have a good way to parse YAML configuration files?","duplicate"
+"How do I read and deserialize YAML data in Swift?","technical"
+"Does Swift have a good way to parse TOML configuration files?","trap"
+"Can you write out a full linked list implementation in C++?","technical"
+"Can you write out a full linked list implementation in C++?","duplicate"
+"I need C++ code that creates and manages a singly linked list.","technical"
+"Can you write out a full doubly linked list implementation in C++?","trap"
+"What's the math logic to find the average value of a Rust array?","technical"
+"What's the math logic to find the average value of a Rust array?","duplicate"
+"How do I compute the mean of an array of floats in Rust?","technical"
+"What's the math logic to find the median value of a Rust array?","trap"
+"I need a python script to filter a list based on a condition, pls.","technical"
+"I need a python script to filter a list based on a condition, pls.","duplicate"
+"How do you use list comprehensions or filter() on a python list?","technical"
+"I need a golang script to filter a slice based on a condition, pls.","trap"
+"Help me out: calculate the derivative of 3x^2 + 2x step-by-step.","math"
+"Help me out: calculate the derivative of 3x^2 + 2x step-by-step.","duplicate"
+"What is the first derivative of the function f(x) = 3x^2 + 2x?","math"
+"Help me out: calculate the integral of 3x^2 + 2x step-by-step.","trap"
+"Math question: what exactly is the integral of e^x?","math"
+"Math question: what exactly is the integral of e^x?","duplicate"
+"If I integrate e to the power of x, what do I get?","math"
+"Math question: what exactly is the derivative of e^x?","trap"
+"Can you walk me through finding the eigenvalues of a 2x2 matrix?","math"
+"Can you walk me through finding the eigenvalues of a 2x2 matrix?","duplicate"
+"What is the mathematical process for computing eigenvalues of a 2x2 matrix?","math"
+"Can you walk me through finding the eigenvectors of a 2x2 matrix?","trap"
+"I keep forgetting, what is the Pythagorean theorem used for?","math"
+"I keep forgetting, what is the Pythagorean theorem used for?","duplicate"
+"Explain the Pythagorean theorem formula (a^2 + b^2 = c^2) to me.","math"
+"I keep forgetting, what is the Binomial theorem used for?","trap"
+"Algebra help! Solve for x in this equation: 2x + 5 = 15.","math"
+"Algebra help! Solve for x in this equation: 2x + 5 = 15.","duplicate"
+"If 2 times x plus 5 equals 15, what is the value of x?","math"
+"Algebra help! Solve for y in this equation: 2y + 5 = 15.","trap"
+"Geometry question: what is the area of a perfect circle if the radius is 5?","math"
+"Geometry question: what is the area of a perfect circle if the radius is 5?","duplicate"
+"How do I calculate the area of a circle that has a radius of 5 units?","math"
+"Geometry question: what is the circumference of a perfect circle if the radius is 5?","trap"
+"Just checking, how do you calculate the factorial of 10?","math"
+"Just checking, how do you calculate the factorial of 10?","duplicate"
+"What is the mathematical value of 10! (10 factorial)?","math"
+"Just checking, how do you calculate the factorial of 9?","trap"
+"What exactly is the Fibonacci sequence and how does it start?","math"
+"What exactly is the Fibonacci sequence and how does it start?","duplicate"
+"Explain how the numbers in the Fibonacci sequence are generated.","math"
+"What exactly is the Lucas sequence and how does it start?","trap"
+"I need to find the roots of the quadratic equation x^2 - 4x + 4 = 0.","math"
+"I need to find the roots of the quadratic equation x^2 - 4x + 4 = 0.","duplicate"
+"Can you solve the quadratic polynomial x^2 - 4x + 4 = 0 for me?","math"
+"I need to find the roots of the quadratic equation x^2 + 4x + 4 = 0.","trap"
+"Quick math: what is the total sum of the first 100 positive integers?","math"
+"Quick math: what is the total sum of the first 100 positive integers?","duplicate"
+"If I add up all numbers from 1 to 100, what is the sum?","math"
+"Quick math: what is the total sum of the first 50 positive integers?","trap"
+"Calculus 101: calculate the derivative of sin(x) for me.","math"
+"Calculus 101: calculate the derivative of sin(x) for me.","duplicate"
+"What is the mathematical derivative of the sine function?","math"
+"Calculus 101: calculate the derivative of cos(x) for me.","trap"
+"What is the indefinite integral of 1/x? I'm stuck on my homework.","math"
+"What is the indefinite integral of 1/x? I'm stuck on my homework.","duplicate"
+"If you integrate 1 over x with respect to x, what is the answer?","math"
+"What is the mathematical derivative of 1/x? I'm stuck on my homework.","trap"
+"How the heck do I find the determinant of a 3x3 matrix?","math"
+"How the heck do I find the determinant of a 3x3 matrix?","duplicate"
+"What's the formula or method to calculate a 3x3 matrix determinant?","math"
+"How the heck do I find the inverse of a 3x3 matrix?","trap"
+"Remind me, what is the standard quadratic formula used for?","math"
+"Remind me, what is the standard quadratic formula used for?","duplicate"
+"Can you write out the quadratic formula and explain it?","math"
+"Remind me, what is the standard cubic formula used for?","trap"
+"I have a basic algebra equation to solve for x: 3x - 7 = 8.","math"
+"I have a basic algebra equation to solve for x: 3x - 7 = 8.","duplicate"
+"If 3x minus 7 is equal to 8, what does x equal?","math"
+"I have a basic algebra equation to solve for x: 3x + 7 = 8.","trap"
+Does anyone know if there is water on Mars?,conversational
+Does anyone know if there is water on Mars?,duplicate
+Has water ever been discovered on the planet Mars?,conversational
+Does anyone know if there is water on Venus?,trap
+"I'm totally new, how do I start a Docker container?",technical
+"I'm totally new, how do I start a Docker container?",duplicate
+What's the command to run a new container in Docker?,technical
+"I'm totally new, how do I stop a Docker container?",trap
+"Pls help, what exactly is a Kubernetes pod?",technical
+"Pls help, what exactly is a Kubernetes pod?",duplicate
+Can someone explain the concept of a Pod in K8s?,technical
+"Pls help, what exactly is a Kubernetes node?",trap
+Math homework: what is the integral of x squared?,math
+Math homework: what is the integral of x squared?,duplicate
+Can you integrate x^2 with respect to x for me?,math
+Math homework: what is the derivative of x squared?,trap
+How do I find the transpose of a 3x3 matrix?,math
+How do I find the transpose of a 3x3 matrix?,duplicate
+What are the steps to transpose a 3 by 3 matrix?,math
+How do I find the inverse of a 3x3 matrix?,trap
+"Quick geography question, what's the capital of Canada?",conversational
+"Quick geography question, what's the capital of Canada?",duplicate
+What city is the official capital of Canada?,conversational
+"Quick geography question, what's the capital of Mexico?",trap
+"I'm visiting soon, what is the capital of Japan?",conversational
+"I'm visiting soon, what is the capital of Japan?",duplicate
+Name the capital city of Japan for me.,conversational
+"I'm visiting soon, what is the capital of China?",trap
+History test tomorrow! What year did World War 2 end?,conversational
+History test tomorrow! What year did World War 2 end?,duplicate
+In what year did the Second World War officially finish?,conversational
+History test tomorrow! What year did World War 1 end?,trap
+When exactly did humans first land on the moon?,conversational
+When exactly did humans first land on the moon?,duplicate
+What date did the Apollo 11 moon landing happen?,conversational
+When exactly did humans first land on Mars?,trap
+"I'm hungry, what's the secret to fluffy scrambled eggs?",conversational
+"I'm hungry, what's the secret to fluffy scrambled eggs?",duplicate
+"How do you make the best, fluffiest scrambled eggs?",conversational
+"I'm hungry, what's the secret to fluffy boiled eggs?",trap
+Biology question: what does DNA stand for?,conversational
+Biology question: what does DNA stand for?,duplicate
+What is the full scientific name for DNA?,conversational
+Biology question: what does RNA stand for?,trap
+What is the very first element on the periodic table?,conversational
+What is the very first element on the periodic table?,duplicate
+Name element number 1 on the periodic table.,conversational
+What is the very last element on the periodic table?,trap
+"I keep hearing about it, what actually is a blockchain?",technical
+"I keep hearing about it, what actually is a blockchain?",duplicate
+Explain the concept of blockchain technology simply.,technical
+"I keep hearing about it, what actually is a cryptocurrency?",trap
+Art history: why did Vincent Van Gogh cut off his ear?,conversational
+Art history: why did Vincent Van Gogh cut off his ear?,duplicate
+What's the real story behind Van Gogh losing his ear?,conversational
+Art history: why did Vincent Van Gogh paint sunflowers?,trap
+How often are the Summer Olympic games held?,conversational
+How often are the Summer Olympic games held?,duplicate
+What is the time gap between each Summer Olympics?,conversational
+How often are the Winter Olympic games held?,trap

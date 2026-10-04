@@ -1,80 +1,93 @@
+import json
 import subprocess
 import time
+import argparse
+import csv
+import sys
 
-prompts = [
-    # --- CONVERSATIONAL (Low Entropy -> Loose Threshold, Semantic Hits Expected) ---
-    "How do I play chess?",
-    "What are the rules of chess?",
-    "Explain chess to a beginner.",
-    "Explain chess to a beginner.",
-    "Who won the last football world cup?",
-    "Tell me about the football world cup.",
-    "What is the capital of France?",
-    "Tell me the capital of France.",
-    "How do you properly boil an egg?",
-    "What's the best way to boil eggs?",
-    "What's the best way to boil eggs?",
-    "Who wrote the play Romeo and Juliet?",
-    "Give me a summary of Romeo and Juliet.",
-    # --- HIGH-PRECISION / CODE (High Entropy -> Strict Threshold) ---
-    "Write a quick swap function in C++",
-    "How to write a quick swap function in C?",
-    "Implement variable swap in golang",
-    "gRPC unary interceptor golang example",
-    "How to build an interceptor in gRPC Go",
-    "How to implement a singleton pattern in Java?",
-    "Java singleton design pattern example",
-    "What is the difference between a mutex and a semaphore?",
-    "Mutex vs semaphore in operating systems",
-    "Docker compose volume mapping syntax",
-    "How to mount a volume in docker-compose.yml",
-    "Explain B-tree vs Hash index in databases",
-    # --- SEMANTIC TRAPS (Proves why AST is mandatory!) ---
-    "Write a python script to sort an array",
-    "Write a golang script to sort an array",
-    "Show me a recursive Fibonacci function in C",
-    "Iterative Fibonacci sequence in C",
-    "How to reverse a string in JavaScript",
-    "How to reverse a string in JavaScript",
-    "JavaScript string reversal method",
-    # --- MATH / FORMULAIC (High Entropy -> Strict Threshold) ---
-    "Calculate derivative of 4x^3 + 2x",
-    "Find the integral of x squared",
-    "O(n log n) sorting algorithm python",
-    "Quick sort complexity analysis",
-    "What is the Pythagorean theorem?",
-    "Formula for the area of a circle",
-    "Calculate the eigenvalues of a 2x2 identity matrix",
-    "How to solve a quadratic equation",
-    # --- EXACT DUPLICATES (Forces Track A to fire O(1) Hits) ---
-    "How do I play chess?",
-    "Write a quick swap function in C++",
-    "gRPC unary interceptor golang example",
-    "What is the difference between a mutex and a semaphore?",
-    "How do you properly boil an egg?",
-    "Formula for the area of a circle",
-    "Calculate derivative of 4x^3 + 2x",
-    "Explain chess to a beginner.",
-    "Tell me about the football world cup.",
-    "Docker compose volume mapping syntax",
-    "How to mount a volume in docker-compose.yml",
-    "How to implement a singleton pattern in Java?",
-    "Calculate the eigenvalues of a 2x2 identity matrix",
-    "Write a python script to sort an array",
-]
 
-print(f"🚀 Launching Benchmark Matrix: {len(prompts)} queries...\n")
+def main():
+    parser = argparse.ArgumentParser(description="Run FSCgRPC Benchmark Suite")
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="qwen2.5:1.5b",
+        help="Model name to evaluate (e.g. gemma3:4b, phi3:mini)",
+    )
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        default="dataset.csv",
+        help="Path to the dataset CSV file",
+    )
+    parser.add_argument(
+        "--delay", type=float, default=1.0, help="Delay between requests in seconds"
+    )
+    parser.add_argument(
+        "--limit", type=int, default=None, help="Limit the number of prompts to run"
+    )
+    parser.add_argument(
+        "--offset", type=int, default=0, help="Skip the first N prompts"
+    )
 
-for i, query in enumerate(prompts):
-    print(f"[{i + 1}/{len(prompts)}] Sending: '{query[:40]}...'")
+    args = parser.parse_args()
 
-    cmd = f"""grpcurl -plaintext -import-path ../proto -proto api.proto -d '{{"text": "{query}"}}' localhost:50051 semantic_cache.CoreAppService/ProcessQuery"""
+    # Load prompts from CSV
+    prompts = []
+    try:
+        with open(args.dataset, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if "query" in row and row["query"].strip():
+                    prompts.append(row["query"].strip())
+    except Exception as e:
+        print(f"❌ Failed to load dataset: {e}")
+        sys.exit(1)
 
-    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    if args.offset:
+        prompts = prompts[args.offset :]
 
-    if result.returncode != 0:
-        print(f"  ❌ execution failure: {result.stderr.strip()}")
+    if args.limit:
+        prompts = prompts[: args.limit]
 
-    time.sleep(2.0)
+    if not prompts:
+        print("❌ Dataset is empty or invalid.")
+        sys.exit(1)
 
-print("\n✅ Benchmark Complete. Check Dashboard.")
+    print(f"🚀 Launching Benchmark Matrix")
+    print(f"   Model  : {args.model}")
+    print(f"   Queries: {len(prompts)}")
+    print(f"   Delay  : {args.delay}s\n")
+
+    for i, query in enumerate(prompts):
+        print(f"[{i + 1}/{len(prompts)}] Sending: '{query[:40]}...'")
+
+        cmd = [
+            "grpcurl",
+            "-plaintext",
+            "-import-path",
+            "./proto",
+            "-proto",
+            "api.proto",
+            "-H",
+            f"x-model-name: {args.model}",
+            "-d",
+            json.dumps({"text": query}),
+            "localhost:50051",
+            "semantic_cache.CoreAppService/ProcessQuery",
+        ]
+
+        result = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8")
+
+        if result.returncode != 0:
+            print(f"  ❌ execution failure: {result.stderr.strip()}")
+
+        time.sleep(args.delay)
+
+    print(
+        "\n✅ Benchmark Complete. Results should be captured by telemetry_exporter.py."
+    )
+
+
+if __name__ == "__main__":
+    main()
