@@ -32,12 +32,6 @@ var rdb *redis.Client
 var kafkaWriter *kafka.Writer
 var netClient = &http.Client{Timeout: 60 * time.Second}
 
-const (
-	layaAcceptanceThreshold = 0.80
-	layaTimeout             = 5 * time.Second
-)
-
-// 1. ADDED "Response" field to ship text to the dashboard
 type TelemetryEvent struct {
 	Timestamp        string  `json:"timestamp"`
 	Query            string  `json:"query"`
@@ -56,6 +50,9 @@ type TelemetryEvent struct {
 	LayaThreshold    float64 `json:"laya_threshold"`
 	LayaDecision     string  `json:"laya_decision"`
 	LayaLatencyMs    float64 `json:"laya_latency_ms"`
+	ShannonAccepted  bool    `json:"shannon_accepted"`
+	CandidateEligible bool   `json:"candidate_eligible"`
+	DecisionPolicy   string  `json:"decision_policy"`
 }
 
 type server struct {
@@ -128,10 +125,6 @@ func getModelThreshold(query string, modelName string) float64 {
 	return 0.35
 }
 
-func layaApproved(verifyErr error, probability float64) bool {
-	return verifyErr == nil && probability >= layaAcceptanceThreshold
-}
-
 func semanticCacheInterceptor(
 	ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler,
 ) (interface{}, error) {
@@ -189,7 +182,6 @@ func semanticCacheInterceptor(
 		ModelThresh:   modelVal,
 	}
 
-	appliedThreshold := shannonVal
 	var auditCachedQuery, auditCachedResponse, auditVerifierError string
 
 	// TRACK A: EXACT HIT
@@ -216,29 +208,33 @@ func semanticCacheInterceptor(
 					auditCachedResponse = cachedResponse
 					telemetry.DistanceScore = scoreFloat
 
-					// Laya is only consulted after the existing Shannon gate admits a candidate.
-					if scoreFloat <= appliedThreshold {
+					policy := defaultCacheDecisionPolicy
+					telemetry.ShannonAccepted = policy.shannonAccepted(scoreFloat, shannonVal)
+					telemetry.CandidateEligible = policy.candidateEligible(scoreFloat, shannonVal)
+					telemetry.DecisionPolicy = policy.Mode
+
+					if telemetry.CandidateEligible {
 						telemetry.LayaCalled = true
-						telemetry.LayaThreshold = layaAcceptanceThreshold
-						layaStart := time.Now()
-						layaCtx, cancel := context.WithTimeout(ctx, layaTimeout)
-						verification, verifyErr := encoderClient.VerifyCachedResponse(layaCtx, &pb.CacheVerificationRequest{
+						telemetry.LayaThreshold = policy.AcceptanceThreshold
+						verificationResult := verifyCachedResponseAsync(ctx, encoderClient, &pb.CacheVerificationRequest{
 							NewQuery:       queryStr,
 							CachedQuery:    cachedQuery,
 							CachedResponse: cachedResponse,
 						})
-						cancel()
-						telemetry.LayaLatencyMs = float64(time.Since(layaStart).Microseconds()) / 1000.0
+						verification := <-verificationResult
+						verifyErr := verification.Err
+						telemetry.LayaLatencyMs = float64(verification.Latency.Microseconds()) / 1000.0
 						probability := 0.0
-						if verification != nil {
-							probability = float64(verification.GetProbability())
+						if verification.Response != nil {
+							probability = float64(verification.Response.GetProbability())
 						}
 						telemetry.LayaProbability = probability
 						if verifyErr != nil {
 							auditVerifierError = verifyErr.Error()
 						}
-						if layaApproved(verifyErr, probability) {
-							telemetry.LayaDecision = "approved"
+						approved, decision := policy.combine(scoreFloat, shannonVal, probability, verifyErr)
+						telemetry.LayaDecision = decision
+						if approved {
 							telemetry.SemanticMatchHit = true
 							telemetry.Response = cachedResponse // <-- Captured
 							rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": cachedResponse, "vector": vectorBytes})
@@ -247,11 +243,6 @@ func semanticCacheInterceptor(
 							go publishTelemetry(telemetry)
 							go publishLayaAudit(telemetry, auditCachedQuery, auditCachedResponse, auditVerifierError)
 							return &pb.QueryResponse{Answer: cachedResponse, Cached: true}, nil
-						}
-						if verifyErr != nil {
-							telemetry.LayaDecision = "unavailable"
-						} else {
-							telemetry.LayaDecision = "rejected"
 						}
 					}
 				}

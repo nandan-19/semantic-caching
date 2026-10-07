@@ -6,8 +6,8 @@ import os
 
 from confluent_kafka import Consumer
 
-TOPIC = "cache-telemetry"
-CSV_PATH = os.path.join("results", "laya_cache_audit.csv")
+TOPIC = "laya-cache-audit"
+CSV_PATH = os.path.join("results", "laya_cache_audit_v2.csv")
 FIELDS = [
     "timestamp",
     "query",
@@ -25,6 +25,9 @@ FIELDS = [
     "laya_threshold",
     "laya_decision",
     "laya_latency_ms",
+    "shannon_accepted",
+    "candidate_eligible",
+    "decision_policy",
     "verifier_error",
     "total_latency_ms",
     "payload_json",

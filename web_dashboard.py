@@ -17,6 +17,7 @@ stats = {
     "laya_called": 0,
     "laya_approved": 0,
     "laya_rejected": 0,
+    "laya_unavailable": 0,
     "sum_trad_ms": 0,
     "sum_sem_ms": 0,
     "sum_total_ms": 0,
@@ -46,8 +47,11 @@ def consume_kafka():
             if payload.get("laya_called"):
                 stats["laya_called"] += 1
                 stats["sum_laya_ms"] += float(payload.get("laya_latency_ms", 0))
-                if payload.get("laya_decision") == "approved":
+                decision = payload.get("laya_decision")
+                if decision in ("approved", "laya_approved"):
                     stats["laya_approved"] += 1
+                elif decision in ("unavailable", "verifier_unavailable"):
+                    stats["laya_unavailable"] += 1
                 else:
                     stats["laya_rejected"] += 1
 
@@ -229,8 +233,13 @@ def index():
                         let modelClass = modelHit ? "text-green-400 font-bold bg-green-950/30 px-2 py-0.5 rounded border border-green-900/40" : "text-cyan-400";
                         let layaHtml = '<span class="text-gray-600">—</span>';
                         if (event.laya_called) {
-                            const approved = event.laya_decision === 'approved';
-                            const color = approved ? 'text-emerald-400 bg-emerald-950/30 border-emerald-900/40' : 'text-red-400 bg-red-950/30 border-red-900/40';
+                            const approved = ['approved', 'laya_approved'].includes(event.laya_decision);
+                            const unavailable = ['unavailable', 'verifier_unavailable'].includes(event.laya_decision);
+                            const color = approved
+                                ? 'text-emerald-400 bg-emerald-950/30 border-emerald-900/40'
+                                : unavailable
+                                    ? 'text-yellow-400 bg-yellow-950/30 border-yellow-900/40'
+                                    : 'text-red-400 bg-red-950/30 border-red-900/40';
                             const probability = parseFloat(event.laya_probability || 0).toFixed(2);
                             layaHtml = `<span class="px-2 py-0.5 rounded border text-xs font-bold ${color}">${event.laya_decision.toUpperCase()} ${probability}</span>`;
                         }

@@ -29,6 +29,9 @@ type LayaAuditEvent struct {
 	LayaThreshold    float64 `json:"laya_threshold"`
 	LayaDecision     string  `json:"laya_decision"`
 	LayaLatencyMs    float64 `json:"laya_latency_ms"`
+	ShannonAccepted  bool    `json:"shannon_accepted"`
+	CandidateEligible bool   `json:"candidate_eligible"`
+	DecisionPolicy   string  `json:"decision_policy"`
 	VerifierError    string  `json:"verifier_error,omitempty"`
 	TotalLatencyMs   float64 `json:"total_latency_ms"`
 }
@@ -57,6 +60,9 @@ func publishLayaAudit(telemetry TelemetryEvent, cachedQuery, cachedResponse, ver
 		LayaThreshold:    telemetry.LayaThreshold,
 		LayaDecision:     telemetry.LayaDecision,
 		LayaLatencyMs:    telemetry.LayaLatencyMs,
+		ShannonAccepted:  telemetry.ShannonAccepted,
+		CandidateEligible: telemetry.CandidateEligible,
+		DecisionPolicy:   telemetry.DecisionPolicy,
 		VerifierError:    verifierError,
 		TotalLatencyMs:   telemetry.TotalLatencyMs,
 	})
