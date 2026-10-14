@@ -13,6 +13,7 @@ import (
 	"math"
 	"net"
 	"net/http"
+	"regexp"
 	"strconv"
 	"strings"
 	"sync"
@@ -32,14 +33,184 @@ var rdb *redis.Client
 var kafkaWriter *kafka.Writer
 var netClient = &http.Client{Timeout: 60 * time.Second}
 
+var semanticGuardAliases = map[string]map[string]string{
+	"programming_language": {
+		"python": "python", "golang": "go", "go": "go", "java": "java",
+		"c++": "cpp", "cpp": "cpp", "javascript": "javascript", "js": "javascript",
+		"typescript": "typescript", "ts": "typescript", "rust": "rust",
+		"swift": "swift", "kotlin": "kotlin", "ruby": "ruby", "php": "php", "scala": "scala",
+	},
+	"framework": {
+		"react": "react", "django": "django", "flask": "flask", "spring": "spring",
+		"fastapi": "fastapi", "express": "express", "angular": "angular", "vue": "vue",
+		"nodejs": "nodejs", "node.js": "nodejs", "laravel": "laravel", "rails": "rails",
+	},
+	"database": {
+		"mysql": "mysql", "postgresql": "postgresql", "postgres": "postgresql",
+		"mongodb": "mongodb", "redis": "redis", "sqlite": "sqlite", "oracle": "oracle",
+		"cassandra": "cassandra", "elasticsearch": "elasticsearch", "cockroachdb": "cockroachdb",
+	},
+	"location": {
+		"london": "london", "tokyo": "tokyo", "france": "france", "germany": "germany",
+		"canada": "canada", "mexico": "mexico", "japan": "japan", "china": "china",
+		"mars": "mars", "venus": "venus", "india": "india", "brazil": "brazil",
+		"italy": "italy", "spain": "spain", "australia": "australia", "egypt": "egypt",
+		"thailand": "thailand", "vietnam": "vietnam", "argentina": "argentina",
+	},
+	"unit": {
+		"km": "km", "kg": "kg", "g": "g", "mg": "mg", "lb": "lb", "lbs": "lb",
+		"cm": "cm", "m": "m", "mm": "mm", "ml": "ml", "l": "l", "inch": "inch",
+		"inches": "inch", "mile": "mile", "miles": "mile",
+	},
+	"currency": {
+		"usd": "usd", "eur": "eur", "gbp": "gbp", "inr": "inr", "cad": "cad",
+		"aud": "aud", "jpy": "jpy", "ruble": "ruble", "rupee": "inr",
+		"dollar": "usd", "dollars": "usd", "euro": "eur", "pound": "gbp",
+		"pounds": "gbp", "yen": "jpy", "rupees": "inr",
+	},
+	"time": {
+		"today": "today", "tomorrow": "tomorrow", "yesterday": "yesterday",
+		"morning": "morning", "afternoon": "afternoon", "evening": "evening",
+		"monday": "monday", "tuesday": "tuesday", "wednesday": "wednesday",
+		"thursday": "thursday", "friday": "friday", "saturday": "saturday",
+		"sunday": "sunday", "january": "january", "february": "february",
+		"march": "march", "april": "april", "may": "may", "june": "june",
+		"july": "july", "august": "august", "september": "september",
+		"october": "october", "november": "november", "december": "december",
+	},
+	"negation": {
+		"not": "negated", "never": "negated", "without": "negated", "cannot": "negated",
+		"can't": "negated", "won't": "negated", "do not": "negated", "does not": "negated",
+		"is not": "negated", "isn't": "negated", "doesn't": "negated", "don't": "negated",
+		"no": "negated",
+	},
+	"polarity": {
+		"enable": "enable", "disable": "disable", "start": "start", "stop": "stop",
+		"on": "on", "off": "off", "allow": "allow", "deny": "deny", "open": "open",
+		"close": "close", "turn on": "on", "turn off": "off",
+	},
+	"intent": {
+		"hello": "greeting", "hi": "greeting", "goodbye": "farewell", "bye": "farewell",
+		"enable": "enable", "disable": "disable", "start": "start", "stop": "stop",
+		"shutdown": "shutdown", "restart": "restart",
+	},
+}
+
+var semanticGuardPatterns = []*regexp.Regexp{
+	regexp.MustCompile(`\b\d+(?:[.,]\d+)?%?\b`),
+	regexp.MustCompile(`\b(?:\d{1,2}:\d{2}\s?(?:am|pm)|\d{4}-\d{2}-\d{2}|\d{1,2}\s+(?:january|february|march|april|may|june|july|august|september|october|november|december))\b`),
+	regexp.MustCompile(`(?:\$|₹|€|£)\s?\d+(?:[.,]\d+)?|\b(?:usd|eur|gbp|inr|cad|aud|jpy|dollar|dollars|rupee|rupees|pound|pounds|yen)\b`),
+}
+
+var semanticGuardContrastGroups = []struct {
+	name  string
+	terms map[string]string
+}{
+	{name: "ORDER_CONTRAST", terms: map[string]string{"first": "first", "second": "second", "maximum": "maximum", "minimum": "minimum", "max": "maximum", "min": "minimum"}},
+	{name: "COLOR_CONTRAST", terms: map[string]string{"primary": "primary", "secondary": "secondary"}},
+	{name: "FLAVOR_CONTRAST", terms: map[string]string{"chocolate": "chocolate", "vanilla": "vanilla"}},
+}
+
+func normalizeTextForGuard(s string) string {
+	return strings.ToLower(strings.TrimSpace(s))
+}
+
+func extractSemanticGuardFeatures(text string) map[string]map[string]struct{} {
+	features := map[string]map[string]struct{}{}
+	for key := range semanticGuardAliases {
+		features[key] = map[string]struct{}{}
+	}
+	features["number"] = map[string]struct{}{}
+	features["contrast"] = map[string]struct{}{}
+
+	normalized := normalizeTextForGuard(text)
+	for category, aliases := range semanticGuardAliases {
+		for alias, canonical := range aliases {
+			pattern := regexp.MustCompile(`(?:^|[^a-z0-9])` + regexp.QuoteMeta(alias) + `(?:$|[^a-z0-9])`)
+			if pattern.MatchString(normalized) {
+				features[category][canonical] = struct{}{}
+			}
+		}
+	}
+
+	for _, re := range semanticGuardPatterns {
+		for _, match := range re.FindAllString(normalized, -1) {
+			match = strings.TrimSpace(match)
+			if match != "" {
+				features["number"][match] = struct{}{}
+			}
+		}
+	}
+
+	for _, group := range semanticGuardContrastGroups {
+		for term, canonical := range group.terms {
+			if regexp.MustCompile(`(?:^|[^a-z0-9])` + regexp.QuoteMeta(term) + `(?:$|[^a-z0-9])`).MatchString(normalized) {
+				features["contrast"][group.name+":"+canonical] = struct{}{}
+			}
+		}
+	}
+
+	return features
+}
+
+func semanticGuardMismatch(queryA, queryB string) (bool, string) {
+	featuresA := extractSemanticGuardFeatures(queryA)
+	featuresB := extractSemanticGuardFeatures(queryB)
+
+	for _, key := range []string{"programming_language", "framework", "database", "location", "number", "unit", "currency", "time", "contrast"} {
+		if len(featuresA[key]) > 0 && len(featuresB[key]) > 0 && !sameSemanticGuardSet(featuresA[key], featuresB[key]) {
+			return true, strings.ToUpper(key) + "_MISMATCH"
+		}
+	}
+
+	negationA := featuresA["negation"]
+	negationB := featuresB["negation"]
+	if (len(negationA) > 0) != (len(negationB) > 0) {
+		return true, "NEGATION_MISMATCH"
+	}
+
+	polarityA := featuresA["polarity"]
+	polarityB := featuresB["polarity"]
+	if (len(polarityA) > 0) != (len(polarityB) > 0) {
+		return true, "POLARITY_MISMATCH"
+	}
+	if len(polarityA) > 0 && len(polarityB) > 0 && !sameSemanticGuardSet(polarityA, polarityB) {
+		return true, "POLARITY_MISMATCH"
+	}
+
+	intentA := featuresA["intent"]
+	intentB := featuresB["intent"]
+	if len(intentA) > 0 && len(intentB) > 0 && !sameSemanticGuardSet(intentA, intentB) {
+		return true, "INTENT_MISMATCH"
+	}
+
+	return false, ""
+}
+
+func sameSemanticGuardSet(a, b map[string]struct{}) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for token := range a {
+		if _, ok := b[token]; !ok {
+			return false
+		}
+	}
+	return true
+}
+
 // 1. ADDED "Response" field to ship text to the dashboard
 type TelemetryEvent struct {
 	Timestamp        string  `json:"timestamp"`
 	Query            string  `json:"query"`
+	CandidateQuery   string  `json:"candidate_query"`
 	Model            string  `json:"model"`
 	Response         string  `json:"response"`
 	ExactMatchHit    bool    `json:"exact_match_hit"`
 	SemanticMatchHit bool    `json:"semantic_match_hit"`
+	GuardChecked     bool    `json:"guard_checked"`
+	GuardBlocked     bool    `json:"guard_blocked"`
+	GuardReason      string  `json:"guard_reason"`
 	DistanceScore    float64 `json:"distance_score"`
 	TradLatencyMs    float64 `json:"trad_latency_ms"`
 	SemLatencyMs     float64 `json:"sem_latency_ms"`
@@ -68,6 +239,16 @@ func float32ToByte(f []float32) []byte {
 func publishTelemetry(event TelemetryEvent) {
 	payload, _ := json.Marshal(event)
 	kafkaWriter.WriteMessages(context.Background(), kafka.Message{Value: payload})
+}
+
+func redisSearchFields(matchData []interface{}) map[string]string {
+	fields := make(map[string]string)
+	for i := 0; i+1 < len(matchData); i += 2 {
+		field := fmt.Sprint(matchData[i])
+		value := fmt.Sprint(matchData[i+1])
+		fields[field] = value
+	}
+	return fields
 }
 
 func getShannonThreshold(query string) float64 {
@@ -128,7 +309,7 @@ func semanticCacheInterceptor(
 	}
 
 	queryStr := textReq.GetText()
-	
+
 	modelName := "qwen2.5:1.5b"
 	if md, ok := metadata.FromIncomingContext(ctx); ok {
 		if vals := md.Get("x-model-name"); len(vals) > 0 {
@@ -136,55 +317,53 @@ func semanticCacheInterceptor(
 		}
 	}
 
+	telemetry := TelemetryEvent{
+		Timestamp:     time.Now().Format(time.RFC3339),
+		Query:         queryStr,
+		Model:         modelName,
+		DistanceScore: 2.0,
+	}
+
+	// TRACK A: EXACT HIT
 	exactKey := fmt.Sprintf("cache:%s", hex.EncodeToString(func(b [32]byte) []byte { return b[:] }(sha256.Sum256([]byte(queryStr)))))
+	exactStart := time.Now()
+	exactRes, exactErr := rdb.HGet(ctx, exactKey, "response").Result()
+	telemetry.TradLatencyMs = float64(time.Since(exactStart).Microseconds()) / 1000.0
+	if exactErr == nil && exactRes != "" {
+		telemetry.ExactMatchHit = true
+		telemetry.Response = exactRes
+		telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
+		go publishTelemetry(telemetry)
+		return &pb.QueryResponse{Answer: exactRes, Cached: true}, nil
+	}
 
-	var exactRes string
 	var embedRes *pb.EmbeddingResponse
-	var exactLatency, semLatency float64
-	var exactErr, embedErr error
-	var shannonVal, modelVal float64
-
+	var embedErr error
+	var semLatency float64
+	var shannonVal float64
+	var modelVal float64
 	var wg sync.WaitGroup
-	wg.Add(4)
-
-	go func() {
-		defer wg.Done()
-		t := time.Now()
-		exactRes, exactErr = rdb.HGet(ctx, exactKey, "response").Result()
-		exactLatency = float64(time.Since(t).Microseconds()) / 1000.0
-	}()
+	wg.Add(3)
 	go func() {
 		defer wg.Done()
 		t := time.Now()
 		embedRes, embedErr = encoderClient.GetEmbedding(ctx, &pb.TextRequest{Text: queryStr})
 		semLatency = float64(time.Since(t).Microseconds()) / 1000.0
 	}()
-	go func() { defer wg.Done(); shannonVal = getShannonThreshold(queryStr) }()
-	go func() { defer wg.Done(); modelVal = getModelThreshold(queryStr, modelName) }()
-
+	go func() {
+		defer wg.Done()
+		shannonVal = getShannonThreshold(queryStr)
+	}()
+	go func() {
+		defer wg.Done()
+		modelVal = getModelThreshold(queryStr, modelName)
+	}()
 	wg.Wait()
 
-	telemetry := TelemetryEvent{
-		Timestamp:     time.Now().Format(time.RFC3339),
-		Query:         queryStr,
-		Model:         modelName,
-		DistanceScore: 2.0,
-		TradLatencyMs: exactLatency,
-		SemLatencyMs:  semLatency,
-		ShannonThresh: shannonVal,
-		ModelThresh:   modelVal,
-	}
-
+	telemetry.SemLatencyMs = semLatency
+	telemetry.ShannonThresh = shannonVal
+	telemetry.ModelThresh = modelVal
 	appliedThreshold := shannonVal
-
-	// TRACK A: EXACT HIT
-	if exactErr == nil && exactRes != "" {
-		telemetry.ExactMatchHit = true
-		telemetry.Response = exactRes 
-		telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
-		go publishTelemetry(telemetry)
-		return &pb.QueryResponse{Answer: exactRes, Cached: true}, nil
-	}
 
 	if embedErr == nil {
 		vectorBytes := float32ToByte(embedRes.GetVector())
@@ -193,12 +372,23 @@ func semanticCacheInterceptor(
 		if err == nil {
 			if resSlice, ok := res.([]interface{}); ok && len(resSlice) >= 3 {
 				if matchData, ok := resSlice[2].([]interface{}); ok && len(matchData) >= 6 {
-					scoreFloat, _ := strconv.ParseFloat(fmt.Sprintf("%s", matchData[1]), 64)
-					cachedResponse := fmt.Sprintf("%s", matchData[3])
+					fields := redisSearchFields(matchData)
+					scoreFloat, _ := strconv.ParseFloat(fields["score"], 64)
+					cachedResponse := fields["response"]
+					cachedText := fields["text"]
 					telemetry.DistanceScore = scoreFloat
+					telemetry.CandidateQuery = cachedText
 
 					// TRACK B: SEMANTIC HIT
+					guardMismatch := false
+					guardReason := ""
 					if scoreFloat <= appliedThreshold {
+						telemetry.GuardChecked = true
+						guardMismatch, guardReason = semanticGuardMismatch(queryStr, cachedText)
+						telemetry.GuardBlocked = guardMismatch
+						telemetry.GuardReason = guardReason
+					}
+					if scoreFloat <= appliedThreshold && !guardMismatch {
 						telemetry.SemanticMatchHit = true
 						telemetry.Response = cachedResponse // <-- Captured
 						rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": cachedResponse, "vector": vectorBytes})
@@ -213,8 +403,8 @@ func semanticCacheInterceptor(
 
 		// TRACK C: SLM FALLBACK
 		reqBody, _ := json.Marshal(map[string]interface{}{
-			"model": modelName, 
-			"prompt": queryStr, 
+			"model":  modelName,
+			"prompt": queryStr,
 			"stream": false,
 			"options": map[string]interface{}{
 				"num_predict": 75,

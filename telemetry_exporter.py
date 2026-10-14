@@ -28,7 +28,8 @@ def main():
         writer = csv.writer(f)
         if write_header:
             writer.writerow([
-                "Timestamp", "Query", "Model", "Exact_Hit", "Semantic_Hit", 
+                "Timestamp", "Query", "Candidate_Query", "Model", "Exact_Hit", "Semantic_Hit",
+                "Guard_Checked", "Guard_Blocked", "Guard_Reason",
                 "Distance_Score", "Trad_Latency_Ms", "Sem_Latency_Ms", 
                 "Total_Latency_Ms", "Shannon_Thresh", "Model_Thresh"
             ])
@@ -48,9 +49,13 @@ def main():
                 row = [
                     payload.get("timestamp", ""),
                     payload.get("query", ""),
+                    payload.get("candidate_query", ""),
                     payload.get("model", ""),
                     payload.get("exact_match_hit", False),
                     payload.get("semantic_match_hit", False),
+                    payload.get("guard_checked", False),
+                    payload.get("guard_blocked", False),
+                    payload.get("guard_reason", ""),
                     payload.get("distance_score", 0.0),
                     payload.get("trad_latency_ms", 0.0),
                     payload.get("sem_latency_ms", 0.0),

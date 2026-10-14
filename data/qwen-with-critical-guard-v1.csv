@@ -1,0 +1,301 @@
+Timestamp,Query,Model,Exact_Hit,Semantic_Hit,Distance_Score,Trad_Latency_Ms,Sem_Latency_Ms,Total_Latency_Ms,Shannon_Thresh,Model_Thresh
+2026-10-14T20:42:32+05:30,Hey there! Can you tell me what the capital of France is?,qwen2.5:1.5b,False,False,2,7.761,95.795,8305.957,0.25,0.35
+2026-10-14T20:42:34+05:30,Hey there! Can you tell me what the capital of France is?,qwen2.5:1.5b,True,False,2,1.642,27.633,452.403,0.25,0.35
+2026-10-14T20:42:36+05:30,What's the capital city of France btw?,qwen2.5:1.5b,False,False,0.130730092525,1.662,20.656,1166.406,0.25,0.15
+2026-10-14T20:42:38+05:30,Hey there! Can you tell me what the capital of Germany is?,qwen2.5:1.5b,False,False,0.270708501339,2.165,25.258,1066.386,0.25,0.35
+2026-10-14T20:42:40+05:30,"yo, I need to bake a chocolate cake today. any good recipes?",qwen2.5:1.5b,False,False,0.887757778168,1.619,24.725,3334.332,0.25,0.35
+2026-10-14T20:42:45+05:30,"yo, I need to bake a chocolate cake today. any good recipes?",qwen2.5:1.5b,True,False,2,3.793,112.469,616.775,0.25,0.35
+2026-10-14T20:42:46+05:30,Could you help me figure out how to bake a chocolate cake?,qwen2.5:1.5b,False,False,0.187233626842,2.437,27.647,3455.582,0.25,0.15
+2026-10-14T20:42:51+05:30,"yo, I need to bake a vanilla cake today. any good recipes?",qwen2.5:1.5b,False,True,0.168067336082,2.394,23.537,519.578,0.25,0.35
+2026-10-14T20:42:52+05:30,Can somebody explain the rules of soccer to me like I'm 5?,qwen2.5:1.5b,False,False,0.818535923958,2.264,26.29,3433.751,0.15,0.35
+2026-10-14T20:42:57+05:30,Can somebody explain the rules of soccer to me like I'm 5?,qwen2.5:1.5b,True,False,2,2.223,68.295,518.632,0.15,0.35
+2026-10-14T20:42:59+05:30,"I don't get soccer, what are the basic rules?",qwen2.5:1.5b,False,False,0.102182626724,2.31,38.166,3305.885,0.25,0.35
+2026-10-14T20:43:03+05:30,Can somebody explain the rules of basketball to me like I'm 5?,qwen2.5:1.5b,False,False,0.213048577309,3.886,29.101,3444.244,0.15,0.35
+2026-10-14T20:43:08+05:30,"I'm super curious, what's literally the tallest mountain on Earth?",qwen2.5:1.5b,False,False,0.724201023579,1.926,50.329,2611.207,0.15,0.15
+2026-10-14T20:43:11+05:30,"I'm super curious, what's literally the tallest mountain on Earth?",qwen2.5:1.5b,True,False,2,2.162,33.706,567.636,0.15,0.15
+2026-10-14T20:43:13+05:30,Which mountain is the absolute highest in the world?,qwen2.5:1.5b,False,False,0.161337316036,2.698,28.649,2123.346,0.25,0.15
+2026-10-14T20:43:16+05:30,"I'm super curious, what's literally the longest river on Earth?",qwen2.5:1.5b,False,False,0.443373501301,2.642,25.874,3931.535,0.15,0.15
+2026-10-14T20:43:21+05:30,Does anyone know exactly how far the moon is from us?,qwen2.5:1.5b,False,False,0.619124174118,1.627,27.142,3388.36,0.25,0.15
+2026-10-14T20:43:26+05:30,Does anyone know exactly how far the moon is from us?,qwen2.5:1.5b,True,False,2,2.208,23.708,548.019,0.25,0.15
+2026-10-14T20:43:27+05:30,What is the distance between Earth and the moon roughly?,qwen2.5:1.5b,False,False,0.184323310852,2.211,26.182,2545.116,0.25,0.15
+2026-10-14T20:43:31+05:30,Does anyone know exactly how far the sun is from us?,qwen2.5:1.5b,False,False,0.25816732645,7.178,156.524,3427.589,0.25,0.15
+2026-10-14T20:43:35+05:30,"I forgot my history class stuff, who was the very first US president?",qwen2.5:1.5b,False,False,0.83330899477,4.152,38.429,1666.705,0.15,0.35
+2026-10-14T20:43:38+05:30,"I forgot my history class stuff, who was the very first US president?",qwen2.5:1.5b,True,False,2,3.453,41.393,525.256,0.15,0.35
+2026-10-14T20:43:40+05:30,Name the 1st president of the United States for me.,qwen2.5:1.5b,False,False,0.306011736393,1.66,25.286,2014.937,0.25,0.35
+2026-10-14T20:43:43+05:30,"I forgot my history class stuff, who was the very second US president?",qwen2.5:1.5b,False,True,0.117716312408,1.687,56.624,549.698,0.15,0.35
+2026-10-14T20:43:45+05:30,"Quick question, what are the primary colors again?",qwen2.5:1.5b,False,False,0.815259635448,1.681,26.47,2049.579,0.15,0.35
+2026-10-14T20:43:48+05:30,"Quick question, what are the primary colors again?",qwen2.5:1.5b,True,False,2,2.384,36.654,442.614,0.15,0.35
+2026-10-14T20:43:49+05:30,I need a list of all the primary colors pls.,qwen2.5:1.5b,False,False,0.155257999897,1.824,31.657,3422.211,0.25,0.35
+2026-10-14T20:43:54+05:30,"Quick question, what are the secondary colors again?",qwen2.5:1.5b,False,True,0.0882515907288,1.602,33.907,452.184,0.15,0.35
+2026-10-14T20:43:55+05:30,"I don't have time to read, give me a quick summary of Harry Potter!",qwen2.5:1.5b,False,False,0.740246415138,2.23,37.434,3436.445,0.15,0.35
+2026-10-14T20:44:00+05:30,"I don't have time to read, give me a quick summary of Harry Potter!",qwen2.5:1.5b,True,False,2,1.755,27.488,510.203,0.15,0.35
+2026-10-14T20:44:01+05:30,Can you summarize the Harry Potter plot real quick?,qwen2.5:1.5b,False,False,0.146870553493,1.642,24.063,3297.156,0.15,0.15
+2026-10-14T20:44:06+05:30,"I don't have time to read, give me a quick summary of Lord of the Rings!",qwen2.5:1.5b,False,False,0.291543483734,1.905,45.081,3527.147,0.15,0.35
+2026-10-14T20:44:11+05:30,"Traveling soon, how do I say a basic 'hello' in Spanish?",qwen2.5:1.5b,False,False,0.807978034019,2.15,23.467,1527.103,0.15,0.35
+2026-10-14T20:44:13+05:30,"Traveling soon, how do I say a basic 'hello' in Spanish?",qwen2.5:1.5b,True,False,2,1.63,20.155,491.778,0.15,0.35
+2026-10-14T20:44:15+05:30,What's the Spanish translation for hello?,qwen2.5:1.5b,False,False,0.16443759203,1.688,59.408,1161.039,0.25,0.35
+2026-10-14T20:44:17+05:30,"Traveling soon, how do I say a basic 'goodbye' in Spanish?",qwen2.5:1.5b,False,False,0.174903869629,1.824,25.712,3431.037,0.15,0.35
+2026-10-14T20:44:22+05:30,At exactly what temperature does water start to freeze?,qwen2.5:1.5b,False,False,0.721052289009,2.209,21.67,3530.968,0.25,0.15
+2026-10-14T20:44:26+05:30,At exactly what temperature does water start to freeze?,qwen2.5:1.5b,True,False,2,2.24,35.01,517.73,0.25,0.15
+2026-10-14T20:44:28+05:30,What is the literal freezing point of water in Celsius?,qwen2.5:1.5b,False,False,0.19761967659,2.858,33.995,1595.698,0.25,0.15
+2026-10-14T20:44:30+05:30,At exactly what temperature does water start to boil?,qwen2.5:1.5b,False,False,0.283652126789,2.766,31.534,3624.966,0.25,0.35
+2026-10-14T20:44:35+05:30,I can't sleep. Can you tell me a nice bedtime story?,qwen2.5:1.5b,False,False,0.660081803799,3.166,51.08,3430.418,0.25,0.35
+2026-10-14T20:44:40+05:30,I can't sleep. Can you tell me a nice bedtime story?,qwen2.5:1.5b,True,False,2,2.86,35.367,493.793,0.25,0.35
+2026-10-14T20:44:41+05:30,Tell me a relaxing story to help me fall asleep.,qwen2.5:1.5b,False,False,0.255619287491,2.283,30.982,3229.801,0.25,0.35
+2026-10-14T20:44:46+05:30,I can't sleep. Can you tell me a terrifying ghost story?,qwen2.5:1.5b,False,False,0.284331381321,2.231,28.19,3533.831,0.15,0.35
+2026-10-14T20:44:50+05:30,"Wow Tokyo is huge, how many people actually live there?",qwen2.5:1.5b,False,False,0.650620698929,3.227,32.966,3696.288,0.15,0.35
+2026-10-14T20:44:55+05:30,"Wow Tokyo is huge, how many people actually live there?",qwen2.5:1.5b,True,False,2,2.418,36.649,532.605,0.15,0.15
+2026-10-14T20:44:57+05:30,What's the current population of Tokyo right now?,qwen2.5:1.5b,False,False,0.210841417313,2.761,31.681,3187.501,0.15,0.35
+2026-10-14T20:45:01+05:30,"Wow London is huge, how many people actually live there?",qwen2.5:1.5b,False,False,0.339619874954,2.862,33.97,3347.504,0.15,0.15
+2026-10-14T20:45:05+05:30,"I have a wedding in an hour, how do I tie a necktie??",qwen2.5:1.5b,False,False,0.863342225552,2.174,32.755,3228.969,0.25,0.15
+2026-10-14T20:45:10+05:30,"I have a wedding in an hour, how do I tie a necktie??",qwen2.5:1.5b,True,False,2,3.131,27.193,486.993,0.25,0.15
+2026-10-14T20:45:11+05:30,Please explain step by step how to tie a tie.,qwen2.5:1.5b,False,False,0.481552958488,3.049,24.622,3545.298,0.25,0.15
+2026-10-14T20:45:16+05:30,"I have a wedding in an hour, how do I tie a bowtie??",qwen2.5:1.5b,False,True,0.156072616577,2.268,26.313,521.312,0.25,0.15
+2026-10-14T20:45:17+05:30,Science question: just how fast does light actually travel?,qwen2.5:1.5b,False,False,0.618055105209,1.61,25.826,3346.38,0.15,0.15
+2026-10-14T20:45:22+05:30,Science question: just how fast does light actually travel?,qwen2.5:1.5b,True,False,2,1.733,24.515,438.888,0.15,0.35
+2026-10-14T20:45:23+05:30,What is the exact speed of light in a vacuum?,qwen2.5:1.5b,False,False,0.246613919735,4.006,26.165,3483.976,0.25,0.15
+2026-10-14T20:45:28+05:30,Science question: just how fast does sound actually travel?,qwen2.5:1.5b,False,False,0.402842819691,2.718,37.479,4651.729,0.15,0.15
+2026-10-14T20:45:34+05:30,Trivia time! Who was the guy who invented the telephone?,qwen2.5:1.5b,False,False,0.572129368782,2.561,36.432,3397.912,0.25,0.15
+2026-10-14T20:45:39+05:30,Trivia time! Who was the guy who invented the telephone?,qwen2.5:1.5b,True,False,2,2.317,39.355,1063.035,0.25,0.35
+2026-10-14T20:45:40+05:30,Who gets the credit for inventing the very first telephone?,qwen2.5:1.5b,False,False,0.214733600616,2.149,21.28,3392.9,0.25,0.15
+2026-10-14T20:45:45+05:30,Trivia time! Who was the guy who invented the television?,qwen2.5:1.5b,False,False,0.297051012516,1.619,19.096,4153.051,0.25,0.35
+2026-10-14T20:45:50+05:30,Can you explain the whole photosynthesis process simply?,qwen2.5:1.5b,False,False,0.736290693283,2.759,29.441,3438.856,0.25,0.15
+2026-10-14T20:45:55+05:30,Can you explain the whole photosynthesis process simply?,qwen2.5:1.5b,True,False,2,2.249,29.975,529.222,0.25,0.15
+2026-10-14T20:45:56+05:30,How exactly does photosynthesis work in plants?,qwen2.5:1.5b,False,True,0.177051544189,3.286,44.756,447.391,0.25,0.35
+2026-10-14T20:45:58+05:30,Can you explain the whole cellular respiration process simply?,qwen2.5:1.5b,False,False,0.315174877644,1.779,23.746,3377.532,0.25,0.15
+2026-10-14T20:46:02+05:30,"It blows my mind, how do massive airplanes actually fly?",qwen2.5:1.5b,False,False,0.771512985229,2.789,31.882,3419.986,0.15,0.15
+2026-10-14T20:46:07+05:30,"It blows my mind, how do massive airplanes actually fly?",qwen2.5:1.5b,True,False,2,1.893,31.606,533.903,0.15,0.15
+2026-10-14T20:46:08+05:30,What keeps heavy airplanes up in the air?,qwen2.5:1.5b,False,False,0.320896804333,2.212,36.623,3438.983,0.25,0.15
+2026-10-14T20:46:13+05:30,"It blows my mind, how do massive helicopters actually fly?",qwen2.5:1.5b,False,False,0.194615900517,1.77,26.897,3590.497,0.15,0.15
+2026-10-14T20:46:18+05:30,"I feel sick, what are the most common symptoms of the flu?",qwen2.5:1.5b,False,False,0.809869289398,2.373,33.585,3597.714,0.25,0.15
+2026-10-14T20:46:22+05:30,"I feel sick, what are the most common symptoms of the flu?",qwen2.5:1.5b,True,False,2,2.251,38.184,583.486,0.25,0.35
+2026-10-14T20:46:24+05:30,How do I know if I have the flu based on symptoms?,qwen2.5:1.5b,False,False,0.193600416183,2.222,27.395,3296.842,0.15,0.35
+2026-10-14T20:46:28+05:30,"I feel sick, what are the most common symptoms of a cold?",qwen2.5:1.5b,False,True,0.146470248699,1.886,29.732,493.767,0.25,0.35
+2026-10-14T20:46:30+05:30,"My friend loves Coldplay, what is the lead singer's name?",qwen2.5:1.5b,False,False,0.689899742603,2.87,35.491,1058.428,0.15,0.35
+2026-10-14T20:46:32+05:30,"My friend loves Coldplay, what is the lead singer's name?",qwen2.5:1.5b,True,False,2,3.158,44.682,455.94,0.15,0.35
+2026-10-14T20:46:34+05:30,Who is the frontman for the band Coldplay?,qwen2.5:1.5b,False,True,0.159474074841,3.213,38.081,899.003,0.25,0.35
+2026-10-14T20:46:35+05:30,"My friend loves U2, what is the lead singer's name?",qwen2.5:1.5b,False,False,0.302921891212,3.167,41.853,1207.394,0.15,0.35
+2026-10-14T20:46:38+05:30,Need caffeine! How do you brew the absolute perfect cup of coffee?,qwen2.5:1.5b,False,False,0.73831820488,2.21,34.692,1353.875,0.25,0.15
+2026-10-14T20:46:40+05:30,Need caffeine! How do you brew the absolute perfect cup of coffee?,qwen2.5:1.5b,True,False,2,2.815,32.81,531.377,0.25,0.15
+2026-10-14T20:46:42+05:30,What's the secret to making really good coffee at home?,qwen2.5:1.5b,False,False,0.277035057545,1.879,30.433,3314.838,0.25,0.15
+2026-10-14T20:46:46+05:30,Need caffeine! How do you brew the absolute perfect cup of tea?,qwen2.5:1.5b,False,True,0.0974150300026,2.198,31.096,532.074,0.25,0.15
+2026-10-14T20:46:48+05:30,"I'm a huge history nerd, tell me about the Roman Empire.",qwen2.5:1.5b,False,False,0.713607311249,4.621,76.787,3259.224,0.15,0.15
+2026-10-14T20:46:52+05:30,"I'm a huge history nerd, tell me about the Roman Empire.",qwen2.5:1.5b,True,False,2,5.217,34.413,654.527,0.15,0.15
+2026-10-14T20:46:54+05:30,Can you give me a brief history lesson on the Roman Empire?,qwen2.5:1.5b,False,False,0.192331314087,4.344,47.954,3389.297,0.25,0.15
+2026-10-14T20:46:59+05:30,"I'm a huge history nerd, tell me about the Greek Empire.",qwen2.5:1.5b,False,False,0.203942298889,6.629,46.097,3316.951,0.15,0.15
+2026-10-14T20:47:03+05:30,That movie was confusing. What was the actual plot of Inception?,qwen2.5:1.5b,False,False,0.655432939529,4.059,57.92,3365.73,0.15,0.15
+2026-10-14T20:47:07+05:30,That movie was confusing. What was the actual plot of Inception?,qwen2.5:1.5b,True,False,2,1.686,24.01,511.696,0.15,0.15
+2026-10-14T20:47:09+05:30,Explain the storyline of the movie Inception to me.,qwen2.5:1.5b,False,False,0.128904521465,1.875,34.659,3392.768,0.25,0.35
+2026-10-14T20:47:13+05:30,That movie was confusing. What was the actual plot of Interstellar?,qwen2.5:1.5b,False,False,0.286801636219,1.73,28.052,2232.718,0.15,0.15
+2026-10-14T20:47:17+05:30,Stuck on the road! Can you tell me the steps to change a flat tire?,qwen2.5:1.5b,False,False,0.704061925411,2.533,42.207,3372.963,0.25,0.15
+2026-10-14T20:47:21+05:30,Stuck on the road! Can you tell me the steps to change a flat tire?,qwen2.5:1.5b,True,False,2,2.752,27.997,515.338,0.25,0.15
+2026-10-14T20:47:23+05:30,How do I go about replacing a flat tire on my car?,qwen2.5:1.5b,False,False,0.292283058167,3.364,39.703,4072.509,0.25,0.15
+2026-10-14T20:47:28+05:30,Stuck on the road! Can you tell me the steps to jump a car battery?,qwen2.5:1.5b,False,False,0.496722817421,2.824,54.475,3544.692,0.25,0.15
+2026-10-14T20:47:33+05:30,"Everyone says I should meditate, but what are the actual benefits?",qwen2.5:1.5b,False,False,0.751281440258,1.685,32.048,3455.102,0.15,0.15
+2026-10-14T20:47:37+05:30,"Everyone says I should meditate, but what are the actual benefits?",qwen2.5:1.5b,True,False,2,1.658,24.017,452.505,0.15,0.15
+2026-10-14T20:47:39+05:30,Why is daily meditation considered good for your health?,qwen2.5:1.5b,False,False,0.301715970039,1.665,24.367,3408.339,0.25,0.35
+2026-10-14T20:47:43+05:30,"Everyone says I should do yoga, but what are the actual benefits?",qwen2.5:1.5b,False,False,0.343600034714,2.063,28.323,3676.154,0.15,0.15
+2026-10-14T20:47:48+05:30,Art trivia: Who was the painter responsible for the Mona Lisa?,qwen2.5:1.5b,False,False,0.637754201889,2.769,53.18,3620.451,0.25,0.35
+2026-10-14T20:47:53+05:30,Art trivia: Who was the painter responsible for the Mona Lisa?,qwen2.5:1.5b,True,False,2,3.513,38.953,571.503,0.25,0.35
+2026-10-14T20:47:55+05:30,Who exactly painted the famous Mona Lisa portrait?,qwen2.5:1.5b,False,False,0.12111389637,3.244,30.734,3898.872,0.15,0.35
+2026-10-14T20:47:59+05:30,Art trivia: Who was the painter responsible for Starry Night?,qwen2.5:1.5b,False,False,0.400021314621,1.652,25.875,3538.391,0.15,0.35
+2026-10-14T20:48:04+05:30,"Hey man, I desperately need a Python script to sort an array.",qwen2.5:1.5b,False,False,0.798476397991,2.903,33.872,3445.312,0.25,0.15
+2026-10-14T20:48:09+05:30,"Hey man, I desperately need a Python script to sort an array.",qwen2.5:1.5b,True,False,2,2.192,29.279,665.198,0.25,0.15
+2026-10-14T20:48:10+05:30,Could you provide some python code that sorts an array?,qwen2.5:1.5b,False,False,0.0975090265274,2.451,30.514,3274.45,0.25,0.15
+2026-10-14T20:48:15+05:30,"Hey man, I desperately need a Golang script to sort an array.",qwen2.5:1.5b,False,False,0.315650224686,5.694,50.538,3599.403,0.25,0.15
+2026-10-14T20:48:19+05:30,What's the standard way to reverse a string in JS nowadays?,qwen2.5:1.5b,False,False,0.779298365116,3.359,44.63,3818.116,0.25,0.15
+2026-10-14T20:48:24+05:30,What's the standard way to reverse a string in JS nowadays?,qwen2.5:1.5b,True,False,2,3.06,28.829,479.106,0.25,0.35
+2026-10-14T20:48:26+05:30,I need a javascript function that can reverse any string.,qwen2.5:1.5b,False,False,0.168765842915,2.7,30.155,4047.029,0.25,0.15
+2026-10-14T20:48:31+05:30,What's the standard way to reverse a string in Java nowadays?,qwen2.5:1.5b,False,False,0.242271840572,2.123,26.097,3385.519,0.25,0.15
+2026-10-14T20:48:35+05:30,Pls walk me through creating a basic REST API using Node.js.,qwen2.5:1.5b,False,False,0.784156024456,2.894,34.839,3375.439,0.15,0.15
+2026-10-14T20:48:40+05:30,Pls walk me through creating a basic REST API using Node.js.,qwen2.5:1.5b,True,False,2,3.149,31.039,536.184,0.15,0.15
+2026-10-14T20:48:41+05:30,How do I set up a simple RESTful API with Node?,qwen2.5:1.5b,False,False,0.18418943882,2.054,23.5,3617.811,0.15,0.15
+2026-10-14T20:48:46+05:30,Pls walk me through creating a basic REST API using Django.,qwen2.5:1.5b,False,False,0.299038290977,2.741,36.636,3448.122,0.15,0.15
+2026-10-14T20:48:51+05:30,I'm stuck. How do I connect to a MySQL database from PHP?,qwen2.5:1.5b,False,False,0.796161174774,2.253,33.498,3290.743,0.15,0.15
+2026-10-14T20:48:55+05:30,I'm stuck. How do I connect to a MySQL database from PHP?,qwen2.5:1.5b,True,False,2,2.182,41.897,657.619,0.15,0.15
+2026-10-14T20:48:57+05:30,Can you show me the PHP code to establish a MySQL connection?,qwen2.5:1.5b,False,False,0.183783710003,3.039,43.541,4006.318,0.15,0.15
+2026-10-14T20:49:02+05:30,I'm stuck. How do I connect to a PostgreSQL database from PHP?,qwen2.5:1.5b,False,False,0.294488728046,2.413,37.411,3688.187,0.15,0.15
+2026-10-14T20:49:07+05:30,What library should I use to read a CSV file in Python?,qwen2.5:1.5b,False,False,0.640989661217,2.8,35.101,3217.754,0.15,0.35
+2026-10-14T20:49:11+05:30,What library should I use to read a CSV file in Python?,qwen2.5:1.5b,True,False,2,1.849,38.382,483.355,0.15,0.35
+2026-10-14T20:49:13+05:30,Show me an example of parsing a CSV document in python.,qwen2.5:1.5b,False,False,0.27176618576,3.607,29.511,3328.739,0.15,0.15
+2026-10-14T20:49:17+05:30,What library should I use to read a CSV file in R?,qwen2.5:1.5b,False,False,0.227302253246,2.613,52.86,3314.37,0.15,0.35
+2026-10-14T20:49:21+05:30,Can you write a quick Golang snippet to send an HTTP GET request?,qwen2.5:1.5b,False,False,0.563170790672,2.207,30.78,3631.971,0.15,0.15
+2026-10-14T20:49:26+05:30,Can you write a quick Golang snippet to send an HTTP GET request?,qwen2.5:1.5b,True,False,2,3.263,39.402,678.159,0.15,0.15
+2026-10-14T20:49:28+05:30,How do I perform a basic GET request using Go's net/http?,qwen2.5:1.5b,False,False,0.226629018784,2.476,38.25,3857.143,0.15,0.15
+2026-10-14T20:49:33+05:30,Can you write a quick Golang snippet to send an HTTP POST request?,qwen2.5:1.5b,False,True,0.0930874943733,2.368,41.629,558.225,0.15,0.15
+2026-10-14T20:49:35+05:30,"I'm doing iOS dev, how do I parse JSON data in Swift safely?",qwen2.5:1.5b,False,False,0.77461206913,5.641,43.22,3756.594,0.15,0.15
+2026-10-14T20:49:39+05:30,"I'm doing iOS dev, how do I parse JSON data in Swift safely?",qwen2.5:1.5b,True,False,2,2.18,30.599,425.733,0.15,0.15
+2026-10-14T20:49:41+05:30,What's the best way to decode JSON objects in Swift?,qwen2.5:1.5b,False,False,0.225713133812,2.157,27.281,3239.31,0.15,0.15
+2026-10-14T20:49:45+05:30,"I'm doing iOS dev, how do I parse XML data in Swift safely?",qwen2.5:1.5b,False,False,0.222944259644,2.248,38.943,3427.33,0.15,0.15
+2026-10-14T20:49:50+05:30,"For my CS class, how do I implement a queue data structure in C++?",qwen2.5:1.5b,False,False,0.75089764595,2.377,26.516,3384.914,0.15,0.15
+2026-10-14T20:49:54+05:30,"For my CS class, how do I implement a queue data structure in C++?",qwen2.5:1.5b,True,False,2,2.222,25.11,529.751,0.15,0.15
+2026-10-14T20:49:56+05:30,Provide a C++ implementation of a standard queue.,qwen2.5:1.5b,False,False,0.222966849804,1.666,22.892,3437.053,0.25,0.15
+2026-10-14T20:50:01+05:30,"For my CS class, how do I implement a stack data structure in C++?",qwen2.5:1.5b,False,False,0.36144310236,1.928,36.74,4426.127,0.15,0.15
+2026-10-14T20:50:06+05:30,"In Rust, what's the idiomatic way to find the max value in an array?",qwen2.5:1.5b,False,False,0.666227698326,2.555,130.651,4204.325,0.15,0.35
+2026-10-14T20:50:11+05:30,"In Rust, what's the idiomatic way to find the max value in an array?",qwen2.5:1.5b,True,False,2,3.171,39.804,645.802,0.15,0.35
+2026-10-14T20:50:13+05:30,How do you get the maximum element of a slice or array in Rust?,qwen2.5:1.5b,False,True,0.177668333054,2.23,29.308,448.452,0.25,0.35
+2026-10-14T20:50:14+05:30,"In Rust, what's the idiomatic way to find the min value in an array?",qwen2.5:1.5b,False,True,0.211211979389,1.962,26.183,696.365,0.25,0.35
+2026-10-14T20:50:16+05:30,Need a quick one-liner Python script to reverse a list in place.,qwen2.5:1.5b,False,False,0.483758091927,2.26,20.082,3255.805,0.25,0.15
+2026-10-14T20:50:20+05:30,Need a quick one-liner Python script to reverse a list in place.,qwen2.5:1.5b,True,False,2,2.162,26.484,521.636,0.25,0.15
+2026-10-14T20:50:22+05:30,How can I reverse the elements of a python list easily?,qwen2.5:1.5b,False,False,0.0992774963379,2.242,27.734,3352.397,0.25,0.35
+2026-10-14T20:50:26+05:30,Need a quick one-liner Golang script to reverse a slice in place.,qwen2.5:1.5b,False,False,0.363790512085,2.553,29.087,3518.96,0.25,0.15
+2026-10-14T20:50:31+05:30,Can you show me a recursive factorial function written in C?,qwen2.5:1.5b,False,False,0.816807806492,2.755,28.205,3602.392,0.25,0.15
+2026-10-14T20:50:36+05:30,Can you show me a recursive factorial function written in C?,qwen2.5:1.5b,True,False,2,3.763,36.612,645.904,0.25,0.15
+2026-10-14T20:50:38+05:30,I need a C program that calculates factorial using recursion.,qwen2.5:1.5b,False,True,0.141213774681,2.179,28.781,589.271,0.25,0.15
+2026-10-14T20:50:39+05:30,Can you show me an iterative factorial function written in C?,qwen2.5:1.5b,False,True,0.126363396645,2.914,37.408,508.538,0.25,0.15
+2026-10-14T20:50:41+05:30,"Hey, what is the easiest method to sort an array in JavaScript?",qwen2.5:1.5b,False,False,0.377165794373,1.649,25.15,3483.919,0.25,0.15
+2026-10-14T20:50:45+05:30,"Hey, what is the easiest method to sort an array in JavaScript?",qwen2.5:1.5b,True,False,2,1.62,18.955,494.477,0.25,0.15
+2026-10-14T20:50:47+05:30,How do I order the elements of a JS array alphabetically or numerically?,qwen2.5:1.5b,False,False,0.212346434593,2.773,29.678,3499.603,0.15,0.35
+2026-10-14T20:50:51+05:30,"Hey, what is the easiest method to sort an array in Java?",qwen2.5:1.5b,False,False,0.314858257771,2.165,26.1,3381.898,0.25,0.15
+2026-10-14T20:50:56+05:30,I want to try GraphQL. How do I create a server for it in Node.js?,qwen2.5:1.5b,False,False,0.391238689423,2.197,34.318,3674.637,0.15,0.15
+2026-10-14T20:51:01+05:30,I want to try GraphQL. How do I create a server for it in Node.js?,qwen2.5:1.5b,True,False,2,1.722,36.612,539.894,0.15,0.15
+2026-10-14T20:51:02+05:30,What's the setup process for a Node JS GraphQL API?,qwen2.5:1.5b,False,False,0.211108744144,2.279,30.532,3272.36,0.15,0.15
+2026-10-14T20:51:07+05:30,I want to try GraphQL. How do I create a server for it in Django?,qwen2.5:1.5b,False,False,0.25939643383,1.689,31.415,3861.302,0.15,0.35
+2026-10-14T20:51:12+05:30,"Using PHP, how exactly do I connect to my MongoDB cluster?",qwen2.5:1.5b,False,False,0.435773193836,2.173,29.726,3440.776,0.15,0.15
+2026-10-14T20:51:16+05:30,"Using PHP, how exactly do I connect to my MongoDB cluster?",qwen2.5:1.5b,True,False,2,4.073,56.971,605.879,0.15,0.15
+2026-10-14T20:51:18+05:30,Give me the PHP syntax for establishing a MongoDB connection.,qwen2.5:1.5b,False,False,0.240341305733,3.477,25.662,3227.714,0.15,0.35
+2026-10-14T20:51:26+05:30,"Using PHP, how exactly do I connect to my Redis cluster?",qwen2.5:1.5b,False,False,0.353616774082,2.699,80.706,8055.947,0.15,0.15
+2026-10-14T20:51:31+05:30,Is there a built-in way to read and parse a JSON file in Python?,qwen2.5:1.5b,False,False,0.501059293747,2.39,33.945,4373.011,0.15,0.35
+2026-10-14T20:51:37+05:30,Is there a built-in way to read and parse a JSON file in Python?,qwen2.5:1.5b,True,False,2,2.186,26.94,670.467,0.15,0.35
+2026-10-14T20:51:38+05:30,How do I load data from a .json file directly into a python dict?,qwen2.5:1.5b,False,False,0.265153169632,2.18,24.298,3252.938,0.25,0.35
+2026-10-14T20:51:43+05:30,Is there a built-in way to read and parse a JSON file in R?,qwen2.5:1.5b,False,False,0.291318297386,2.759,28.731,3810.027,0.15,0.35
+2026-10-14T20:51:48+05:30,I need a Go example showing how to send an HTTP PUT request.,qwen2.5:1.5b,False,False,0.270323574543,3.265,31.396,3645.713,0.15,0.15
+2026-10-14T20:51:53+05:30,I need a Go example showing how to send an HTTP PUT request.,qwen2.5:1.5b,True,False,2,1.662,23.556,505.78,0.15,0.15
+2026-10-14T20:51:54+05:30,How can I execute a PUT request in Golang?,qwen2.5:1.5b,False,False,0.214246988297,2.437,40.618,3208.921,0.15,0.35
+2026-10-14T20:51:59+05:30,I need a Go example showing how to send an HTTP DELETE request.,qwen2.5:1.5b,False,False,0.269459784031,2.151,78.849,3411.236,0.15,0.15
+2026-10-14T20:52:03+05:30,Does Swift have a good way to parse YAML configuration files?,qwen2.5:1.5b,False,False,0.387570083141,2.188,21.26,3646.443,0.15,0.15
+2026-10-14T20:52:08+05:30,Does Swift have a good way to parse YAML configuration files?,qwen2.5:1.5b,True,False,2,1.706,50.406,526.979,0.15,0.15
+2026-10-14T20:52:09+05:30,How do I read and deserialize YAML data in Swift?,qwen2.5:1.5b,False,False,0.302680790424,2.234,30.112,3355.074,0.25,0.15
+2026-10-14T20:52:14+05:30,Does Swift have a good way to parse TOML configuration files?,qwen2.5:1.5b,False,False,0.201869368553,2.257,25.803,3998.437,0.15,0.15
+2026-10-14T20:52:19+05:30,Can you write out a full linked list implementation in C++?,qwen2.5:1.5b,False,False,0.582623839378,3.729,39.777,3547.999,0.25,0.15
+2026-10-14T20:52:24+05:30,Can you write out a full linked list implementation in C++?,qwen2.5:1.5b,True,False,2,2.551,31.053,629.203,0.25,0.15
+2026-10-14T20:52:25+05:30,I need C++ code that creates and manages a singly linked list.,qwen2.5:1.5b,False,True,0.194150805473,3.581,32.146,533.611,0.25,0.15
+2026-10-14T20:52:27+05:30,Can you write out a full doubly linked list implementation in C++?,qwen2.5:1.5b,False,True,0.0741736888885,2.236,37.651,510.226,0.25,0.15
+2026-10-14T20:52:28+05:30,What's the math logic to find the average value of a Rust array?,qwen2.5:1.5b,False,False,0.366704344749,2.274,38.757,3586.107,0.25,0.15
+2026-10-14T20:52:33+05:30,What's the math logic to find the average value of a Rust array?,qwen2.5:1.5b,True,False,2,2.65,33.447,552.244,0.25,0.15
+2026-10-14T20:52:35+05:30,How do I compute the mean of an array of floats in Rust?,qwen2.5:1.5b,False,True,0.180424451828,2.329,29.493,511.49,0.25,0.15
+2026-10-14T20:52:36+05:30,What's the math logic to find the median value of a Rust array?,qwen2.5:1.5b,False,True,0.177918553352,2.257,32.15,446.078,0.25,0.15
+2026-10-14T20:52:38+05:30,"I need a python script to filter a list based on a condition, pls.",qwen2.5:1.5b,False,False,0.561211287975,4.994,33.315,3313.455,0.25,0.15
+2026-10-14T20:52:42+05:30,"I need a python script to filter a list based on a condition, pls.",qwen2.5:1.5b,True,False,2,2.234,30.109,527.124,0.25,0.15
+2026-10-14T20:52:44+05:30,How do you use list comprehensions or filter() on a python list?,qwen2.5:1.5b,False,False,0.326654732227,3.102,42.833,3247.941,0.25,0.15
+2026-10-14T20:52:48+05:30,"I need a golang script to filter a slice based on a condition, pls.",qwen2.5:1.5b,False,False,0.189784705639,1.65,29.757,3800.455,0.25,0.15
+2026-10-14T20:52:53+05:30,Help me out: calculate the derivative of 3x^2 + 2x step-by-step.,qwen2.5:1.5b,False,False,0.805186271667,2.161,36.243,3744.166,0.15,0.15
+2026-10-14T20:52:58+05:30,Help me out: calculate the derivative of 3x^2 + 2x step-by-step.,qwen2.5:1.5b,True,False,2,2.187,31.385,534.604,0.15,0.15
+2026-10-14T20:53:00+05:30,What is the first derivative of the function f(x) = 3x^2 + 2x?,qwen2.5:1.5b,False,False,0.206796586514,2.921,32.787,3299.411,0.15,0.15
+2026-10-14T20:53:04+05:30,Help me out: calculate the integral of 3x^2 + 2x step-by-step.,qwen2.5:1.5b,False,False,0.267445385456,2.228,44.492,3429.728,0.15,0.15
+2026-10-14T20:53:08+05:30,Math question: what exactly is the integral of e^x?,qwen2.5:1.5b,False,False,0.612840890884,2.46,24.732,3362.217,0.15,0.15
+2026-10-14T20:53:13+05:30,Math question: what exactly is the integral of e^x?,qwen2.5:1.5b,True,False,2,3.539,48.552,484.018,0.15,0.15
+2026-10-14T20:53:14+05:30,"If I integrate e to the power of x, what do I get?",qwen2.5:1.5b,False,False,0.275228440762,1.586,24.073,3476.691,0.25,0.15
+2026-10-14T20:53:19+05:30,Math question: what exactly is the derivative of e^x?,qwen2.5:1.5b,False,False,0.247693121433,2.297,42.737,4255.64,0.15,0.15
+2026-10-14T20:53:24+05:30,Can you walk me through finding the eigenvalues of a 2x2 matrix?,qwen2.5:1.5b,False,False,0.73089838028,2.171,23.695,3722.505,0.15,0.35
+2026-10-14T20:53:29+05:30,Can you walk me through finding the eigenvalues of a 2x2 matrix?,qwen2.5:1.5b,True,False,2,2.238,41.67,671.053,0.15,0.15
+2026-10-14T20:53:31+05:30,What is the mathematical process for computing eigenvalues of a 2x2 matrix?,qwen2.5:1.5b,False,False,0.195859134197,2.954,36.028,4306.034,0.15,0.15
+2026-10-14T20:53:36+05:30,Can you walk me through finding the eigenvectors of a 2x2 matrix?,qwen2.5:1.5b,False,True,0.126090884209,1.826,26.868,517.497,0.15,0.15
+2026-10-14T20:53:38+05:30,"I keep forgetting, what is the Pythagorean theorem used for?",qwen2.5:1.5b,False,False,0.747564911842,2.399,45.395,3322.699,0.25,0.15
+2026-10-14T20:53:42+05:30,"I keep forgetting, what is the Pythagorean theorem used for?",qwen2.5:1.5b,True,False,2,1.644,25.911,484.758,0.25,0.15
+2026-10-14T20:53:44+05:30,Explain the Pythagorean theorem formula (a^2 + b^2 = c^2) to me.,qwen2.5:1.5b,False,False,0.224175632,2.206,21.17,3098.155,0.15,0.15
+2026-10-14T20:53:48+05:30,"I keep forgetting, what is the Binomial theorem used for?",qwen2.5:1.5b,False,False,0.574874162674,1.611,19.664,3268.825,0.15,0.15
+2026-10-14T20:53:54+05:30,Algebra help! Solve for x in this equation: 2x + 5 = 15.,qwen2.5:1.5b,False,False,0.741538822651,1.713,29.237,5120.481,0.15,0.35
+2026-10-14T20:53:59+05:30,Algebra help! Solve for x in this equation: 2x + 5 = 15.,qwen2.5:1.5b,True,False,2,4.271,47.865,1384.902,0.15,0.35
+2026-10-14T20:54:01+05:30,"If 2 times x plus 5 equals 15, what is the value of x?",qwen2.5:1.5b,False,False,0.197486042976,2.893,39.69,4040.992,0.25,0.15
+2026-10-14T20:54:08+05:30,Algebra help! Solve for y in this equation: 2y + 5 = 15.,qwen2.5:1.5b,False,False,0.211009204388,6.4,35.644,5307.974,0.15,0.15
+2026-10-14T20:54:14+05:30,Geometry question: what is the area of a perfect circle if the radius is 5?,qwen2.5:1.5b,False,False,0.570813417435,2.307,27.933,4618.56,0.25,0.15
+2026-10-14T20:54:18+05:30,Geometry question: what is the area of a perfect circle if the radius is 5?,qwen2.5:1.5b,True,False,2,2.233,26.292,581.787,0.25,0.35
+2026-10-14T20:54:20+05:30,How do I calculate the area of a circle that has a radius of 5 units?,qwen2.5:1.5b,False,False,0.20654886961,2.419,36.232,3945.654,0.25,0.15
+2026-10-14T20:54:25+05:30,Geometry question: what is the circumference of a perfect circle if the radius is 5?,qwen2.5:1.5b,False,True,0.102734029293,2.391,34.189,435.295,0.25,0.15
+2026-10-14T20:54:26+05:30,"Just checking, how do you calculate the factorial of 10?",qwen2.5:1.5b,False,False,0.487835168839,1.619,29.533,3303.023,0.15,0.15
+2026-10-14T20:54:31+05:30,"Just checking, how do you calculate the factorial of 10?",qwen2.5:1.5b,True,False,2,2.383,29.481,483.708,0.15,0.15
+2026-10-14T20:54:32+05:30,What is the mathematical value of 10! (10 factorial)?,qwen2.5:1.5b,False,False,0.10768610239,3.133,35.053,3527.651,0.25,0.15
+2026-10-14T20:54:37+05:30,"Just checking, how do you calculate the factorial of 9?",qwen2.5:1.5b,False,False,0.110034048557,1.654,25.913,3321.832,0.15,0.15
+2026-10-14T20:54:42+05:30,What exactly is the Fibonacci sequence and how does it start?,qwen2.5:1.5b,False,False,0.635736703873,1.663,21.366,3917.71,0.25,0.15
+2026-10-14T20:54:47+05:30,What exactly is the Fibonacci sequence and how does it start?,qwen2.5:1.5b,True,False,2,2.295,29.208,684.234,0.25,0.15
+2026-10-14T20:54:48+05:30,Explain how the numbers in the Fibonacci sequence are generated.,qwen2.5:1.5b,False,False,0.133067071438,2.328,28.351,3555.903,0.15,0.15
+2026-10-14T20:54:53+05:30,What exactly is the Lucas sequence and how does it start?,qwen2.5:1.5b,False,False,0.428107380867,2.826,31.886,3561.705,0.25,0.15
+2026-10-14T20:54:58+05:30,I need to find the roots of the quadratic equation x^2 - 4x + 4 = 0.,qwen2.5:1.5b,False,False,0.58735871315,2.364,38.581,3269.67,0.25,0.15
+2026-10-14T20:55:02+05:30,I need to find the roots of the quadratic equation x^2 - 4x + 4 = 0.,qwen2.5:1.5b,True,False,2,1.671,30.004,475.125,0.25,0.15
+2026-10-14T20:55:04+05:30,Can you solve the quadratic polynomial x^2 - 4x + 4 = 0 for me?,qwen2.5:1.5b,False,True,0.136565089226,2.376,23.235,514.763,0.15,0.15
+2026-10-14T20:55:05+05:30,I need to find the roots of the quadratic equation x^2 + 4x + 4 = 0.,qwen2.5:1.5b,False,True,0.0306149125099,2.178,21.893,433.791,0.25,0.15
+2026-10-14T20:55:07+05:30,Quick math: what is the total sum of the first 100 positive integers?,qwen2.5:1.5b,False,False,0.711320638657,1.73,24.469,3532.787,0.15,0.15
+2026-10-14T20:55:11+05:30,Quick math: what is the total sum of the first 100 positive integers?,qwen2.5:1.5b,True,False,2,4.015,35.582,563.694,0.15,0.15
+2026-10-14T20:55:13+05:30,"If I add up all numbers from 1 to 100, what is the sum?",qwen2.5:1.5b,False,False,0.189927220345,2.257,21.14,3811.524,0.15,0.15
+2026-10-14T20:55:18+05:30,Quick math: what is the total sum of the first 50 positive integers?,qwen2.5:1.5b,False,False,0.174545645714,3.091,126.437,3291.844,0.25,0.15
+2026-10-14T20:55:22+05:30,Calculus 101: calculate the derivative of sin(x) for me.,qwen2.5:1.5b,False,False,0.481052458286,1.638,24.834,3194.226,0.15,0.35
+2026-10-14T20:55:27+05:30,Calculus 101: calculate the derivative of sin(x) for me.,qwen2.5:1.5b,True,False,2,2.488,37.08,559.134,0.15,0.35
+2026-10-14T20:55:28+05:30,What is the mathematical derivative of the sine function?,qwen2.5:1.5b,False,False,0.260072886944,2.496,45.814,4371.658,0.25,0.15
+2026-10-14T20:55:34+05:30,Calculus 101: calculate the derivative of cos(x) for me.,qwen2.5:1.5b,False,False,0.242926955223,2.191,26.212,3913.87,0.15,0.35
+2026-10-14T20:55:39+05:30,What is the indefinite integral of 1/x? I'm stuck on my homework.,qwen2.5:1.5b,False,False,0.461216807365,2.143,32.395,3811.776,0.15,0.35
+2026-10-14T20:55:43+05:30,What is the indefinite integral of 1/x? I'm stuck on my homework.,qwen2.5:1.5b,True,False,2,2.521,34.434,460.104,0.15,0.15
+2026-10-14T20:55:45+05:30,"If you integrate 1 over x with respect to x, what is the answer?",qwen2.5:1.5b,False,False,0.262753427029,2.234,39.985,3341.713,0.25,0.15
+2026-10-14T20:55:49+05:30,What is the mathematical derivative of 1/x? I'm stuck on my homework.,qwen2.5:1.5b,False,False,0.303068161011,1.654,25.353,3821.626,0.15,0.15
+2026-10-14T20:55:54+05:30,How the heck do I find the determinant of a 3x3 matrix?,qwen2.5:1.5b,False,False,0.463650584221,3.043,48.244,4008.441,0.25,0.15
+2026-10-14T20:56:00+05:30,How the heck do I find the determinant of a 3x3 matrix?,qwen2.5:1.5b,True,False,2,2.265,35.096,522.437,0.25,0.15
+2026-10-14T20:56:01+05:30,What's the formula or method to calculate a 3x3 matrix determinant?,qwen2.5:1.5b,False,True,0.0999767184258,2.204,24.908,498.49,0.25,0.15
+2026-10-14T20:56:03+05:30,How the heck do I find the inverse of a 3x3 matrix?,qwen2.5:1.5b,False,False,0.279953896999,2.315,27.773,3524.593,0.25,0.35
+2026-10-14T20:56:07+05:30,"Remind me, what is the standard quadratic formula used for?",qwen2.5:1.5b,False,False,0.44066286087,2.198,30.923,4567.686,0.25,0.15
+2026-10-14T20:56:13+05:30,"Remind me, what is the standard quadratic formula used for?",qwen2.5:1.5b,True,False,2,2.789,20.931,516.322,0.25,0.15
+2026-10-14T20:56:15+05:30,Can you write out the quadratic formula and explain it?,qwen2.5:1.5b,False,False,0.183739602566,2.387,35.643,3550.309,0.25,0.15
+2026-10-14T20:56:19+05:30,"Remind me, what is the standard cubic formula used for?",qwen2.5:1.5b,False,False,0.340483546257,2.82,31.394,4066.696,0.15,0.15
+2026-10-14T20:56:24+05:30,I have a basic algebra equation to solve for x: 3x - 7 = 8.,qwen2.5:1.5b,False,False,0.396307647228,2.213,27.247,3569.753,0.15,0.15
+2026-10-14T20:56:29+05:30,I have a basic algebra equation to solve for x: 3x - 7 = 8.,qwen2.5:1.5b,True,False,2,3.356,45.062,530.308,0.15,0.15
+2026-10-14T20:56:31+05:30,"If 3x minus 7 is equal to 8, what does x equal?",qwen2.5:1.5b,False,True,0.228714764118,2.925,37.964,563.588,0.25,0.15
+2026-10-14T20:56:32+05:30,I have a basic algebra equation to solve for x: 3x + 7 = 8.,qwen2.5:1.5b,False,True,0.0251100063324,2.913,34.665,638.142,0.15,0.15
+2026-10-14T20:56:34+05:30,Does anyone know if there is water on Mars?,qwen2.5:1.5b,False,False,0.672511994839,2.306,32.113,3355.681,0.25,0.15
+2026-10-14T20:56:38+05:30,Does anyone know if there is water on Mars?,qwen2.5:1.5b,True,False,2,4.081,40.787,557.94,0.25,0.15
+2026-10-14T20:56:40+05:30,Has water ever been discovered on the planet Mars?,qwen2.5:1.5b,False,False,0.150875270367,2.298,37.055,3274.82,0.25,0.15
+2026-10-14T20:56:44+05:30,Does anyone know if there is water on Venus?,qwen2.5:1.5b,False,False,0.268117427826,1.91,31.314,3561.414,0.25,0.15
+2026-10-14T20:56:49+05:30,"I'm totally new, how do I start a Docker container?",qwen2.5:1.5b,False,False,0.743172645569,2.196,26.214,3524.75,0.25,0.15
+2026-10-14T20:56:54+05:30,"I'm totally new, how do I start a Docker container?",qwen2.5:1.5b,True,False,2,1.817,29.259,518.664,0.25,0.15
+2026-10-14T20:56:55+05:30,What's the command to run a new container in Docker?,qwen2.5:1.5b,False,False,0.238583385944,2.229,24.18,3321.693,0.25,0.15
+2026-10-14T20:57:00+05:30,"I'm totally new, how do I stop a Docker container?",qwen2.5:1.5b,False,False,0.289717972279,1.691,21.474,3314.797,0.15,0.35
+2026-10-14T20:57:04+05:30,"Pls help, what exactly is a Kubernetes pod?",qwen2.5:1.5b,False,False,0.660550475121,1.664,52.225,3748.645,0.15,0.15
+2026-10-14T20:57:09+05:30,"Pls help, what exactly is a Kubernetes pod?",qwen2.5:1.5b,True,False,2,2.049,29.803,605.322,0.15,0.35
+2026-10-14T20:57:11+05:30,Can someone explain the concept of a Pod in K8s?,qwen2.5:1.5b,False,False,0.168242752552,2.275,30.888,3229.671,0.25,0.35
+2026-10-14T20:57:15+05:30,"Pls help, what exactly is a Kubernetes node?",qwen2.5:1.5b,False,False,0.154821753502,2.758,36.018,4561.027,0.15,0.35
+2026-10-14T20:57:21+05:30,Math homework: what is the integral of x squared?,qwen2.5:1.5b,False,False,0.395701885223,2.51,48.702,4186.693,0.15,0.15
+2026-10-14T20:57:26+05:30,Math homework: what is the integral of x squared?,qwen2.5:1.5b,True,False,2,2.239,28.623,1070.604,0.15,0.15
+2026-10-14T20:57:28+05:30,Can you integrate x^2 with respect to x for me?,qwen2.5:1.5b,False,False,0.260882616043,2.761,29.19,3416.151,0.25,0.15
+2026-10-14T20:57:33+05:30,Math homework: what is the derivative of x squared?,qwen2.5:1.5b,False,False,0.315445661545,13.023,35.957,2860.759,0.25,0.15
+2026-10-14T20:57:37+05:30,How do I find the transpose of a 3x3 matrix?,qwen2.5:1.5b,False,False,0.295051574707,2.266,25.882,3522.678,0.25,0.15
+2026-10-14T20:57:41+05:30,How do I find the transpose of a 3x3 matrix?,qwen2.5:1.5b,True,False,2,2.17,27.947,552.361,0.25,0.15
+2026-10-14T20:57:43+05:30,What are the steps to transpose a 3 by 3 matrix?,qwen2.5:1.5b,False,False,0.12900352478,2.208,21.975,3444.864,0.25,0.35
+2026-10-14T20:57:47+05:30,How do I find the inverse of a 3x3 matrix?,qwen2.5:1.5b,False,True,0.0140402317047,2.349,39.733,678.925,0.25,0.15
+2026-10-14T20:57:49+05:30,"Quick geography question, what's the capital of Canada?",qwen2.5:1.5b,False,False,0.430034279823,3.416,28.765,1307.693,0.15,0.35
+2026-10-14T20:57:52+05:30,"Quick geography question, what's the capital of Canada?",qwen2.5:1.5b,True,False,2,2.971,32.015,727.599,0.15,0.35
+2026-10-14T20:57:53+05:30,What city is the official capital of Canada?,qwen2.5:1.5b,False,False,0.158707499504,3.127,26.441,1167.405,0.25,0.35
+2026-10-14T20:57:55+05:30,"Quick geography question, what's the capital of Mexico?",qwen2.5:1.5b,False,False,0.426154375076,2.782,31.097,1632.032,0.15,0.35
+2026-10-14T20:57:58+05:30,"I'm visiting soon, what is the capital of Japan?",qwen2.5:1.5b,False,False,0.374229490757,3.585,38.51,1270.389,0.25,0.35
+2026-10-14T20:58:01+05:30,"I'm visiting soon, what is the capital of Japan?",qwen2.5:1.5b,True,False,2,2.161,26.468,762.17,0.25,0.35
+2026-10-14T20:58:03+05:30,Name the capital city of Japan for me.,qwen2.5:1.5b,False,False,0.189333021641,2.714,36.466,1466.045,0.25,0.35
+2026-10-14T20:58:05+05:30,"I'm visiting soon, what is the capital of China?",qwen2.5:1.5b,False,False,0.318358123302,3.361,34.664,1236.478,0.25,0.35
+2026-10-14T20:58:07+05:30,History test tomorrow! What year did World War 2 end?,qwen2.5:1.5b,False,False,0.589168310165,3.07,30.248,4093.95,0.25,0.15
+2026-10-14T20:58:13+05:30,History test tomorrow! What year did World War 2 end?,qwen2.5:1.5b,True,False,2,2.406,39.795,562.815,0.25,0.15
+2026-10-14T20:58:14+05:30,In what year did the Second World War officially finish?,qwen2.5:1.5b,False,False,0.245523333549,2.241,21.689,2628.65,0.25,0.35
+2026-10-14T20:58:18+05:30,History test tomorrow! What year did World War 1 end?,qwen2.5:1.5b,False,False,0.0505135059357,2.619,39.838,4117.33,0.25,0.15
+2026-10-14T20:58:23+05:30,When exactly did humans first land on the moon?,qwen2.5:1.5b,False,False,0.481524705887,2.282,50.527,4365.857,0.25,0.15
+2026-10-14T20:58:29+05:30,When exactly did humans first land on the moon?,qwen2.5:1.5b,True,False,2,2.375,31.406,658.755,0.25,0.15
+2026-10-14T20:58:30+05:30,What date did the Apollo 11 moon landing happen?,qwen2.5:1.5b,False,False,0.311526060104,2.159,56.079,4268.415,0.25,0.35
+2026-10-14T20:58:36+05:30,When exactly did humans first land on Mars?,qwen2.5:1.5b,False,False,0.262570798397,2.3,28.525,3191.51,0.25,0.15
+2026-10-14T20:58:40+05:30,"I'm hungry, what's the secret to fluffy scrambled eggs?",qwen2.5:1.5b,False,False,0.620968639851,1.63,27.721,3202.31,0.15,0.15
+2026-10-14T20:58:44+05:30,"I'm hungry, what's the secret to fluffy scrambled eggs?",qwen2.5:1.5b,True,False,2,2.797,36.934,688.65,0.15,0.15
+2026-10-14T20:58:46+05:30,"How do you make the best, fluffiest scrambled eggs?",qwen2.5:1.5b,False,False,0.184547543526,3.287,35.778,4660.464,0.15,0.15
+2026-10-14T20:58:52+05:30,"I'm hungry, what's the secret to fluffy boiled eggs?",qwen2.5:1.5b,False,True,0.0879643559456,2.234,27.86,661.848,0.15,0.15
+2026-10-14T20:58:54+05:30,Biology question: what does DNA stand for?,qwen2.5:1.5b,False,False,0.713402867317,3.082,29.062,5301.314,0.15,0.35
+2026-10-14T20:59:01+05:30,Biology question: what does DNA stand for?,qwen2.5:1.5b,True,False,2,2.172,24.189,1215.239,0.15,0.35
+2026-10-14T20:59:02+05:30,What is the full scientific name for DNA?,qwen2.5:1.5b,False,False,0.230862140656,2.199,29.594,1923.386,0.25,0.35
+2026-10-14T20:59:05+05:30,Biology question: what does RNA stand for?,qwen2.5:1.5b,False,False,0.30850058794,2.228,30.008,3061.394,0.15,0.35
+2026-10-14T20:59:09+05:30,What is the very first element on the periodic table?,qwen2.5:1.5b,False,False,0.694884300232,2.268,25.171,1176.515,0.25,0.35
+2026-10-14T20:59:11+05:30,What is the very first element on the periodic table?,qwen2.5:1.5b,True,False,2,2.208,25.978,468.528,0.25,0.35
+2026-10-14T20:59:13+05:30,Name element number 1 on the periodic table.,qwen2.5:1.5b,False,False,0.175589442253,1.655,25.034,1097.434,0.25,0.35
+2026-10-14T20:59:15+05:30,What is the very last element on the periodic table?,qwen2.5:1.5b,False,True,0.131780803204,2.403,30.739,497.087,0.25,0.35
+2026-10-14T20:59:17+05:30,"I keep hearing about it, what actually is a blockchain?",qwen2.5:1.5b,False,False,0.692955732346,3.453,34.293,3846.689,0.25,0.15
+2026-10-14T20:59:22+05:30,"I keep hearing about it, what actually is a blockchain?",qwen2.5:1.5b,True,False,2,3.294,28.836,572.711,0.25,0.15
+2026-10-14T20:59:23+05:30,Explain the concept of blockchain technology simply.,qwen2.5:1.5b,False,False,0.262395918369,2.729,32.44,3294.087,0.15,0.15
+2026-10-14T20:59:28+05:30,"I keep hearing about it, what actually is a cryptocurrency?",qwen2.5:1.5b,False,False,0.337588965893,1.696,29.183,3516.188,0.15,0.15
+2026-10-14T20:59:32+05:30,Art history: why did Vincent Van Gogh cut off his ear?,qwen2.5:1.5b,False,False,0.589603304863,2.849,40.243,1918.698,0.15,0.15
+2026-10-14T20:59:35+05:30,Art history: why did Vincent Van Gogh cut off his ear?,qwen2.5:1.5b,True,False,2,2.747,29.499,539.769,0.15,0.15
+2026-10-14T20:59:37+05:30,What's the real story behind Van Gogh losing his ear?,qwen2.5:1.5b,False,False,0.147189557552,2.403,37.235,4535.792,0.25,0.35
+2026-10-14T20:59:43+05:30,Art history: why did Vincent Van Gogh paint sunflowers?,qwen2.5:1.5b,False,False,0.349016785622,2.277,29.527,3270.12,0.15,0.35
+2026-10-14T20:59:47+05:30,How often are the Summer Olympic games held?,qwen2.5:1.5b,False,False,0.75230050087,2.065,27.437,3410.045,0.15,0.35
+2026-10-14T20:59:52+05:30,How often are the Summer Olympic games held?,qwen2.5:1.5b,True,False,2,2.24,30.291,636.823,0.15,0.35
+2026-10-14T20:59:53+05:30,What is the time gap between each Summer Olympics?,qwen2.5:1.5b,False,False,0.243780791759,3.003,30.5,4223.031,0.25,0.35
+2026-10-14T20:59:59+05:30,How often are the Winter Olympic games held?,qwen2.5:1.5b,False,False,0.113715529442,9.522,100.014,3376.729,0.15,0.35
