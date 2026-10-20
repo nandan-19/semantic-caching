@@ -1,0 +1,74 @@
+DATASET ANALYSIS REPORT
+========================================================================
+Input: C:\Users\nanda\workspace\FSCgRPC\results\wildchat_2k.csv
+Rows: 2,000
+Columns: 15
+
+DETECTED COLUMNS
+------------------------------------------------------------------------
+timestamp: Timestamp
+query: Query
+candidate_query: Candidate_Query
+model: Model
+exact_hit: Exact_Hit
+semantic_hit: Semantic_Hit
+guard_checked: Guard_Checked
+guard_blocked: Guard_Blocked
+guard_reason: Guard_Reason
+distance: Distance_Score
+trad_latency: Trad_Latency_Ms
+sem_latency: Sem_Latency_Ms
+total_latency: Total_Latency_Ms
+shannon_thresh: Shannon_Thresh
+model_thresh: Model_Thresh
+
+BOOLEAN METRICS
+------------------------------------------------------------------------
+exact_hit: 183/2,000 true (9.150%); missing/unrecognized=0
+semantic_hit: 234/2,000 true (11.700%); missing/unrecognized=0
+guard_checked: 295/2,000 true (14.750%); missing/unrecognized=0
+guard_blocked: 61/2,000 true (3.050%); missing/unrecognized=0
+
+NUMERIC METRICS
+------------------------------------------------------------------------
+distance: count=2,000, mean=0.631, median=0.5829, p90=0.8501, p95=2.0, max=2.0
+trad_latency: count=2,000, mean=2.1596, median=2.136, p90=2.7525, p95=3.0111, max=14.784
+sem_latency: count=2,000, mean=35.4865, median=34.8, p90=54.1273, p95=62.729, max=280.22
+total_latency: count=2,000, mean=1624.5223, median=1981.162, p90=2170.8644, p95=2238.2655, max=27553.185
+shannon_thresh: count=2,000, mean=0.1899, median=0.15, p90=0.25, p95=0.35, max=0.35
+model_thresh: count=2,000, mean=0.2031, median=0.15, p90=0.35, p95=0.35, max=0.35
+
+QUERY STATS
+------------------------------------------------------------------------
+unique_nonempty_queries: 1817
+duplicate_query_rows_after_first: 183
+empty_query_rows: 0
+average_query_characters: 128.82
+median_query_characters: 85.0
+
+TIME RANGE
+------------------------------------------------------------------------
+Valid timestamps: 2,000
+Start (UTC): 2026-10-18T01:20:13+00:00
+End (UTC): 2026-10-18T02:54:49+00:00
+
+CATEGORY ANALYSIS
+------------------------------------------------------------------------
+No category column found. Overall analysis was completed without category breakdowns.
+Pass --category-column COLUMN_NAME when a label column is available, or --auto-cluster N for rough query clusters.
+
+GUARD REASONS
+------------------------------------------------------------------------
+(no reason / not blocked): 1,939
+NUMBER_MISMATCH: 35
+POLARITY_MISMATCH: 15
+NEGATION_MISMATCH: 11
+
+OUTPUTS
+------------------------------------------------------------------------
+summary.json: complete structured summary
+metrics.csv: flattened metric values
+hit_combinations.csv: Exact_Hit / Semantic_Hit combinations, when available
+guard_reason_counts.csv: guard reason counts, when available
+category_summary.csv: per-category metrics, when category analysis is available
+charts/: generated PNG visualizations

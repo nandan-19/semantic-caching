@@ -1,0 +1,193 @@
+{
+  "input_file": "C:\\Users\\nanda\\workspace\\FSCgRPC\\results\\wildchat_2k.csv",
+  "rows": 2000,
+  "columns_count": 15,
+  "column_names": [
+    "Timestamp",
+    "Query",
+    "Candidate_Query",
+    "Model",
+    "Exact_Hit",
+    "Semantic_Hit",
+    "Guard_Checked",
+    "Guard_Blocked",
+    "Guard_Reason",
+    "Distance_Score",
+    "Trad_Latency_Ms",
+    "Sem_Latency_Ms",
+    "Total_Latency_Ms",
+    "Shannon_Thresh",
+    "Model_Thresh"
+  ],
+  "detected_columns": {
+    "timestamp": "Timestamp",
+    "query": "Query",
+    "candidate_query": "Candidate_Query",
+    "model": "Model",
+    "exact_hit": "Exact_Hit",
+    "semantic_hit": "Semantic_Hit",
+    "guard_checked": "Guard_Checked",
+    "guard_blocked": "Guard_Blocked",
+    "guard_reason": "Guard_Reason",
+    "distance": "Distance_Score",
+    "trad_latency": "Trad_Latency_Ms",
+    "sem_latency": "Sem_Latency_Ms",
+    "total_latency": "Total_Latency_Ms",
+    "shannon_thresh": "Shannon_Thresh",
+    "model_thresh": "Model_Thresh"
+  },
+  "missing_values_by_column": {
+    "Timestamp": 0,
+    "Query": 0,
+    "Candidate_Query": 184,
+    "Model": 0,
+    "Exact_Hit": 0,
+    "Semantic_Hit": 0,
+    "Guard_Checked": 0,
+    "Guard_Blocked": 0,
+    "Guard_Reason": 1939,
+    "Distance_Score": 0,
+    "Trad_Latency_Ms": 0,
+    "Sem_Latency_Ms": 0,
+    "Total_Latency_Ms": 0,
+    "Shannon_Thresh": 0,
+    "Model_Thresh": 0
+  },
+  "category_analysis": {
+    "available": false,
+    "source": null,
+    "distinct_categories": 0
+  },
+  "query_stats": {
+    "unique_nonempty_queries": 1817,
+    "duplicate_query_rows_after_first": 183,
+    "empty_query_rows": 0,
+    "average_query_characters": 128.82,
+    "median_query_characters": 85.0
+  },
+  "time_range": {
+    "valid_timestamps": 2000,
+    "start_utc": "2026-10-18T01:20:13+00:00",
+    "end_utc": "2026-10-18T02:54:49+00:00"
+  },
+  "model_counts": {
+    "qwen2.5:1.5b": 2000
+  },
+  "boolean_metrics": {
+    "exact_hit": {
+      "true_count": 183,
+      "valid_count": 2000,
+      "true_rate_pct": 9.15,
+      "missing_or_unrecognized_count": 0
+    },
+    "semantic_hit": {
+      "true_count": 234,
+      "valid_count": 2000,
+      "true_rate_pct": 11.7,
+      "missing_or_unrecognized_count": 0
+    },
+    "guard_checked": {
+      "true_count": 295,
+      "valid_count": 2000,
+      "true_rate_pct": 14.75,
+      "missing_or_unrecognized_count": 0
+    },
+    "guard_blocked": {
+      "true_count": 61,
+      "valid_count": 2000,
+      "true_rate_pct": 3.05,
+      "missing_or_unrecognized_count": 0
+    }
+  },
+  "numeric_metrics": {
+    "distance": {
+      "count": 2000,
+      "mean": 0.631,
+      "std": 0.4849,
+      "min": -0.0,
+      "p50": 0.5829,
+      "p90": 0.8501,
+      "p95": 2.0,
+      "p99": 2.0,
+      "max": 2.0
+    },
+    "trad_latency": {
+      "count": 2000,
+      "mean": 2.1596,
+      "std": 0.9091,
+      "min": 0.0,
+      "p50": 2.136,
+      "p90": 2.7525,
+      "p95": 3.0111,
+      "p99": 5.7762,
+      "max": 14.784
+    },
+    "sem_latency": {
+      "count": 2000,
+      "mean": 35.4865,
+      "std": 17.6877,
+      "min": 0.0,
+      "p50": 34.8,
+      "p90": 54.1273,
+      "p95": 62.729,
+      "p99": 82.3068,
+      "max": 280.22
+    },
+    "total_latency": {
+      "count": 2000,
+      "mean": 1624.5223,
+      "std": 1011.3875,
+      "min": 0.54,
+      "p50": 1981.162,
+      "p90": 2170.8644,
+      "p95": 2238.2655,
+      "p99": 2515.8545,
+      "max": 27553.185
+    },
+    "shannon_thresh": {
+      "count": 2000,
+      "mean": 0.1899,
+      "std": 0.0863,
+      "min": 0.0,
+      "p50": 0.15,
+      "p90": 0.25,
+      "p95": 0.35,
+      "p99": 0.35,
+      "max": 0.35
+    },
+    "model_thresh": {
+      "count": 2000,
+      "mean": 0.2031,
+      "std": 0.1123,
+      "min": 0.0,
+      "p50": 0.15,
+      "p90": 0.35,
+      "p95": 0.35,
+      "p99": 0.35,
+      "max": 0.35
+    }
+  },
+  "hit_combinations": [
+    {
+      "exact_hit": "False",
+      "semantic_hit": "False",
+      "count": 1583
+    },
+    {
+      "exact_hit": "False",
+      "semantic_hit": "True",
+      "count": 234
+    },
+    {
+      "exact_hit": "True",
+      "semantic_hit": "False",
+      "count": 183
+    }
+  ],
+  "guard_reason_counts": {
+    "(no reason / not blocked)": 1939,
+    "NUMBER_MISMATCH": 35,
+    "POLARITY_MISMATCH": 15,
+    "NEGATION_MISMATCH": 11
+  }
+}
