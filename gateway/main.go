@@ -32,6 +32,7 @@ var encoderClient pb.EncoderServiceClient
 var rdb *redis.Client
 var kafkaWriter *kafka.Writer
 var netClient = &http.Client{Timeout: 60 * time.Second}
+var cacheAdmission *cacheDecider
 
 var semanticGuardAliases = map[string]map[string]string{
 	"programming_language": {
@@ -202,10 +203,13 @@ func sameSemanticGuardSet(a, b map[string]struct{}) bool {
 // 1. ADDED "Response" field to ship text to the dashboard
 type TelemetryEvent struct {
 	Timestamp        string  `json:"timestamp"`
+	RequestID        string  `json:"request_id"`
 	Query            string  `json:"query"`
 	CandidateQuery   string  `json:"candidate_query"`
 	Model            string  `json:"model"`
 	Response         string  `json:"response"`
+	CachedResponse   string  `json:"cached_response"`
+	ResponseSource   string  `json:"response_source"`
 	ExactMatchHit    bool    `json:"exact_match_hit"`
 	SemanticMatchHit bool    `json:"semantic_match_hit"`
 	GuardChecked     bool    `json:"guard_checked"`
@@ -214,9 +218,35 @@ type TelemetryEvent struct {
 	DistanceScore    float64 `json:"distance_score"`
 	TradLatencyMs    float64 `json:"trad_latency_ms"`
 	SemLatencyMs     float64 `json:"sem_latency_ms"`
+	ExactCacheLatencyMs     float64 `json:"exact_cache_latency_ms"`
+	EmbeddingLatencyMs      float64 `json:"embedding_latency_ms"`
+	ShannonLatencyMs        float64 `json:"shannon_latency_ms"`
+	ModelThresholdLatencyMs float64 `json:"model_threshold_latency_ms"`
+	VectorSearchLatencyMs   float64 `json:"vector_search_latency_ms"`
+	AdmissionLatencyMs      float64 `json:"admission_latency_ms"`
+	CacheWriteLatencyMs     float64 `json:"cache_write_latency_ms"`
+	EdgeGenerationLatencyMs float64 `json:"edge_generation_latency_ms"`
+	CloudFallbackLatencyMs  float64 `json:"cloud_fallback_latency_ms"`
 	TotalLatencyMs   float64 `json:"total_latency_ms"`
+	ExactCacheStatus string  `json:"exact_cache_status"`
+	EmbeddingStatus  string  `json:"embedding_status"`
+	VectorSearchStatus string `json:"vector_search_status"`
+	AdmissionStatus  string  `json:"admission_status"`
+	CacheWriteStatus string   `json:"cache_write_status"`
+	EdgeGenerationStatus string `json:"edge_generation_status"`
+	CloudFallbackStatus string `json:"cloud_fallback_status"`
 	ShannonThresh    float64 `json:"shannon_thresh"`
 	ModelThresh      float64 `json:"model_thresh"`
+	Decider          string  `json:"decider"`
+	LayaChecked      bool    `json:"laya_checked"`
+	LayaAccepted     bool    `json:"laya_accepted"`
+	LayaDecision     string  `json:"laya_decision"`
+	LayaConfidence   float64 `json:"laya_confidence"`
+	LayaLatencyMs    float64 `json:"laya_latency_ms"`
+}
+
+func durationMs(started time.Time) float64 {
+	return float64(time.Since(started).Microseconds()) / 1000.0
 }
 
 type server struct {
@@ -280,10 +310,13 @@ func getModelThreshold(query string, modelName string) float64 {
 	})
 
 	resp, err := netClient.Post("http://127.0.0.1:11434/api/generate", "application/json", bytes.NewBuffer(reqBody))
-	if err != nil || resp.StatusCode != http.StatusOK {
+	if err != nil || resp == nil {
 		return 0.15
 	}
 	defer resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		return 0.15
+	}
 
 	bodyBytes, _ := io.ReadAll(resp.Body)
 	var result map[string]interface{}
@@ -309,7 +342,6 @@ func semanticCacheInterceptor(
 	}
 
 	queryStr := textReq.GetText()
-
 	modelName := "qwen2.5:1.5b"
 	if md, ok := metadata.FromIncomingContext(ctx); ok {
 		if vals := md.Get("x-model-name"); len(vals) > 0 {
@@ -318,23 +350,39 @@ func semanticCacheInterceptor(
 	}
 
 	telemetry := TelemetryEvent{
-		Timestamp:     time.Now().Format(time.RFC3339),
+		Timestamp:     time.Now().UTC().Format(time.RFC3339Nano),
+		RequestID:     fmt.Sprintf("req-%d", startTime.UnixNano()),
 		Query:         queryStr,
 		Model:         modelName,
 		DistanceScore: 2.0,
+		Decider:       string(cacheAdmission.mode),
+		ExactCacheStatus: "miss",
+		EmbeddingStatus: "skipped",
+		VectorSearchStatus: "skipped",
+		AdmissionStatus: "skipped",
+		CacheWriteStatus: "skipped",
+		EdgeGenerationStatus: "skipped",
+		CloudFallbackStatus: "skipped",
 	}
 
 	// TRACK A: EXACT HIT
 	exactKey := fmt.Sprintf("cache:%s", hex.EncodeToString(func(b [32]byte) []byte { return b[:] }(sha256.Sum256([]byte(queryStr)))))
 	exactStart := time.Now()
 	exactRes, exactErr := rdb.HGet(ctx, exactKey, "response").Result()
-	telemetry.TradLatencyMs = float64(time.Since(exactStart).Microseconds()) / 1000.0
+	telemetry.ExactCacheLatencyMs = durationMs(exactStart)
+	telemetry.TradLatencyMs = telemetry.ExactCacheLatencyMs // Backward-compatible field name.
 	if exactErr == nil && exactRes != "" {
 		telemetry.ExactMatchHit = true
+		telemetry.ExactCacheStatus = "hit"
 		telemetry.Response = exactRes
-		telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
+		telemetry.CachedResponse = exactRes
+		telemetry.ResponseSource = "exact_cache"
+		telemetry.TotalLatencyMs = durationMs(startTime)
 		go publishTelemetry(telemetry)
 		return &pb.QueryResponse{Answer: exactRes, Cached: true}, nil
+	}
+	if exactErr != nil && exactErr != redis.Nil {
+		telemetry.ExactCacheStatus = "error"
 	}
 
 	var embedRes *pb.EmbeddingResponse
@@ -342,63 +390,103 @@ func semanticCacheInterceptor(
 	var semLatency float64
 	var shannonVal float64
 	var modelVal float64
+	var shannonLatency float64
+	var modelThresholdLatency float64
 	var wg sync.WaitGroup
 	wg.Add(3)
 	go func() {
 		defer wg.Done()
 		t := time.Now()
 		embedRes, embedErr = encoderClient.GetEmbedding(ctx, &pb.TextRequest{Text: queryStr})
-		semLatency = float64(time.Since(t).Microseconds()) / 1000.0
+		semLatency = durationMs(t)
 	}()
 	go func() {
 		defer wg.Done()
+		t := time.Now()
 		shannonVal = getShannonThreshold(queryStr)
+		shannonLatency = durationMs(t)
 	}()
 	go func() {
 		defer wg.Done()
+		t := time.Now()
 		modelVal = getModelThreshold(queryStr, modelName)
+		modelThresholdLatency = durationMs(t)
 	}()
 	wg.Wait()
 
 	telemetry.SemLatencyMs = semLatency
+	telemetry.EmbeddingLatencyMs = semLatency
+	telemetry.ShannonLatencyMs = shannonLatency
+	telemetry.ModelThresholdLatencyMs = modelThresholdLatency
+	if embedErr == nil {
+		telemetry.EmbeddingStatus = "ok"
+	} else {
+		telemetry.EmbeddingStatus = "error"
+	}
 	telemetry.ShannonThresh = shannonVal
 	telemetry.ModelThresh = modelVal
 	appliedThreshold := shannonVal
 
 	if embedErr == nil {
 		vectorBytes := float32ToByte(embedRes.GetVector())
+		vectorSearchStart := time.Now()
 		res, err := rdb.Do(ctx, "FT.SEARCH", "idx:cache", "*=>[KNN 1 @vector $query_vec AS score]", "PARAMS", "2", "query_vec", vectorBytes, "RETURN", "3", "response", "score", "text", "DIALECT", "2").Result()
+		telemetry.VectorSearchLatencyMs = durationMs(vectorSearchStart)
 
 		if err == nil {
+			telemetry.VectorSearchStatus = "miss"
 			if resSlice, ok := res.([]interface{}); ok && len(resSlice) >= 3 {
 				if matchData, ok := resSlice[2].([]interface{}); ok && len(matchData) >= 6 {
 					fields := redisSearchFields(matchData)
 					scoreFloat, _ := strconv.ParseFloat(fields["score"], 64)
 					cachedResponse := fields["response"]
 					cachedText := fields["text"]
+					telemetry.VectorSearchStatus = "hit"
 					telemetry.DistanceScore = scoreFloat
 					telemetry.CandidateQuery = cachedText
+					telemetry.CachedResponse = cachedResponse
 
-					// TRACK B: SEMANTIC HIT
-					guardMismatch := false
-					guardReason := ""
-					if scoreFloat <= appliedThreshold {
-						telemetry.GuardChecked = true
-						guardMismatch, guardReason = semanticGuardMismatch(queryStr, cachedText)
-						telemetry.GuardBlocked = guardMismatch
-						telemetry.GuardReason = guardReason
+					// TRACK B: semantic admission is configurable. Shannon can run alone,
+					// as a Laya shortlist, or be replaced by Laya's decision.
+					admissionStart := time.Now()
+					decision := cacheAdmission.decide(ctx, queryStr, cachedText, scoreFloat, appliedThreshold)
+					telemetry.AdmissionLatencyMs = durationMs(admissionStart)
+					telemetry.GuardChecked = decision.checked
+					telemetry.GuardBlocked = decision.blocked
+					telemetry.GuardReason = decision.reason
+					telemetry.LayaChecked = decision.layaChecked
+					telemetry.LayaAccepted = decision.layaAccepted
+					telemetry.LayaDecision = decision.layaDecision
+					telemetry.LayaConfidence = decision.layaConfidence
+					telemetry.LayaLatencyMs = decision.layaLatencyMs
+					if decision.accepted {
+						telemetry.AdmissionStatus = "accepted"
+					} else if decision.reason == "LAYA_UNAVAILABLE" {
+						telemetry.AdmissionStatus = "unavailable"
+					} else {
+						telemetry.AdmissionStatus = "rejected"
 					}
-					if scoreFloat <= appliedThreshold && !guardMismatch {
+					if decision.accepted {
 						telemetry.SemanticMatchHit = true
-						telemetry.Response = cachedResponse // <-- Captured
-						rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": cachedResponse, "vector": vectorBytes})
+						telemetry.Response = cachedResponse
+						telemetry.ResponseSource = "semantic_cache"
+						cacheWriteStart := time.Now()
+						cacheWriteErr := rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": cachedResponse, "vector": vectorBytes}).Err()
+						telemetry.CacheWriteLatencyMs = durationMs(cacheWriteStart)
+						if cacheWriteErr == nil {
+							telemetry.CacheWriteStatus = "ok"
+						} else {
+							telemetry.CacheWriteStatus = "error"
+						}
 
-						telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
+						telemetry.TotalLatencyMs = durationMs(startTime)
 						go publishTelemetry(telemetry)
 						return &pb.QueryResponse{Answer: cachedResponse, Cached: true}, nil
 					}
 				}
 			}
+		} else {
+			telemetry.VectorSearchStatus = "error"
 		}
 
 		// TRACK C: SLM FALLBACK
@@ -406,37 +494,74 @@ func semanticCacheInterceptor(
 			"model":  modelName,
 			"prompt": queryStr,
 			"stream": false,
-			"options": map[string]interface{}{
-				"num_predict": 75,
-			},
 		})
-		if httpResp, err := netClient.Post("http://127.0.0.1:11434/api/generate", "application/json", bytes.NewBuffer(reqBody)); err == nil && httpResp.StatusCode == http.StatusOK {
-			defer httpResp.Body.Close()
-			bodyBytes, _ := io.ReadAll(httpResp.Body)
-			var oRes map[string]interface{}
-			json.Unmarshal(bodyBytes, &oRes)
+		edgeGenerationStart := time.Now()
+		httpResp, edgeErr := netClient.Post("http://127.0.0.1:11434/api/generate", "application/json", bytes.NewBuffer(reqBody))
+		if edgeErr == nil && httpResp != nil {
+			if httpResp.StatusCode == http.StatusOK {
+				bodyBytes, _ := io.ReadAll(httpResp.Body)
+				httpResp.Body.Close()
+				telemetry.EdgeGenerationLatencyMs = durationMs(edgeGenerationStart)
+				var oRes map[string]interface{}
+				json.Unmarshal(bodyBytes, &oRes)
 
-			if slmAnswer, ok := oRes["response"].(string); ok && slmAnswer != "" {
-				finalAns := "🤖 [Qwen Edge] " + slmAnswer
-				telemetry.Response = finalAns // <-- Captured
-				rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": finalAns, "vector": vectorBytes})
-				telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
-				go publishTelemetry(telemetry)
-				return &pb.QueryResponse{Answer: finalAns, Cached: false}, nil
+				if slmAnswer, ok := oRes["response"].(string); ok && slmAnswer != "" {
+					finalAns := "🤖 [Qwen Edge] " + slmAnswer
+					telemetry.Response = finalAns
+					telemetry.ResponseSource = "edge_model"
+					telemetry.EdgeGenerationStatus = "ok"
+					cacheWriteStart := time.Now()
+					cacheWriteErr := rdb.HSet(ctx, exactKey, map[string]interface{}{"text": queryStr, "response": finalAns, "vector": vectorBytes}).Err()
+					telemetry.CacheWriteLatencyMs = durationMs(cacheWriteStart)
+					if cacheWriteErr == nil {
+						telemetry.CacheWriteStatus = "ok"
+					} else {
+						telemetry.CacheWriteStatus = "error"
+					}
+					telemetry.TotalLatencyMs = durationMs(startTime)
+					go publishTelemetry(telemetry)
+					return &pb.QueryResponse{Answer: finalAns, Cached: false}, nil
+				}
+			} else {
+				httpResp.Body.Close()
 			}
 		}
+		if telemetry.EdgeGenerationLatencyMs == 0 {
+			telemetry.EdgeGenerationLatencyMs = durationMs(edgeGenerationStart)
+		}
+		telemetry.EdgeGenerationStatus = "error"
 	}
 
 	// TRACK D: CLOUD FALLBACK
-	resp, _ := handler(ctx, req)
+	cloudFallbackStart := time.Now()
+	resp, handlerErr := handler(ctx, req)
+	telemetry.CloudFallbackLatencyMs = durationMs(cloudFallbackStart)
+	if handlerErr != nil {
+		telemetry.CloudFallbackStatus = "error"
+		telemetry.TotalLatencyMs = durationMs(startTime)
+		go publishTelemetry(telemetry)
+		return resp, handlerErr
+	}
 	queryResp := resp.(*pb.QueryResponse)
-	telemetry.Response = queryResp.Answer // <-- Captured
-	telemetry.TotalLatencyMs = float64(time.Since(startTime).Microseconds()) / 1000.0
+	telemetry.Response = queryResp.Answer
+	telemetry.ResponseSource = "cloud_fallback"
+	telemetry.CloudFallbackStatus = "ok"
+	telemetry.TotalLatencyMs = durationMs(startTime)
 	go publishTelemetry(telemetry)
 	return queryResp, nil
 }
 
 func main() {
+	var err error
+	cacheAdmission, err = newCacheDeciderFromEnv()
+	if err != nil {
+		log.Fatalf("invalid cache decider configuration: %v", err)
+	}
+	log.Printf("Semantic cache decider: %s", cacheAdmission.mode)
+	if cacheAdmission.mode != cacheDeciderShannon {
+		log.Printf("Laya verifier endpoint: %s", cacheAdmission.laya.url)
+	}
+
 	conn, _ := grpc.NewClient("localhost:50052", grpc.WithTransportCredentials(insecure.NewCredentials()))
 	defer conn.Close()
 	encoderClient = pb.NewEncoderServiceClient(conn)
