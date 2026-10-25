@@ -13,6 +13,7 @@ import (
 	"math"
 	"net"
 	"net/http"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -28,11 +29,14 @@ import (
 	pb "github.com/THETITAN220/FSCgRPC/gateway/proto"
 )
 
-var encoderClient pb.EncoderServiceClient
-var rdb *redis.Client
-var kafkaWriter *kafka.Writer
-var netClient = &http.Client{Timeout: 60 * time.Second}
-var cacheAdmission *cacheDecider
+var (
+	encoderClient                 pb.EncoderServiceClient
+	rdb                           *redis.Client
+	kafkaWriter                   *kafka.Writer
+	netClient                     = &http.Client{Timeout: 60 * time.Second}
+	cacheAdmission                *cacheDecider
+	modelThresholdBaselineEnabled bool
+)
 
 var semanticGuardAliases = map[string]map[string]string{
 	"programming_language": {
@@ -202,47 +206,82 @@ func sameSemanticGuardSet(a, b map[string]struct{}) bool {
 
 // 1. ADDED "Response" field to ship text to the dashboard
 type TelemetryEvent struct {
-	Timestamp        string  `json:"timestamp"`
-	RequestID        string  `json:"request_id"`
-	Query            string  `json:"query"`
-	CandidateQuery   string  `json:"candidate_query"`
-	Model            string  `json:"model"`
-	Response         string  `json:"response"`
-	CachedResponse   string  `json:"cached_response"`
-	ResponseSource   string  `json:"response_source"`
-	ExactMatchHit    bool    `json:"exact_match_hit"`
-	SemanticMatchHit bool    `json:"semantic_match_hit"`
-	GuardChecked     bool    `json:"guard_checked"`
-	GuardBlocked     bool    `json:"guard_blocked"`
-	GuardReason      string  `json:"guard_reason"`
-	DistanceScore    float64 `json:"distance_score"`
-	TradLatencyMs    float64 `json:"trad_latency_ms"`
-	SemLatencyMs     float64 `json:"sem_latency_ms"`
-	ExactCacheLatencyMs     float64 `json:"exact_cache_latency_ms"`
-	EmbeddingLatencyMs      float64 `json:"embedding_latency_ms"`
-	ShannonLatencyMs        float64 `json:"shannon_latency_ms"`
-	ModelThresholdLatencyMs float64 `json:"model_threshold_latency_ms"`
-	VectorSearchLatencyMs   float64 `json:"vector_search_latency_ms"`
-	AdmissionLatencyMs      float64 `json:"admission_latency_ms"`
-	CacheWriteLatencyMs     float64 `json:"cache_write_latency_ms"`
-	EdgeGenerationLatencyMs float64 `json:"edge_generation_latency_ms"`
-	CloudFallbackLatencyMs  float64 `json:"cloud_fallback_latency_ms"`
-	TotalLatencyMs   float64 `json:"total_latency_ms"`
-	ExactCacheStatus string  `json:"exact_cache_status"`
-	EmbeddingStatus  string  `json:"embedding_status"`
-	VectorSearchStatus string `json:"vector_search_status"`
-	AdmissionStatus  string  `json:"admission_status"`
-	CacheWriteStatus string   `json:"cache_write_status"`
-	EdgeGenerationStatus string `json:"edge_generation_status"`
-	CloudFallbackStatus string `json:"cloud_fallback_status"`
-	ShannonThresh    float64 `json:"shannon_thresh"`
-	ModelThresh      float64 `json:"model_thresh"`
-	Decider          string  `json:"decider"`
-	LayaChecked      bool    `json:"laya_checked"`
-	LayaAccepted     bool    `json:"laya_accepted"`
-	LayaDecision     string  `json:"laya_decision"`
-	LayaConfidence   float64 `json:"laya_confidence"`
-	LayaLatencyMs    float64 `json:"laya_latency_ms"`
+	Timestamp                 string  `json:"timestamp"`
+	RequestID                 string  `json:"request_id"`
+	Query                     string  `json:"query"`
+	SampleID                  string  `json:"sample_id"`
+	Category                  string  `json:"category"`
+	DomainCategory            string  `json:"domain_category"`
+	Topic                     string  `json:"topic"`
+	ScenarioID                string  `json:"scenario_id"`
+	ScenarioRole              string  `json:"scenario_role"`
+	ExpectedCacheOutcome      string  `json:"expected_cache_outcome"`
+	ExpectedCacheMethod       string  `json:"expected_cache_method"`
+	ExpectedCandidateID       string  `json:"expected_candidate_id"`
+	ExpectedCandidateRelation string  `json:"expected_candidate_relation"`
+	AnnotationConfidence      string  `json:"annotation_confidence"`
+	FreshnessSensitive        string  `json:"freshness_sensitive"`
+	AnswerStability           string  `json:"answer_stability"`
+	ReuseRisk                 string  `json:"reuse_risk"`
+	CandidateQuery            string  `json:"candidate_query"`
+	Model                     string  `json:"model"`
+	Response                  string  `json:"response"`
+	CachedResponse            string  `json:"cached_response"`
+	ResponseSource            string  `json:"response_source"`
+	ExactMatchHit             bool    `json:"exact_match_hit"`
+	SemanticMatchHit          bool    `json:"semantic_match_hit"`
+	GuardChecked              bool    `json:"guard_checked"`
+	GuardBlocked              bool    `json:"guard_blocked"`
+	GuardReason               string  `json:"guard_reason"`
+	DistanceScore             float64 `json:"distance_score"`
+	TradLatencyMs             float64 `json:"trad_latency_ms"`
+	SemLatencyMs              float64 `json:"sem_latency_ms"`
+	ExactCacheLatencyMs       float64 `json:"exact_cache_latency_ms"`
+	EmbeddingLatencyMs        float64 `json:"embedding_latency_ms"`
+	ShannonLatencyMs          float64 `json:"shannon_latency_ms"`
+	ModelThresholdLatencyMs   float64 `json:"model_threshold_latency_ms"`
+	VectorSearchLatencyMs     float64 `json:"vector_search_latency_ms"`
+	AdmissionLatencyMs        float64 `json:"admission_latency_ms"`
+	CacheWriteLatencyMs       float64 `json:"cache_write_latency_ms"`
+	EdgeGenerationLatencyMs   float64 `json:"edge_generation_latency_ms"`
+	CloudFallbackLatencyMs    float64 `json:"cloud_fallback_latency_ms"`
+	TotalLatencyMs            float64 `json:"total_latency_ms"`
+	ExactCacheStatus          string  `json:"exact_cache_status"`
+	EmbeddingStatus           string  `json:"embedding_status"`
+	VectorSearchStatus        string  `json:"vector_search_status"`
+	AdmissionStatus           string  `json:"admission_status"`
+	CacheWriteStatus          string  `json:"cache_write_status"`
+	EdgeGenerationStatus      string  `json:"edge_generation_status"`
+	CloudFallbackStatus       string  `json:"cloud_fallback_status"`
+	ShannonThresh             float64 `json:"shannon_thresh"`
+	ModelThresh               float64 `json:"model_thresh"`
+	Decider                   string  `json:"decider"`
+	LayaChecked               bool    `json:"laya_checked"`
+	LayaAccepted              bool    `json:"laya_accepted"`
+	LayaDecision              string  `json:"laya_decision"`
+	LayaConfidence            float64 `json:"laya_confidence"`
+	LayaLatencyMs             float64 `json:"laya_latency_ms"`
+}
+
+func metadataValue(md metadata.MD, key string) string {
+	values := md.Get(key)
+	if len(values) == 0 {
+		return ""
+	}
+	return values[0]
+}
+
+func envBool(name string, defaultValue bool) bool {
+	value := strings.TrimSpace(os.Getenv(name))
+	if value == "" {
+		return defaultValue
+	}
+	parsed, err := strconv.ParseBool(value)
+	if err != nil {
+		log.Printf("Invalid boolean %s=%q; using default %t", name, value, defaultValue)
+		return defaultValue
+	}
+	return parsed
 }
 
 func durationMs(started time.Time) float64 {
@@ -343,26 +382,39 @@ func semanticCacheInterceptor(
 
 	queryStr := textReq.GetText()
 	modelName := "qwen2.5:1.5b"
-	if md, ok := metadata.FromIncomingContext(ctx); ok {
-		if vals := md.Get("x-model-name"); len(vals) > 0 {
-			modelName = vals[0]
-		}
+	incomingMD, _ := metadata.FromIncomingContext(ctx)
+	if value := metadataValue(incomingMD, "x-model-name"); value != "" {
+		modelName = value
 	}
 
 	telemetry := TelemetryEvent{
-		Timestamp:     time.Now().UTC().Format(time.RFC3339Nano),
-		RequestID:     fmt.Sprintf("req-%d", startTime.UnixNano()),
-		Query:         queryStr,
-		Model:         modelName,
-		DistanceScore: 2.0,
-		Decider:       string(cacheAdmission.mode),
-		ExactCacheStatus: "miss",
-		EmbeddingStatus: "skipped",
-		VectorSearchStatus: "skipped",
-		AdmissionStatus: "skipped",
-		CacheWriteStatus: "skipped",
-		EdgeGenerationStatus: "skipped",
-		CloudFallbackStatus: "skipped",
+		Timestamp:                 time.Now().UTC().Format(time.RFC3339Nano),
+		RequestID:                 fmt.Sprintf("req-%d", startTime.UnixNano()),
+		Query:                     queryStr,
+		SampleID:                  metadataValue(incomingMD, "x-sample-id"),
+		Category:                  metadataValue(incomingMD, "x-category"),
+		DomainCategory:            metadataValue(incomingMD, "x-domain-category"),
+		Topic:                     metadataValue(incomingMD, "x-topic"),
+		ScenarioID:                metadataValue(incomingMD, "x-scenario-id"),
+		ScenarioRole:              metadataValue(incomingMD, "x-scenario-role"),
+		ExpectedCacheOutcome:      metadataValue(incomingMD, "x-expected-cache-outcome"),
+		ExpectedCacheMethod:       metadataValue(incomingMD, "x-expected-cache-method"),
+		ExpectedCandidateID:       metadataValue(incomingMD, "x-expected-candidate-id"),
+		ExpectedCandidateRelation: metadataValue(incomingMD, "x-expected-candidate-relation"),
+		AnnotationConfidence:      metadataValue(incomingMD, "x-annotation-confidence"),
+		FreshnessSensitive:        metadataValue(incomingMD, "x-freshness-sensitive"),
+		AnswerStability:           metadataValue(incomingMD, "x-answer-stability"),
+		ReuseRisk:                 metadataValue(incomingMD, "x-reuse-risk"),
+		Model:                     modelName,
+		DistanceScore:             2.0,
+		Decider:                   string(cacheAdmission.mode),
+		ExactCacheStatus:          "miss",
+		EmbeddingStatus:           "skipped",
+		VectorSearchStatus:        "skipped",
+		AdmissionStatus:           "skipped",
+		CacheWriteStatus:          "skipped",
+		EdgeGenerationStatus:      "skipped",
+		CloudFallbackStatus:       "skipped",
 	}
 
 	// TRACK A: EXACT HIT
@@ -389,11 +441,11 @@ func semanticCacheInterceptor(
 	var embedErr error
 	var semLatency float64
 	var shannonVal float64
-	var modelVal float64
+	modelVal := -1.0 // -1 means the model-threshold baseline was disabled.
 	var shannonLatency float64
 	var modelThresholdLatency float64
 	var wg sync.WaitGroup
-	wg.Add(3)
+	wg.Add(2)
 	go func() {
 		defer wg.Done()
 		t := time.Now()
@@ -406,12 +458,15 @@ func semanticCacheInterceptor(
 		shannonVal = getShannonThreshold(queryStr)
 		shannonLatency = durationMs(t)
 	}()
-	go func() {
-		defer wg.Done()
-		t := time.Now()
-		modelVal = getModelThreshold(queryStr, modelName)
-		modelThresholdLatency = durationMs(t)
-	}()
+	if modelThresholdBaselineEnabled {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			t := time.Now()
+			modelVal = getModelThreshold(queryStr, modelName)
+			modelThresholdLatency = durationMs(t)
+		}()
+	}
 	wg.Wait()
 
 	telemetry.SemLatencyMs = semLatency
@@ -449,7 +504,7 @@ func semanticCacheInterceptor(
 					// TRACK B: semantic admission is configurable. Shannon can run alone,
 					// as a Laya shortlist, or be replaced by Laya's decision.
 					admissionStart := time.Now()
-					decision := cacheAdmission.decide(ctx, queryStr, cachedText, scoreFloat, appliedThreshold)
+					decision := cacheAdmission.decide(ctx, queryStr, cachedText, cachedResponse, scoreFloat, appliedThreshold)
 					telemetry.AdmissionLatencyMs = durationMs(admissionStart)
 					telemetry.GuardChecked = decision.checked
 					telemetry.GuardBlocked = decision.blocked
@@ -552,6 +607,8 @@ func semanticCacheInterceptor(
 }
 
 func main() {
+	modelThresholdBaselineEnabled = envBool("ENABLE_MODEL_THRESHOLD_BASELINE", false)
+	log.Printf("Model AST threshold baseline enabled: %t", modelThresholdBaselineEnabled)
 	var err error
 	cacheAdmission, err = newCacheDeciderFromEnv()
 	if err != nil {

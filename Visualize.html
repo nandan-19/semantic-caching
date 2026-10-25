@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cache Lab · telemetry analysis</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{--bg:#f4f1ea;--fg:#1b1d22;--mut:#6b7080;--card:#fffdf8;--line:#d9d4c7;--acc:#0e7490;--bad:#b91c1c;--good:#15803d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0e14;--fg:#e6e9f0;--mut:#8b93a7;--card:#121724;--line:#222a3b;--acc:#22d3ee;--bad:#f87171;--good:#4ade80}}
+:root[data-theme="dark"]{--bg:#0b0e14;--fg:#e6e9f0;--mut:#8b93a7;--card:#121724;--line:#222a3b;--acc:#22d3ee;--bad:#f87171;--good:#4ade80}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px;background-attachment:fixed}
+.wrap{max-width:1200px;margin:0 auto;padding:20px 16px 60px}
+h1{font:700 28px/1.1 Georgia,"Iowan Old Style",serif;margin:0;letter-spacing:-.5px}h1 i{color:var(--acc)}
+h2{font:600 12px ui-monospace,monospace;text-transform:uppercase;letter-spacing:2px;color:var(--mut);margin:0 0 10px}
+.sub{color:var(--mut);margin:4px 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px;margin-bottom:14px;box-shadow:4px 4px 0 var(--line)}
+.drop{border:2px dashed var(--mut);padding:26px;text-align:center;cursor:pointer;border-radius:6px}.drop:hover,.drop.on{border-color:var(--acc);color:var(--acc)}
+.files{display:grid;gap:8px;margin-top:12px}.f{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.f input[type=text]{background:var(--bg);color:var(--fg);border:1px solid var(--line);padding:6px 8px;font:inherit;min-width:180px;flex:1}
+.sw{width:14px;height:14px;border-radius:50%}.fn{color:var(--mut);font-size:12px;flex:2;min-width:160px;overflow:hidden;text-overflow:ellipsis}
+button,select{background:var(--bg);color:var(--fg);border:1px solid var(--line);padding:6px 12px;font:inherit;cursor:pointer;border-radius:4px}
+button.go{background:var(--acc);color:#001;border-color:var(--acc);font-weight:700}button:hover{border-color:var(--acc)}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin:14px 0}.tabs button.on{background:var(--fg);color:var(--bg)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
+.cv{position:relative;height:300px}.ov{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:12px}th,td{border-bottom:1px solid var(--line);padding:5px 8px;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{color:var(--mut);font-weight:600}
+td.best{color:var(--good);font-weight:700}td.worst{color:var(--bad)}td.q{white-space:normal;max-width:360px;text-align:left}
+.cm{display:grid;grid-template-columns:auto 1fr 1fr;gap:3px;max-width:300px;font-size:12px}.cm div{padding:10px;text-align:center;border-radius:3px}.cm .h{color:var(--mut);padding:4px}
+.note{border-left:3px solid var(--acc);padding:6px 12px;margin:6px 0;background:var(--bg)}
+.tag{display:inline-block;padding:0 6px;border-radius:3px;font-size:11px;border:1px solid var(--line)}.ok{color:var(--good)}.no{color:var(--bad)}
+</style></head><body><div class="wrap">
+<div style="display:flex;justify-content:space-between;align-items:start;gap:10px"><div><h1>Cache <i>Lab</i></h1><p class="sub">Load one or more telemetry CSVs → compare cache deciders on accuracy, safety, latency and pipeline cost. Everything runs locally in your browser.</p></div><button onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark';tab&&show(tab)">◐ theme</button></div>
+<div class="card"><h2>1 · Load runs</h2>
+<label class="drop" id="dz"><input id="fi" type="file" accept=".csv" multiple hidden>Drop CSV files here or click to browse (1, 2, 3, 4 or more)</label>
+<div class="files" id="fl"></div>
+<div style="margin-top:12px" id="goRow" hidden><button class="go" onclick="analyze()">Analyze runs →</button> <span class="sub">Label each file above; labels are used in every chart.</span></div></div>
+<div id="out" hidden><div class="tabs" id="tabs"></div><div id="panel"></div></div>
+</div>
+<script>
+const PAL=['#22d3ee','#f472b6','#a3e635','#fbbf24','#a78bfa','#fb923c','#2dd4bf','#f87171'];
+const STAGES=[['Exact_Cache_Latency_Ms','Exact cache'],['Embedding_Latency_Ms','Embedding'],['Shannon_Latency_Ms','Shannon'],['Model_Threshold_Latency_Ms','Model threshold'],['Laya_Latency_Ms','Laya'],['Vector_Search_Latency_Ms','Vector search'],['Admission_Latency_Ms','Admission'],['Cache_Write_Latency_Ms','Cache write'],['Edge_Generation_Latency_Ms','Edge generation'],['Cloud_Fallback_Latency_Ms','Cloud fallback']];
+const DIMS=['Category','Domain_Category','Scenario_Role','Reuse_Risk','Freshness_Sensitive','Answer_Stability','Annotation_Confidence','Expected_Cache_Method'];
+const TABS=['Overview','Accuracy','Latency','Pipeline','Guards & Laya','Distance','Segments','Disagreements'];
+let files=[],R=[],tab='',charts=[];
+const N=v=>{v=parseFloat(v);return isNaN(v)?0:v},B=v=>v===true||/^true$/i.test(String(v)),sum=a=>a.reduce((x,y)=>x+y,0),mean=a=>a.length?sum(a)/a.length:0;
+const pc=(a,p)=>{if(!a.length)return 0;const s=[...a].sort((x,y)=>x-y);return s[Math.min(s.length-1,Math.floor(p/100*s.length))]};
+const f1=(v,d=1)=>isFinite(v)?v.toFixed(d):'–',pct=v=>isFinite(v)?(v*100).toFixed(1)+'%':'–',ms=v=>f1(v,1)+' ms';
+const dz=document.getElementById('dz'),fi=document.getElementById('fi');
+fi.onchange=()=>add(fi.files);dz.ondragover=e=>{e.preventDefault();dz.classList.add('on')};dz.ondragleave=()=>dz.classList.remove('on');
+dz.ondrop=e=>{e.preventDefault();dz.classList.remove('on');add(e.dataTransfer.files)};
+function add(l){for(const f of l)files.push({file:f,name:f.name.replace(/\.csv$/i,'').replace(/_/g,' ')});fi.value='';drawFiles()}
+function drawFiles(){fl.innerHTML=files.map((x,i)=>`<div class="f"><span class="sw" style="background:${PAL[i%8]}"></span><span class="fn">${x.file.name}</span><input type="text" value="${x.name}" oninput="files[${i}].name=this.value" placeholder="Label for this run"><button onclick="files.splice(${i},1);drawFiles()">✕</button></div>`).join('');goRow.hidden=!files.length}
+async function analyze(){
+ R=[];for(let i=0;i<files.length;i++){const x=files[i];const rows=await new Promise(r=>Papa.parse(x.file,{header:true,skipEmptyLines:true,complete:o=>r(o.data)}));R.push({name:x.name||('Run '+(i+1)),color:PAL[i%8],rows,m:metrics(rows)})}
+ out.hidden=false;tabs.innerHTML=TABS.map(t=>`<button onclick="show('${t}')" data-t="${t}">${t}</button>`).join('');show('Overview')}
+const isHit=r=>r.Response_Source==='exact_cache'||r.Response_Source==='semantic_cache',expHit=r=>r.Expected_Cache_Outcome==='HIT';
+const actM=r=>({exact_cache:'exact',semantic_cache:'semantic'}[r.Response_Source]||'fallback');
+function metrics(rows){const m={n:rows.length,tp:0,fp:0,fn:0,tn:0,mOk:0,src:{},srcLat:{},lat:[],hitLat:[],missLat:[],stage:{},guard:{},gBlockGood:0,gBlockBad:0,gBlocked:0,laya:{chk:0,acc:0,accGood:0,A:0,B:0,conf:[],lat:[]},cloud:0};
+ STAGES.forEach(s=>m.stage[s[0]]=[]);
+ for(const r of rows){const p=isHit(r),e=expHit(r),l=N(r.Total_Latency_Ms);
+  if(p&&e)m.tp++;else if(p)m.fp++;else if(e)m.fn++;else m.tn++;
+  if(actM(r)===r.Expected_Cache_Method)m.mOk++;
+  m.src[r.Response_Source]=(m.src[r.Response_Source]||0)+1;(m.srcLat[r.Response_Source]??=[]).push(l);
+  m.lat.push(l);(p?m.hitLat:m.missLat).push(l);STAGES.forEach(s=>m.stage[s[0]].push(N(r[s[0]])));
+  if(r.Guard_Reason)m.guard[r.Guard_Reason]=(m.guard[r.Guard_Reason]||0)+1;
+  if(B(r.Guard_Blocked)){m.gBlocked++;e?m.gBlockBad++:m.gBlockGood++}
+  if(B(r.Laya_Checked)){m.laya.chk++;m.laya.conf.push(N(r.Laya_Confidence));m.laya.lat.push(N(r.Laya_Latency_Ms));if(r.Laya_Decision)m.laya[r.Laya_Decision]=(m.laya[r.Laya_Decision]||0)+1}
+  if(B(r.Laya_Accepted)){m.laya.acc++;if(e)m.laya.accGood++}
+  if(r.Response_Source==='cloud_fallback')m.cloud++}
+ m.prec=m.tp/(m.tp+m.fp);m.rec=m.tp/(m.tp+m.fn);m.f1=2*m.prec*m.rec/(m.prec+m.rec);m.acc=(m.tp+m.tn)/m.n;m.fpr=m.fp/(m.fp+m.tn);m.mAcc=m.mOk/m.n;
+ m.mean=mean(m.lat);m.p50=pc(m.lat,50);m.p95=pc(m.lat,95);m.p99=pc(m.lat,99);m.max=Math.max(...m.lat);return m}
+function kill(){charts.forEach(c=>c.destroy());charts=[]}
+function mk(id,type,labels,sets,o={}){const cs=getComputedStyle(document.documentElement);Chart.defaults.color=cs.getPropertyValue('--mut');Chart.defaults.borderColor=cs.getPropertyValue('--line');Chart.defaults.font.family='ui-monospace,monospace';
+ const c=new Chart(document.getElementById(id),{type,data:{labels,datasets:sets},options:{responsive:true,maintainAspectRatio:false,...o,plugins:{legend:{labels:{boxWidth:10}},...(o.plugins||{})}}});charts.push(c)}
+const perRun=(fn,extra={})=>R.map(r=>({label:r.name,data:fn(r),backgroundColor:r.color,borderColor:r.color,...extra}));
+const union=f=>[...new Set(R.flatMap(f))].sort();
+const cvCard=(id,t,n='')=>`<div class="card"><h2>${t}</h2><div class="cv"><canvas id="${id}"></canvas></div>${n?`<div class="note">${n}</div>`:''}</div>`;
+function tbl(h,rows){return `<div class="ov"><table><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(c=>typeof c==='object'?`<td class="${c.c}">${c.v}</td>`:`<td>${c}</td>`).join('')}</tr>`).join('')}</table></div>`}
+function best(vals,hi){if(vals.length<2)return vals.map(v=>({v}));const ok=vals.filter(isFinite),b=hi?Math.max(...ok):Math.min(...ok),w=hi?Math.min(...ok):Math.max(...ok);return vals.map(v=>({v:v.t,c:v.n===b&&b!==w?'best':v.n===w&&b!==w?'worst':''}))}
+function show(t){tab=t;kill();document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));panel.innerHTML=V[t]();setTimeout(()=>(P[t]||(()=>{}))(),0)}
+const V={},P={};
+const KP=[['Requests',m=>m.n,v=>v,0],['Cache hit rate',m=>(m.tp+m.fp)/m.n,pct,0],['Accuracy',m=>m.acc,pct,1],['Precision (hits that were right)',m=>m.prec,pct,1],['Recall (hits found)',m=>m.rec,pct,1],['F1',m=>m.f1,v=>f1(v,3),1],['False-hit rate (unsafe reuse)',m=>m.fpr,pct,-1],['False hits (count)',m=>m.fp,v=>v,-1],['Missed hits (count)',m=>m.fn,v=>v,-1],['Method accuracy',m=>m.mAcc,pct,1],['Mean latency',m=>m.mean,ms,-1],['p50 latency',m=>m.p50,ms,-1],['p95 latency',m=>m.p95,ms,-1],['p99 latency',m=>m.p99,ms,-1],['Cloud fallbacks',m=>m.cloud,v=>v,0]];
+V.Overview=()=>{const rows=KP.map(([l,g,f,d])=>{const vals=R.map(r=>({n:g(r.m),t:f(g(r.m))}));return[l,...(d?best(vals,d>0):vals.map(x=>({v:x.t})))]});
+ const bF=[...R].sort((a,b)=>b.m.f1-a.m.f1)[0],bS=[...R].sort((a,b)=>a.m.fpr-b.m.fpr)[0],bL=[...R].sort((a,b)=>a.m.mean-b.m.mean)[0];
+ return `<div class="card"><h2>Scorecard · green = best, red = worst</h2>${tbl(['Metric',...R.map(r=>`<span style="color:${r.color}">● ${r.name}</span>`)],rows)}</div>
+ <div class="card"><h2>Auto-verdict</h2><div class="note">Best balance (F1): <b>${bF.name}</b> (${f1(bF.m.f1,3)}).</div><div class="note">Safest (lowest false-hit rate): <b>${bS.name}</b> — ${bS.m.fp} unsafe reuses (${pct(bS.m.fpr)}).</div><div class="note">Fastest on average: <b>${bL.name}</b> at ${ms(bL.m.mean)}.${bF!==bL?' Speed and quality are won by different runs — this is your tradeoff.':''}</div>${R.some(r=>r.m.fp>0)?'<div class="note">Every false hit returns a wrong cached answer; weigh it against latency saved, not just F1.</div>':''}</div>
+ <div class="grid">${cvCard('c1','Response source mix (% of requests)')}${cvCard('c2','Quality metrics')}</div>`};
+P.Overview=()=>{const s=union(r=>Object.keys(r.m.src));mk('c1','bar',R.map(r=>r.name),s.map((k,i)=>({label:k,data:R.map(r=>100*(r.m.src[k]||0)/r.m.n),backgroundColor:PAL[(i+2)%8]})),{scales:{x:{stacked:true},y:{stacked:true,max:100}}});
+ mk('c2','bar',['Accuracy','Precision','Recall','F1'],perRun(r=>[r.m.acc,r.m.prec,r.m.rec,r.m.f1].map(x=>x*100)),{scales:{y:{min:0,max:100}}})};
+const cm=r=>{const m=r.m,c=(v,g)=>`<div style="background:${g?'#16a34a44':'#dc262644'}"><b>${v}</b></div>`;return `<div><b style="color:${r.color}">${r.name}</b><div class="cm"><div class="h"></div><div class="h">pred HIT</div><div class="h">pred MISS</div><div class="h">true HIT</div>${c(m.tp,1)}${c(m.fn,0)}<div class="h">true MISS</div>${c(m.fp,0)}${c(m.tn,1)}</div></div>`};
+V.Accuracy=()=>`<div class="card"><h2>Confusion matrices (FP = wrong answer served from cache)</h2><div class="grid">${R.map(cm).join('')}</div></div><div class="grid">${cvCard('c1','Correct-decision rate by scenario role','hard_negative = near-duplicate traps; exact_repeat = must hit exactly; semantic_candidate = paraphrases.')}${cvCard('c2','Errors by type (count)')}</div>`;
+P.Accuracy=()=>{const roles=union(r=>r.rows.map(x=>x.Scenario_Role));mk('c1','bar',roles,perRun(r=>roles.map(k=>{const q=r.rows.filter(x=>x.Scenario_Role===k);return 100*q.filter(x=>isHit(x)===expHit(x)).length/(q.length||1)})),{scales:{y:{min:0,max:100}}});
+ mk('c2','bar',['False hits','Missed hits','Wrong method'],perRun(r=>[r.m.fp,r.m.fn,r.m.n-r.m.mOk]))};
+V.Latency=()=>`<div class="card"><h2>Latency percentiles</h2>${tbl(['Run','mean','p50','p95','p99','max','hit mean','miss mean','speedup on hit'],R.map(r=>{const m=r.m;return[r.name,ms(m.mean),ms(m.p50),ms(m.p95),ms(m.p99),ms(m.max),ms(mean(m.hitLat)),ms(mean(m.missLat)),f1(mean(m.missLat)/mean(m.hitLat),1)+'×']}))}</div><div class="grid">${cvCard('c1','Percentiles (ms)')}${cvCard('c2','Mean latency by response source (ms)')}${cvCard('c3','Latency CDF (log x)')}</div>`;
+P.Latency=()=>{mk('c1','bar',['mean','p50','p95','p99'],perRun(r=>[r.m.mean,r.m.p50,r.m.p95,r.m.p99]),{scales:{y:{type:'logarithmic'}}});
+ const s=union(r=>Object.keys(r.m.src));mk('c2','bar',s,perRun(r=>s.map(k=>mean(r.m.srcLat[k]||[]))),{scales:{y:{type:'logarithmic'}}});
+ mk('c3','scatter',null,R.map(r=>{const a=[...r.m.lat].sort((x,y)=>x-y),st=Math.max(1,Math.floor(a.length/120));return{label:r.name,borderColor:r.color,backgroundColor:r.color,showLine:true,pointRadius:0,data:a.filter((_,i)=>i%st===0).map((v,i)=>({x:Math.max(v,.1),y:100*(i*st+1)/a.length}))}}),{scales:{x:{type:'logarithmic'},y:{max:100,title:{display:true,text:'% ≤ x'}}}})};
+V.Pipeline=()=>`<div class="grid">${cvCard('c1','Mean time per pipeline stage (ms, stacked)','Shows where the latency budget goes: look for the dominant stage in each run.')}${cvCard('c2','Stage status counts (non-skipped)')}</div><div class="card"><h2>Stage means (ms)</h2>${tbl(['Stage',...R.map(r=>r.name)],STAGES.map(([k,l])=>[l,...R.map(r=>f1(mean(r.m.stage[k]),2))]))}</div>`;
+P.Pipeline=()=>{mk('c1','bar',R.map(r=>r.name),STAGES.map(([k,l],i)=>({label:l,data:R.map(r=>mean(r.m.stage[k])),backgroundColor:PAL[i%8]+(i>7?'88':'')})),{scales:{x:{stacked:true},y:{stacked:true}}});
+ const cols=['Exact_Cache_Status','Embedding_Status','Vector_Search_Status','Admission_Status','Cache_Write_Status','Edge_Generation_Status','Cloud_Fallback_Status'];
+ mk('c2','bar',cols.map(c=>c.replace('_Status','')),perRun(r=>cols.map(c=>r.rows.filter(x=>x[c]&&x[c]!=='skipped').length)))};
+V['Guards & Laya']=()=>`<div class="card"><h2>Safety guard efficacy</h2>${tbl(['Run','guard blocks','good blocks (true MISS)','over-blocks (true HIT)','Laya checked','Laya accepted','accept precision','A / B','avg conf','avg Laya ms'],R.map(r=>{const m=r.m,l=m.laya;return[r.name,m.gBlocked,m.gBlockGood,m.gBlockBad,l.chk,l.acc,pct(l.accGood/l.acc),(l.A||0)+' / '+(l.B||0),f1(mean(l.conf),3),ms(mean(l.lat))]}))}</div><div class="grid">${cvCard('c1','Guard / rejection reasons')}${cvCard('c2','Laya decision & acceptance')}</div>`;
+P['Guards & Laya']=()=>{const g=union(r=>Object.keys(r.m.guard));mk('c1','bar',g,perRun(r=>g.map(k=>r.m.guard[k]||0)),{indexAxis:'y'});
+ mk('c2','bar',['Checked','Accepted','Decision A','Decision B'],perRun(r=>[r.m.laya.chk,r.m.laya.acc,r.m.laya.A||0,r.m.laya.B||0]))};
+V.Distance=()=>`<div class="card"><h2>Distance-score separability <select id="dsel" onchange="drawDist()">${R.map((r,i)=>`<option value="${i}">${r.name}</option>`).join('')}</select></h2><div class="cv"><canvas id="c1"></canvas></div><div class="note">Paraphrases (semantic_candidate) should sit left of traps (hard_negative). Overlap = a threshold cannot separate them → rely on guards / Laya.</div></div><div class="card"><h2>Thresholds seen</h2>${tbl(['Run','Shannon thresh (mean)','Model thresh (mean)','mean dist · semantic hits','mean dist · false hits'],R.map(r=>[r.name,f1(mean(r.rows.map(x=>N(x.Shannon_Thresh))),3),f1(mean(r.rows.map(x=>N(x.Model_Thresh))),3),f1(mean(r.rows.filter(x=>x.Response_Source==='semantic_cache'&&expHit(x)).map(x=>N(x.Distance_Score))),3),f1(mean(r.rows.filter(x=>isHit(x)&&!expHit(x)).map(x=>N(x.Distance_Score))),3)]))}</div>`;
+window.drawDist=()=>{charts.forEach(c=>c.destroy());charts=[];const r=R[+dsel.value],gr=['semantic_candidate','hard_negative'],d=r.rows.filter(x=>x.Exact_Cache_Status!=='hit'&&N(x.Distance_Score)>0),mx=Math.max(...d.map(x=>N(x.Distance_Score))),B_=24;
+ mk('c1','line',Array.from({length:B_},(_,i)=>f1(mx*i/B_,2)),gr.map((k,i)=>{const h=Array(B_).fill(0);d.filter(x=>x.Scenario_Role===k).forEach(x=>h[Math.min(B_-1,Math.floor(N(x.Distance_Score)/mx*B_))]++);return{label:k,data:h,borderColor:PAL[i*1+0===0?0:1],backgroundColor:PAL[i]+'44',fill:true,tension:.3}}),{scales:{x:{title:{display:true,text:'Distance_Score'}},y:{title:{display:true,text:'count'}}}})};
+P.Distance=()=>drawDist();
+const segTbl=dim=>{const ks=union(r=>r.rows.map(x=>x[dim]||'(none)'));return{ks,get:(r,k)=>{const q=r.rows.filter(x=>(x[dim]||'(none)')===k);return{n:q.length,ok:q.filter(x=>isHit(x)===expHit(x)).length,fp:q.filter(x=>isHit(x)&&!expHit(x)).length,fn:q.filter(x=>!isHit(x)&&expHit(x)).length,lat:mean(q.map(x=>N(x.Total_Latency_Ms)))}}}};
+V.Segments=()=>`<div class="card"><h2>Slice by <select id="ssel" onchange="seg()">${DIMS.map(d=>`<option>${d}</option>`).join('')}</select></h2><div class="cv"><canvas id="c1"></canvas></div><div id="st" style="margin-top:12px"></div></div>`;
+window.seg=()=>{charts.forEach(c=>c.destroy());charts=[];const s=segTbl(ssel.value);mk('c1','bar',s.ks,perRun(r=>s.ks.map(k=>{const g=s.get(r,k);return 100*g.ok/(g.n||1)})),{scales:{y:{min:0,max:100,title:{display:true,text:'% correct decisions'}}}});
+ st.innerHTML=tbl(['Segment','n',...R.map(r=>r.name+' · acc / FP / FN / ms')],s.ks.map(k=>{const g=R.map(r=>s.get(r,k));return[k,g[0].n,...g.map(x=>`${pct(x.ok/(x.n||1))} / ${x.fp} / ${x.fn} / ${f1(x.lat,0)}`)]}))};
+P.Segments=()=>seg();
+V.Disagreements=()=>`<div class="card"><h2>Per-query forensics <select id="dflt" onchange="dis()"><option value="any">any run wrong</option><option value="dis">runs disagree</option><option value="fp">any false hit</option><option value="all">all</option></select></h2><div class="ov" id="dt"></div></div><div class="card"><h2>Pairwise decision agreement</h2><div id="ag"></div></div>`;
+window.dis=()=>{const M={};R.forEach((r,i)=>r.rows.forEach(x=>{const e=M[x.Sample_ID]??={q:x.Query,role:x.Scenario_Role,exp:x.Expected_Cache_Outcome,p:[]};e.p[i]=x}));
+ const L=Object.entries(M).filter(([,e])=>{const ps=R.map((_,i)=>e.p[i]).filter(Boolean),h=ps.map(isHit);return dflt.value==='all'||(dflt.value==='dis'&&new Set(h).size>1)||(dflt.value==='fp'&&ps.some(p=>isHit(p)&&!expHit(p)))||(dflt.value==='any'&&ps.some(p=>isHit(p)!==expHit(p)))});
+ dt.innerHTML=`<p class="sub">${L.length} queries${L.length>200?' (showing 200)':''}</p>`+tbl(['ID','Role','Query','Exp',...R.map(r=>r.name)],L.slice(0,200).map(([id,e])=>[id,e.role,{c:'q',v:(e.q||'').slice(0,110)},e.exp,...R.map((_,i)=>{const p=e.p[i];if(!p)return'–';const ok=isHit(p)===expHit(p);return{c:ok?'ok':'no',v:`${p.Response_Source.replace('_cache','')} ${f1(N(p.Distance_Score),2)} ${p.Guard_Reason||''}`}})]));
+ ag.innerHTML=tbl(['',...R.map(r=>r.name)],R.map((a,i)=>[a.name,...R.map((b,j)=>{const mb={};b.rows.forEach(x=>mb[x.Sample_ID]=x);const c=a.rows.filter(x=>mb[x.Sample_ID]);return pct(c.filter(x=>isHit(x)===isHit(mb[x.Sample_ID])).length/(c.length||1))})]))};
+P.Disagreements=()=>dis();
+</script></body></html>
