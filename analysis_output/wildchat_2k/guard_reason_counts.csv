@@ -1,0 +1,5 @@
+Guard_Reason,Count
+(no reason / not blocked),1939
+NUMBER_MISMATCH,35
+POLARITY_MISMATCH,15
+NEGATION_MISMATCH,11

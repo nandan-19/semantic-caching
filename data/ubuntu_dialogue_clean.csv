@@ -1,0 +1,1001 @@
+query,category
+What do i need to install to avoid needing the DVD ever again for software installs????,technical
+"Hello all. Is there a program to record into mp3 the whatever goes into my laptops speakers? I want to stream a song from the web, such as youtube, pandora, or seeqpod and record it.",technical
+"Hey guys, one last question - How do i change my computer name",technical
+"looking at devede to make DVD, it does not support picture-slideshow, is there an app that can do both(dvd movie + pic slideshow)?",technical
+does anyone know why compiling ndiswrapper from source might fail?,technical
+is it possible to make a live USB of a fedora iso from Ubuntu? (i was planning on testing the shell alpha live usb and was hoping to make the usb from Ubuntu using startup disk creator),technical
+Channel: A guide to making a LiveUSB please?,technical
+does anybody know an irc client that allows you to ignore user joins and quits,technical
+"Hi, Why isnt this site not working? http://www.quietglow.com/docs/ubuntumythtv.htm",technical
+"hi, im trying to update ubuntu with apt-get update but i get an error when it tries to download certain sources, it stays stuck at 99% and can't finish...is it possible i don't have the good source adresses or something?",technical
+"hi, i've got a crashing hd... normally I would use ubcd to scan it but I don't have any blank cds ... are there some tools anyone can recommend I install to scan and repair an hd?",technical
+"Hey all, anyone know if it's possible to turn Thunderbird into a system tray icon?",technical
+What package do I have to install in order to run the command 'sudo ./blah blah --buildpkg Ubuntu/breezy'?,technical
+im using ubuntu 10.10 and need to update my gtk+ version to 2.24 (its 2.22 now). how can i safely do this?,technical
+any software to auto detect sniffer machine that have promisic network in a subnet in ubuntu?,technical
+Hi all! I'm using breezy. Which repository do I need to add for acroread and sun's java?,technical
+"I connect to the net through a static ip and pppoe and my connection is running 1/10 what it should, network tools will not let me configure the connections because it says the interfaces don't exist, can someone please help?",technical
+is there a metapackage for installing gnu development toolchain?,technical
+"what app would you reccomend for internet radio browsing / exploring? i've seen streamtuner, but it hasn't been updated in 3 years, so maybe there's something better ...",technical
+how do i avoid to be prompted for password when ubuntu starts up?,technical
+Is there a way of preventing an external USB hard drive from mounting upon boot up? I tried in /etc/fstab but Ubuntu tried mounting it anyway...,technical
+how to grep a command?,technical
+how to generate the x11 configuration files for xinit? i don't have /etc/X11/X.,technical
+"I compiled my own 3.1.5 kernel for 11.04, and everything seems work great except I can't pair anything over bluetooth. Is there a common fix for this? google hasn't found me anything solid on it",technical
+"im useing dd in a terminal to clone a drive its running but i dont see any real activity, is there something like windows maskmaniger to see the disk activity?",technical
+has anyone tried running games under Windows under VMWare?,technical
+Anyone know how to force an NTP update?,technical
+"reading up on iptables...if i wanted to block port 113, would this command do it?",technical
+How to change preferred DNS Server through terminal?!,technical
+"I have an idea for an app (or better a system component) for Ubuntu. Is there a special place for suggesting that, like a certain website or IRC room?",technical
+can someone help me with upgrading to gutsy?,technical
+is there a terminal command to output data on network traffic? I know the system monitor tool will but that's a gui. i need something i can use in a terminal from a remote connection,technical
+Hi. Does anyone know how to exit to shell_,technical
+is the superbowl still on ?,technical
+is there anyway to disable evolution from starting up the evolution-exchange process even when it's explicitly disabled in the session? I don't even use evolution.,technical
+I am pretty new to ubuntu (I use fedora mainly) but does apt-get have a kind of search command? kind of like yum does,technical
+"The wifi in this computer was working perfectly in Gentoo yesterday, but I managed to bork my Gentoo install and I can't afford the time to re-build it, so I installed Ubuntu... and now I've got a beautiful new system with no wi-fi. It detects the card, but the card doesn't find any wifi networks.",technical
+what's the apt-get thing to install kde in ubuntu?,technical
+Hiiiiiiiii can anyone tell me how to find my internal IP (eth1 NIC)? ifconfig shows no ip,technical
+is it possible to create a link to an application with commandline parameters? I want to tell blender to open in a certain way,technical
+"hi, can i ask questions about edgy here?",technical
+"what is the best way to get external USB drives (flash, HDD) always mount at the same point under ubuntu? mine change every time (8.04 and 9.04)?",technical
+"Is alsa to OSs, as Pulse is to Jack?",technical
+is there a command that will show me the model of my dvd drive?,technical
+another question before installing: i read somewhere that ubuntu has no multimedia support.. does it mean i wont be able to watch my avi(divx/xvid) or realmedia files ?,technical
+E: Unable to lock the list directory,technical
+Anyone know of a <512MB bootable distro that I can use to securely erase partitions?,technical
+"on ur previous question, you can restart your sound afaik,process depends on what you use (OSS, ALSA etc)",technical
+you are running lucid? maybe it's kernel is too old; i mean there were tons of changes since then and loads of new drivers were added. Can you boot your system with a new oneiric live-cd or something to see if it works there?,technical
+:( so I must change it?,technical
+what service do i have to install in order to have the system update date and time over the internet?,technical
+"I killed x-window, and now ubuntu loads directly to console and when I startx, it goes straight to gnome, skipping the session manager. I want to be able to choose my desktop environment again; how do I get the session manager to load on start up again. :( Forgive my noobness. hehe..",technical
+the evince PDF reader really annoys me how it doesn't change page when you scroll to the bottom of the current page,technical
+someone know when Edgy Eft will be released ??,technical
+Is this the place to learn to install linux?,technical
+"Hi there, i created a folder with sudo, but i want to be accessible as normal user now, how can i do thath ?",technical
+A quick question... If I install Ubuntu 10.04 beta now and install all updates from canonical till 10.04 final release is out...Would my Ubuntu installation be then equivalent to final release...,technical
+a good tool to get an overview of you harddrives. and how much space you have left?,technical
+Does Ubuntu have a task manager?,technical
+"hi all, are servers still busy or is it a good time to upgrade now?",technical
+What is the Gnome equivalent command to the KDM command '/etc/init.d/kdm stop'?,technical
+"Ubuntu just paid for itself today: I edited an important pdf document and created a new template for letterhead for our non-profit org. My computer literacy program might just get off the ground. I need to come up with a schematic for our floor usage, can anyone recommend a architecture style cad program for Ubuntu that has a shallow learning curve?",technical
+"hey, where are all the .desktop files for the application menu stored?",technical
+I've got a DVD image on my PC as a .iso file.. I opened in VLC but it stops playing after a chapter.. how can i play this correctly?,technical
+anyone know how to find the constant rate of change that best approximates some data points? -- I know its kinda off topic :),technical
+"If I am using ubuntu with gnome, is there a way to close a window that is frozen and won't close by using the X? (Pardon me if this is a stupid question)",technical
+How do you change what programs to auto-start when logging in to gnome?,technical
+how to add more irc servers to xchat?,technical
+how can i determine whether an already installed Ubuntu is 32 bit or 64 bit?,technical
+what's the bash command to look at my video/graphics card? lshw?,technical
+"Hi, is it possible to colorize apt-get or aptitude output?",technical
+howto restart network daemon in ubuntu?,technical
+does anyone know of some good finances bookeeping software? I tried gnucash but it's too complicated for what I want..,technical
+wo sind die paketquellen von edgy? gabs da nicht nen old stable archiv,technical
+how do I set up an ftp server?,technical
+"irssi question: when someone replies to you and the channel number turns pink, you go into the channel. is there a shortcut to see the last message with your name in it?",technical
+Anybody have a webcam on 9.10 want to test something for me?,technical
+"anyone know the name of the graphical manager for users and groups, to invoke from an X-Terminal ??",technical
+"I was upgrading to kernel 2.6.17-11 , but the electricity down while unpacking , now I'm unable to use this new kernel. what should I do",technical
+"hey, i'm trying to install a custom rom on my android phone, and I'm finding a lot of guides for windows but none for ubuntu. can anyone point me in the right direction?",technical
+"It would probably also be nice if he could easily reinstall all the packages he has installed. I've wondered, is there an easy way to export that?",technical
+does anyone know of a rss feeder for the terminal,technical
+"are there any former undergrads here that have experience on arguing with professors? specifically, how stupid is doing such a thing?",technical
+does anacron poll for changes to anacrontab? or must it be restarted...?,technical
+"can any1 help me with a simple msql issue, it sais ERROR 1045 (28000): Access denied for user 'dimitri'@'localhost' (using password: NO), when i just type msql form the console, i installed from the repos, verson 5.0",technical
+how can i see what files a package installs and where they go to?,technical
+hello. when i want to burn an .iso file in doesn't work. i wanted to create a file image with CD/DVD Creator but when i'm copy the file and click 'write to disc' it'll open a dialog with 'from image' and 'file' and when i hit from image i don't get nothing,technical
+how to empty trash from command line?,technical
+how do I set up where if i move my mouse to the bottom corner of my screen it will show my desktop?,technical
+how do i create a symbolic link ??,technical
+"hi, i'm looking for a tool where i can choose special charakters... especially UTF-8 ones!",technical
+how can you list all of the running proccesses from the command line?,technical
+i am having problems with my NVIDIA drivers ... somehow i installed it and i had to add it to /etc/rc.local (chmod 666 /dev/nvidia*). isn't there a way to make it permanent without the use in this file?,technical
+"Question - When I goto: System > Admin > Printing > then under my printer properties, under Driver tab, I have what appears to be names of drivers (and one of it is gutenprint, which matches what was suggested at openprinting.org) my question is, would selecting that from the list okay? or do I need to install it manually by clicking on Install Driver button next to the list?",technical
+where I can find more fonts for Ubuntu and how to install them?,technical
+"hi, does any1 know how to restrict an access on user account? eg. to run only 2 process'es etc",technical
+is it possible to repair ubuntu 11.10 by a live cd ? http://ubuntuforums.org/showthread.php?t=157250 :: What packages must be installed to get the login mask?,technical
+to all: how many of you are straight ubuntu users,technical
+"hey guys, is there a way to find out what all the available groups (for permissions) are via the terminal????",technical
+"hmm, anyone knows when is the new ubuntu distro going to come out?",technical
+"hey, I'm having a REALLY weird problem when loading xmms...",technical
+does anyone know if there is a command to tell me how much space is being used inside a directory?,technical
+"hi, what is the easiest way to upgrade from 5.10 to 6.06 ?",technical
+does anyone have any idea why /etc/default/console-setup wont hold its settings after ubuntu finishes booting? when the kernel spewed its usual memory crap at the beginning it changed to what i set it to but then the consoles reverted back to the ubuntu default. any idea what would cause this?,technical
+how to store the file names in a folder to a file on Ubuntu? As in windows its dir /a -> file.txt,technical
+"Hye, quick question. I cannot view gmail.com because it asks me to install PSM. But I cannot find it in the package list lol",technical
+Just wondering is there ANYBODY here that actually likes Unity? Wonder if Canonical is listing to its users. Maybe they are idk.,technical
+"what is the command to give a tree like structure in linux at the prompt, something similiar to tree in DOS?",technical
+I've got this delay when my cursor drags between windows in unity. how can I cancel it?,technical
+What command will list the partitions on the system?,technical
+what's a good cd burning app?,technical
+should i go with kubuntu or ubuntu? just an opinion,technical
+"I'm trying to get my tv-out working (nVidia FX 5200), setting up modes like '1600x1200,640x480' does not make the computer display in 1600x1200 and the tv in the other, but instead changes the computer to display 2240x1200 so it extends the desktop in such a way that the tv displays something out of the (to the computer) visible desktop range.",technical
+what permissions should my home folder have or what command can i use to restore it to its default permissions?,technical
+Where can i change what sounds is played during startup?,technical
+Is there anyway to enable network connections in terminal?,technical
+hey does anybody know how to add WindowMaker apps to the fluxbox slit?,technical
+what image editors there are other than gimp?,technical
+"I'm running Ubuntu 12.04 and I'm trying to slow my mouse pointer down more than the Mouse and Touchpad window is offering, does anyone know of another way to do this?",technical
+"Hi, does anybody know how to start Gnome Disk Utility using a command in the terminal? gnome-disk-utility isn't it it seems",technical
+"you don't have it mounted, do you? :)",technical
+"hi, i just upgraded to intrepid, but how can i change my dns numbers settings?",technical
+"But I used to be a debian developer.. one of my reasons to stop (aside from lack of time..) was the way people try to make you do what THEY want, even if it's not the best thing for the project",technical
+did you notice my query? please help me...,technical
+How do I make GRUB recognise OSs on multiple HDDs?,technical
+is there any document about hardening ubuntu specifically?,technical
+"but I'm on ppc, so I don't know for sure",technical
+Is anyone else having issues with Bon Echo in the Edgy beta? The address bar doesn't work.. I have to type URL's into the google search box to go anywhere. Typing them into the address bar does nothing when I hit enter or click the arrow,technical
+Guys Im installing the default installation of ubuntu in my 486 do you think it will run?,technical
+"Hi all, can anyone help me with a problem? I installed Ubuntu 10.04 but when i boot my bluetooth keyboard & mouse wont work, so I cant log in..",technical
+how do i make more partitions with linux? (i left space during windows installation),technical
+"argh, this stupid pulseaudio bug is driving me crazy :S why the f***ck if I remove it it has to remove ubuntu-desktop can't seem to find a way arround this stupid bug.",technical
+if I 'make uninstall'... what do I do after that? anything?,technical
+how do you extract tar into choosen dir?,technical
+keith27 It if was a malicious program why would it need to be connected the network to work?,technical
+"Miro seems to be on the fritz, and Joost is anti-linux-facists (spelling?), any alternatives?",technical
+"hey, how do i end a process -- specifically firefox,,?",technical
+"Hello everybody, I'v got a problem with a SD card reader (in a Scaleo P Fujitsu Siemens computer). The card reader can read a 2GB Kingston card but not a 8GB Verbatim one (which is working). Any idea ?",technical
+"In order to make the background of my desktop just black, do I have to have a black wallpaper? Or are there others ways to make it black without having a black wallpaper??",technical
+If I remove my wine package will it also remove my program files or do they stay?,technical
+how do I completely remove all traces of apache2?,technical
+Does 3.5.4 come with something absolutely fabulous new things?,technical
+"Hi, I have 2 lucid lynx boxes that seem to hang at fsck during startup - is there any way I can disable it/ find out what is wrong with it?",technical
+"thet toolbars for alot of my gnome apps have dissapeared, any one know how to get them back?",technical
+"Hey Everyone, How do I find out if my filesystem has 'no exec' on it? Is there a command or something to see that?",technical
+"hello, im having tough timer mapping samba server share on mine ubuntu machine via cifs, cant anyone check this error http://wklej.org/id/606686/",technical
+"hi whats the package that allows ubuntu to install .deb files, just noticed i havent got it?",technical
+is Gnomenu in the repositories?,technical
+"Hi all. is it possible to allow sudo to be able to run at boot for (say) a Minute after login? I currently have to run a program manually as sudo every time I login and it's frustrating to have to type out a 20+ long password twice, especially since I just logged in! D:",technical
+Im trying to convert a .nrg file to ISO. But nrg2iso doesn't work and AcetoneISO2 says that the file is already in ISO-9660 format. But still it has the .nrg extension,technical
+"Guys, how can I play MPG on Ubuntu?",technical
+I just did a fresh Draper install. When I try to login it flickers and puts me back at the login screen.,technical
+"i am trying to use a frontpage client with apache; believe I've loaded all of the frontpage extensions from the package manager, but frontpage client still claims the frontpage server extensions are not installed. any ideas?",technical
+i recently installed vim-gnome via apt. but how can i start it?,technical
+I can't remember the name of an equivalent to rpmfind for deb packages. Any clue anyone?,technical
+is there a way to mimic windows 7's left-half and right-half screen resizing hotkeys?,technical
+How do I get into the back end of firefox? on the address line it's something like.. about:<something>,technical
+what's the command line tool that can list all of the installed packages? i'm looking for the equivalent of gentoo's 'equery list' and redhat's 'rpm -qa'.,technical
+"hey could you tel me how can i have the same dimension of my terminal all the time ? when i close or reboot my cmputer, the terminal open small again :/",technical
+ok...how would I have gnome start like an eggdrop bot and xchat when it boots?,technical
+"hi, I'm booting from a 12.04 CD, but all I get is a mostly blank screen with the 'keyboard = vitruvian' image at the bottom before it launches what looks like a Live mode. how do I get an install menu?",technical
+"I'd like to load the classic Gnome-menus, bey there is NO options at the login-screen. Is there any other way to to this ?",technical
+How do you add an extension in the Mozilla browser if you have .xpi file? Apparently it's different from FF's Tools > Extensions.,technical
+"Hi, I want to only download a certain range of bytes of a remote file, how to do this?",technical
+is there a music program that can use a qwerty keyboard to play different notes?,technical
+"I just got a new computer and am now trying to figure out how to sync up my old files from my previous ubuntu install. To ssh from one box to the other, do I need to make firewall changes? I'm getting 'port 22: Connection refused'",technical
+"currently, when i select a file to download it defaults to my ~/Downloads folder - is there a change that default?",technical
+Im having trouble connecting to msn through Empathy?,technical
+"Flash in Google Chrome stopped working for me out of the blue..and I don't have a clue what to do with it. Any ideas, anyone?",technical
+"hey guys, i need to reinstall my windows boot loader, i've just removed the linux partition (and EXT partition) and now grubs broken and i cant boot into windows, any ideas on how to reinstall the windows boot loader with out reinstalling windows",technical
+"Okay, I have a really lame question - is there a faster way in XChat to copy a user's name to the input box? I'm tired of having to type out someone's complete name everytime I talk to them.\",technical
+can the ubuntu installer coexist with a windows XP installation?,technical
+cevan ... yeah im using 9.04 now but the auto upgrade from 8.10 did something evil to the drivers for ATI and no amount on reinstalling the drivers seemed to help ... had something to do with the conf file and the way the new kernel used the drivers,technical
+what's the command to restart the X server?,technical
+I have an urgend offtopic question. What is correct? 'His new bike costs him as much three times as the last bike that he bought or is three times as much as correct?,technical
+Hello ! How can in change the language of the Login Window under Feisty Fawn ?,technical
+i was wondering does ubuntu server have the option to netboot network computers with custom boot images or just ubuntu?,technical
+"hi, how do I unmount swap?",technical
+Eclipse for C++ annoys me because it keeps recompiling the damn code whenever I change it.,technical
+can anyone help me in installing mplayer and plugins to play mpg or avi files?,technical
+"what is the best way to remotely back up a system, like using clonezilla remotely. can I install clonezilla and ssh on the remote machine",technical
+"Hi. I need to take a look at the default ubuntu kernel config to see if a driver was either built statically into the kernel, or as a module. Where can I find the kernel config? It doesn't appear in /proc/config.gz.",technical
+hi how can I use a secure tunnel to a dns server?,technical
+Q) 10.04 Server tasksel install lamp-server all works fine except netstat -antp show no 443. Q) how do i get https working ? thanks...,technical
+"When I try to play a DVD in Totem, it says that some plugins are missing - where do I find these plugins?",technical
+"Hello, i get this when trying to run make menuconfig in the kernel source tree, You must install ncurses-devel in order to run make menuconfig. But theres no such package ncurses-devel. I searched for ncurses packages installed, and there was quite a bunch. Plain Ubuntu 5.04 install.",technical
+can anyone name an app that will let me easily keep track of my homework assignments ?,technical
+how do you set a static ip in ubuntu?,technical
+"hi, 64-bit version of the ISO image of Ubuntu is right choice for an Intel Core Duo based machine?",technical
+"Hi, where is the hosts file in ubuntu? My computer is acting a bit strange, would you also recommend me a scanner for ubuntu?",technical
+how can i remove kde desktop to keep genome,technical
+"Hi, how can I manually enforce a readout of ~/.profile (so I won't have to restart or anything)?",technical
+"hey, i found a server that is stuck on 8.04, intrepid. how can I upgrade it to the latest version, or at least, 10.04 LTS?",technical
+any idea where I can download some legal flac audio?,technical
+"folks, updated to hoary, no xorg.conf. X -configure didn't work (or do I need to be out of X). What was that deb-something command I need to get an xorg conf to appear?",technical
+"ok here's the deal. I've made a trext document with some commands (which basically call DD to format a memory card).. Thing is, I have to copy and paste the text within the text (the commands) into terminal. I want to be able to click the text document, and then ti would automatically put all of the contents with in it (AKA, the commands) and then run these commands in terminal. A bit like having a script to make n",technical
+can i get Firegox 1.0 on my Ubuntu ?,technical
+how to convert videos for Iphones or Android phones?,technical
+"Hi, what did happen with NVU Web Editor in Repositories? If it's no more, what easy editor can I use?",technical
+"its there a better way to open a 4mb text file and search it, gedit crashes even on my pc",technical
+"this kis kind of a basic question but something is using up 100% of my clock cycles, how would I go about finding out what process is doing that and killing it (sys monitor is no help)",technical
+Anyone know how to install Hoary to the hard drive from the Live CD?,technical
+"hi everybody, sorry when editing with pico (nano), it says something like ^O to save, but i dont know what doe that means..",technical
+Where are sftp filesystems mounted in nautilus kept?,technical
+"Hi! Does Ubuntu 9.10 init script create a login prompt on the console? If not, how can I enable it? (I'm running Ubuntu 9.10 as Xen DomU and before everything is working, it helps to have a console login prompt.)",technical
+What's the command used to compile a piece of software as a debian package? Not make-kpkg...,technical
+Is there a program that can tell me what is currently running? I tried to open a program and think it might be running in the background.,technical
+how to get ubuntu version over ssh shell?,technical
+how do I know with which option was my root filesystem mounted?,technical
+"if the live cd has an installer, why should I not download the live cd? what advantages does the non-live cd have",technical
+"Hi I can't install madwifi drivers for my wlan card, get error while make, please take a look http://ubuntu.pastebin.com/m56dde851",technical
+"ubuntu 'hardware drivers' is supposed to show your graphics card, right?",technical
+"Evening good people. I've been having trouble finding a solution to my problem on the forums: My wireless network connection speed is always displayed as 'Unknown' in the connection information window and 0 kb/s bit rate in iwconfig. (Atheros, AR9285, ath9k driver, Ubuntu 10.04).",technical
+"if i want to get a new computer and run ubuntu on it, what's the best kind of computer to run ubuntu on?",technical
+"Hey all how do I install wxPython in Ubuntu, more precisely what are the name of the packages that I should install ?",technical
+what's the next version called?,technical
+"Hey guys. Is there anyway a usb flash drive, when inserted into a ubuntu 8.10 machine autorun malicious code and infect my ubuntu box? Thanks",technical
+"Can I alter my default font size, without altering the resolution?",technical
+Where do you put gnome themes?,technical
+How the hell do I close emacs?,technical
+can someone please explain to me how to edt /etc/apt/sources.list?,technical
+your info is soo vague does/did windows detect the disks be fore you tried ubuntu? jumpers wrong? ide channel enabled in bios?,technical
+"Hey, anyone know off the top of their head how to get the taskbar to group multiple instances of the same app?",technical
+so whats the coolest IRC client for ubuntu,technical
+is their any way to search the filesystem for files owned by a specific user?,technical
+Is there a way to upgrade the kernel without recompiling?,technical
+What's the most common reason for conky not appearing?,technical
+Running netstat -atnp shows master is listening on port 25. How do I stop master?,technical
+is pidgin included in the main ubuntu repos?,technical
+"hi all, i'm running 12.04 and would like to know if it is possible to add a program to the unity bar on the left side, the program has to be started from the shell (it's name is 'ding', a dictionary) so when i start it it appears in the bar but after closing it i cant's start it again...",technical
+can i get the ati drivers with apt-get?,technical
+can anyone help with routing my audio to bluetooth headset?,technical
+So how is it gnome can mount / umount things even though the user can't go into the command line and do a mount / umount?,technical
+I understand it's unstable and I installed it taking that risk,technical
+"I'm logged into a machine via SSH, and there is a user on the machine running a full desktop (KDE in this instance). Is there any way I can send this user a message from the command line?",technical
+I need to create a bootable usb from a cd iso of ipcop 2.0.0 installer,technical
+What is the command to download a file through SSH?,technical
+"I have a question regarding Ubuntu + Drupal. According to this guy, it seems that a mail server is not necessary (http://groups.drupal.org/node/22401#comment-77421). Is this true?",technical
+"hi, i installed debian after installing karmic, but i skipped the step of installing grub in debian, how do i generate grub entries for debian now?",technical
+does ubuntu 11.04 have any hdd defrag app installed by default?,technical
+I'm trying to follow Hoary's ClearType-like fonts howto here: http://ubuntuforums.org/showthread.php?t=20976 but when I edit xorg.conf and reboot xdpyinfo output doesn't change. Anyone know why?,technical
+"hm. maybe i was too unspecific. what i want to find out is, which apt-repository provides a certain package/program",technical
+how good is ubuntu at automatically configuring for dual montiors?,technical
+"anyone running a win7 vm in virtualbox with 3d enabled, and running ok?",technical
+newbie ubuntu question - how can I create a key shortcut to open the 'Computer - File Browser'?,technical
+"Just say no if you would rather not, I can take it!",technical
+could someone please tell me how to disable my computer from interacting with ubuntu-one service (10.04) ?,technical
+"Does the grub that comes with ubuntu have splashimage support? It says it does, but when I try and load a splashimage with the grub config, I get a funky looking ascii lines thing. If I load it in the grub commandline before booting, I get it just fine.",technical
+"hello, how can I set the minimize, maximize, exit buttons of the windows in the right part instead of the left, in ubuntu Lucid Linx?",technical
+chown: changing ownership of `/media/external': Operation not permitted,technical
+what command to use to see all connected hardware? like usb-sticks and stuff,technical
+can anyone help me get the streaming url from this website ? http://www.skai.gr/player/radiolive/,technical
+anyone on hardy here without sound? I have some fixes :),technical
+Does the server edition of 7.10 come with or without a GUI?,technical
+"hi! i use xubuntu 9.04 and 2 ntfs partitions don't mount at startup. This is my options: defaults,rw,user,auto,locale=ru_RU.UTF-8. What's wrong?",technical
+"my upgrade vim 12.04 to 12.10 is messed up. I was asked to restart at some point during the upgrade, ever since I don't have any X working nor network working. When I run apt-get upgrade I get many packets listed which are not yet installed. '-f' does not work either, when I do that it tries to download some more packets which it cannot due to lack of network connectivity. Can I boot from USB/CD and resume the upgrade from the USB/CD medi",technical
+Last night I set up GnuPG. GnuPG responded: 'The key 1024D/7C52BC42 was successfully validated.' What does the letter 'D' mean?,technical
+Does turning the visual effects from 'extra' to 'normal' disable compiz?,technical
+what is a simple decent ide for java and c/c++ on linux?,technical
+Can someone tell me how to make numbered list items in the community docs? I'm having a little trouble figuring out the correct wiki code....,technical
+"which memory use data is right? I have some trouble with the system monitor told me used 449MB ram, but the 'free' command told me I use 931MB ram.",technical
+"When installing VMWare Server Console, it will NOT let me run the install script unless im a super user.. After installing it (with sudo) it will not let me run vmware-server-console unless im I user sudo.. How can I install this so that it shows up in my Applications and doesnt require sudo from terminal??",technical
+Quick question: I need the terminal command to find the model of my wired NIC. Anyone?,technical
+how do I install software,technical
+"Is there a smooth way to generate an xorg.conf in 10.04? Having some annoying behaviour using two monitors when they are configured inside of Gnome, so I thought the xorg.conf would be a better place to set this up",technical
+"whats the proper way to install ndiswrapper? does ndiswrapper-common include the binaries? i can't find a straight answer, it seems to be the kernel has ndiswrapper with it?",technical
+Is there an ip scanner in Ubuntu?,technical
+I have a bunch of files in nested directories. does anyone know how to get the files out of those directories and into one central location?,technical
+yeah gparted/ntfsprogs apparently - whats the best way to check if they are on the live cd?,technical
+http://pastebin.arslinux.com/2808 is this corect for ubuntu sources? I'm following the http://ubuntuguide.org/#jre and after updating cant find any jre2 package at all,technical
+how do I use clamscan to scan all the folders and subfolders of my /media/disk/ ?,technical
+hey. can someone tell me how to install a firefox theme that is in a .jar?,technical
+"i have mounted a windows share which i have browsed with nautilus (ubuntu 7.10). where do i find the configuration of that now? i can't find the mount entry in /etc/fstab, /media/ nor /mount/",technical
+when hardy is release does that mean that people running beta can dist-upgrade to the release version,technical
+"i plan on buying a 2tb 4k sector hard dive to use as a media/storage drive on my win7/ubuntu 10.04 dual boot system. do i need to worry about these alignment issues if i'm only using it for data, no os?",technical
+ok again: how do i change the default browser?,technical
+who knows what existed before tcp/ip? like in the days of the arpanet?,technical
+is anyone else having problems with beagle?,technical
+"hi, how do i set it so that i can login automatically?",technical
+*Can* Ubuntu determine what graphic controller a PC has?,technical
+"I have an iPod and I want my 8.1.4 ubuntu to open banshee instead of gtkpod, how do I do that?",technical
+what's the simplest way to get remote desktop access to an ubuntu machine from a windows machine without installing client software for remote desktop access?,technical
+i just ordered those freebies.. I can't wait to distro them to friends now!,technical
+"When I go to Places->Connect to a server and I 'mount' an FTP server, where does it mount it? Can I access it from the command line?",technical
+'mount /dev/fd0 /media/floppy' give this error mount: mount point /media/floppy does not exist,technical
+does anyone know of a way to check if my dvd burner is using sata or ide from inside ubuntu,technical
+"my workplace uses cisco vpn... any ideas on how I could get this working with linux? I am developing from ubuntu completely at work, but unable to from home due to vpn",technical
+does ubuntu use gnome or kde by default ?,technical
+"i've downloaded openoffice 2.0 and its all RPM's, is there a way to install them on ubuntu ?",technical
+what is an easy way to download a website?,technical
+"hi. if i have put a dvd in the drive, and i can go through the filesystem and whatnot and execute programs from it, then it must be mounted, yes? why would there be no device, then, in gparted? or, on a related note, how can i figure out what device is associated with a folder in /media/ ???",technical
+anyone know if there is a gnome applet for checking gmail accounts?,technical
+"Hello everybody, I clicked 'Hide Menubar' in ktorrent>options. anyone know how can bring the menubar back?",technical
+what's the desktop environment that Xubuntu uses?,technical
+"is there a tool, other than something in gdesklets or gonky, that lets you see the temperature of your cpu ?",technical
+"what does it mean when someone has a dot followed by a filename, like '. build/envsetup.sh' ? is this equivalent to './build/envsetup.sh' ?",technical
+How are one to interpret this?: 'password: Password string for EAP. This field can include either the plaintext password (using ASCII or hex string)' Does it mean that password='1' (ASCII) is the exact equivalent of password='31' (hex)?,technical
+"in the top panel, when you are on the desktop, it says 'Ubuntu Desktop'",technical
+Is there a way to roll back an update?,technical
+I installed ubuntu-desktop in kubuntu (switching totally to know here) and I didn't have window borders. I did System > Appearance > Vis Effects tab and clicked None and got my window border back. Was this the right way to do this?,technical
+"Is there a command to list the largest files on your system? Almost over night, ive gone to having 98% of my disk filled and i cant figure out what file(s) are doing it.",technical
+"I'm not sure whether I should use 64bit, or 32bit with PAE. My computer usage is general web browsing, web development using Nusphere PhpEd running under Wine, local web services (LAMP setup), some game playing, and cross compiling embedded Linux installations. Anyone have any suggestions/warnings?",technical
+I kind of typed > instead of >> and now my .bashrc is gone. anyone have the default .bashrc and want to gist/pastie/something it to me?,technical
+how do I format my thumb drive?,technical
+Anyone know a command that can search for a string in a directory of files?,technical
+ncmpcpp --now-playing doesn't show anything,technical
+"hi, when linux 2.6.28. is coming to ubuntu ??",technical
+"Where, by which organisation, and for what purpose was Ubuntu created?",technical
+Is there a gui which i can configure samba through? i remember having one under FC but i can't find one in ubuntu,technical
+if it the groups support i know of no other place,technical
+How do I move a directory? I want to move /desktop/images to /media/driveb/new,technical
+hey I just got a new hard drive. How can I make sure it's mounted automatically at boot without defining the /dev/sdb1 kind of point? Other entries in /etc/fstab have UUID,technical
+should have just left it at 10 when 10.04 and 10.10 'worked' with both my displays out of the gate. (vmware server broke but what else is new) but nooo I had to just hit the upgrade button. like a crack head I do stupid things.,technical
+"I wonder, if win7 can read ext4...",technical
+is it possible to install packages from ubuntu 11.04 in ubuntu 10.10 via apt-get or something similar without compiling? or to download the .deb files?,technical
+hi . is there a linux program that can automatically scan for all wma and convert them to mp3 format without manually doing each one one at a time ?,technical
+is there a way to burn a .ogm video into VCD or DVD?,technical
+How do I monitor traffic coming from my router?,technical
+"is that posible to use windows fonts in linux ?! is yes , how ?!",technical
+I want to install opensuse.. Shall i use gparted to resize my ubuntu ext4 partition and make some space for osuse ??,technical
+has anyone ever installed grub on the secondary harddrive and it worked?,technical
+how do I find out which device is my cd/dvd drive?,technical
+how do I get syntax hilighting in vim? I installed vim-latexsuite but I dont see any colors,technical
+"between firestarter and guarddog, which would you suggest?",technical
+"sorry for repeating the question ,but I really need your help.My brother's CD/DVD reader is old and extremely slow to the extent that prevented me from insalling ubuntu on it ....is there a way to install ubuntu in a fast way without downloading the alternate CD for text mode? Thanks in advance",technical
+"How do I run apache? I installed it,but I am not sure how to run it.",technical
+Is the Debian irc down?,technical
+"No one got a clue what software i can use, synapse is silent as the grave when searching on 'tvcard'",technical
+is there a replacement for the backports...?,technical
+nautilus keeps freezing up my desktop. Can anyone recommend an alternative file browser?,technical
+"Hello - would someone recommend an RPG they like to play on Ubuntu, please??",technical
+"yeah, i have a problem: i just plugged in an ubuntu box from way back in the day, and i cannot remember my login name, i can remember that it could only have had one of a total of three passwords",technical
+what does this line mean? `ln -s ../bivailable/gitto ./milow',technical
+". i just installed this, not sure how to start program. http://stereopsis.com/flux/linux.html",technical
+"How can i make sun's java the system default? I've copied the files to /usr/java and tried modifying the /etc/jvm file, but it does not show up as an alternative when doing update-alternatives --configure-java... Please! I'm sick of launching java apps thru terminal...",technical
+I seem to be hitting the Installer hangs at 80% on 'Configuring apt' bug: https://bugs.launchpad.net/ubuntu/+source/ubiquity/+bug/445385 - any ideas how i can proceed with install? is it safe to hit 'skip' at this point?,technical
+"right... i've done a minimal ubuntu installation, how do install the add-apt-repository command itself/",technical
+Anyone able to provide some support for PS3 Media server running on Ubuntu?,technical
+"When using dmraid, I can't use any triggers, it keeps telling me 'ERROR: you must be root' So how do I gain root to mess around in terminal?",technical
+"Can someone help me with my audio problems, I've started a thread but haven't gotten much help. http://ubuntuforums.org/showthread.php?t=1226922",technical
+"What is the linux command to locate the directory of a command/exec? (eg: what is the dir of python. what is the dir of apt-get, etc.)",technical
+Can anyone tell me if i can run the downloaded version of Gutsy Ribbon as a live CD?,technical
+I just did some research into what graphics card to buy. I'm a little confused. is this correct: I either want a nvdia card with the binary driver blob or an amd card with the open source driver,technical
+anyone know a good keyboard shortcuts app,technical
+"Ok, would SOMEBODY please give me a hand here with my sound problems?",technical
+"Hello... I was wondering, what exactly is the ubuntu launchpad? Are new bugs to be submitted via launchpad, or through bugzilla as usual? Thank you!",technical
+"I asked about EVDO, if that's what you mean.",technical
+"hey, what's the quickest way to mass encode a bunch of m4a songs to mp3?",technical
+lookin to see what all the fuss about compiz fusion is-- in synaptic I don't see compiz-fusion; closest I see is compiz and compiz-fusion-bcop; which am I lookin for please?,technical
+I can't get Gnome Do to show up in 12.04 at all. The summon command doesn't work and I can't get to it at all since it's not on the toolbar any longer,technical
+"With the Jaunty UNR, is there a way to have a normal desktop?",technical
+where is pidgin config folder located?,technical
+"Hi guys! Please help me! I want to install a program from source, but it says: bash: make: command not found. What to do?",technical
+I am trying to run www.pbskids.org for my kids.. but it requires flash player and shockwave... I am having a hard time installing them. Could some one instruct me in how to do this?,technical
+"hello.. i seem to have had a disk failure... now when i reboot, grub enters 'minimal' mode.. what does this mean about the disk? grub is still on the disk, right? so it's not totally broken?",technical
+Can anyone tell me how to change the refresh rate grub sets?,technical
+are ubuntu release still tied to gnome releases?,technical
+where can I get PyQt 3.13 for kubuntu?,technical
+"hello...i had to completely clear out my home directory, is there a place that i could copy back the default ubuntu .bashrc back from?",technical
+"Hi everyone, I want to erase all the 802.11 AP saved passwords, does anyone know how to do this?",technical
+"hi, i ruined my wireless driver while attempting to patch it. is there a way to reverse that?",technical
+"from cli, how would i remove all files (files only, not dirs) which filename starts with 'wget'?",technical
+how can i run top and see the ram usage in megs and not K,technical
+"In Ubuntu, where is '~/gcc-3.4'?",technical
+I have a DNS server i'd like to be used prior to the DNS servers I get back from DHCP. I can edit /etc/resolv.conf but it doesn't last for long - is there a way to make that change permanent?,technical
+"Howdy. How can I disable the NetworkManager in gnome, for atleast the eth0? I am defining the options in /etc/network/interfaces but the applet is overriding it",technical
+where is /tmp ?? i cant find it via konqueror,technical
+"Anyone know of a good How-to for running Microsoft Office 2007 in wine? I have tried the #winehq room, but so far no love.",technical
+"Hello all, is it a good time to upgrade to 12.04? I am using 10.04 for a long time. However, some ppl told me that it has problem when shutdown the computer",technical
+proper way would be what?,technical
+does anyone know were the skeleton directory is for new user accounts?,technical
+"I just installed kubuntu-kde4-desktop. Now, when I rebooted, the startup halts with errors that fsck could not check /dev/sdb6 (which is my /home/ partition). I need to press Ctrl-D to continue booting. Also, when logging into Gnome, now the 'User Switcher' applet crashes immediately. What happened and how do I fix this?",technical
+"anyone have experience with the thinkpad t510 and the broadband adapter ? To use it i have to boot Windows , turn it on , reboot to ubuntu and then the adapter is visible. After a shutdown it's gone and have to do same procedure again :(",technical
+Any good sites for Ubuntu backgrounds?,technical
+"help ... the applications icon disappeared from the panel, I rebooted, and it said something about busy box and the prompt says (initramfs) ... how do i get applications icon back and get back into GUI ... this is Xbuntu 8.04",technical
+Why is ubuntu taking up 18 gigs of my hard drive? Is there a way to find out if there are just un-needed files to delete?,technical
+"right now i have a wifi card plugged into my pcmcia slot -- ubuntu is loading orinoco drivers for it, which is not what i want -- i have compiled and installed the hostap drivers, how do i instruct ubuntu to load them, and not load the orinoco drivers?",technical
+How can i run something through the terminal without dedicating that terminal to the application?,technical
+"does anyone know where i can find how i can strip an installed version of ubuntu down to the minimum, i need to make it as small as i can",technical
+can anyone recommend a usb wireless device that works out of the box with ubuntu?,technical
+does anyone have some decently easy instructions to installing the java client for firefox? i've tried 4 times now and nothing works...,technical
+":/ anyother way to get .avi files to work, DanaG?",technical
+I can't connect to packages.ubuntu.com from firefox. Is it down currently?,technical
+how do you view multiple pages side by side in open office?,technical
+how to close a hanged program?,technical
+"Dualboot with Vista and Karmic. Has anyone tried? Heard of any problems, or should it be easy as pie?",technical
+"with all the beryl hype, why compiz? is it just hype then?",technical
+what do i install to get flash to work in firefox?,technical
+someone knows where de x11 config file is?,technical
+is it normal that 'System->Administration->Hardware Drivers' is empty ??,technical
+How can I beep right and left speakers independently ?,technical
+It can't seem to find aalib or pretty much anything whatsoever when trying to configure even if its installed,technical
+"sorry to insist. My screen is blinking (goes black for a second, turning back to normal) when viewing dvds on VLC and Gxine, and forgot to mention, it hapens with more frequency with fullscreen.",technical
+"I use Windows XP daily, but more and more I am trying to convert my work to Ubuntu (save gaming, of course). One problem I have is that apparently Linux inherently uses the middle-mouse button for copying/pasting (in WinXP you middle-mouse click to slide down), so Firefox cannot use it to rapidly scroll down the page. Is there any alternative to scrolling it with the wheel or dragging the scrollbar manually? The middle-mouse click",technical
+how to remove installed program with cli?,technical
+How can I get the terminal to show me my local ip adress? ipconfig in a way,technical
+NO one here can tell me the difference?,technical
+hi. I have system with a Live CD running without a mouse. I switched to console. Now I want to reboot the system to the installed OS on disk but also to eject the CD currently mounted (on which is ubuntu). What is the root password please or how to commence otherwise?,technical
+hi.. can anyone plss help me ... how to access g++ i have installed it but dont know how to open it :),technical
+hi - I got a macbook air last week and am getting ready to install ubuntu 11.04. should I use the 32-bit or the 64-bit ubuntu 11.04 installer?,technical
+What is the CLI command to query if a package is installed and what version is installed?,technical
+"Ok, I've looked at the documentation and it seems I've read it already - my main problem is windows-users get a password-challenge when trying to access the samba-shared files...",technical
+"i'm trying to compile a little hello-world.c and it seems, gcc cant find stdio.h",technical
+"Hello, does anyone know how to fix python2.5 version problems? I can't install python2.5-dev because the version of python2.5 is higher than the one of python2.5-dev",technical
+What's the default command to unzip a tar.bz2?,technical
+"hey guys, how can i merge two text files on the command line? sort of like how git does it?",technical
+"I tried the latest Debian and am having difficulties with the S3 Trio3D in my IBM 300GL. It isn't supported by debian, but will it work with Ubuntu?",technical
+where can i ask for Androit Ubuntu?,technical
+"flannel, do i use sudo leafpad /etc/comadn here ?",technical
+"What would be the best virtual machine software (fully free, of course) to utilize if I wanted to run HardyAlpha6",technical
+"hello, how can I change my default desktop to KDE? I tried switchdesk, but the command wasn't found",technical
+Is it straightforward to make a .deb from a tar.gz?,technical
+how can i get swiftfox to play sound? sound works fine for other browsers and applications.,technical
+how do I uninstall a deb package that I've installed with 'dpkg -i package.deb' ?,technical
+"anyone else happen to be using the packages.medibuntu.org repos? They appear to currently be down, can someone validate this for me?",technical
+"implementing a system to bypass logging in is going to require a significant amount of effort, especially in an integrated distribution such as ubuntu",technical
+does anybody know how to remove the close tab button from firefox? my buttons are huge and they make my tabs huge too,technical
+"http://ubuntuguide.org/#limewire, it all works but then I can't open Limewire, anybody knows what to do?",technical
+"how about this.. is there a kernel parameter to disable ACPI Trip points or ACPI in general, so I can attempt to debug the machine?",technical
+anyone know how to start unity with xinit -- :1.,technical
+yo what's up -- I'm trying to copy a file from an external hd to my desktop (using root nautillus) but I get an error saying I don't have permission. How can I bypass this error and copy files and folders?,technical
+a few ubuntus ago there was Totem with BBC... I can't find it no more.,technical
+what's the name of the program that creates ubuntu/deb packages from source code so you can uninstall them?,technical
+Is it possible to copy a virtualbox virtual machine to another computer?,technical
+does anybody have an idea why the 7.10 installed doesn't detect my NTFS partitions on my sata drive ?,technical
+Hello. I know its not exactly the right place but I can't find anywhere else to ask this: Anyone knows where can I find a Java support chat?,technical
+"I've got a perculiar problem. I can connect to wifi, but random apps work, and others dont. Chrome will connect, but Firefox wont. Pidgin will connect to freenode, but not to MSN, or GTalk. What on earth could be causing this? (No I haven't done anything with a proxy, or any other network tweaks.)",technical
+where can I check for linux/ubuntu hardware compatibility (for webcam) before buying one? Thanks,technical
+Hi all! im looking for an open VOIP-Solution fur Ubuntu.. do you have any suggestions for me?,technical
+to report back: i can now leave the files on my usb drive open while hibernating,technical
+"is there a way to make nautilus show all the files as List by default, instead of showing them as icons?",technical
+Istarnes: Why does 'chmod -r 777 *' answer 'No such file or directory',technical
+what's a utility that tells the id3 and bitrate etc. info for an mp3 file that people use?,technical
+"Hey guys, im installing ubuntu on a 40gb solid state drive. I really only want to install the core system and a handful of applications onto the SSD however. Whats the best way to go about this (ie which directories would be a must on the SSD), thanks.",technical
+Is there any way to mount a CD image in Ubuntu?,technical
+how do you check who has logged on your pc since last boot?,technical
+im not sure where else to ask for help with this issue but can someone tell me what they think is going wrong here: http://paste.ubuntu-nl.org/46333/,technical
+what's the name of the program to capture screen videos?,technical
+"I'm running fluxbox as wm and it's great, except one thing :/ My iPod won't load in rhythmbox. When I switch to my gnome-session it works fine but not using fluxbox (it connects without problem, but not listed in rhythmbox). How do I solve this? Or is there another good music manager that I can use with iPod support (playing from the iPod) and last.fm scrobble?",technical
+How can I append something to an enviroment variable?,technical
+"when I do 'mount -t ntfs /dev/sda1 /mnt/windows -o ro', I get that mount point /mnt/windows does not exist. How do I create a mount point?",technical
+Does anyone know of a command line utility that outputs image information (for .jpg specifically)?,technical
+"If I have wine installed, and when I click on a windows installer and it asks which program I want to use...is there a wine config I need to run through to make it accept .exe as a suitable file?",technical
+"i've done everything listed http://ubuntuforums.org/showthread.php?t=413624 here, but i can't get mp3s to play at all in amoraK, they were working, but something i did has made it stop working",technical
+"on Ubuntu, in which file is /usr/local/bin added to the PATH?",technical
+can i run ubuntu live CD without and disk drives connected to motherboard,technical
+"Aloha, I have always upgraded by disk or via upgrade manager / synaptic but I wanted to minimize network traffic for the ubuntu.com folks and acquired 11.10 via bittorrent this time. I have 11.04 and tried sudo mount -t iso9660 ubuntu-11.10-desktop-i386.iso /cdrom -o loop but that doesn't help. It mounts as a volume but I'm not sure how to make it upgrade.",technical
+"I think to set static you need to kill networkmanager, is that the problem?",technical
+Is there a way to install for example the latest version of Wine via aptitude?,technical
+Anyone know if Feisty can be downloaded yet? I know it's not offically released but is it possible?,technical
+really? that's strange then. is it 3+ in 10.04?,technical
+what was wrong with the ubuntu site? does anyone know what the issues were?,technical
+"I am trying to connect a game with a friend through with cables through a network switch. And I'm configuring this manually in Network Manager. Problem is, the network manager wants me to give a DNS, and I don't have any/don't know of any. Could anyone please help me ASAP?",technical
+"ok, since no one has any useful advice for me, I have a general question. why does ubuntu by default make filesystems mount read-only on error, if X and everything else utterly fails when / is read-only?",technical
+"eh? This is the first linux distro I've had, um, in a decade or so, that didn't have a c compiler installed by default.",technical
+hello what is the cammand to change label to a partition?,technical
+howdy folks ... what command-line apt command do I use to see what version of a package is installed?,technical
+is there a driver you can download from canon?,technical
+How do i unpack a rarset? Got a file packed over multiple files here,technical
+Does an ext4 partition need to be defragmentated?,technical
+how to install a deb file in terminal,technical
+"Hello, I am unable to unlock my administration directory for an install using apt-get. I cannot kill the PID that has a lock on it either 'kill:(5134) - Operation not permitted'",technical
+can someone recommend a third party programm that can change wallpapers for Dual-Screens?,technical
+"Hi, do you know some way to record the sound output with gtk-recordmydektop?",technical
+How do I install perl DBD::ODBC successfully? The CPAN install keeps erroring out.,technical
+"Does anyone know an easy way to setup a script to check for process, kill it if it is stuck, and then run the new process?",technical
+I have just modified './etc/X11/xorg.cong' in the terminal. What is the command to save it?,technical
+i have xubuntu. am i in the wrong channel?,technical
+"Has anybody's flash player (nonfree) broken in firefox with the most recent update? I get the thing to install additional plugins, but tis already installed :\",technical
+"I am trying to install vmware tools, and I am being asked to install GCC, but I dont know what version I need, I guess it depends on my kernel version? what command console command tells me what kernel I am running?",technical
+"hey, what is the package i have to download to have the kde graphical interface ? i am finding for kde in the synaptic i only found 'kde-devel' but i am not sure whether it is the correct package, is it ? obs: i know, it seems a stupid doubt , it is because when i was using debian the package i chose for installing kde was just 'kde'.",technical
+"is there something like iMovie for linux, maybe a little more robust- sorta like Adobe Premier?",technical
+"Hey :), anybody here uses irssi and knows how to set it up for autoidenting me? it's kind of annoying to write /msg nickserv password at each login :/",technical
+"** question ** Hi all - I just mounted an external ext3 drive on my system. However, it only mounts as root, and 'sudo chown' tells me I don't have the permissions to chabg it to my user. How do I make it writable by non-root users?",technical
+is 1004 scheduled to be at the end of April like the previous releases? I need to install ubuntu as of now but thinking of holding back until 1004 is released!,technical
+Anybody noticed that the Scale plugin for Compiz slows down (only) when Firefox is open?,technical
+"is there a gui security level adjustment on ubuntu? similar to what on redhat linux (to control port access, etc)?",technical
+"Hi. I normally keep backups, but last week my backups drive died. Today, the main folder that I store pictures in went blank. It's an ext3 filesystem. Any suggestions?",technical
+I had done a ./configure and was running the make when I got logged out of my desktop. How would I got about fixing this so I can continue compiling.,technical
+is there a way to copy and rename a directory?,technical
+"hey all, what package do i install to get fonts such as Impact for openoffice?",technical
+hello. how do i refresh my repo? using aptitude from commandline,technical
+"Hi all. I have a fresh Jaunty install and would like to find an audio howto. I previously had a 'mixer type' gui tool that let me select what programs audio would be sent to which sound output. It was working perfectly but I can't remember the packages and randomly installing jack, pulse etc broke my last installation.",technical
+Any suggestions on a nice and simple finance manager gizmo?,technical
+how i know the amount of memory ram?,technical
+is there a way to see if a hard disk has bad blocks on ubuntu? fsck does the job?,technical
+is there a program that finds orphaned libraries?,technical
+Does anyone know how to hide all those join/part messages in xchat?,technical
+How do I set Abiword as default rtf ediitor in Ubuntu?,technical
+what is the executable name of system monitor?,technical
+how do I install firefox-3.6 ? is there a repository for that?,technical
+"Hey guys, does anyone know an app that can read guitar pro 3 and 4 files? - I have installed KGuitar, but am not having much luck with it... it crashes when i open a file",technical
+"Hi - I'm running Ubuntu 9.1 and I want to disable the startup sound. I've looked in System-Settings-Sound but the only option here is to turn of ALL sound, or change themes. I've looked in the System-administration-login, but nothing there either. how do I turn i of?",technical
+"in Linux, it's 'it crashed because when w, x, y and z are true, and you do a, it b's and goes into c'",technical
+there used to be an application in GNOME that let you pick a color from anything on screen and copy the hex value to the clipboard. Can someone tell me the name of that?,technical
+anything special i have to do to get a sata cdrom to work after plugging it in?,technical
+Im trying to compile my first kernel. Im useing a web site as a guide but Im having a problem. It tells me to 'fakeroot make-kpkg --initrd --append-to-version=-custom kernel_image kernel_headers' but when I do that I get '/usr/bin/fakeroot: 152: make-: not found'. Can anyone tell me what the problem is?,technical
+"i typically like to install a minimal system and build up from there, and i want to install to lvm on raid. would i be better off with the server or alternate install CD?",technical
+could i convert an RPM of vm server to deb and install vm server that way?,technical
+how do i switch workspace with keyboard?,technical
+"hello, I want to transfer all my Ubuntu OS to another disk AND make that disk bootable, so, besides the 'copy' operation how do I make the 2nd disk bootable? (that is, how do I reinstall grub on it)",technical
+can anyone help me get sound working?,technical
+"I just upgraded to 11.04, and can't log in to Ubuntu or Ubuntu Classic, but Ubuntu Classic (no effects) works. When I log in with effects, I just get a plain desktop background, no panels or Unity... help?",technical
+redhat has chkconfig. Is there something similar in ubuntu?,technical
+Is there any way via something in /proc or /sys that I can use to figure out what kind of RAM i need to buy for my desktop?,technical
+could you tell me how to use the restricted modules?,technical
+I sucessful installed KDE enviroment using 'sudo apt-get install kubuntu-desktop'. OK what should I need to download to have option at login to choose between GNOME and KDE.,technical
+"hya: I'm trying to resize my ubuntu 11.10 server buffer size window. Right now, it is set with the default, which, I believe it is 80x25. Where do I go to modify this? I found something in the ubuntu community, but it looks like that article is outdated",technical
+Where can I download the Plasma screensaver?,technical
+is there a way to extract the audio stream from Rhythmbox,technical
+Any clue how can I install Ubuntu without booting from the CD?,technical
+does anyone here know how to get rhythmbox to play m4a audio files in dapper drake?,technical
+how can I make dolphin the default file browser?,technical
+"If I have two hard disks on my machine and I only want to partition the second one, how would I go about doing this.",technical
+"hey guys, i can't install karmic because it won't recognize my hard drives. because a livecd requires a reboot, i can't boot livecd, run an update and then try to install with fixes (since a reboot clears it ofc)",technical
+does anyone know how to make utorrent run on linux?,technical
+"i am having trouble finding information on installing ubuntu as a second operating system onto a different partition other than windows, i want to be able to select which OS i want to start in the boot menu",technical
+"I have ubuntu 10.04 installed on virtualbox, i use mobile broadband in windows7 and ubuntu is not taking the connection...what should i use in network settings of virtualbox?",technical
+HI guys is it possible to install Ubuntu over the internet?? with a few floppies,technical
+WHat on earth happened to unrar support in Archive Manager in Hoary,technical
+"but you can do it all over again, it's all up to you",technical
+"I've been having some trouble with my Atheros WiFi card. Network Manager seems to disable it when I suspend my computer, and doesn't 'forget' the AP's. Therefor, if I move it tries to connect to an AP that isn't there.",technical
+"Guys, how can i 'su' ? i type in term. mode 'su' but i get an error",technical
+is there any GUI irc client besides pidgin ?,technical
+I guess you already saw this guide: http://ubuntuforums.org/showthread.php?p=1071920&mode=linear,technical
+how do I configure VPN?,technical
+"whats the best way to upgrade sarge to ubuntu with only 1 reboot? I was thinking of removing almost all packages from sarge, changing repositories update; dist-upgrade, install ubuntu-desktop, run bash script to add any custom packages and make any custom changes, but hardest part with that is removing all the packages I possibly can without breaking apt",technical
+"how do I get window's video codecs, for mpegs and whatnot, for feisty?",technical
+Is there a tool under ubuntu to monitor the threads of a process?,technical
+when will ubuntu have zfs support!!!,technical
+is there a way to migrate my current /home to another partition and use it as the /home mountpoint when I reinstall?,technical
+"hello, how can I make a service start by default wen the machine boots?",technical
+question: with aptitude we had the parameter search to go through the package list...any equivalent on apt-get? or on the console in general?,technical
+"_Spire_, url please?",technical
+how do I change the locale in ubuntu?,technical
+does anyone know when then fixes for openssl/etc. are going to be available for download? apt-get update && apt-get upgrade gives me nothing :(,technical
+How do I tell what video card I have via CLI?,technical
+"hi , I am using AMD athlon 64. I have installed ubuntu 10.04. How do I find the chipset details and install the appropriate drivers as the laptop gets heated upto 90 c",technical
+"when i connect to my vpn, i can't send X stuff back? is there something i need to configure for that?",technical
+Hey. Sound doesn't work in flash for me. It plays fine for everything else,technical
+Anyone know about using Gnome3 for Ubuntu? (not looking forward to Unity desktop after f15a) Should I look to Debian instead?,technical
+"i know what are gDesklets and i actually have some working on my ubuntu, i would like to know about a tutorial of how to develop my own gDesklets",technical
+"hey folks, how do i change the clock?",technical
+"i'm @ the terminal and want to launch and executable, but return to the terminal and keep using it rather than locking it up ... i can't remember what that is called or how to do it =\",technical
+can anyone mention a good online port scanner?,technical
+"how can i log into two sessions simultaneously, as the same user? switch users just dumps me into my old session (as is to be expected)",technical
+some questions ... i have an Ntfs partition .... how can i edit files on that partition ? i allready install ntfs-3g package,technical
+Hi peoples. What's the command to show what kernel version I'm using?,technical
+"How do I edit the items in the notification area on the panel, Right click and remove removes the entire notification area applet and not individual items",technical
+"Hey guys how do I use debhelper, I mean, I have it installed apparently, I did 'debhelper' and it says commadn not found",technical
+"Hey guys I was just changing the color of my download speed in the little realtime chart in my system monitor and it worked fine. Then For some reason it said my download or upload speed was zero when it wasnt so I closed the system monitor and reopened it. Now I can only see my download speed, not my upload speed and I cant/dont know how to add the upload speed sensor. Any help? Thanks",technical
+"hey, just a question...i know that the universe packages aren't updated. But, will they be updated between releases? For instance, amsn is at version 0.92 in universe right now and it wont be updated. but when hoary is released, will it be updated to say version 0.95 in the hoary tree?",technical
+"Good evening everyone! Could somebody give me little help with WLAN usb-device? Little brothers Zonet zew2502 usb can be found on 'device manager', but I cannot locate it with 'iwconfig'. howcome?",technical
+"i removed the bar at the bottom of my screen, and then I was able to add it back, but I can't add to the bar the ability to minimize thigns to it",technical
+"This may sound dumb ,but how to you find out file /dev/ is your dvd drive ? is as simple as being dvd. The reason I am asking is I am trying dvd with vlc",technical
+"Hello, Can someone take a look and suggest other dependencies I may need? I'm trying to build the source package rbmake-1.2.tar.gz. ./configure seemed to work ok. The ./configure output is posted here: http://paste.ubuntu.com:80/192073/ However make gave me errors. The output is posted here: http://paste.ubuntu.com:80/192073/.",technical
+"Hello, Can someone explain to me what exactly exempts Ubuntu from being a completely free distro (in the eyes of the FSF). I'm Having a discussion about this issue and I'm struggling to find a solid answer on exactly which parts are non-free (on a clean install). I thought it was the trademarks or perhaps how Ubuntu facilitates the use of non free software - but I feel I'm missing something.",technical
+"How can I installed multimedia support on Lubuntu 10.04? On Ubuntu I would just install ubuntu-restricted-extras, and there also also *buntu-restricted-extras packages for Kubuntu and Xubuntu. What do I need to get multimedia support on Lubuntu?",technical
+is there an alternative to iptables? (cant use iptables because its a vroot),technical
+"hi all. something's constantly accessing my hard disk and slowing things down to a crawl. Any idea how to identify what's going on? I suspect it's a hardware problem since it started quite suddenly, but the smart tools don't identify anything too strange...",technical
+"is there a script in ubuntu which executes commands, at shutdown?",technical
+"Hi, Ubuntu 9.10. What package(s) must I install in order to get a CUPS Development Environment so that I can make from src?",technical
+"hi, i'm new to ubuntu, is there way to upgrade firefox on ubuntu 4.10 to 1.0?",technical
+"whats the difference between apt-get upgrade, and apt-get dist-upgrade",technical
+hi all. how do I make a program run at startup,technical
+'Requested download is not authorized for use with this tracker.' <-- i'm getting that when i try to download 10.10 through transmission,technical
+"hello, how do i make gcc make executables? which package i need to install with synaptic? i tried compiling something, and it said c compiler cannot make executables...",technical
+I am running Terminal in full screen on its own workspace. Is there a way to hide the bottom automatically when I switch over to the full screened terminal?,technical
+"hi guys, i have a stupid question. Is it possible to remove GUI from normal ubuntu so it almost the same as ubuntu server?",technical
+Hey guys....... Having trouble with Mupen64Plus still....... I figured out what my problem was but now I can't get CuteMupen to work on Ubuntu 10.10? =| Can anyone help me?,technical
+"hello, does anyone in here knows about any application that would help me tune a piano. I need to detect the frequencies at which the keys are, so I can correct them. Any suggestion?",technical
+hello I use Ubuntu Dapper and I have an intel card based laptop and my resolution is not widescreen at all. I have installed 915resolution but I can not change pls help.I use a dell inspiron 1300 laptop,technical
+"hi, anyone know how to get the ASUS p8p67 onboard NIC (intel 82579) working with ubuntu?",technical
+how can I ask for a package to be added to multiverse?,technical
+"hi, can someone recommend a good rss reader for ubuntu?",technical
+Can somebody dcc a small text file so I can test my irssi setup?,technical
+question: can Helix play real media? or will i need to get realplayer?,technical
+How can i find out what graphics card i have?,technical
+I want to cleanly install Ubuntu 9.10 after upgrading the last 6 versions. So I havn't done CD installation in a while. I would like to fully encrypt my Ubuntu 9.10. Do I still need the alternate CD for that or can the desktop CD do that now?,technical
+is there a way to disable gnome-screensaver's unlock dialog?,technical
+support for Jaunty expires in October. What's that supposed to mean?,technical
+"hi, I want to buy a cheap video card into my girlfriend's computer (600 MHz Celeron, 256MB RAM), I have these options (equally cheap): nvidia vanta 16MB AGP, savage4 32MB AGP, matrox g400 16MB AGP, ati rage128 8MB AGP, which one should I buy?",technical
+whats the package name for install the C man-pages with apt-get? When i type man qsort my ubuntu dont find the man page.,technical
+"I'm having a really weird issue, I have files that aren't being read by programs, Nautilus doesn't show the files as existing (even gksudo nautilus) and weechat can't read any of its settings, but midnight commander and ls show the files as existing, although ls returns: cannot access file.extension: Input/output error",technical
+can i make hardy to restart progs i had open last time i logged out?,technical
+"I need to install an older version of perl. I can only see 5.10.0-11.1ubuntu2 and .10.0-11.1ubuntu2.2, but I need 5.8.7-10ubuntu1.2 It's ubuntu server 8.10. I get the version numbers I can see from apt-get showpkg perl",technical
+"general desktop use should be ok for ext 4, if server of for write intensive application can be dangerous during reboot...",technical
+"question to anyone: i am having problems playing mp3s with xmms, using intel ich (alsa), xmms freezes when i try to play an mp3",technical
+how do i switch between the four desktops?,technical
+is there a command to check what is the partition type?,technical
+can anyone help me get my isight webcam going?,technical
+"all, I set 'bash -v' by accident, now I want to disable that, how to do?",technical
+"hello, I scanned myself and found an open port, now how do i trail this back to the service ?",technical
+I'm wondering what package I didn't install for it to work..,technical
+"how do i insert excel codes to open office, they wont work",technical
+anyone know a minimalistic GUI email client?,technical
+how can i watch dvd's on my dvd-rom with ubuntu?,technical
+anyone knows the exact release date of hardy?,technical
+I have a Linux server the houses all my media on it. Is there a application that would index all my media and create a almost intranet website that I could use to show which media I do and don't have? Say thumbnails from movie clips and/or flash players to stream a MP3?,technical
+"what is the smallest possible, portable, long life storage medium to install ubuntu on? USB thumbs aren't 'write oriented' but then portable external magnetic hard-drives are, IMO, bulky.",technical
+what is the latest ubunty release?,technical
+how do I install svn client?,technical
+Could you paste your script to the pastebin? Maybe someone could help if they saw it.,technical
+is there something like defragmentation on linux?,technical
+what happened to open office? what is libre office?,technical
+How do I find out if my processor is 64-bit or not?,technical
+"In 10.04, is it possible to change the terminal's text from the user@computername:~S to something shorter (such as only using the $ or #)?",technical
+"Hey all, I'm trying to add a printer, but I can't find a way to add the printer...",technical
+"In irssi, how do I switch between cli windows?",technical
+Could someone pastebin /usr/share/X11/xkb/symbols/us please? I forgot to make a backup and... well.. you know.,technical
+hey anyone know what is the command to check a disk for errors?,technical
+Is there any for sure way to test that the nvidia drivers are working?,technical
+How do I get the UUID of a partition?,technical
+"hmmm, this reminds me: is there a list of laptops that are known to work very well with ubuntu?",technical
+how do i open opt folder with root rights?,technical
+"Anyone tell me if its possible for a power supply to 'go bad' and still work, but just not provide enough juice to boot anymore",technical
+how can i make my windows partition readable with my normal user?,technical
+Is there a website that keeps 'must have' repositories?,technical
+"hey, does 12.10 need both python and python3? can i remove 2.7?",technical
+"Hi, any suggestions for doing a minimal install? Just enough to use apt-get to install other packages. Thanks",technical
+anyone know how to set the label on a fat32 thumbdrive ?,technical
+"hi all. i don't get any image from video card, when x is running, only console is displayed correctly. what i can i do the fix X or use the 'factory' settings?",technical
+"hi, is anyone know what is the commadline used by synaptic to install packages ?",technical
+"when upgrading to a binary 686 kernel from the stock 386 kernel, I added the right packages, but what now? Do I change my grub entry and that's it? or something else?",technical
+Anyone in here know a widely accepted Usenet / newsgroup binary download client?,technical
+"I want to automate UBUNTU install using PXE for my company, roll out about 50 or so machines. Does anyone know of a good step by step article that may help me with this? I am no Ubuntu expert but I have a couple of years support experience so I am not a newbie either.",technical
+So I'm on a public wifi and I can get on IRC (as you can see) but Firefox will not load pages,technical
+"Hey, how do I set up a simple shortcut to start a Terminal with?",technical
+"i find this quite anoying... whenever you install something... lets say... Eclipse... dependencies get installed aswell... altho, whenever you uninstall Eclipse..., all the dependencies will stay untouched.... how can i remove a package and all its dependencies (where possible) ?",technical
+"is it possible to regenerate my menu.lst, it doesnt want to boot ubuntu or windows xp anymore",technical
+Someone want to refresh me? Which file can I edit/add a line to to execute a shell script on boot?,technical
+hey guys... why is my update keeping some back? http://pastebin.com/unjQWNkX,technical
+"I have aproblem installing edgy rc from live cd gui installer, is there atext based installer that i can use",technical
+Does anyone know where I can get a complete list of features for 9.04?,technical
+How to copy a string from xterm to Clipboard?,technical
+"Guys I've never tried xfce before, I'm a bit curious about it, I read it's based on gtk+, does it means that it will run gnome apps natively?",technical
+what's the command to enable a vhost on apache2?,technical
+"Hi, Linux noob here - just installed Xubuntu on an old P3 machine. I added an Adaptec 1205SA PCI SATA card so I can add a SATA HDD. How do I get Xubuntu to recognize this card so I can use the SATA drive? tyty",technical
+I created a dvd holding all the packages I installed on my development machine using 'aptoncd'. I then ran aptoncd on my laptop. But how to tell the laptop to *install* all these packages? In other words how do I get a list of installed packages and duplicate it on another machine.,technical
+Is there a gnome (or non-kde) equivalent of Kile (the latex editor)?,technical
+I have a sound problem with my new Acer Aspire 5920. Installed newest Ubuntu and there is no sound at all and no errors (as far as i know). Anyone familiar with this?,technical
+... what's the command to change the keymap ?,technical
+"Hi there, Ive managed to bugger up my networking somehow - it seems as if some wierd route is being added when ever dhcp gets an address (for wired or wireless interfaces) could some one give me a hand",technical
+"If I install ubuntu-minimal and upgrade to ubuntu studio, does it do the kernel updates that fix midi timing?",technical
+Can someone do me a big favor and see if www.53.com works for them?,technical
+"Hey guys, theres an app (Wondershaper, to throttle bandwidth) which I have to run with sudo. Is there anyway I can have limited users run it or any other thing that requires sudo? Thanks",technical
+"hi guys, i reported a bug that is completely wrong... how can i adjust or close it?",technical
+"how to know my version of ubuntu please, hardy,intrepid etc.. ?",technical
+"could anyone help me on this? i cannot play any video files right now using kaffeine+xine (or anything else plus xine, as far as i can tell.) it makes programs like kaffeine and crash. my debugging info looks like this: http://paste.ubuntu-nl.org/4775/ i was up all night trying to fix this and am at an end. if i am not providing enough detail, please let me know\",technical
+is there a ppc specific channel?,technical
+is there an alarm program for Ubuntu?,technical
+Hello! How do I get rid of this message? Enter password to unlock your login keyring The password you use to log in to your computer no longer matches that of your login keyring.,technical
+if you had 30gb hdd with P3 1gb ram (laptop for hibernation) how much would you allocate for '/' 'swap' and 'home' - planning on installing Lubuntu - for now i was going to keep 2gb for swap / can't decide on the home vs / sizes - this will be a single boot OS laptop. also was planning on using ext4 filesystem *very new to linux / 1st time install,technical
+"amendo, wireshark will show all packets in the air regardless of encryption or not. the important point here is that the wireless network card is not showing anything at all when it's put into monitor but works fine when in managed mode for internet serfing",technical
+"hi, is it possible to run football manager 2010 in ubuntu?",technical
+how do i apply permissions to subdirectories?,technical
+"hey, how can I import Firefox settings (bookmarks/passwords/etc) from my windows vista ? to another (PC ubuntu)",technical
+newbie needs help: My sound was working fine for quite some time. All of a sudden I can only hear the faintest noise when my speakers are at max volume. I've checked my volume levels and everything looks fine. I've rebooted and the problem did not resolve.,technical
+Where is the sourceslist menu in Ubuntu 10.10?,technical
+how can i identify myself on this irc network?,technical
+if i want to just read lines in a file with George i will do cat file.txt | grep George > georgefile.txt. but what if i want all lines with George or Fred?,technical
+Quick question.....could I use VMWare to play games such as Half LIfe?,technical
+how do I link a desktop icon to a command ran in the terminal?,technical
+"Hi there. please, could somebody advise me, how to back up playlists in rhythmbox, or at least, if it is possible?",technical
+hey... does anyone know where I can find my c header files for my kernel? im running 2.6.15-27-386,technical
+is there something in ubuntu akin to local.start (gets executed at system startup) and local.stop (gets executed at system shutdown) from gentoo for ubuntu?,technical
+"do i want to try the upgrade to 8.04 offerered in the package manager, or do a cd install?",technical
+how does one install firefox 3 in hardy?,technical
+How can you print a list of all the installed software?,technical
+is there anyway to get the Empathy chat client to login to skype?,technical
+what's the command to run all the mounts from fstab?,technical
+is there any utility like rc-update in ubuntu to launch apps at boot time?,technical
+Hi - when opening virtualbox I got a note about a new version (4.1.20) being available and a link to download it from virtualbox.org Do I need to uninstall the old one first?,technical
+What is the difference between hoary and breezy and whatever follows?,technical
+is there a cli tool in linux that allow one to record realtime audio sent to your souncard? (possibly pipe it to any encoders too).,technical
+"hey, how do you combine 2 wordlist files one after the other?",technical
+I have a problem getting ubuntu 6.06 LTX x86_64 installed on my ML370 G5 with Smart Array p400. It prompts for language and location then sits forever with a blank blue screen. Any help?,technical
+does anyone know of a thunderbird channel i can go and maybe harrass them instead of u guys :P ??,technical
+"I'm trying to run a Java App, but I get 'No Java virtual machine could be found from your PATH variable'.... I have all the Sun Java stuff installed. What can I do to fix?",technical
+"Hey guys, I was wondering: If I post a log file output to pastebin, would someone be willing to look at it and explain a few things to me? I'm trying to determine if my computer has been compromised by some unauthorized user",technical
+uhm i have a little issue with VI.. when i start it to edit a file and press the insert key to edit the file contents.. if i then press the arrow keys to normally move the cursor. it instead prints letters like ADN and such.. what am i doing wrong ? havent been using vi for a very long time,technical
+Anyone? Is there a site with a searchable list of packages available for Ubuntu?,technical
+what filesystems are available in the installer?,technical
+What's the best way to install mplayer?,technical
+What is the difference between Chromium Browser and Google Chrome?,technical
+"hey, how do i run an app from the menu panel as root?",technical
+"the theme switcher freaks out on me, wont' let me scroll. But if I click on another theme on the first page then it works fine?",technical
+"Hallo, can I just copy my old .Evolution folder from the old home directory into my new home from a fresh install and have all my evolution settings, emails, and contacts back?",technical
+"how do I tell the file browser not to show the hidden directories, that is those starting with a . ?",technical
+"im trying to remove kubuntu by putting the long command in, but as soon as the terminal finds out that one of the things listed is not installed, it stops the whole process. is there a way around that? https://help.ubuntu.com/community/FromUbuntuToKubuntu",technical
+does anyone know of mysql gui tools in apt?,technical
+"I've got a terribly old computer I'm running Ubuntu on, how can I get it to stop starting up X on boot. I'm used to init levels, but ubuntu does something different.",technical
+"Hi :> I just ran sudo update-alternatives --config usplash-artwork.so to change it from the kubuntu splash to the ubuntu splash...when i shut down everything is okay, but when i reboot it boots up with the kubuntu splash?",technical
+"Hello, what's the currently supported version of Ubutnu LTS?",technical
+for some reason i cant set vlc as default so i want to remove movie player but it's not listed in synaptic,technical
+how do I open a file in a text editor using the terminal?,technical
+hello people. has anyone else experienced problems installing flashplugin-nonfree? I get a md5sum mismatch,technical
+"i need some help, i am getting '403 Forbidden' when trying to just do the system update",technical
+"After making changes to alsamixer, it will reset to default after reboot. How can I permanently change it?",technical
+hey folks... I need some schooling on setting permissions... I need to setup a directory correctly... so that when I copy files into it... I don't have to do chmod on all the files I copied in,technical
+How do I get rid of this friggin' Compiz?,technical
+How do I make 'find' be case insensitive?,technical
+can someone direct me to good a cd cover maker?,technical
+is there a graphic cdrecording app in the livecd that I'm completely missing? I see the commandline cdrecord is there but I need to burn some random files,technical
+how can i search through repositories via CLI?,technical
+someone can give hints how to configure KVM in 12.04?,technical
+Can someone help me to install Wine for ubuntu? PM,technical
+remasters can if you have a custom set up,technical
+does anyone know a good package for setting mouse button functions for ubuntu?,technical
+Are the 12.04 us.archive.ubuntu repositories having issues today?,technical
+"With acpi disabled, will I be able to use a pmcia slot?",technical
+where i can find reading material on ubuntu (to download) (learning) basic etc... Please let me know...anyone.,technical
+Is there any diff between the open source and proprietry nvidia driver? Is one better than the other?,technical
+ive installed the new kubuntu beta. problem is: i dont have configure installed... where can i find it?,technical
+Any idea if external USB discs support hdd > 2TB? (10.04LTS),technical
+ive setup my machine so i can restart my apache without the root password using visudo....%jason ALL=/opt/lampp/lampp restart ....etc but it keeps asking me for sudo password?,technical
+"hi guys, any solution to record audio streaming in ubuntu ?",technical
+"Hello. I want to automate the Ubuntu installation by using preseeds. How can I identify the names of the questions asked in d-i (the Debian/Ubuntu installer) ? The Wiki describes many of them, but I'm not sure they are all there.",technical
+"hi, does anybody know what is that web browser, it says mozilla but it is not firefox. I think i saw it on backtrack.",technical
+i have a new hardy installation; is there a way to disable compiz? it is causing too much trouble,technical
+"http://www.ubuntu.com/download/ubuntu/alternative-download links to http://releases.ubuntu.com/11.04/ubuntu-11.04-netbook-i386.iso.torrent , but the latter link gives me a 404. problem?",technical
+Can anyone provide me with the password for the root or what pass I need to preform SUDO on a LiveCD?,technical
+how do I install opera from a .deb file?,technical
+"On my laptop I have the screensaver off and power management set to never activate(sleep mode etc) in battery mode and ac mode, though every I close the lid and leave the machine running when I open the lid it shows that the cpu is at 100 %. is there a log or a command or something that i can access to tell me what is going on at those times?",technical
+anyone know why Disk Utility created my raid array on md127 instead of md0?,technical
+Is it possible to use kdm to log in to Gnome session? I'm planning to set up a multiseat but the the new gdm doesn't seem to support multisessions but kdm does. The problem is that I don't want to use KDE as desktop environment. I qant the default Gnom desktop.,technical
+Is the MS Word export in a separate package?,technical
+"hi, someone there knows a great mounting program for linux, like deamon tools for windows.",technical
+"Hi all, what is the command in terminal to update clamav, please and thank you.",technical
+"When I insert a CD in the cd drive, which file is it that tells the system which mount point tt use when mounting that cd disk?",technical
+Question: what is the different between a system user and normal user?,technical
+can I somehow tell openoffice that comes with my ubuntu to anti-alias the lines in drawings I make?,technical
+How do I tell Ubuntu to connect to internet when booted up without the necessity to log in? Is that possible?,technical
+"I am having problems with my bluetooth mouse. I am able to pair it properly to my laptop, and it works for that session, but as soon as I reboot the computer or turn off the mouse and turn it back on, the computer will not reconnect to the mouse. The mouse is still on the bluetooth-applet list, so it's not that the computer forgot about the mouse, it just will not connect and I have to repair it every time I want to use the mouse. Does",technical
+Where can I disable the finger daemon in lucid?,technical
+any repos with firefox 4 yet?,technical
+"hey, how i can increase the resolution screen when i am seeing a movie with mplayer?",technical
+"[Spooky] : just *maybe*, your isp blocks port 22 ?",technical
+hiiii i'm a desperate physics student and i have no idea how to do this but i have to compile a program my teacher made in c and i don't have the c libraries or however you call them can anyone help me please?,technical
+"For some reason, my Feisty shutdown menu suddenly doesn't include 'Shut Down'. I only get Log Out, Lock Screen, Switch User, Suspend, & Hibernate - Any suggestions?",technical
+Hi how do I remove an installed program (munin),technical
+so which pattern you dragged?,technical
+"anyone have a toshiba lappy? wondering how i can use restoring disc along with paritioning tools. my lappy is just one partition, can't install linux at this point",technical
+hi guys I was wondering how I can stop just gnome without restarting the server ?,technical
+What is the command to install fakeroot?,technical
+Is there a way to close fullscreen program that has frozen without restarting X which closes Pidgin and XChat? I'm trying to configure Nexuiz in order to test my graphics card & drivers.,technical
+are the broadcom drivers on feisty on board?,technical
+I did 'cp --recursive --preserve=all /var /backup/var' and got 'cp: reading '/var/lib/ureadahead/debugfs/ieee80211/phy0/statistics/dot11RTSSuccessCount' : Operation not suported. What's wrong?',technical
+How do I list processes in order to kill one?,technical
+"Hello everyone. I'm new to Ubuntu and haven't used Debian in a while. It seems that my 'Hoary Hedgehog' install doesn't have some header files (stdarg.h, for example), and i can't seem to find a gcc-devel package. What package(s) should I be looking for to install these extra headers?",technical
+Is it 'ok' to remove a swap partition without affecting the rest of the system?,technical
+Yaro: This is what I do.,technical
+guys what's the 'meta' key? where is that on the keyboard ?,technical
+are broadcom wireless cards now supported??,technical
+anyone know of some software (gtk/gnome) that will re-encode mp3's to a lower bit-rate,technical
+i can only play one sound at once.. any way to fix it?,technical
+hey guyz...just downloaded pidgin...and executed the './configure' command...and when i executed the the 'make' command...this is what i get http://paste.ubuntu-nl.org/57588/ ...i think it's some thing to do with the dependencies....although i might be wrong....can some one plz give me a hint or point me to the right direction...thnx,technical
+why does my cube only have two sides!? the workspace switcher has four slots,technical
+"Hi, I plugged in a usb keyboard last week for an hour or so and ever since my laptop has num-lock on by default - any ideas? I'm running Gnome on Ubuntu 7.04",technical
+Could anyone tell my how to disable the composite extension in ubuntu? there is no xorg.conf so Idk if making one will even be read or not,technical
+"wow creating an ext4 filesystem takes a while, eh?",technical
+what beginners guide to ubuntu do you all recommend?,technical
+"I get this error trying to install crystalcursors, any help? http://paste.ubuntu-nl.org/16574",technical
+"hey everyone, any ubuntu tutorial that uses a lot of dbus? :) id like to try and read some code that uses a lot of it",technical
+"I downloaded an ubuntu CD image, but all I can find is a blank DVD. Can I use the image I have at all to make a bootable DVD?",technical
+how to check which version of Ubuntu I'm running on server?,technical
+"i am trying to run firefox, but when I try delete them it says, firefox i running. how do i find the id in terminal to kill?",technical
+how do I retreive info about my mobo and cpu?,technical
+What is the command to see the returned value of the last command is it '!?' ?,technical
+question: in which file does phpmyadmin says to apache that localhost/phpmyadmin is the place to be?,technical
+What tools exist for making HTML websites on ubuntu (like Dreamweaver)?,technical
+"hello, how do I map CAPSLOCK key to ubuntu?",technical
+is there any over-riding command to eject the cd tray?,technical
+"can anyone help me get my desktop back up and running? I think I might haev accidentally deleted a startup process or something, because nautilus doesn't launch and all that is on my desktop is the wallpaper",technical
+anyone know what qmgr is??,technical
+anyone know a command to show available disk space?,technical
+can anyone plz recommend a dreamweaver-like webdev prog in apt?,technical
+Anyone know a way to pull like 100 files at a time out of directory and move them to another directory?,technical
+is there a command out there to move from the beta to the new release?,technical
+"If I burn an Ubuntu Feisty Desktop install CD image to a DVD it will work exactly the same as if I had used a CD, won't it? (my burner is behaving a bit temperamental about CDs lately)",technical
+hello. i installed 08.04 beta and i'm trying to connect to a bluetooth keyboard. the applet doesn't succeed and following the how-to i get to the point where i should launch the 'hidd' tool... but there is no such programm installed :-(,technical
+you got all that from the log?,technical
+can't remember... how do I search for a package in apt?,technical
+Hi! I've got a technical question. My PC is 'getting old' and I want to change to some lightweight distro and I wonder is there truly a diffrence between a light-distro (like Crunchbang or Lubuntu) and using Ubuntu with fluxbox or openbox? Is it really more 'light'?,technical
+"guys, what's the command line to view a .png or .jpg files?",technical
+"hello everybody, i have a problem about gnash. When I open youtube in firefox, my computer choked, gnash uses more than 50% of cpu, how can i deal it except uninstall gnash?",technical
+"Question about purging: I can't seem to purge (config files of) packages I've already removed. Now, I want to purge 'mysql', but 'amarok' depends on 'mysql' and I just want to remove and not purge 'amarok'. Can I do this? How? (Prefer cmd-line.)",technical
+"just a quick question, i am able to play dvds but i get no sound. any ideas why?",technical
+I can only create 4 partitions and then the rest of the space is given as 'unusable' and there is a max of 200gb per partition,technical
+Hey can someone that frequently uses lynx tell me how to download a file to a specific location on my hard drive?,technical
+Any thoughts on what the best(easiest to setup) mail server would be for edgy?,technical
+"guys, what is the plug in that makes a window look like it gets burned as u close it?!",technical
+can i run ubuntu on a 2 gig thumbdrive?,technical
+"I am having issues accessing an ntfs partition with partition manager/initial installer; freezes immediately after attempting to recognize partitions in live install; I can access data on and mount both partitions in jaunty live, though the moment I try to use Gparted to access them while unmounted, partitions become unmountable (through automated Gnome mounting) and gparted locks",technical
+How do I change volume from the command line or something like that?,technical
+How do I make my panel at the top look like this: http://images.howtoforge.com/images/mac4lin/Mac4Lin%20Documentation_html_m2ad3b0cf.jpg,technical
+how is sudo and gksudo different?,technical
+Anyone know how I can make my account an Admin?,technical
+"I don't see any autohide option under unity for compiz, mind pointing me in the right direction?",technical
+"I'm trying to run freeciv; I get this error message: / 0: Plugin 'alsa' isn't available. Available are [none, sdl] / - I'm quite sure Alsa is running, I think it only means the sdl plugins, am I right ? Which ones are those?",technical
+"Having problems installing eggdrop on a fresh install of kubuntu. It says it requires tcl, but I did 'sudo apt-get install tcl' and 'sudo apt-get install tcllib' and it still can't find it when I do ./configure for the eggie. Suggestions?",technical
+is there a way to change permissions of a folder that is owned by root without using the terminal?,technical
+"the other day i received an auto-update of xorg-server, and when i rebooted, gdm couldn't start because of this error 'ee: no device detected - fatal error: no screens found'... i tried to restore my backup of xorg.conf, but nothing... and i already tried to reconfigure xorg-server (although i don't know if i did it right; the first time i did it with aticonfig) but it doesn't work... any idea of what i should do?",technical
+"hey guys, how do i fing the icons for different programs? im trying to set up a launcher",technical
+"hey guys,,, from a fairly default setup, no X, just terminal,, how do i add ~/bin/ to $PATH for all users? including root?",technical
+ahhh i can't eject my cdrom :( -- is 'lsof | grep cdrom' supposed to find the source of the problem?,technical
+How would I start the Nvidia X settings as root? My resolution won't stick and it keeps changing back every time I boot.,technical
+how do i copy stoff to a samba share via terminal?,technical
+how to setup xorg to use my widescreen monitor in the mode 1440x900?,technical
+is there a room where only amd64 topics are discussed?,technical
+what can I use at the command line to play a music file? Tried aplay with a mp3 and nothing but static,technical
+"Hi everyone. I have a strange networking issue. I've configured my ethernet using ifconfig. I can ping my other computers on the network, and I can ping my router/modem. But, I can't ping anything outside of the local network. Neither by IP address or www name. However, I can do an nslookup and get IP addresses.",technical
+Do you know any good gnome search applet ? (I like the one on OpenSuse that replace the entire gnome menu,technical
+how does one minimize a window without using the mouse,technical
+"Is there a way to input multiple commands in Terminal? I'm coverting a bunch of .mp4 files to .wav files, and I'm getting tired of doing it one at a time..",technical
+No one will try to help me?,technical
+"how come i hear myself through my speakers whenever i say something into my mic? i hear all i need to do is just mute the mic, but there's no such option in gnome alsa mixer",technical
+what other linux & ubuntu related channels are on freenode ?,technical
+"i want to shift from lucid to 11.04, how should i backup the packages?",technical
+"Hey, me again. I still can't compile alsa-driver. I have all the proper headers installed (AFAIK) but I still get the same error: http://paste.ubuntu-nl.org/54655/",technical
+how hard is wubi to install?,technical
+"i'm trying to use sed in a bash script to read to the nth line of a file: sed -n 'LINENUM{p;q;}' FILENUM. But i can't find a way to use a variable as the line number, any suggestions?",technical
+"I remember synaptic has an option 'just download the package files, don't install anything'. Is that possible from commandline? Apparently, apt-get doesn't have such an option...",technical
+I have my root partition on one disk and home partition on another; how would I configure the installer do a clean upgrade of root (and not overwrite /home)?,technical
+checking for C compiler default output file name... configure: error: C compiler cannot create executables,technical
+"I just installed ubuntu 12.04, and most of my X setup is working, but I want to make adjustments to the default Xorg setup. Unfortunately, there's no xorg.conf, and I'm afraid if I try to create one manually, I'm going to end up with a setup that doesn't work. Is there any way to get the existing xorg.conf, both as a starting point, and as a backup?",technical
+Hi all. How I can format my nwe HDD to NTFS filesystem on ubuntu?,technical
+"hi guys, dir /opt is presently owned by user and group root. can I change it to my user without any problems? thanks.",technical
+anyone know anything about the whole 'linux being trademarked' issue?,technical
+"if i want to force shutdown an application that is stuck, how do i do?",technical
+"lol...help! my ubuntu livecd is asking for a login and password...now I gather the login name is ubuntu, but what is the password?",technical
+I used to be able to get the xorg.conf into a usable configuration back in the good ole days of 6.06/6.10 but this new-fangled version in Intrepid doesn't seem to care about xorg.conf much,technical
+i love how all the grub fixes listed online assume you have a ubuntu cd lying around.,technical
+is there a way to remove a package without removing dependencies,technical
+Does anyone know where my windows partition would be mounted in Ubuntu when installed through Wubi?,technical
+how can i make it so that rhythmbox does not open automatically anytime i plug in my mp3 player?,technical
+"OK, so I'm trying to learn about commands using 'man' in terminal. So I learned my first command, now how do I get out of the manual?",technical
+hi Guys do you know how to ran windows applications without WINE (another program maybe)???,technical
+what did you do to fix the tracker problem?,technical
+"'DHCP server failed to start, check syslog for diagnostics' WHICH 'syslog' show I check?",technical
+knows somebody a good way to manipulate the nameserver list when i connect a vpn with network manager?,technical
+where do i find lndir?,technical
+how can I see how much memory a process use if I know the command used to open it and the user running it?,technical
+which is best gtk frontend for torrent?,technical
+how can I telnet over tor? what command would I use?,technical
+anyone know if there is a msn client that supports webcam?,technical
+what's the process for suggesting software for ubuntu? My game - anagramarama - is a good fit for edubuntu I'd imagine... just email the dev list? or is there perhaps a website,technical
+opening http://ubuntuforums.org/archive/index.php/t-208310.html : 'Unable to forward this request at this time.' by 'feijoa.canonical.com (squid/2.6.STABLE18)',technical
+Is there a way to make Gaim open links in my Firefox 1.5 Beta 2 instead of the normal Firefox 1.0.7?,technical
+"if i mount an ssh server, how do i cd to it in terminal?",technical
+Nobody knows how to use VLC for copying DVD videos?? Can't believe it!!!!,technical
+"how can i direct stuff to stdin when you use sudo? eg. 'cat file | sudo myprog' will send file to sudo, not myprog :(",technical
+"I admit that this is strictly a Gnome 2.8 question, but how can I put a panel applet of some kind in the far right corner of the top panel with a warty installation?",technical
+Hi.. 'rm -rf *.o' does not remove all '.o' files recursively if there are none at the top level directory.. What can be done?,technical
+I cant get my broadcom wlan to work with wpa,technical
+"Hi, how can I get a list of packages that contain a certain string on command line?",technical
+i installd linux/ubuntu for the first time yesterday and trying to learn som shit now. and i'm woundering if someone know how i can change the standard terminal in ubuntu/gnome...,technical
+"I want to build a windows 7 and ubuntu dual boot system, where can I find info on how to best do that'",technical
+"hi, i just installed lamp-server with tasksel, its working when when i do a php file test firefox prompts me to download the php file instead of rendering it! any ideas?",technical
+How do I specify more than one path to search for files using the find command?,technical
+how do I tell if I am on hardy or ibex?,technical
+Does anyone know what the version of modwsgi is in 11.04 and 10.04 LTS?,technical
+What should I do if /dev/dsp is missing?,technical
+"Anyhow, does ANYONE: looking for link for 'how to' videos in ubuntu linux. ideas? i saw a bunch were posted but forgot where",technical
+what is the shell command to clear cache,technical
+any one know how to change the color of the screen that pops up right after you log in to gnome?,technical
+Does Gnomebaker support DVD ISO images for burning?,technical
+is it possible to add an 'edit with gedit' option to the right-click menu in nautilus?,technical
+which will be a good packet generator in ubuntu?,technical
+hi do you know a good tv tunner software ?,technical
+"Hi, I'm a new user and having some trouble setting up my wireless. I'm pretty sure I need to download the drivers, but i'm not sure where or how to go about that, if anyone could help me I'd appreciate it.",technical
+!tell wweasel about xorgbug,technical
+"guys, I have directory with about 500 tar.gz file, how to extract all of them at once>?",technical
+Hey everyone... is there a thunderbird 3 final deb anywhere?,technical
+"how to enable/disable the compiz plugins from the command line, without using ccsm?",technical
+what's the command to copy a folder from one dir to another please?,technical
+how would onelist the processes (in the terminal)?,technical
+"Anybody running Ubuntu under VMware in Windows here? I am trying to get Edgy Beta under VMware, and everything is fine. Just one question. How do I transfer files? Right now, I am using scp...",technical
+"Hey, guys. Say I have an .iso file of a DVD movie that I'd like to watch without burning said file to a dvd. I installed an image mounting program, but I still have a question. Is there any specific place that I need to mount the image to watch the movie? Thanks in advance.",technical
+Is there a way to reset the fonts?,technical
+is it possible to install from the LiveCD?,technical
+"Question: How do i eject a USB Device, and how do i 'know' it is ejected, so i can be sure of a safe removal?",technical
+What do I add to /etc/fstab to turn off fsck?,technical
+I'm looking online for directions on how to use apt-get to remove an application.... anyone have a link or know the answer?,technical
+anyone know if there is a desklet that lets you create and set timers to alert you after X time?,technical
+whats the command to see the partition of your computer? fdisk -i or something?,technical
+"hi, how can I block DCC spam? or deactivate DCC?",technical
+"hi folks, I have a fresh installation of 10.4 and no longer have a terminal beep, i.e. when autocomplete fails to find a unique match or when I get an email in Tbird.",technical
+does anyone know of a way (besides looking in xorg.conf) to tell what xorg video driver is in use? xdpyinfo and xvinfo won't tell me... any other ides?,technical
+hey does anyone know of a picture library program for gnome?,technical
+how to run audacious on Ubuntu in terminal without exiting audaciuos when i close terminal?,technical
+is it possible that the driver for my sata controller has been taken out of the linux kernel? i can't update my kernel and i can't install the new ubuntu from the cd.,technical
+lsb_release -a does it as well,technical
+do they have a linux version of that program at portforward.com?,technical
+"okay, the time command isn't working in doing time > file.txt how do I get the current time to the file. this is in a bash script",technical
+hey how can i replace give text in more than one file,technical
+what is the name of winamp-look mp3 player for linux?,technical
+"my mouse has like 8 buttons, how do i configure them?",technical
+"hey, i have a problem. i just did a fresh install of ubuntu but i cant use sudo to run commands (its asking for a password even though i havent set one with `sudo passwd root`). what should i do?",technical
+anyone else seeing that gtk-gnutella is borked in hoary?,technical
+Can anyone recommend a good DVD burner??,technical
+"What are file browser alternatives to nautilus, other than thunar and pcmanfm? any ?",technical
+"hey guys, i messed up, X is gone :D, how to burn iso from cli",technical
+anyone know what the gnome console is called?,technical
+where i can identify my wireless-board ?!,technical
+"Can anyone help me with this? If I had an image on my desktop, let's call it 'test.jpg', what would the path for it be?",technical
+"btw, are there install cd's available without the live-part? so it immediatly starts installing without running from cd first ?",technical
+"So, has anyone else had trouble with Ubuntu not configuring X during setup?",technical
+how can I connect a mac os x and ubuntu directly over ethernet cable to share files ?,technical
+In ubuntu is there a way to turn the internal wifi card of a laptop on/off via 'software' command? The 'button' on my HP laptop is buggy with ubuntu,technical
+"getting problem in upgrading Ubunut to 11.10, update manager is not responding after clicking on upgrade, can anyone help?",technical
+Hi!. Where could I add the command that would mount cd image automaticlly on startup?,technical
+anyone know *anything* about how restricted kernel modules work in 10.04?,technical
+"ok, say I have a second hard drive and I want to install gutsy gibbon, i have the iso, but I don't wanna burn it. It's mounted, but I can't seem to get the installer started. How should I go about gettin it done?",technical
+"Where is a good place to put small, useful scripts?",technical
+folks...it's there possible for me to encrypt all trafic that comes and goes out from my PC ? (ubuntu 10.04 LTS),technical
+"i manually started nm-applet and it appears to be working now. however, i get this in my terminal: ** (nm-applet:16454): WARNING **: couldn't communicate with gnome keyring daemon via dbus: The name org.gnome.keyring was not provided by any .service files",technical
+I want to be able to easily mount and unmount iso files.. anyone know a good way? perhaps a script for nautilus?,technical
+anyone knows how to install acroread on IA64?,technical
+"hm, how can i find out what there is the best driver for my Elsa Victory Erazor PCI Graphicadapter?",technical
+"Hi, can someone please help me set up a iptable ?",technical
+"so, my sound is busted on ubuntu, but it works fine on the livecd anyway i can take the sound information from the livecd and replace it on my current ubuntu install because i cant figure out why its not working",technical
+"limewire/frostwire both do not work on my computer,can anyone suggest an alternative?",technical
+I'm setting up Karmic on my friends computer and I'm having issues trying to figure out how you set up Evolution Mail to work with a Yahoo address. I'm the GMail kinda guy...,technical
+"hi, how can i tell what version of the flash plugin i have for firefox?",technical
+and what is 'OEM install option'?,technical
+how do i see/change what the 'system fixed width font' is?,technical
+would it be possible to mount an ubuntu liveCD ISO and modify it from there? and then burn it?,technical
+"i just installed the new version of ubuntu (amd64) and when i look at the system monitor it shows one cpu, but before when i looked at it it would show two, i have an emt64 dual core chip.. is it necessary to install an smtp kernel?",technical
+"there must be something wrong with the uploaded amd64 iso...no matter where I download it, it has a different md5 :/",technical
+"hello guys, is it possible to put more than one linux distros on my pc?",technical
+Is there a decent C++ RAD for Ubuntu? Or is it possible to implement Glade with g++? I've never understood how to do that.,technical
+"hello im having problems with audio when i play youtube videos, the sound seems to get stuck and rerpetitive",technical
+I have a general OS Concepts question... What happens when the OS gets an interrupt in the middle of handling an interrupt. Do interrupts queue in some way?,technical
+how old is 5.10 3 yr ?,technical
+"i need help with user and group permisions, I have a directory owned by root, but i want to give members of the group 'mygroup' permission to write on that directory. How can i do this?",technical
+"i want to install ubuntu, but i already have an ntfs filesystem that takes the whole hd. will ubuntu play nice and format its own space without messing up the rest of the data?",technical
+Question: Running 'wget -c http://www.debian-multimedia.org/pool/main/w/w32codecs/w32codecs_20060611-0.0_i386.deb' downloads Debian.org's index.html file instead of w32codecs... Any way to correct this?,technical
+how do I install my kernel sources,technical
+"Could someone tell me if there is a way to totally disable a laptops internal speakers short of tearing into the laptop and unplugging them? I have a Sony Vaio, VGN-NR385E, and when i plug in head phones the internal speakers still broadcast. It is annoying and makes the laptop unusable in public if I want to hear web content",technical
+"anyone? i have no menu or task bar running the ubuntu 6.06 livecd - everything else appears to be functional however (firefox, openoffice work fine if i manually run them from a terminal)",technical
+when I try to install libdvdcss2 i get this error 'E: Package libdvdcss2 has no installation candidate'.can someone help?,technical
+"on ububuntu server 11.10, how do i switch eth0 from dynamic to static?",technical
+"hello, i wanna know how to unistall a program that i installed with 'make' command",technical
+"hey guys, i just installed the virtualbox version from their website, but now i don't seem to have it installed at all, any ideas?",technical
+Hi there! Does anyone know where I could find a list of linuy compatible USB numpads for laptops?,technical
+"Hi, will there by official support for nvidia optimus?",technical
+Yo Hey Yall. How do I empty out ~/.thumbnails and ~/.nautilus/saved-session-* --> the 'right way',technical
+how do i access the repositories from a web browser?,technical
+hello how do i rename a file to the current date? like file.18-12-2009-12:22.sql,technical
+How do I ssh tunnel in ubuntu?,technical
+What happend to EasyUbuntu?,technical
+"i am using ubuntu on a macbook and i want to define keys for the infraret remote control. but xev doesnt show keycodes for most of the buttons, but some kind of events. they work find with rhythmplayer, but i dont want to use them as media buttons... what app is responsible for that?",technical
+"is there a command to make sure samba is running? I setup a file server using samba and used the /etc/init.d/samba restart, but when I try to connect using win, it cannot find my shared folders...",technical
+"Updated to Edgy this morning. Laptop boots to black screen when kernel linux-image-generic is used. I've tried a search, but found no answers.",technical
+would it be possible for me to modify the package and remove the sql dependency? i believe it is needed for a bx plugin which i do not intend to use. or would i basically have to compile bx myself anyway,technical
+What is a good program to use to play dvd's?,technical
+"hello, how do i edit the grub boot loader on the MBR?",technical
+"Dear ubuntu people, this is rather odd: Whether I use totem, vlc or mplayer, the video always shows as a pink screen that doesn't change, while my video drivers are installed correctly. What could cause this",technical
+"my numpad is moving the mousearound instead of typing numbers, whats the key combination to disable that?",technical
+best software to compare Winamp to for 7.10 64bijt?,technical
+is there anyway to activate my back/forward button with the new ubuntu? or its a crazy mess like before? :P,technical
+here's what I'm talking about: http://www.omgubuntu.co.uk/2010/02/lucid-has-sexy-new-volume-indicator.html how do I get the indicator instead of the old version?,technical
+how do i find out the UUID of my partitions ?,technical
+what is the bash command to show where your data is stored? like makes it easier to find big files / folders,technical
+"Hi all, any ideas on how to change the default app that opens when I plug my iPod in? Right now its Rhythmbox - but ideally it'd be banshee",technical
+Could anyone tell me if there is a known workaround for installation on a Panasonic Toughbook CF-30 ( Core2Duo ) ?,technical
+can anyone tell the command to restrat the network after changing IP address??,technical
+"Can anyone point me to a guide, how-to or a forum that has info on upgrading from warty to hoary ?",technical
+"Hey, does ubuntu karmic server have pcmcia support built in? I can see a pcmcia card via lspci. does that mean pcmcia support works?",technical
+"Hey fellas.. I can't seem to figure out how to craft a propwer modprobe.d/ config file.. I want to autoload the powernow and cpu scalling modules on boot, but I'm a tard... is someone capable of walking me through what I'd need to put in to make that happen?",technical
+"I installed nvidia driver in Live Cd mode before I installed Ubuntu 9.10, and now after installing it wont boot, it goes to a terminal and my screen is flashing. Looking inside xorg.conf the driver is nvidia. Could this be problem? What is the default/generic driver to put?",technical
+"A simple question: It is really the intention that the user needs to run Aptitude Update from a console, before using the Software Center ? I find it hard to believe that",technical
+When i try to install the upgrades (after i havent done so for long time) i get a partial upgrade screen and then it writes 'Error authenticating some packages' and gives me a list,technical
+"Hi everyone, I have a lenovo x120e with a AMD E-350 that has the built-in Radeon 6310 graphics chip. How do I install a driver for it on Ubuntu?",technical
+is there any free program that can be used to play windows games on ubuntu?,technical
+any experts on FakeRaidDebug advanced troubleshooting around tonight?,technical
+"Hi, I'm connected to a server through SSH. I've had a game server opened (the console), but I was disconnected from the internet. Now my question is: Is there a way to resume the TTY the server console is running on",technical
+"I have multiple e-mail addresses and I like to use Thunderbird to aggregate them, the checking, etc. Sometimes I use Windows though and like to check things there. Sometimes I use Ubuntu and check things here. Anyone have suggestions as to how I can synchronize the data in Thunderbird so I can see the same e-mails in both OS (as well as deletes affecting both inboxes, etc.) ?",technical
+"is there a way to expand on wildcards in client, by typing that which is unique (e.g. psuedosyntax *s0005*) and hitting tab?",technical
+How can I change what program should start when I double click something?,technical
+currently /var/www is owned by root.root but I want to have an ftp account to upload to this area - do I have to use the user root for this or is there another solution?,technical
+any chance you use Ubuntu with ham radio? I'm wondering specifically about stuff that directly interfaces with a rig like a logger or satellite tracker.,technical
+"just after i pressed the key combination ALY+PRINTSCREEN+K, the ubuntu interface freezed, no any key or key combination work, do anyone know how to figure this problem out?",technical
+slightly offtopic: anyone in here knows what this is? http://img217.imageshack.us/my.php?image=l84a3bf92be6919b52a021dlf5.jpg,technical
+"i can see it listed on the packages website, but aptitude does not see it",technical
+"I made some changes to xorg.conf last night. I had a backup. I reverted back to the backup later, but something must have gone wrong becuase now I can't start X.",technical
+how can I automatically start a certain process for a certain user at bot?,technical
+Anyone know if there's a Breezy package for Gaim 2.0 beta?,technical
+I ran clamav on my windows partition from ubuntu. It caught some viruses that I suspected being there (some kind of rootkit thing and a couple others) I was wondering is there anything else I should run/try before starting back up the windows partition. I've heard of viruses reinstalling themselves once windows boots up... Also my clamav said that the engine was outdated but I couldn't find out where/how to update it can anyone hel,technical
+"when I start my laptop, I have to run modprob b43 for wireless.. Can I put it in startup?",technical
+For a given package what command can I use to know where the packages are installed ? Something similar to apt-file show ?,technical
+are there any good webkit based browsers for ubuntu?,technical
+"anyone got any recommendations for calm system sounds for mail alerts in Ubuntu? I'm using Thunderbird, but the default sound is reminiscent of Windows 95. And I don't want some vocal for each email that comes in. It gets old real quick.",technical
+"perhaps a trivial question, but I don't know how to connect to another computer (ssh), run a program there (command line) and then disconnect from that machine while the program is still running in the background. Does anyone of you know how?",technical
+"Sorry, what was the kernel option to disable ACPI ?",technical
+"Hey guys. I would like to know, how do i go to a location in terminal. What is the same as cd ___ in windows?",technical
+if I have kubuntu-desktop installed how do I switch over?,technical
+Anyone who can an easy way to replace pulse audio with alsa or make alsa the default driver?,technical
+how do I uninstall something that I installed from a .deb file?,technical

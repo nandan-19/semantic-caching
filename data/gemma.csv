@@ -1,0 +1,301 @@
+Timestamp,Query,Model,Exact_Hit,Semantic_Hit,Distance_Score,Trad_Latency_Ms,Sem_Latency_Ms,Total_Latency_Ms,Shannon_Thresh,Model_Thresh
+2026-05-30T00:16:13+05:30,Hey there! Can you tell me what the capital of France is?,gemma2:2b,False,False,2,1.762,22.162,10154.276,0.25,0.35
+2026-05-30T00:16:16+05:30,Hey there! Can you tell me what the capital of France is?,gemma2:2b,True,False,2,2.394,25.748,590.925,0.25,0.35
+2026-05-30T00:16:17+05:30,What's the capital city of France btw?,gemma2:2b,False,True,0.130730092525,2.299,24.067,567.381,0.25,0.35
+2026-05-30T00:16:19+05:30,Hey there! Can you tell me what the capital of Germany is?,gemma2:2b,False,False,0.270708501339,2.586,27.938,1556.197,0.25,0.35
+2026-05-30T00:16:22+05:30,"yo, I need to bake a chocolate cake today. any good recipes?",gemma2:2b,False,False,0.887757778168,1.621,22.597,4594.163,0.25,0.35
+2026-05-30T00:16:28+05:30,"yo, I need to bake a chocolate cake today. any good recipes?",gemma2:2b,True,False,2,1.676,25.276,779.23,0.25,0.35
+2026-05-30T00:16:30+05:30,Could you help me figure out how to bake a chocolate cake?,gemma2:2b,False,True,0.187233626842,2.117,23.856,626.643,0.25,0.35
+2026-05-30T00:16:32+05:30,"yo, I need to bake a vanilla cake today. any good recipes?",gemma2:2b,False,True,0.168067336082,1.639,23.153,650.088,0.25,0.35
+2026-05-30T00:16:34+05:30,Can somebody explain the rules of soccer to me like I'm 5?,gemma2:2b,False,False,0.818535923958,2.267,33.671,4282.633,0.15,0.35
+2026-05-30T00:16:40+05:30,Can somebody explain the rules of soccer to me like I'm 5?,gemma2:2b,True,False,2,3.742,29.22,653.848,0.15,0.35
+2026-05-30T00:16:42+05:30,"I don't get soccer, what are the basic rules?",gemma2:2b,False,True,0.102182626724,3.73,24.365,594.417,0.25,0.35
+2026-05-30T00:16:44+05:30,Can somebody explain the rules of basketball to me like I'm 5?,gemma2:2b,False,False,0.213048577309,1.694,31.641,4195.385,0.15,0.35
+2026-05-30T00:16:49+05:30,"I'm super curious, what's literally the tallest mountain on Earth?",gemma2:2b,False,False,0.724201023579,2.549,34.346,3128.392,0.15,0.35
+2026-05-30T00:16:54+05:30,"I'm super curious, what's literally the tallest mountain on Earth?",gemma2:2b,True,False,2,1.652,29.854,653.821,0.15,0.35
+2026-05-30T00:16:55+05:30,Which mountain is the absolute highest in the world?,gemma2:2b,False,True,0.161337316036,2.464,25.893,615.749,0.25,0.35
+2026-05-30T00:16:57+05:30,"I'm super curious, what's literally the longest river on Earth?",gemma2:2b,False,False,0.443373501301,2.505,29.586,4167.926,0.15,0.35
+2026-05-30T00:17:03+05:30,Does anyone know exactly how far the moon is from us?,gemma2:2b,False,False,0.619124174118,2.698,32.181,4244.363,0.25,0.35
+2026-05-30T00:17:08+05:30,Does anyone know exactly how far the moon is from us?,gemma2:2b,True,False,2,2.228,28.036,653.886,0.25,0.35
+2026-05-30T00:17:10+05:30,What is the distance between Earth and the moon roughly?,gemma2:2b,False,True,0.184323310852,1.641,29.707,623.812,0.25,0.35
+2026-05-30T00:17:12+05:30,Does anyone know exactly how far the sun is from us?,gemma2:2b,False,False,0.25816732645,2.369,27.492,4201.114,0.25,0.35
+2026-05-30T00:17:18+05:30,"I forgot my history class stuff, who was the very first US president?",gemma2:2b,False,False,0.83330899477,2.103,32.79,1509.164,0.15,0.35
+2026-05-30T00:17:20+05:30,"I forgot my history class stuff, who was the very first US president?",gemma2:2b,True,False,2,3.57,37.512,694.67,0.15,0.35
+2026-05-30T00:17:22+05:30,Name the 1st president of the United States for me.,gemma2:2b,False,False,0.306011736393,1.65,24.881,1571.774,0.25,0.35
+2026-05-30T00:17:25+05:30,"I forgot my history class stuff, who was the very second US president?",gemma2:2b,False,True,0.117716312408,2.279,25.48,668.345,0.15,0.35
+2026-05-30T00:17:27+05:30,"Quick question, what are the primary colors again?",gemma2:2b,False,False,0.815259635448,2.257,28.974,3942.682,0.15,0.35
+2026-05-30T00:17:32+05:30,"Quick question, what are the primary colors again?",gemma2:2b,True,False,2,1.675,27.777,659.258,0.15,0.35
+2026-05-30T00:17:34+05:30,I need a list of all the primary colors pls.,gemma2:2b,False,True,0.155257999897,4.737,36.736,625.428,0.25,0.35
+2026-05-30T00:17:36+05:30,"Quick question, what are the secondary colors again?",gemma2:2b,False,True,0.0882515907288,3.567,28.625,637.078,0.15,0.35
+2026-05-30T00:17:38+05:30,"I don't have time to read, give me a quick summary of Harry Potter!",gemma2:2b,False,False,0.740246415138,2.22,29.527,4184.515,0.15,0.35
+2026-05-30T00:17:44+05:30,"I don't have time to read, give me a quick summary of Harry Potter!",gemma2:2b,True,False,2,1.635,27.512,641.262,0.15,0.35
+2026-05-30T00:17:46+05:30,Can you summarize the Harry Potter plot real quick?,gemma2:2b,False,True,0.146870553493,2.325,32.077,637.345,0.15,0.35
+2026-05-30T00:17:47+05:30,"I don't have time to read, give me a quick summary of Lord of the Rings!",gemma2:2b,False,False,0.291543483734,2.873,33.491,4183.056,0.15,0.35
+2026-05-30T00:17:53+05:30,"Traveling soon, how do I say a basic 'hello' in Spanish?",gemma2:2b,False,False,0.807978034019,2.223,32.542,3028.933,0.15,0.35
+2026-05-30T00:17:57+05:30,"Traveling soon, how do I say a basic 'hello' in Spanish?",gemma2:2b,True,False,2,2.234,30.455,643.246,0.15,0.35
+2026-05-30T00:17:59+05:30,What's the Spanish translation for hello?,gemma2:2b,False,True,0.16443759203,2.224,29.922,630.312,0.25,0.35
+2026-05-30T00:18:01+05:30,"Traveling soon, how do I say a basic 'goodbye' in Spanish?",gemma2:2b,False,False,0.174903869629,2.171,46.406,4161.118,0.15,0.35
+2026-05-30T00:18:07+05:30,At exactly what temperature does water start to freeze?,gemma2:2b,False,False,0.721052289009,1.313,25.779,2602.638,0.25,0.15
+2026-05-30T00:18:10+05:30,At exactly what temperature does water start to freeze?,gemma2:2b,True,False,2,1.844,26.35,557.742,0.25,0.15
+2026-05-30T00:18:12+05:30,What is the literal freezing point of water in Celsius?,gemma2:2b,False,True,0.19761967659,2.148,28.413,559.099,0.25,0.15
+2026-05-30T00:18:14+05:30,At exactly what temperature does water start to boil?,gemma2:2b,False,False,0.283652126789,3.199,28.908,4065.44,0.25,0.15
+2026-05-30T00:18:19+05:30,I can't sleep. Can you tell me a nice bedtime story?,gemma2:2b,False,False,0.660081803799,2.174,26.988,4336.235,0.25,0.35
+2026-05-30T00:18:25+05:30,I can't sleep. Can you tell me a nice bedtime story?,gemma2:2b,True,False,2,2.8,35.46,651.236,0.25,0.35
+2026-05-30T00:18:27+05:30,Tell me a relaxing story to help me fall asleep.,gemma2:2b,False,False,0.255619287491,1.884,30.92,4164.22,0.25,0.35
+2026-05-30T00:18:32+05:30,I can't sleep. Can you tell me a terrifying ghost story?,gemma2:2b,False,False,0.284331381321,2.315,29.512,4288.155,0.15,0.35
+2026-05-30T00:18:38+05:30,"Wow Tokyo is huge, how many people actually live there?",gemma2:2b,False,False,0.650620698929,1.777,23.296,4189.864,0.15,0.35
+2026-05-30T00:18:44+05:30,"Wow Tokyo is huge, how many people actually live there?",gemma2:2b,True,False,2,2.326,30.647,686.633,0.15,0.35
+2026-05-30T00:18:45+05:30,What's the current population of Tokyo right now?,gemma2:2b,False,False,0.210841417313,2.837,34.212,4273.045,0.15,0.35
+2026-05-30T00:18:51+05:30,"Wow London is huge, how many people actually live there?",gemma2:2b,False,False,0.339619874954,2.666,25.028,2948.5,0.15,0.35
+2026-05-30T00:18:55+05:30,"I have a wedding in an hour, how do I tie a necktie??",gemma2:2b,False,False,0.863342225552,2.371,30.5,4183.115,0.25,0.35
+2026-05-30T00:19:01+05:30,"I have a wedding in an hour, how do I tie a necktie??",gemma2:2b,True,False,2,3.268,33.075,645.139,0.25,0.35
+2026-05-30T00:19:03+05:30,Please explain step by step how to tie a tie.,gemma2:2b,False,False,0.481552958488,2.331,26.863,4170.955,0.25,0.35
+2026-05-30T00:19:08+05:30,"I have a wedding in an hour, how do I tie a bowtie??",gemma2:2b,False,True,0.156072616577,2.945,48.497,650.103,0.25,0.35
+2026-05-30T00:19:10+05:30,Science question: just how fast does light actually travel?,gemma2:2b,False,False,0.618055105209,2.787,31.744,4082.667,0.15,0.15
+2026-05-30T00:19:15+05:30,Science question: just how fast does light actually travel?,gemma2:2b,True,False,2,2.314,34.576,572.253,0.15,0.35
+2026-05-30T00:19:17+05:30,What is the exact speed of light in a vacuum?,gemma2:2b,False,True,0.246613919735,2.895,33.002,558.56,0.25,0.15
+2026-05-30T00:19:19+05:30,Science question: just how fast does sound actually travel?,gemma2:2b,False,False,0.402842819691,2.895,29.634,4065.04,0.15,0.35
+2026-05-30T00:19:24+05:30,Trivia time! Who was the guy who invented the telephone?,gemma2:2b,False,False,0.572129368782,2.697,63.944,1532.322,0.25,0.35
+2026-05-30T00:19:27+05:30,Trivia time! Who was the guy who invented the telephone?,gemma2:2b,True,False,2,2.228,34.545,571.788,0.25,0.35
+2026-05-30T00:19:29+05:30,Who gets the credit for inventing the very first telephone?,gemma2:2b,False,True,0.214733600616,2.536,34.069,632.096,0.25,0.35
+2026-05-30T00:19:31+05:30,Trivia time! Who was the guy who invented the television?,gemma2:2b,False,False,0.297051012516,2.286,35.264,4107.922,0.25,0.35
+2026-05-30T00:19:36+05:30,Can you explain the whole photosynthesis process simply?,gemma2:2b,False,False,0.736290693283,1.877,33.058,4283.398,0.25,0.35
+2026-05-30T00:19:42+05:30,Can you explain the whole photosynthesis process simply?,gemma2:2b,True,False,2,1.61,27.208,675.363,0.25,0.35
+2026-05-30T00:19:44+05:30,How exactly does photosynthesis work in plants?,gemma2:2b,False,True,0.177051544189,3.228,28.48,642.922,0.25,0.35
+2026-05-30T00:19:46+05:30,Can you explain the whole cellular respiration process simply?,gemma2:2b,False,False,0.315174877644,2.319,27.033,4217.101,0.25,0.35
+2026-05-30T00:19:51+05:30,"It blows my mind, how do massive airplanes actually fly?",gemma2:2b,False,False,0.771512985229,2.267,28.297,4183.442,0.15,0.35
+2026-05-30T00:19:57+05:30,"It blows my mind, how do massive airplanes actually fly?",gemma2:2b,True,False,2,2.161,30.564,635.262,0.15,0.35
+2026-05-30T00:19:59+05:30,What keeps heavy airplanes up in the air?,gemma2:2b,False,False,0.320896804333,2.805,30.681,4133.265,0.25,0.35
+2026-05-30T00:20:04+05:30,"It blows my mind, how do massive helicopters actually fly?",gemma2:2b,False,False,0.194615900517,1.633,27.238,4179.881,0.15,0.35
+2026-05-30T00:20:10+05:30,"I feel sick, what are the most common symptoms of the flu?",gemma2:2b,False,False,0.809869289398,2.353,30.633,4195.63,0.25,0.35
+2026-05-30T00:20:15+05:30,"I feel sick, what are the most common symptoms of the flu?",gemma2:2b,True,False,2,2.173,29.283,630.297,0.25,0.35
+2026-05-30T00:20:17+05:30,How do I know if I have the flu based on symptoms?,gemma2:2b,False,False,0.193600416183,2.897,31.971,4194.302,0.15,0.35
+2026-05-30T00:20:23+05:30,"I feel sick, what are the most common symptoms of a cold?",gemma2:2b,False,True,0.146470248699,1.596,25.016,637.284,0.25,0.35
+2026-05-30T00:20:24+05:30,"My friend loves Coldplay, what is the lead singer's name?",gemma2:2b,False,False,0.689899742603,2.242,38.184,1614.406,0.15,0.35
+2026-05-30T00:20:27+05:30,"My friend loves Coldplay, what is the lead singer's name?",gemma2:2b,True,False,2,2.26,37.392,651.787,0.15,0.35
+2026-05-30T00:20:29+05:30,Who is the frontman for the band Coldplay?,gemma2:2b,False,True,0.159474074841,2.185,27.524,619.304,0.25,0.35
+2026-05-30T00:20:31+05:30,"My friend loves U2, what is the lead singer's name?",gemma2:2b,False,False,0.302921891212,1.755,28.683,1478.019,0.15,0.35
+2026-05-30T00:20:34+05:30,Need caffeine! How do you brew the absolute perfect cup of coffee?,gemma2:2b,False,False,0.73831820488,1.639,28.068,4177.363,0.25,0.35
+2026-05-30T00:20:39+05:30,Need caffeine! How do you brew the absolute perfect cup of coffee?,gemma2:2b,True,False,2,2.685,31.282,652.824,0.25,0.35
+2026-05-30T00:20:41+05:30,What's the secret to making really good coffee at home?,gemma2:2b,False,False,0.277035057545,2.455,37.026,4273.064,0.25,0.35
+2026-05-30T00:20:47+05:30,Need caffeine! How do you brew the absolute perfect cup of tea?,gemma2:2b,False,True,0.0974150300026,3.195,30.668,652.358,0.25,0.35
+2026-05-30T00:20:49+05:30,"I'm a huge history nerd, tell me about the Roman Empire.",gemma2:2b,False,False,0.713607311249,3.158,32.103,4148.021,0.15,0.35
+2026-05-30T00:20:54+05:30,"I'm a huge history nerd, tell me about the Roman Empire.",gemma2:2b,True,False,2,2.283,28.471,650.183,0.15,0.35
+2026-05-30T00:20:56+05:30,Can you give me a brief history lesson on the Roman Empire?,gemma2:2b,False,True,0.192331314087,1.608,26.811,624.467,0.25,0.35
+2026-05-30T00:20:58+05:30,"I'm a huge history nerd, tell me about the Greek Empire.",gemma2:2b,False,False,0.203942298889,2.859,25.82,4854.334,0.15,0.35
+2026-05-30T00:21:04+05:30,That movie was confusing. What was the actual plot of Inception?,gemma2:2b,False,False,0.655432939529,2.318,26.896,4257.547,0.15,0.35
+2026-05-30T00:21:10+05:30,That movie was confusing. What was the actual plot of Inception?,gemma2:2b,True,False,2,1.608,24.691,633.955,0.15,0.35
+2026-05-30T00:21:12+05:30,Explain the storyline of the movie Inception to me.,gemma2:2b,False,True,0.128904521465,2.363,44.201,657.188,0.25,0.35
+2026-05-30T00:21:14+05:30,That movie was confusing. What was the actual plot of Interstellar?,gemma2:2b,False,False,0.286801636219,1.623,27.035,4314.738,0.15,0.35
+2026-05-30T00:21:19+05:30,Stuck on the road! Can you tell me the steps to change a flat tire?,gemma2:2b,False,False,0.704061925411,1.664,31.247,4202.74,0.25,0.35
+2026-05-30T00:21:25+05:30,Stuck on the road! Can you tell me the steps to change a flat tire?,gemma2:2b,True,False,2,2.198,35.827,644.444,0.25,0.35
+2026-05-30T00:21:27+05:30,How do I go about replacing a flat tire on my car?,gemma2:2b,False,False,0.292283058167,2.229,36.191,4157.541,0.25,0.35
+2026-05-30T00:21:32+05:30,Stuck on the road! Can you tell me the steps to jump a car battery?,gemma2:2b,False,False,0.496722817421,2.435,33.381,4147.171,0.25,0.15
+2026-05-30T00:21:38+05:30,"Everyone says I should meditate, but what are the actual benefits?",gemma2:2b,False,False,0.751281440258,2.468,31.407,4211.94,0.15,0.35
+2026-05-30T00:21:43+05:30,"Everyone says I should meditate, but what are the actual benefits?",gemma2:2b,True,False,2,1.764,34.573,644.277,0.15,0.35
+2026-05-30T00:21:45+05:30,Why is daily meditation considered good for your health?,gemma2:2b,False,False,0.301715970039,3.616,29.471,4258.779,0.25,0.35
+2026-05-30T00:21:51+05:30,"Everyone says I should do yoga, but what are the actual benefits?",gemma2:2b,False,False,0.343600034714,1.617,29.079,4368.254,0.15,0.35
+2026-05-30T00:21:56+05:30,Art trivia: Who was the painter responsible for the Mona Lisa?,gemma2:2b,False,False,0.637754201889,2.21,31.474,1777.665,0.25,0.35
+2026-05-30T00:21:59+05:30,Art trivia: Who was the painter responsible for the Mona Lisa?,gemma2:2b,True,False,2,1.606,32.543,691.122,0.25,0.35
+2026-05-30T00:22:01+05:30,Who exactly painted the famous Mona Lisa portrait?,gemma2:2b,False,True,0.12111389637,1.636,29.138,616.591,0.15,0.35
+2026-05-30T00:22:03+05:30,Art trivia: Who was the painter responsible for Starry Night?,gemma2:2b,False,False,0.400021314621,2.518,27.297,1743.675,0.15,0.35
+2026-05-30T00:22:06+05:30,"Hey man, I desperately need a Python script to sort an array.",gemma2:2b,False,False,0.798476397991,3.223,34.403,4128.817,0.25,0.15
+2026-05-30T00:22:12+05:30,"Hey man, I desperately need a Python script to sort an array.",gemma2:2b,True,False,2,2.519,33.902,565.317,0.25,0.15
+2026-05-30T00:22:13+05:30,Could you provide some python code that sorts an array?,gemma2:2b,False,True,0.0975090265274,3.858,31.159,547.227,0.25,0.15
+2026-05-30T00:22:15+05:30,"Hey man, I desperately need a Golang script to sort an array.",gemma2:2b,False,False,0.315650224686,2.17,30.88,4076.8,0.25,0.15
+2026-05-30T00:22:21+05:30,What's the standard way to reverse a string in JS nowadays?,gemma2:2b,False,False,0.779298365116,2.22,32.553,4238.905,0.25,0.35
+2026-05-30T00:22:26+05:30,What's the standard way to reverse a string in JS nowadays?,gemma2:2b,True,False,2,1.983,28.914,655.793,0.25,0.35
+2026-05-30T00:22:28+05:30,I need a javascript function that can reverse any string.,gemma2:2b,False,True,0.168765842915,1.697,29.948,553.837,0.25,0.15
+2026-05-30T00:22:30+05:30,What's the standard way to reverse a string in Java nowadays?,gemma2:2b,False,True,0.242271840572,3.958,35.113,630.05,0.25,0.35
+2026-05-30T00:22:32+05:30,Pls walk me through creating a basic REST API using Node.js.,gemma2:2b,False,False,0.784156024456,1.605,28.056,4119.061,0.15,0.15
+2026-05-30T00:22:37+05:30,Pls walk me through creating a basic REST API using Node.js.,gemma2:2b,True,False,2,2.384,33.926,574.072,0.15,0.15
+2026-05-30T00:22:39+05:30,How do I set up a simple RESTful API with Node?,gemma2:2b,False,False,0.18418943882,2.284,30.763,4072.104,0.15,0.15
+2026-05-30T00:22:44+05:30,Pls walk me through creating a basic REST API using Django.,gemma2:2b,False,False,0.299038290977,2.169,27.904,4144.543,0.15,0.15
+2026-05-30T00:22:50+05:30,I'm stuck. How do I connect to a MySQL database from PHP?,gemma2:2b,False,False,0.796161174774,2.236,37.244,4244.104,0.15,0.15
+2026-05-30T00:22:55+05:30,I'm stuck. How do I connect to a MySQL database from PHP?,gemma2:2b,True,False,2,1.643,29.038,573.992,0.15,0.15
+2026-05-30T00:22:57+05:30,Can you show me the PHP code to establish a MySQL connection?,gemma2:2b,False,False,0.183783710003,2.577,37.11,4136.459,0.15,0.35
+2026-05-30T00:23:03+05:30,I'm stuck. How do I connect to a PostgreSQL database from PHP?,gemma2:2b,False,False,0.294488728046,1.682,36.967,4213.317,0.15,0.35
+2026-05-30T00:23:08+05:30,What library should I use to read a CSV file in Python?,gemma2:2b,False,False,0.640989661217,2.255,29.146,4195.3,0.15,0.35
+2026-05-30T00:23:14+05:30,What library should I use to read a CSV file in Python?,gemma2:2b,True,False,2,2.352,31.395,637.046,0.15,0.35
+2026-05-30T00:23:16+05:30,Show me an example of parsing a CSV document in python.,gemma2:2b,False,False,0.27176618576,2.845,35.182,4060.357,0.15,0.15
+2026-05-30T00:23:21+05:30,What library should I use to read a CSV file in R?,gemma2:2b,False,False,0.227302253246,1.609,26.343,4243.64,0.15,0.35
+2026-05-30T00:23:26+05:30,Can you write a quick Golang snippet to send an HTTP GET request?,gemma2:2b,False,False,0.563170790672,2.324,30.269,4108.902,0.15,0.15
+2026-05-30T00:23:32+05:30,Can you write a quick Golang snippet to send an HTTP GET request?,gemma2:2b,True,False,2,2.878,27.507,569.35,0.15,0.15
+2026-05-30T00:23:34+05:30,How do I perform a basic GET request using Go's net/http?,gemma2:2b,False,False,0.226629018784,3.425,41.079,4110.525,0.15,0.15
+2026-05-30T00:23:39+05:30,Can you write a quick Golang snippet to send an HTTP POST request?,gemma2:2b,False,True,0.0930874943733,2.491,30.211,566.232,0.15,0.15
+2026-05-30T00:23:41+05:30,"I'm doing iOS dev, how do I parse JSON data in Swift safely?",gemma2:2b,False,False,0.77461206913,2.857,33.621,4056.874,0.15,0.15
+2026-05-30T00:23:46+05:30,"I'm doing iOS dev, how do I parse JSON data in Swift safely?",gemma2:2b,True,False,2,2.26,37.148,575.658,0.15,0.15
+2026-05-30T00:23:48+05:30,What's the best way to decode JSON objects in Swift?,gemma2:2b,False,False,0.225713133812,1.675,25.438,4187.483,0.15,0.35
+2026-05-30T00:23:54+05:30,"I'm doing iOS dev, how do I parse XML data in Swift safely?",gemma2:2b,False,False,0.222944259644,2.909,38.119,4291.306,0.15,0.15
+2026-05-30T00:23:59+05:30,"For my CS class, how do I implement a queue data structure in C++?",gemma2:2b,False,False,0.75089764595,1.624,33.075,4276.903,0.15,0.15
+2026-05-30T00:24:05+05:30,"For my CS class, how do I implement a queue data structure in C++?",gemma2:2b,True,False,2,2.341,31.67,573.105,0.15,0.35
+2026-05-30T00:24:07+05:30,Provide a C++ implementation of a standard queue.,gemma2:2b,False,True,0.222966849804,1.695,26.61,554.453,0.25,0.15
+2026-05-30T00:24:08+05:30,"For my CS class, how do I implement a stack data structure in C++?",gemma2:2b,False,False,0.36144310236,1.609,28.539,4100.805,0.15,0.15
+2026-05-30T00:24:14+05:30,"In Rust, what's the idiomatic way to find the max value in an array?",gemma2:2b,False,False,0.666227698326,1.715,30.143,4209.871,0.15,0.35
+2026-05-30T00:24:19+05:30,"In Rust, what's the idiomatic way to find the max value in an array?",gemma2:2b,True,False,2,2.18,36.575,631.241,0.15,0.35
+2026-05-30T00:24:21+05:30,How do you get the maximum element of a slice or array in Rust?,gemma2:2b,False,True,0.177668333054,1.834,31.191,639.918,0.25,0.35
+2026-05-30T00:24:23+05:30,"In Rust, what's the idiomatic way to find the min value in an array?",gemma2:2b,False,True,0.211211979389,2.411,28.133,661.539,0.25,0.35
+2026-05-30T00:24:25+05:30,Need a quick one-liner Python script to reverse a list in place.,gemma2:2b,False,False,0.483758091927,2.286,32.195,4110.626,0.25,0.35
+2026-05-30T00:24:30+05:30,Need a quick one-liner Python script to reverse a list in place.,gemma2:2b,True,False,2,1.926,31.029,560.339,0.25,0.35
+2026-05-30T00:24:32+05:30,How can I reverse the elements of a python list easily?,gemma2:2b,False,True,0.0992774963379,2.148,30.009,617.875,0.25,0.35
+2026-05-30T00:24:34+05:30,Need a quick one-liner Golang script to reverse a slice in place.,gemma2:2b,False,False,0.363790512085,3.468,34.645,4064.485,0.25,0.35
+2026-05-30T00:24:40+05:30,Can you show me a recursive factorial function written in C?,gemma2:2b,False,False,0.816807806492,2.346,33.222,4111.01,0.25,0.15
+2026-05-30T00:24:45+05:30,Can you show me a recursive factorial function written in C?,gemma2:2b,True,False,2,3.386,35.78,623.991,0.25,0.15
+2026-05-30T00:24:47+05:30,I need a C program that calculates factorial using recursion.,gemma2:2b,False,True,0.141213774681,2.776,33.362,554.902,0.25,0.15
+2026-05-30T00:24:49+05:30,Can you show me an iterative factorial function written in C?,gemma2:2b,False,True,0.126363396645,3.195,31.367,547.574,0.25,0.15
+2026-05-30T00:24:51+05:30,"Hey, what is the easiest method to sort an array in JavaScript?",gemma2:2b,False,False,0.377165794373,1.752,25.171,4161.311,0.25,0.35
+2026-05-30T00:24:56+05:30,"Hey, what is the easiest method to sort an array in JavaScript?",gemma2:2b,True,False,2,1.906,29.271,691.295,0.25,0.35
+2026-05-30T00:24:58+05:30,How do I order the elements of a JS array alphabetically or numerically?,gemma2:2b,False,False,0.212346434593,2.784,35.77,4268.485,0.15,0.35
+2026-05-30T00:25:04+05:30,"Hey, what is the easiest method to sort an array in Java?",gemma2:2b,False,False,0.314858257771,2.164,63.696,4242.631,0.25,0.35
+2026-05-30T00:25:09+05:30,I want to try GraphQL. How do I create a server for it in Node.js?,gemma2:2b,False,False,0.391238689423,3.335,34.633,4147.368,0.15,0.15
+2026-05-30T00:25:14+05:30,I want to try GraphQL. How do I create a server for it in Node.js?,gemma2:2b,True,False,2,2.838,34.714,557.861,0.15,0.15
+2026-05-30T00:25:16+05:30,What's the setup process for a Node JS GraphQL API?,gemma2:2b,False,False,0.211108744144,2.366,32.321,4175.632,0.15,0.35
+2026-05-30T00:25:22+05:30,I want to try GraphQL. How do I create a server for it in Django?,gemma2:2b,False,False,0.25939643383,1.989,31.478,4115.988,0.15,0.15
+2026-05-30T00:25:27+05:30,"Using PHP, how exactly do I connect to my MongoDB cluster?",gemma2:2b,False,False,0.435773193836,2.249,27.365,4163.063,0.15,0.15
+2026-05-30T00:25:33+05:30,"Using PHP, how exactly do I connect to my MongoDB cluster?",gemma2:2b,True,False,2,2.546,27.331,562.477,0.15,0.15
+2026-05-30T00:25:34+05:30,Give me the PHP syntax for establishing a MongoDB connection.,gemma2:2b,False,False,0.240341305733,2.134,33.87,4059.684,0.15,0.15
+2026-05-30T00:25:40+05:30,"Using PHP, how exactly do I connect to my Redis cluster?",gemma2:2b,False,False,0.353616774082,1.639,31.285,4114.194,0.15,0.15
+2026-05-30T00:25:45+05:30,Is there a built-in way to read and parse a JSON file in Python?,gemma2:2b,False,False,0.501059293747,2.36,32.861,4269.281,0.15,0.35
+2026-05-30T00:25:51+05:30,Is there a built-in way to read and parse a JSON file in Python?,gemma2:2b,True,False,2,2.353,35.937,561.54,0.15,0.35
+2026-05-30T00:25:53+05:30,How do I load data from a .json file directly into a python dict?,gemma2:2b,False,False,0.265153169632,3.538,43.688,4109.945,0.25,0.15
+2026-05-30T00:25:58+05:30,Is there a built-in way to read and parse a JSON file in R?,gemma2:2b,False,False,0.291318297386,2.218,32.103,4239.233,0.15,0.35
+2026-05-30T00:26:03+05:30,I need a Go example showing how to send an HTTP PUT request.,gemma2:2b,False,False,0.270323574543,2.345,28.543,4230.831,0.15,0.15
+2026-05-30T00:26:09+05:30,I need a Go example showing how to send an HTTP PUT request.,gemma2:2b,True,False,2,2.265,32.955,561.915,0.15,0.15
+2026-05-30T00:26:11+05:30,How can I execute a PUT request in Golang?,gemma2:2b,False,False,0.214246988297,2.205,28.766,4205.485,0.15,0.35
+2026-05-30T00:26:16+05:30,I need a Go example showing how to send an HTTP DELETE request.,gemma2:2b,False,False,0.269459784031,1.751,31.263,4192.6,0.15,0.15
+2026-05-30T00:26:22+05:30,Does Swift have a good way to parse YAML configuration files?,gemma2:2b,False,False,0.387570083141,1.749,27.566,4374.632,0.15,0.35
+2026-05-30T00:26:28+05:30,Does Swift have a good way to parse YAML configuration files?,gemma2:2b,True,False,2,2.764,35.02,657.041,0.15,0.35
+2026-05-30T00:26:29+05:30,How do I read and deserialize YAML data in Swift?,gemma2:2b,False,False,0.302680790424,1.623,29.114,4089.038,0.25,0.15
+2026-05-30T00:26:35+05:30,Does Swift have a good way to parse TOML configuration files?,gemma2:2b,False,False,0.201869368553,2.996,35.532,4237.417,0.15,0.35
+2026-05-30T00:26:40+05:30,Can you write out a full linked list implementation in C++?,gemma2:2b,False,False,0.582623839378,2.198,45.945,4108.526,0.25,0.15
+2026-05-30T00:26:46+05:30,Can you write out a full linked list implementation in C++?,gemma2:2b,True,False,2,4.071,41.431,567.474,0.25,0.15
+2026-05-30T00:26:47+05:30,I need C++ code that creates and manages a singly linked list.,gemma2:2b,False,True,0.194150805473,2.207,32.617,544.385,0.25,0.15
+2026-05-30T00:26:49+05:30,Can you write out a full doubly linked list implementation in C++?,gemma2:2b,False,True,0.0741736888885,2.372,31.255,561.975,0.25,0.15
+2026-05-30T00:26:51+05:30,What's the math logic to find the average value of a Rust array?,gemma2:2b,False,False,0.366704344749,2.437,28.442,4168.919,0.25,0.15
+2026-05-30T00:26:57+05:30,What's the math logic to find the average value of a Rust array?,gemma2:2b,True,False,2,1.607,25.694,588.086,0.25,0.15
+2026-05-30T00:26:59+05:30,How do I compute the mean of an array of floats in Rust?,gemma2:2b,False,True,0.180424451828,3.855,35.441,573.692,0.25,0.15
+2026-05-30T00:27:00+05:30,What's the math logic to find the median value of a Rust array?,gemma2:2b,False,True,0.177918553352,1.496,25.477,544.435,0.25,0.15
+2026-05-30T00:27:02+05:30,"I need a python script to filter a list based on a condition, pls.",gemma2:2b,False,False,0.561211287975,1.642,36.785,4096.775,0.25,0.15
+2026-05-30T00:27:08+05:30,"I need a python script to filter a list based on a condition, pls.",gemma2:2b,True,False,2,3.828,38.096,572.089,0.25,0.15
+2026-05-30T00:27:10+05:30,How do you use list comprehensions or filter() on a python list?,gemma2:2b,False,False,0.326654732227,2.3,33.065,4239.316,0.25,0.35
+2026-05-30T00:27:15+05:30,"I need a golang script to filter a slice based on a condition, pls.",gemma2:2b,False,True,0.189784705639,2.281,32.642,581.137,0.25,0.15
+2026-05-30T00:27:17+05:30,Help me out: calculate the derivative of 3x^2 + 2x step-by-step.,gemma2:2b,False,False,0.805186271667,2.917,33.207,4123.612,0.15,0.15
+2026-05-30T00:27:22+05:30,Help me out: calculate the derivative of 3x^2 + 2x step-by-step.,gemma2:2b,True,False,2,2.296,38.448,581.072,0.15,0.15
+2026-05-30T00:27:24+05:30,What is the first derivative of the function f(x) = 3x^2 + 2x?,gemma2:2b,False,False,0.206796586514,1.731,33.262,4091.669,0.15,0.15
+2026-05-30T00:27:30+05:30,Help me out: calculate the integral of 3x^2 + 2x step-by-step.,gemma2:2b,False,False,0.267445385456,1.723,35.429,4122.765,0.15,0.15
+2026-05-30T00:27:35+05:30,Math question: what exactly is the integral of e^x?,gemma2:2b,False,False,0.612840890884,2.838,26.949,4118.263,0.15,0.15
+2026-05-30T00:27:40+05:30,Math question: what exactly is the integral of e^x?,gemma2:2b,True,False,2,1.636,26.659,555.438,0.15,0.15
+2026-05-30T00:27:42+05:30,"If I integrate e to the power of x, what do I get?",gemma2:2b,False,False,0.275228440762,1.63,29.808,4095.025,0.25,0.15
+2026-05-30T00:27:48+05:30,Math question: what exactly is the derivative of e^x?,gemma2:2b,False,False,0.247693121433,6.628,40.489,4187.832,0.15,0.15
+2026-05-30T00:27:53+05:30,Can you walk me through finding the eigenvalues of a 2x2 matrix?,gemma2:2b,False,False,0.73089838028,1.642,26.421,4369.131,0.15,0.35
+2026-05-30T00:27:59+05:30,Can you walk me through finding the eigenvalues of a 2x2 matrix?,gemma2:2b,True,False,2,1.711,31.725,632.235,0.15,0.35
+2026-05-30T00:28:01+05:30,What is the mathematical process for computing eigenvalues of a 2x2 matrix?,gemma2:2b,False,False,0.195859134197,2.157,33.743,4064.377,0.15,0.15
+2026-05-30T00:28:06+05:30,Can you walk me through finding the eigenvectors of a 2x2 matrix?,gemma2:2b,False,True,0.126090884209,2.499,27.922,580.378,0.15,0.35
+2026-05-30T00:28:08+05:30,"I keep forgetting, what is the Pythagorean theorem used for?",gemma2:2b,False,False,0.747564911842,1.684,27.759,4174.152,0.25,0.35
+2026-05-30T00:28:13+05:30,"I keep forgetting, what is the Pythagorean theorem used for?",gemma2:2b,True,False,2,1.618,40.209,698.728,0.25,0.35
+2026-05-30T00:28:15+05:30,Explain the Pythagorean theorem formula (a^2 + b^2 = c^2) to me.,gemma2:2b,False,False,0.224175632,2.149,29.647,4211.892,0.15,0.15
+2026-05-30T00:28:21+05:30,"I keep forgetting, what is the Binomial theorem used for?",gemma2:2b,False,False,0.574874162674,2.711,34.352,4262.24,0.15,0.35
+2026-05-30T00:28:26+05:30,Algebra help! Solve for x in this equation: 2x + 5 = 15.,gemma2:2b,False,False,0.741538822651,2.35,29.546,4150.512,0.15,0.35
+2026-05-30T00:28:32+05:30,Algebra help! Solve for x in this equation: 2x + 5 = 15.,gemma2:2b,True,False,2,2.808,28.765,575.415,0.15,0.35
+2026-05-30T00:28:34+05:30,"If 2 times x plus 5 equals 15, what is the value of x?",gemma2:2b,False,True,0.197486042976,2.183,29.933,549.21,0.25,0.15
+2026-05-30T00:28:35+05:30,Algebra help! Solve for y in this equation: 2y + 5 = 15.,gemma2:2b,False,False,0.211009204388,2.539,30.078,4098.168,0.15,0.35
+2026-05-30T00:28:41+05:30,Geometry question: what is the area of a perfect circle if the radius is 5?,gemma2:2b,False,False,0.570813417435,3.975,34.181,4144.95,0.25,0.35
+2026-05-30T00:28:46+05:30,Geometry question: what is the area of a perfect circle if the radius is 5?,gemma2:2b,True,False,2,2.266,37.486,576.655,0.25,0.35
+2026-05-30T00:28:48+05:30,How do I calculate the area of a circle that has a radius of 5 units?,gemma2:2b,False,True,0.20654886961,2.432,34.06,546.971,0.25,0.15
+2026-05-30T00:28:50+05:30,Geometry question: what is the circumference of a perfect circle if the radius is 5?,gemma2:2b,False,True,0.102734029293,1.851,35.083,560.161,0.25,0.35
+2026-05-30T00:28:52+05:30,"Just checking, how do you calculate the factorial of 10?",gemma2:2b,False,False,0.487835168839,1.914,23.954,4174.365,0.15,0.15
+2026-05-30T00:28:57+05:30,"Just checking, how do you calculate the factorial of 10?",gemma2:2b,True,False,2,2.313,30.962,575.495,0.15,0.15
+2026-05-30T00:28:59+05:30,What is the mathematical value of 10! (10 factorial)?,gemma2:2b,False,True,0.10768610239,2.18,28.595,552.499,0.25,0.15
+2026-05-30T00:29:01+05:30,"Just checking, how do you calculate the factorial of 9?",gemma2:2b,False,True,0.110034048557,2.792,36.576,559.947,0.15,0.15
+2026-05-30T00:29:03+05:30,What exactly is the Fibonacci sequence and how does it start?,gemma2:2b,False,False,0.635736703873,1.786,28.43,4567.747,0.25,0.35
+2026-05-30T00:29:09+05:30,What exactly is the Fibonacci sequence and how does it start?,gemma2:2b,True,False,2,2.157,27.455,585.505,0.25,0.35
+2026-05-30T00:29:11+05:30,Explain how the numbers in the Fibonacci sequence are generated.,gemma2:2b,False,True,0.133067071438,1.099,22.86,521.943,0.15,0.15
+2026-05-30T00:29:12+05:30,What exactly is the Lucas sequence and how does it start?,gemma2:2b,False,False,0.428107380867,3.147,47.123,4260.396,0.25,0.35
+2026-05-30T00:29:18+05:30,I need to find the roots of the quadratic equation x^2 - 4x + 4 = 0.,gemma2:2b,False,False,0.58735871315,1.6,24.347,4300.937,0.25,0.15
+2026-05-30T00:29:24+05:30,I need to find the roots of the quadratic equation x^2 - 4x + 4 = 0.,gemma2:2b,True,False,2,4.633,29.484,574.154,0.25,0.15
+2026-05-30T00:29:25+05:30,Can you solve the quadratic polynomial x^2 - 4x + 4 = 0 for me?,gemma2:2b,False,True,0.136565089226,1.632,22.593,508.592,0.15,0.15
+2026-05-30T00:29:27+05:30,I need to find the roots of the quadratic equation x^2 + 4x + 4 = 0.,gemma2:2b,False,True,0.0306149125099,2.674,28.834,500.847,0.25,0.15
+2026-05-30T00:29:29+05:30,Quick math: what is the total sum of the first 100 positive integers?,gemma2:2b,False,False,0.711320638657,2.382,35.688,4113.367,0.15,0.15
+2026-05-30T00:29:34+05:30,Quick math: what is the total sum of the first 100 positive integers?,gemma2:2b,True,False,2,2.102,26.181,583.862,0.15,0.15
+2026-05-30T00:29:36+05:30,"If I add up all numbers from 1 to 100, what is the sum?",gemma2:2b,False,False,0.189927220345,1.626,17.373,4167.91,0.15,0.15
+2026-05-30T00:29:42+05:30,Quick math: what is the total sum of the first 50 positive integers?,gemma2:2b,False,True,0.174545645714,1.632,17.74,514.763,0.25,0.15
+2026-05-30T00:29:44+05:30,Calculus 101: calculate the derivative of sin(x) for me.,gemma2:2b,False,False,0.481052458286,5.614,49.156,4227.598,0.15,0.35
+2026-05-30T00:29:49+05:30,Calculus 101: calculate the derivative of sin(x) for me.,gemma2:2b,True,False,2,1.835,29.757,522.481,0.15,0.35
+2026-05-30T00:29:51+05:30,What is the mathematical derivative of the sine function?,gemma2:2b,False,False,0.260072886944,2.29,29.116,4108.012,0.25,0.15
+2026-05-30T00:29:56+05:30,Calculus 101: calculate the derivative of cos(x) for me.,gemma2:2b,False,False,0.242926955223,1.629,24.522,4254.761,0.15,0.35
+2026-05-30T00:30:02+05:30,What is the indefinite integral of 1/x? I'm stuck on my homework.,gemma2:2b,False,False,0.461216807365,1.617,22.447,4101.899,0.15,0.15
+2026-05-30T00:30:07+05:30,What is the indefinite integral of 1/x? I'm stuck on my homework.,gemma2:2b,True,False,2,2.082,26.879,589.41,0.15,0.15
+2026-05-30T00:30:09+05:30,"If you integrate 1 over x with respect to x, what is the answer?",gemma2:2b,False,False,0.262753427029,1.619,30.006,4126.346,0.25,0.15
+2026-05-30T00:30:15+05:30,What is the mathematical derivative of 1/x? I'm stuck on my homework.,gemma2:2b,False,False,0.303068161011,1.706,26.044,4265.418,0.15,0.15
+2026-05-30T00:30:20+05:30,How the heck do I find the determinant of a 3x3 matrix?,gemma2:2b,False,False,0.463650584221,2.624,26.542,4253.032,0.25,0.15
+2026-05-30T00:30:26+05:30,How the heck do I find the determinant of a 3x3 matrix?,gemma2:2b,True,False,2,3.934,23.748,591.062,0.25,0.15
+2026-05-30T00:30:28+05:30,What's the formula or method to calculate a 3x3 matrix determinant?,gemma2:2b,False,True,0.0999767184258,1.779,22.012,512.739,0.25,0.15
+2026-05-30T00:30:30+05:30,How the heck do I find the inverse of a 3x3 matrix?,gemma2:2b,False,False,0.279953896999,2.534,25.729,4212.521,0.25,0.15
+2026-05-30T00:30:35+05:30,"Remind me, what is the standard quadratic formula used for?",gemma2:2b,False,False,0.44066286087,1.666,23.176,4172.751,0.25,0.15
+2026-05-30T00:30:40+05:30,"Remind me, what is the standard quadratic formula used for?",gemma2:2b,True,False,2,2.538,23.239,508.847,0.25,0.15
+2026-05-30T00:30:42+05:30,Can you write out the quadratic formula and explain it?,gemma2:2b,False,True,0.183739602566,1.604,33.558,527.409,0.25,0.15
+2026-05-30T00:30:44+05:30,"Remind me, what is the standard cubic formula used for?",gemma2:2b,False,False,0.340483546257,2.217,22.874,3946.424,0.15,0.35
+2026-05-30T00:30:49+05:30,I have a basic algebra equation to solve for x: 3x - 7 = 8.,gemma2:2b,False,False,0.396307647228,2.413,27.826,4129.671,0.15,0.15
+2026-05-30T00:30:55+05:30,I have a basic algebra equation to solve for x: 3x - 7 = 8.,gemma2:2b,True,False,2,2.271,23.787,512.072,0.15,0.15
+2026-05-30T00:30:57+05:30,"If 3x minus 7 is equal to 8, what does x equal?",gemma2:2b,False,True,0.228714764118,1.734,30.114,499.237,0.25,0.15
+2026-05-30T00:30:58+05:30,I have a basic algebra equation to solve for x: 3x + 7 = 8.,gemma2:2b,False,True,0.0251100063324,1.623,22.421,513.595,0.15,0.15
+2026-05-30T00:31:00+05:30,Does anyone know if there is water on Mars?,gemma2:2b,False,False,0.672511994839,1.642,24.003,4200.845,0.25,0.35
+2026-05-30T00:31:06+05:30,Does anyone know if there is water on Mars?,gemma2:2b,True,False,2,1.622,20.983,582.417,0.25,0.35
+2026-05-30T00:31:08+05:30,Has water ever been discovered on the planet Mars?,gemma2:2b,False,True,0.150875270367,2.812,26.659,592.594,0.25,0.35
+2026-05-30T00:31:10+05:30,Does anyone know if there is water on Venus?,gemma2:2b,False,False,0.268117427826,2.176,31.814,4175.674,0.25,0.35
+2026-05-30T00:31:15+05:30,"I'm totally new, how do I start a Docker container?",gemma2:2b,False,False,0.743172645569,1.625,23.775,4320.774,0.25,0.35
+2026-05-30T00:31:21+05:30,"I'm totally new, how do I start a Docker container?",gemma2:2b,True,False,2,2.224,28.569,592.469,0.25,0.35
+2026-05-30T00:31:23+05:30,What's the command to run a new container in Docker?,gemma2:2b,False,True,0.238583385944,1.621,22.406,565.086,0.25,0.35
+2026-05-30T00:31:24+05:30,"I'm totally new, how do I stop a Docker container?",gemma2:2b,False,False,0.289717972279,1.622,21.801,4378.742,0.15,0.35
+2026-05-30T00:31:30+05:30,"Pls help, what exactly is a Kubernetes pod?",gemma2:2b,False,False,0.660550475121,1.654,22.733,4232.532,0.15,0.35
+2026-05-30T00:31:36+05:30,"Pls help, what exactly is a Kubernetes pod?",gemma2:2b,True,False,2,2.241,38.057,589.806,0.15,0.35
+2026-05-30T00:31:38+05:30,Can someone explain the concept of a Pod in K8s?,gemma2:2b,False,True,0.168242752552,2.362,25.375,573.302,0.25,0.35
+2026-05-30T00:31:39+05:30,"Pls help, what exactly is a Kubernetes node?",gemma2:2b,False,False,0.154821753502,1.597,22.437,4206.903,0.15,0.35
+2026-05-30T00:31:45+05:30,Math homework: what is the integral of x squared?,gemma2:2b,False,False,0.395701885223,1.628,21.825,4304.021,0.15,0.15
+2026-05-30T00:31:51+05:30,Math homework: what is the integral of x squared?,gemma2:2b,True,False,2,1.621,21.963,550.734,0.15,0.15
+2026-05-30T00:31:52+05:30,Can you integrate x^2 with respect to x for me?,gemma2:2b,False,False,0.260882616043,1.716,24.803,4161.37,0.25,0.15
+2026-05-30T00:31:58+05:30,Math homework: what is the derivative of x squared?,gemma2:2b,False,False,0.315445661545,1.625,17.893,4273.594,0.25,0.15
+2026-05-30T00:32:04+05:30,How do I find the transpose of a 3x3 matrix?,gemma2:2b,False,False,0.295051574707,1.757,25.891,4299.725,0.25,0.15
+2026-05-30T00:32:09+05:30,How do I find the transpose of a 3x3 matrix?,gemma2:2b,True,False,2,1.639,27.116,515.027,0.25,0.15
+2026-05-30T00:32:11+05:30,What are the steps to transpose a 3 by 3 matrix?,gemma2:2b,False,True,0.12900352478,1.639,22.025,494.874,0.25,0.15
+2026-05-30T00:32:13+05:30,How do I find the inverse of a 3x3 matrix?,gemma2:2b,False,True,0.0140402317047,1.629,25.071,541.958,0.25,0.15
+2026-05-30T00:32:15+05:30,"Quick geography question, what's the capital of Canada?",gemma2:2b,False,False,0.430034279823,1.602,20.529,1595.374,0.15,0.35
+2026-05-30T00:32:17+05:30,"Quick geography question, what's the capital of Canada?",gemma2:2b,True,False,2,2.252,16.833,597.907,0.15,0.35
+2026-05-30T00:32:19+05:30,What city is the official capital of Canada?,gemma2:2b,False,True,0.158707499504,2.196,24.735,579.999,0.25,0.35
+2026-05-30T00:32:21+05:30,"Quick geography question, what's the capital of Mexico?",gemma2:2b,False,False,0.426154375076,1.652,22.444,1566.242,0.15,0.35
+2026-05-30T00:32:24+05:30,"I'm visiting soon, what is the capital of Japan?",gemma2:2b,False,False,0.374229490757,2.181,21.955,1479.195,0.25,0.35
+2026-05-30T00:32:27+05:30,"I'm visiting soon, what is the capital of Japan?",gemma2:2b,True,False,2,1.611,20.898,602.267,0.25,0.35
+2026-05-30T00:32:29+05:30,Name the capital city of Japan for me.,gemma2:2b,False,True,0.189333021641,1.608,21.456,603.089,0.25,0.35
+2026-05-30T00:32:31+05:30,"I'm visiting soon, what is the capital of China?",gemma2:2b,False,False,0.318358123302,1.776,23.132,1393.439,0.25,0.35
+2026-05-30T00:32:33+05:30,History test tomorrow! What year did World War 2 end?,gemma2:2b,False,False,0.589168310165,1.617,22.139,4238.631,0.25,0.35
+2026-05-30T00:32:39+05:30,History test tomorrow! What year did World War 2 end?,gemma2:2b,True,False,2,8.457,72.076,639.326,0.25,0.35
+2026-05-30T00:32:41+05:30,In what year did the Second World War officially finish?,gemma2:2b,False,True,0.245523333549,2.256,23.788,562.116,0.25,0.35
+2026-05-30T00:32:43+05:30,History test tomorrow! What year did World War 1 end?,gemma2:2b,False,True,0.0505135059357,1.605,25.344,562.559,0.25,0.35
+2026-05-30T00:32:45+05:30,When exactly did humans first land on the moon?,gemma2:2b,False,False,0.481524705887,2.17,20.096,3462.4,0.25,0.35
+2026-05-30T00:32:49+05:30,When exactly did humans first land on the moon?,gemma2:2b,True,False,2,2.175,111.104,711.058,0.25,0.35
+2026-05-30T00:32:51+05:30,What date did the Apollo 11 moon landing happen?,gemma2:2b,False,False,0.311526060104,2.235,20.185,1946.121,0.25,0.35
+2026-05-30T00:32:55+05:30,When exactly did humans first land on Mars?,gemma2:2b,False,False,0.262570798397,5.393,23.552,4026.669,0.25,0.15
+2026-05-30T00:33:00+05:30,"I'm hungry, what's the secret to fluffy scrambled eggs?",gemma2:2b,False,False,0.620968639851,1.699,23.776,4262.971,0.15,0.35
+2026-05-30T00:33:06+05:30,"I'm hungry, what's the secret to fluffy scrambled eggs?",gemma2:2b,True,False,2,3.214,24.719,639.064,0.15,0.35
+2026-05-30T00:33:08+05:30,"How do you make the best, fluffiest scrambled eggs?",gemma2:2b,False,False,0.184547543526,1.661,25.014,4482.139,0.15,0.35
+2026-05-30T00:33:13+05:30,"I'm hungry, what's the secret to fluffy boiled eggs?",gemma2:2b,False,True,0.0879643559456,1.654,24.17,649.885,0.15,0.35
+2026-05-30T00:33:15+05:30,Biology question: what does DNA stand for?,gemma2:2b,False,False,0.713402867317,2.303,26.492,1520.331,0.15,0.35
+2026-05-30T00:33:18+05:30,Biology question: what does DNA stand for?,gemma2:2b,True,False,2,2.166,23.812,636.598,0.15,0.35
+2026-05-30T00:33:20+05:30,What is the full scientific name for DNA?,gemma2:2b,False,True,0.230862140656,1.109,18.359,592.693,0.25,0.35
+2026-05-30T00:33:22+05:30,Biology question: what does RNA stand for?,gemma2:2b,False,False,0.30850058794,3.274,24.08,2094.961,0.15,0.35
+2026-05-30T00:33:25+05:30,What is the very first element on the periodic table?,gemma2:2b,False,False,0.694884300232,1.625,22.024,1844.606,0.25,0.35
+2026-05-30T00:33:28+05:30,What is the very first element on the periodic table?,gemma2:2b,True,False,2,1.589,20.008,581.841,0.25,0.35
+2026-05-30T00:33:30+05:30,Name element number 1 on the periodic table.,gemma2:2b,False,True,0.175589442253,2.198,20.433,495.972,0.25,0.15
+2026-05-30T00:33:32+05:30,What is the very last element on the periodic table?,gemma2:2b,False,True,0.131780803204,2.175,35.324,568.75,0.25,0.35
+2026-05-30T00:33:34+05:30,"I keep hearing about it, what actually is a blockchain?",gemma2:2b,False,False,0.692955732346,2.035,23.522,4250.597,0.25,0.35
+2026-05-30T00:33:40+05:30,"I keep hearing about it, what actually is a blockchain?",gemma2:2b,True,False,2,2.177,20.732,591.248,0.25,0.35
+2026-05-30T00:33:42+05:30,Explain the concept of blockchain technology simply.,gemma2:2b,False,False,0.262395918369,2.203,29.482,4143.282,0.15,0.35
+2026-05-30T00:33:47+05:30,"I keep hearing about it, what actually is a cryptocurrency?",gemma2:2b,False,False,0.337588965893,1.672,21.377,4275.898,0.15,0.35
+2026-05-30T00:33:53+05:30,Art history: why did Vincent Van Gogh cut off his ear?,gemma2:2b,False,False,0.589603304863,2.167,21.313,4253.595,0.15,0.35
+2026-05-30T00:33:58+05:30,Art history: why did Vincent Van Gogh cut off his ear?,gemma2:2b,True,False,2,1.07,21.114,628.678,0.15,0.35
+2026-05-30T00:34:00+05:30,What's the real story behind Van Gogh losing his ear?,gemma2:2b,False,True,0.147189557552,1.622,27.079,578.891,0.25,0.35
+2026-05-30T00:34:02+05:30,Art history: why did Vincent Van Gogh paint sunflowers?,gemma2:2b,False,False,0.349016785622,2.192,23.122,4219.532,0.15,0.35
+2026-05-30T00:34:07+05:30,How often are the Summer Olympic games held?,gemma2:2b,False,False,0.75230050087,1.67,21.009,2506.619,0.15,0.35
+2026-05-30T00:34:11+05:30,How often are the Summer Olympic games held?,gemma2:2b,True,False,2,2.016,23.249,663.428,0.15,0.35
+2026-05-30T00:34:13+05:30,What is the time gap between each Summer Olympics?,gemma2:2b,False,True,0.243780791759,1.57,21.401,490.337,0.25,0.15
+2026-05-30T00:34:15+05:30,How often are the Winter Olympic games held?,gemma2:2b,False,True,0.113715529442,1.657,23.256,547.926,0.15,0.35

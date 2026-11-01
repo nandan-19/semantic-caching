@@ -1,0 +1,301 @@
+Timestamp,Query,Model,Exact_Hit,Semantic_Hit,Distance_Score,Trad_Latency_Ms,Sem_Latency_Ms,Total_Latency_Ms,Shannon_Thresh,Model_Thresh
+2026-05-29T23:51:53+05:30,Hey there! Can you tell me what the capital of France is?,llama3.2:3b,False,False,2,4.072,33.145,1643.167,0.25,0.35
+2026-05-29T23:51:56+05:30,Hey there! Can you tell me what the capital of France is?,llama3.2:3b,True,False,2,14.825,32.336,813.05,0.25,0.35
+2026-05-29T23:51:58+05:30,What's the capital city of France btw?,llama3.2:3b,False,True,0.130730092525,2.854,30.198,689.335,0.25,0.35
+2026-05-29T23:52:00+05:30,Hey there! Can you tell me what the capital of Germany is?,llama3.2:3b,False,False,0.270708501339,4.298,30.981,2369.091,0.25,0.35
+2026-05-29T23:52:04+05:30,"yo, I need to bake a chocolate cake today. any good recipes?",llama3.2:3b,False,False,0.887757778168,2.329,32.041,6110.449,0.25,0.35
+2026-05-29T23:52:12+05:30,"yo, I need to bake a chocolate cake today. any good recipes?",llama3.2:3b,True,False,2,2.165,112.828,731.051,0.25,0.35
+2026-05-29T23:52:14+05:30,Could you help me figure out how to bake a chocolate cake?,llama3.2:3b,False,True,0.187233626842,2.135,35.164,684.805,0.25,0.35
+2026-05-29T23:52:16+05:30,"yo, I need to bake a vanilla cake today. any good recipes?",llama3.2:3b,False,True,0.168067336082,1.678,37.376,665.702,0.25,0.35
+2026-05-29T23:52:18+05:30,Can somebody explain the rules of soccer to me like I'm 5?,llama3.2:3b,False,False,0.818535923958,2.292,26.851,5993.256,0.15,0.35
+2026-05-29T23:52:26+05:30,Can somebody explain the rules of soccer to me like I'm 5?,llama3.2:3b,True,False,2,2.29,47.354,720.675,0.15,0.35
+2026-05-29T23:52:28+05:30,"I don't get soccer, what are the basic rules?",llama3.2:3b,False,True,0.102182626724,2.273,26.427,704.042,0.25,0.35
+2026-05-29T23:52:30+05:30,Can somebody explain the rules of basketball to me like I'm 5?,llama3.2:3b,False,False,0.213048577309,2.326,28.634,5913.776,0.15,0.35
+2026-05-29T23:52:37+05:30,"I'm super curious, what's literally the tallest mountain on Earth?",llama3.2:3b,False,False,0.724201023579,2.926,33.684,5854.951,0.15,0.35
+2026-05-29T23:52:44+05:30,"I'm super curious, what's literally the tallest mountain on Earth?",llama3.2:3b,True,False,2,2.272,36.638,754.77,0.15,0.35
+2026-05-29T23:52:46+05:30,Which mountain is the absolute highest in the world?,llama3.2:3b,False,True,0.161337316036,2.242,32.07,697.51,0.25,0.35
+2026-05-29T23:52:48+05:30,"I'm super curious, what's literally the longest river on Earth?",llama3.2:3b,False,False,0.443373501301,1.893,25.783,6030.575,0.15,0.35
+2026-05-29T23:52:55+05:30,Does anyone know exactly how far the moon is from us?,llama3.2:3b,False,False,0.619124174118,2.657,41.639,6062.422,0.25,0.35
+2026-05-29T23:53:02+05:30,Does anyone know exactly how far the moon is from us?,llama3.2:3b,True,False,2,2.243,30.14,736.706,0.25,0.35
+2026-05-29T23:53:04+05:30,What is the distance between Earth and the moon roughly?,llama3.2:3b,False,True,0.184323310852,2.272,31.742,750.106,0.25,0.15
+2026-05-29T23:53:06+05:30,Does anyone know exactly how far the sun is from us?,llama3.2:3b,False,False,0.25816732645,2.13,25.008,6328.75,0.25,0.35
+2026-05-29T23:53:13+05:30,"I forgot my history class stuff, who was the very first US president?",llama3.2:3b,False,False,0.83330899477,1.621,36.166,6515.848,0.15,0.35
+2026-05-29T23:53:21+05:30,"I forgot my history class stuff, who was the very first US president?",llama3.2:3b,True,False,2,2.239,39.22,993.363,0.15,0.35
+2026-05-29T23:53:23+05:30,Name the 1st president of the United States for me.,llama3.2:3b,False,False,0.306011736393,2.477,32.004,2766.719,0.25,0.35
+2026-05-29T23:53:27+05:30,"I forgot my history class stuff, who was the very second US president?",llama3.2:3b,False,True,0.117716312408,2.231,45.996,911.576,0.15,0.35
+2026-05-29T23:53:29+05:30,"Quick question, what are the primary colors again?",llama3.2:3b,False,False,0.815259635448,2.123,50.445,5244.923,0.15,0.35
+2026-05-29T23:53:35+05:30,"Quick question, what are the primary colors again?",llama3.2:3b,True,False,2,2.6,31.859,906.811,0.15,0.35
+2026-05-29T23:53:37+05:30,I need a list of all the primary colors pls.,llama3.2:3b,False,True,0.155257999897,1.853,33.665,850.94,0.25,0.35
+2026-05-29T23:53:39+05:30,"Quick question, what are the secondary colors again?",llama3.2:3b,False,True,0.0882515907288,4.647,34.751,674.694,0.15,0.35
+2026-05-29T23:53:41+05:30,"I don't have time to read, give me a quick summary of Harry Potter!",llama3.2:3b,False,False,0.740246415138,1.658,27.594,6702.299,0.15,0.35
+2026-05-29T23:53:49+05:30,"I don't have time to read, give me a quick summary of Harry Potter!",llama3.2:3b,True,False,2,1.625,29.198,737.244,0.15,0.35
+2026-05-29T23:53:50+05:30,Can you summarize the Harry Potter plot real quick?,llama3.2:3b,False,True,0.146870553493,2.491,44.109,654.371,0.15,0.35
+2026-05-29T23:53:52+05:30,"I don't have time to read, give me a quick summary of Lord of the Rings!",llama3.2:3b,False,False,0.291543483734,2.227,50.407,6636.678,0.15,0.35
+2026-05-29T23:54:00+05:30,"Traveling soon, how do I say a basic 'hello' in Spanish?",llama3.2:3b,False,False,0.807978034019,1.134,45.723,6735.027,0.15,0.35
+2026-05-29T23:54:08+05:30,"Traveling soon, how do I say a basic 'hello' in Spanish?",llama3.2:3b,True,False,2,2.511,31.432,867.034,0.15,0.35
+2026-05-29T23:54:10+05:30,What's the Spanish translation for hello?,llama3.2:3b,False,True,0.16443759203,2.232,28.675,659.285,0.25,0.35
+2026-05-29T23:54:11+05:30,"Traveling soon, how do I say a basic 'goodbye' in Spanish?",llama3.2:3b,False,False,0.174903869629,2.883,34.821,7507.928,0.15,0.35
+2026-05-29T23:54:20+05:30,At exactly what temperature does water start to freeze?,llama3.2:3b,False,False,0.721052289009,2.737,54.911,6839.66,0.25,0.15
+2026-05-29T23:54:28+05:30,At exactly what temperature does water start to freeze?,llama3.2:3b,True,False,2,2.192,30.186,768.408,0.25,0.15
+2026-05-29T23:54:30+05:30,What is the literal freezing point of water in Celsius?,llama3.2:3b,False,True,0.19761967659,2.374,50.437,848.704,0.25,0.15
+2026-05-29T23:54:32+05:30,At exactly what temperature does water start to boil?,llama3.2:3b,False,False,0.283652126789,2.154,23.441,6719.233,0.25,0.15
+2026-05-29T23:54:40+05:30,I can't sleep. Can you tell me a nice bedtime story?,llama3.2:3b,False,False,0.660081803799,7.338,72.212,7241.295,0.25,0.35
+2026-05-29T23:54:48+05:30,I can't sleep. Can you tell me a nice bedtime story?,llama3.2:3b,True,False,2,3.479,28.805,889.633,0.25,0.35
+2026-05-29T23:54:50+05:30,Tell me a relaxing story to help me fall asleep.,llama3.2:3b,False,False,0.255619287491,2.155,43.292,6547.04,0.25,0.35
+2026-05-29T23:54:58+05:30,I can't sleep. Can you tell me a terrifying ghost story?,llama3.2:3b,False,False,0.284331381321,2.343,39.104,6921.467,0.15,0.35
+2026-05-29T23:55:06+05:30,"Wow Tokyo is huge, how many people actually live there?",llama3.2:3b,False,False,0.650620698929,3.595,40.543,7370.4,0.15,0.35
+2026-05-29T23:55:14+05:30,"Wow Tokyo is huge, how many people actually live there?",llama3.2:3b,True,False,2,1.693,27.037,713.19,0.15,0.35
+2026-05-29T23:55:16+05:30,What's the current population of Tokyo right now?,llama3.2:3b,False,False,0.210841417313,2.853,58.583,6702.321,0.15,0.35
+2026-05-29T23:55:24+05:30,"Wow London is huge, how many people actually live there?",llama3.2:3b,False,False,0.339619874954,4.508,35.887,6805.372,0.15,0.35
+2026-05-29T23:55:32+05:30,"I have a wedding in an hour, how do I tie a necktie??",llama3.2:3b,False,False,0.863342225552,2.794,27.062,7326.985,0.25,0.35
+2026-05-29T23:55:40+05:30,"I have a wedding in an hour, how do I tie a necktie??",llama3.2:3b,True,False,2,2.758,35.112,983.384,0.25,0.35
+2026-05-29T23:55:42+05:30,Please explain step by step how to tie a tie.,llama3.2:3b,False,False,0.481552958488,2.226,41.299,7436.988,0.25,0.35
+2026-05-29T23:55:50+05:30,"I have a wedding in an hour, how do I tie a bowtie??",llama3.2:3b,False,True,0.156072616577,2.73,39.298,916.31,0.25,0.35
+2026-05-29T23:55:52+05:30,Science question: just how fast does light actually travel?,llama3.2:3b,False,False,0.618055105209,2.147,30.42,7092.987,0.15,0.35
+2026-05-29T23:56:00+05:30,Science question: just how fast does light actually travel?,llama3.2:3b,True,False,2,1.691,25.28,638.742,0.15,0.15
+2026-05-29T23:56:02+05:30,What is the exact speed of light in a vacuum?,llama3.2:3b,False,True,0.246613919735,2.807,33.281,945.622,0.25,0.15
+2026-05-29T23:56:04+05:30,Science question: just how fast does sound actually travel?,llama3.2:3b,False,False,0.402842819691,2.858,39.051,6498.048,0.15,0.35
+2026-05-29T23:56:12+05:30,Trivia time! Who was the guy who invented the telephone?,llama3.2:3b,False,False,0.572129368782,3.824,52.872,7081.602,0.25,0.35
+2026-05-29T23:56:20+05:30,Trivia time! Who was the guy who invented the telephone?,llama3.2:3b,True,False,2,3.059,34.975,949.966,0.25,0.35
+2026-05-29T23:56:22+05:30,Who gets the credit for inventing the very first telephone?,llama3.2:3b,False,True,0.214733600616,2.339,39.507,860.075,0.25,0.35
+2026-05-29T23:56:24+05:30,Trivia time! Who was the guy who invented the television?,llama3.2:3b,False,False,0.297051012516,2.499,38.625,7304.145,0.25,0.35
+2026-05-29T23:56:33+05:30,Can you explain the whole photosynthesis process simply?,llama3.2:3b,False,False,0.736290693283,3.376,34.56,7184.162,0.25,0.35
+2026-05-29T23:56:41+05:30,Can you explain the whole photosynthesis process simply?,llama3.2:3b,True,False,2,2.901,26.618,984.579,0.25,0.35
+2026-05-29T23:56:43+05:30,How exactly does photosynthesis work in plants?,llama3.2:3b,False,True,0.177051544189,3.582,47.016,958.432,0.25,0.15
+2026-05-29T23:56:45+05:30,Can you explain the whole cellular respiration process simply?,llama3.2:3b,False,False,0.315174877644,3.875,67.349,7250.184,0.25,0.35
+2026-05-29T23:56:53+05:30,"It blows my mind, how do massive airplanes actually fly?",llama3.2:3b,False,False,0.771512985229,2.781,56.759,7228.537,0.15,0.35
+2026-05-29T23:57:01+05:30,"It blows my mind, how do massive airplanes actually fly?",llama3.2:3b,True,False,2,2.159,26.257,705.923,0.15,0.35
+2026-05-29T23:57:03+05:30,What keeps heavy airplanes up in the air?,llama3.2:3b,False,False,0.320896804333,2.172,39.972,6712.388,0.25,0.15
+2026-05-29T23:57:11+05:30,"It blows my mind, how do massive helicopters actually fly?",llama3.2:3b,False,False,0.194615900517,2.185,34.359,7255.388,0.15,0.35
+2026-05-29T23:57:19+05:30,"I feel sick, what are the most common symptoms of the flu?",llama3.2:3b,False,False,0.809869289398,3.831,43.475,7192.926,0.25,0.35
+2026-05-29T23:57:28+05:30,"I feel sick, what are the most common symptoms of the flu?",llama3.2:3b,True,False,2,2.384,28.105,885.45,0.25,0.35
+2026-05-29T23:57:30+05:30,How do I know if I have the flu based on symptoms?,llama3.2:3b,False,False,0.193600416183,2.834,27.828,6966.183,0.15,0.35
+2026-05-29T23:57:38+05:30,"I feel sick, what are the most common symptoms of a cold?",llama3.2:3b,False,True,0.146470248699,2.474,34.796,907.677,0.25,0.35
+2026-05-29T23:57:40+05:30,"My friend loves Coldplay, what is the lead singer's name?",llama3.2:3b,False,False,0.689899742603,2.905,31.414,6045.622,0.15,0.35
+2026-05-29T23:57:47+05:30,"My friend loves Coldplay, what is the lead singer's name?",llama3.2:3b,True,False,2,2.752,50.586,910.325,0.15,0.35
+2026-05-29T23:57:49+05:30,Who is the frontman for the band Coldplay?,llama3.2:3b,False,True,0.159474074841,9.096,43.198,842.199,0.25,0.35
+2026-05-29T23:57:51+05:30,"My friend loves U2, what is the lead singer's name?",llama3.2:3b,False,False,0.302921891212,2.996,45.182,6676.743,0.15,0.35
+2026-05-29T23:57:59+05:30,Need caffeine! How do you brew the absolute perfect cup of coffee?,llama3.2:3b,False,False,0.73831820488,3.024,65.918,7225.845,0.25,0.35
+2026-05-29T23:58:07+05:30,Need caffeine! How do you brew the absolute perfect cup of coffee?,llama3.2:3b,True,False,2,2.292,34.989,734.898,0.25,0.35
+2026-05-29T23:58:08+05:30,What's the secret to making really good coffee at home?,llama3.2:3b,False,False,0.277035057545,2.866,30.376,6566.457,0.25,0.35
+2026-05-29T23:58:16+05:30,Need caffeine! How do you brew the absolute perfect cup of tea?,llama3.2:3b,False,True,0.0974150300026,2.251,49.933,903.22,0.25,0.35
+2026-05-29T23:58:18+05:30,"I'm a huge history nerd, tell me about the Roman Empire.",llama3.2:3b,False,False,0.713607311249,2.174,59.693,7217.342,0.15,0.35
+2026-05-29T23:58:27+05:30,"I'm a huge history nerd, tell me about the Roman Empire.",llama3.2:3b,True,False,2,2.142,32.366,890.51,0.15,0.35
+2026-05-29T23:58:29+05:30,Can you give me a brief history lesson on the Roman Empire?,llama3.2:3b,False,True,0.192331314087,2.234,41.162,849.594,0.25,0.35
+2026-05-29T23:58:31+05:30,"I'm a huge history nerd, tell me about the Greek Empire.",llama3.2:3b,False,False,0.203942298889,2.216,30.032,7161.131,0.15,0.35
+2026-05-29T23:58:39+05:30,That movie was confusing. What was the actual plot of Inception?,llama3.2:3b,False,False,0.655432939529,1.747,43.205,7011.13,0.15,0.35
+2026-05-29T23:58:47+05:30,That movie was confusing. What was the actual plot of Inception?,llama3.2:3b,True,False,2,3.486,41.13,907.731,0.15,0.35
+2026-05-29T23:58:49+05:30,Explain the storyline of the movie Inception to me.,llama3.2:3b,False,True,0.128904521465,3.051,31.859,829.5,0.25,0.35
+2026-05-29T23:58:51+05:30,That movie was confusing. What was the actual plot of Interstellar?,llama3.2:3b,False,False,0.286801636219,3.806,46.43,7245.762,0.15,0.35
+2026-05-29T23:58:59+05:30,Stuck on the road! Can you tell me the steps to change a flat tire?,llama3.2:3b,False,False,0.704061925411,4.468,39.207,6444.741,0.25,0.35
+2026-05-29T23:59:07+05:30,Stuck on the road! Can you tell me the steps to change a flat tire?,llama3.2:3b,True,False,2,2.689,44.086,920.495,0.25,0.35
+2026-05-29T23:59:09+05:30,How do I go about replacing a flat tire on my car?,llama3.2:3b,False,False,0.292283058167,2.864,34.932,6182.594,0.25,0.35
+2026-05-29T23:59:16+05:30,Stuck on the road! Can you tell me the steps to jump a car battery?,llama3.2:3b,False,False,0.496722817421,4.156,44.545,6841.441,0.25,0.35
+2026-05-29T23:59:24+05:30,"Everyone says I should meditate, but what are the actual benefits?",llama3.2:3b,False,False,0.751281440258,2.242,36.509,6960.763,0.15,0.35
+2026-05-29T23:59:32+05:30,"Everyone says I should meditate, but what are the actual benefits?",llama3.2:3b,True,False,2,3.042,37.107,901.729,0.15,0.35
+2026-05-29T23:59:34+05:30,Why is daily meditation considered good for your health?,llama3.2:3b,False,False,0.301715970039,2.778,39.616,7194.022,0.25,0.35
+2026-05-29T23:59:42+05:30,"Everyone says I should do yoga, but what are the actual benefits?",llama3.2:3b,False,False,0.343600034714,2.745,38.981,7294.08,0.15,0.35
+2026-05-29T23:59:51+05:30,Art trivia: Who was the painter responsible for the Mona Lisa?,llama3.2:3b,False,False,0.637754201889,2.839,38.772,5783.97,0.25,0.35
+2026-05-29T23:59:58+05:30,Art trivia: Who was the painter responsible for the Mona Lisa?,llama3.2:3b,True,False,2,2.208,27.636,903.389,0.25,0.35
+2026-05-29T23:59:59+05:30,Who exactly painted the famous Mona Lisa portrait?,llama3.2:3b,False,True,0.12111389637,4.736,45.823,848.193,0.15,0.35
+2026-05-30T00:00:01+05:30,Art trivia: Who was the painter responsible for Starry Night?,llama3.2:3b,False,False,0.400021314621,2.409,33.931,3436.695,0.15,0.35
+2026-05-30T00:00:06+05:30,"Hey man, I desperately need a Python script to sort an array.",llama3.2:3b,False,False,0.798476397991,3.886,46.947,7131.463,0.25,0.35
+2026-05-30T00:00:14+05:30,"Hey man, I desperately need a Python script to sort an array.",llama3.2:3b,True,False,2,2.202,68.231,769.024,0.25,0.35
+2026-05-30T00:00:16+05:30,Could you provide some python code that sorts an array?,llama3.2:3b,False,True,0.0975090265274,1.663,35.339,728.606,0.25,0.15
+2026-05-30T00:00:18+05:30,"Hey man, I desperately need a Golang script to sort an array.",llama3.2:3b,False,False,0.315650224686,1.636,24.731,6724.767,0.25,0.35
+2026-05-30T00:00:25+05:30,What's the standard way to reverse a string in JS nowadays?,llama3.2:3b,False,False,0.779298365116,8.176,35.147,7143.825,0.25,0.15
+2026-05-30T00:00:34+05:30,What's the standard way to reverse a string in JS nowadays?,llama3.2:3b,True,False,2,2.851,30.753,990.066,0.25,0.15
+2026-05-30T00:00:36+05:30,I need a javascript function that can reverse any string.,llama3.2:3b,False,True,0.168765842915,3.299,42.69,839.335,0.25,0.35
+2026-05-30T00:00:38+05:30,What's the standard way to reverse a string in Java nowadays?,llama3.2:3b,False,True,0.242271840572,2.877,30.293,947.643,0.25,0.15
+2026-05-30T00:00:40+05:30,Pls walk me through creating a basic REST API using Node.js.,llama3.2:3b,False,False,0.784156024456,3.589,42.123,7144.852,0.15,0.35
+2026-05-30T00:00:48+05:30,Pls walk me through creating a basic REST API using Node.js.,llama3.2:3b,True,False,2,2.22,27.615,895.811,0.15,0.35
+2026-05-30T00:00:50+05:30,How do I set up a simple RESTful API with Node?,llama3.2:3b,False,False,0.18418943882,3.192,42.79,6895.326,0.15,0.15
+2026-05-30T00:00:58+05:30,Pls walk me through creating a basic REST API using Django.,llama3.2:3b,False,False,0.299038290977,1.688,29.813,6957.718,0.15,0.35
+2026-05-30T00:01:06+05:30,I'm stuck. How do I connect to a MySQL database from PHP?,llama3.2:3b,False,False,0.796161174774,3.099,40.753,6961.298,0.15,0.15
+2026-05-30T00:01:14+05:30,I'm stuck. How do I connect to a MySQL database from PHP?,llama3.2:3b,True,False,2,2.993,32.33,900.421,0.15,0.35
+2026-05-30T00:01:16+05:30,Can you show me the PHP code to establish a MySQL connection?,llama3.2:3b,False,False,0.183783710003,3.411,31.985,6411.088,0.15,0.15
+2026-05-30T00:01:23+05:30,I'm stuck. How do I connect to a PostgreSQL database from PHP?,llama3.2:3b,False,False,0.294488728046,2.25,31.869,6798.659,0.15,0.35
+2026-05-30T00:01:32+05:30,What library should I use to read a CSV file in Python?,llama3.2:3b,False,False,0.640989661217,2.845,39.604,7298.661,0.15,0.15
+2026-05-30T00:01:40+05:30,What library should I use to read a CSV file in Python?,llama3.2:3b,True,False,2,2.194,32.259,1003.07,0.15,0.15
+2026-05-30T00:01:42+05:30,Show me an example of parsing a CSV document in python.,llama3.2:3b,False,False,0.27176618576,1.706,51.884,6511.646,0.15,0.15
+2026-05-30T00:01:49+05:30,What library should I use to read a CSV file in R?,llama3.2:3b,False,False,0.227302253246,2.254,26.576,7253.983,0.15,0.15
+2026-05-30T00:01:58+05:30,Can you write a quick Golang snippet to send an HTTP GET request?,llama3.2:3b,False,False,0.563170790672,1.632,27.675,7217.574,0.15,0.15
+2026-05-30T00:02:06+05:30,Can you write a quick Golang snippet to send an HTTP GET request?,llama3.2:3b,True,False,2,2.153,30.624,961.948,0.15,0.15
+2026-05-30T00:02:08+05:30,How do I perform a basic GET request using Go's net/http?,llama3.2:3b,False,False,0.226629018784,2.174,35.042,6293.869,0.15,0.15
+2026-05-30T00:02:16+05:30,Can you write a quick Golang snippet to send an HTTP POST request?,llama3.2:3b,False,True,0.0930874943733,3.005,40.327,896.574,0.15,0.15
+2026-05-30T00:02:17+05:30,"I'm doing iOS dev, how do I parse JSON data in Swift safely?",llama3.2:3b,False,False,0.77461206913,1.672,75.49,7315.823,0.15,0.15
+2026-05-30T00:02:26+05:30,"I'm doing iOS dev, how do I parse JSON data in Swift safely?",llama3.2:3b,True,False,2,1.653,35.331,872.564,0.15,0.15
+2026-05-30T00:02:28+05:30,What's the best way to decode JSON objects in Swift?,llama3.2:3b,False,False,0.225713133812,1.576,27.613,6488.512,0.15,0.15
+2026-05-30T00:02:35+05:30,"I'm doing iOS dev, how do I parse XML data in Swift safely?",llama3.2:3b,False,False,0.222944259644,1.632,23.549,6126.735,0.15,0.15
+2026-05-30T00:02:43+05:30,"For my CS class, how do I implement a queue data structure in C++?",llama3.2:3b,False,False,0.75089764595,2.24,45.968,6750.37,0.15,0.15
+2026-05-30T00:02:50+05:30,"For my CS class, how do I implement a queue data structure in C++?",llama3.2:3b,True,False,2,2.152,29.069,823.25,0.15,0.15
+2026-05-30T00:02:52+05:30,Provide a C++ implementation of a standard queue.,llama3.2:3b,False,True,0.222966849804,1.656,30.651,738.871,0.25,0.15
+2026-05-30T00:02:54+05:30,"For my CS class, how do I implement a stack data structure in C++?",llama3.2:3b,False,False,0.36144310236,2.162,27.013,6188.086,0.15,0.15
+2026-05-30T00:03:01+05:30,"In Rust, what's the idiomatic way to find the max value in an array?",llama3.2:3b,False,False,0.666227698326,1.93,27.666,5639.055,0.15,0.15
+2026-05-30T00:03:08+05:30,"In Rust, what's the idiomatic way to find the max value in an array?",llama3.2:3b,True,False,2,2.187,39.071,876.873,0.15,0.15
+2026-05-30T00:03:10+05:30,How do you get the maximum element of a slice or array in Rust?,llama3.2:3b,False,True,0.177668333054,2.487,56.799,699.612,0.25,0.15
+2026-05-30T00:03:12+05:30,"In Rust, what's the idiomatic way to find the min value in an array?",llama3.2:3b,False,True,0.211211979389,2.173,29.099,750.562,0.25,0.15
+2026-05-30T00:03:13+05:30,Need a quick one-liner Python script to reverse a list in place.,llama3.2:3b,False,False,0.483758091927,2.629,33.522,5570.642,0.25,0.15
+2026-05-30T00:03:20+05:30,Need a quick one-liner Python script to reverse a list in place.,llama3.2:3b,True,False,2,1.735,34.865,821.067,0.25,0.15
+2026-05-30T00:03:22+05:30,How can I reverse the elements of a python list easily?,llama3.2:3b,False,True,0.0992774963379,2.293,23.139,709.041,0.25,0.15
+2026-05-30T00:03:24+05:30,Need a quick one-liner Golang script to reverse a slice in place.,llama3.2:3b,False,False,0.363790512085,1.637,31.647,5731.775,0.25,0.15
+2026-05-30T00:03:31+05:30,Can you show me a recursive factorial function written in C?,llama3.2:3b,False,False,0.816807806492,1.599,27.455,6590.49,0.25,0.15
+2026-05-30T00:03:38+05:30,Can you show me a recursive factorial function written in C?,llama3.2:3b,True,False,2,3.144,35.884,911.575,0.25,0.15
+2026-05-30T00:03:40+05:30,I need a C program that calculates factorial using recursion.,llama3.2:3b,False,True,0.141213774681,1.643,61.115,757.402,0.25,0.15
+2026-05-30T00:03:42+05:30,Can you show me an iterative factorial function written in C?,llama3.2:3b,False,True,0.126363396645,1.738,48.063,771.843,0.25,0.15
+2026-05-30T00:03:44+05:30,"Hey, what is the easiest method to sort an array in JavaScript?",llama3.2:3b,False,False,0.377165794373,2.201,25.261,6833.753,0.25,0.35
+2026-05-30T00:03:52+05:30,"Hey, what is the easiest method to sort an array in JavaScript?",llama3.2:3b,True,False,2,2.41,22.059,822.57,0.25,0.35
+2026-05-30T00:03:54+05:30,How do I order the elements of a JS array alphabetically or numerically?,llama3.2:3b,False,False,0.212346434593,2.132,30.042,5727.133,0.15,0.15
+2026-05-30T00:04:00+05:30,"Hey, what is the easiest method to sort an array in Java?",llama3.2:3b,False,False,0.314858257771,1.622,25.554,5588.392,0.25,0.35
+2026-05-30T00:04:07+05:30,I want to try GraphQL. How do I create a server for it in Node.js?,llama3.2:3b,False,False,0.391238689423,1.62,32.396,6068.936,0.15,0.15
+2026-05-30T00:04:14+05:30,I want to try GraphQL. How do I create a server for it in Node.js?,llama3.2:3b,True,False,2,2.678,29.001,758.689,0.15,0.15
+2026-05-30T00:04:16+05:30,What's the setup process for a Node JS GraphQL API?,llama3.2:3b,False,False,0.211108744144,2.354,33.76,5515.41,0.15,0.15
+2026-05-30T00:04:23+05:30,I want to try GraphQL. How do I create a server for it in Django?,llama3.2:3b,False,False,0.25939643383,2.154,26.665,5647.54,0.15,0.15
+2026-05-30T00:04:29+05:30,"Using PHP, how exactly do I connect to my MongoDB cluster?",llama3.2:3b,False,False,0.435773193836,2.408,28.08,5566.663,0.15,0.15
+2026-05-30T00:04:36+05:30,"Using PHP, how exactly do I connect to my MongoDB cluster?",llama3.2:3b,True,False,2,1.085,31.554,781.818,0.15,0.15
+2026-05-30T00:04:38+05:30,Give me the PHP syntax for establishing a MongoDB connection.,llama3.2:3b,False,False,0.240341305733,2.198,24.587,5563.982,0.15,0.15
+2026-05-30T00:04:44+05:30,"Using PHP, how exactly do I connect to my Redis cluster?",llama3.2:3b,False,False,0.353616774082,2.807,32.388,5623.665,0.15,0.15
+2026-05-30T00:04:51+05:30,Is there a built-in way to read and parse a JSON file in Python?,llama3.2:3b,False,False,0.501059293747,1.958,27.833,5790.116,0.15,0.15
+2026-05-30T00:04:58+05:30,Is there a built-in way to read and parse a JSON file in Python?,llama3.2:3b,True,False,2,2.929,35.58,828.284,0.15,0.15
+2026-05-30T00:05:00+05:30,How do I load data from a .json file directly into a python dict?,llama3.2:3b,False,False,0.265153169632,1.598,35.395,5519.397,0.25,0.15
+2026-05-30T00:05:06+05:30,Is there a built-in way to read and parse a JSON file in R?,llama3.2:3b,False,False,0.291318297386,1.633,29.314,5624.66,0.15,0.15
+2026-05-30T00:05:13+05:30,I need a Go example showing how to send an HTTP PUT request.,llama3.2:3b,False,False,0.270323574543,1.699,33.44,5612.066,0.15,0.15
+2026-05-30T00:05:20+05:30,I need a Go example showing how to send an HTTP PUT request.,llama3.2:3b,True,False,2,3.278,30.063,736.077,0.15,0.15
+2026-05-30T00:05:22+05:30,How can I execute a PUT request in Golang?,llama3.2:3b,False,False,0.214246988297,2.231,31.499,5457.622,0.15,0.15
+2026-05-30T00:05:28+05:30,I need a Go example showing how to send an HTTP DELETE request.,llama3.2:3b,False,False,0.269459784031,2.336,28.874,5622.918,0.15,0.15
+2026-05-30T00:05:35+05:30,Does Swift have a good way to parse YAML configuration files?,llama3.2:3b,False,False,0.387570083141,2.409,31.022,5590.294,0.15,0.15
+2026-05-30T00:05:42+05:30,Does Swift have a good way to parse YAML configuration files?,llama3.2:3b,True,False,2,2.088,26.635,775.548,0.15,0.15
+2026-05-30T00:05:43+05:30,How do I read and deserialize YAML data in Swift?,llama3.2:3b,False,False,0.302680790424,2.506,33.082,5508.51,0.25,0.15
+2026-05-30T00:05:50+05:30,Does Swift have a good way to parse TOML configuration files?,llama3.2:3b,False,False,0.201869368553,4.753,36.343,5604.736,0.15,0.15
+2026-05-30T00:05:57+05:30,Can you write out a full linked list implementation in C++?,llama3.2:3b,False,False,0.582623839378,2.225,33.42,5572.031,0.25,0.15
+2026-05-30T00:06:03+05:30,Can you write out a full linked list implementation in C++?,llama3.2:3b,True,False,2,2.046,29.772,748.789,0.25,0.15
+2026-05-30T00:06:05+05:30,I need C++ code that creates and manages a singly linked list.,llama3.2:3b,False,True,0.194150805473,2.808,29.081,690.784,0.25,0.15
+2026-05-30T00:06:07+05:30,Can you write out a full doubly linked list implementation in C++?,llama3.2:3b,False,True,0.0741736888885,1.67,29.306,690.511,0.25,0.15
+2026-05-30T00:06:09+05:30,What's the math logic to find the average value of a Rust array?,llama3.2:3b,False,False,0.366704344749,1.657,26.714,5489.305,0.25,0.15
+2026-05-30T00:06:15+05:30,What's the math logic to find the average value of a Rust array?,llama3.2:3b,True,False,2,2.706,33.67,751.181,0.25,0.15
+2026-05-30T00:06:17+05:30,How do I compute the mean of an array of floats in Rust?,llama3.2:3b,False,True,0.180424451828,2.801,36.033,696.481,0.25,0.15
+2026-05-30T00:06:19+05:30,What's the math logic to find the median value of a Rust array?,llama3.2:3b,False,True,0.177918553352,1.608,48.046,602.977,0.25,0.15
+2026-05-30T00:06:20+05:30,"I need a python script to filter a list based on a condition, pls.",llama3.2:3b,False,False,0.561211287975,1.616,28.578,5526.215,0.25,0.35
+2026-05-30T00:06:27+05:30,"I need a python script to filter a list based on a condition, pls.",llama3.2:3b,True,False,2,2.849,37.039,685.94,0.25,0.35
+2026-05-30T00:06:29+05:30,How do you use list comprehensions or filter() on a python list?,llama3.2:3b,False,False,0.326654732227,2.17,29.323,5508.517,0.25,0.15
+2026-05-30T00:06:35+05:30,"I need a golang script to filter a slice based on a condition, pls.",llama3.2:3b,False,True,0.189784705639,1.662,26.32,709.881,0.25,0.35
+2026-05-30T00:06:37+05:30,Help me out: calculate the derivative of 3x^2 + 2x step-by-step.,llama3.2:3b,False,False,0.805186271667,2.482,35.303,5499.744,0.15,0.15
+2026-05-30T00:06:44+05:30,Help me out: calculate the derivative of 3x^2 + 2x step-by-step.,llama3.2:3b,True,False,2,2.224,28.025,682.271,0.15,0.15
+2026-05-30T00:06:45+05:30,What is the first derivative of the function f(x) = 3x^2 + 2x?,llama3.2:3b,False,False,0.206796586514,1.618,37.093,5671.397,0.15,0.15
+2026-05-30T00:06:52+05:30,Help me out: calculate the integral of 3x^2 + 2x step-by-step.,llama3.2:3b,False,False,0.267445385456,1.583,29.955,5745.677,0.15,0.15
+2026-05-30T00:06:59+05:30,Math question: what exactly is the integral of e^x?,llama3.2:3b,False,False,0.612840890884,3.052,37.027,5447.597,0.15,0.15
+2026-05-30T00:07:05+05:30,Math question: what exactly is the integral of e^x?,llama3.2:3b,True,False,2,2.199,28.646,609.622,0.15,0.15
+2026-05-30T00:07:07+05:30,"If I integrate e to the power of x, what do I get?",llama3.2:3b,False,False,0.275228440762,2.224,28.389,3084.38,0.25,0.15
+2026-05-30T00:07:11+05:30,Math question: what exactly is the derivative of e^x?,llama3.2:3b,False,False,0.247693121433,2.691,34.155,5462.171,0.15,0.15
+2026-05-30T00:07:18+05:30,Can you walk me through finding the eigenvalues of a 2x2 matrix?,llama3.2:3b,False,False,0.73089838028,2.146,23.865,5484.602,0.15,0.35
+2026-05-30T00:07:24+05:30,Can you walk me through finding the eigenvalues of a 2x2 matrix?,llama3.2:3b,True,False,2,2.032,35.27,748.813,0.15,0.15
+2026-05-30T00:07:26+05:30,What is the mathematical process for computing eigenvalues of a 2x2 matrix?,llama3.2:3b,False,False,0.195859134197,2.135,44.06,5694.543,0.15,0.15
+2026-05-30T00:07:33+05:30,Can you walk me through finding the eigenvectors of a 2x2 matrix?,llama3.2:3b,False,True,0.126090884209,2.164,30.906,773.591,0.15,0.15
+2026-05-30T00:07:35+05:30,"I keep forgetting, what is the Pythagorean theorem used for?",llama3.2:3b,False,False,0.747564911842,2.194,29.02,5441.153,0.25,0.35
+2026-05-30T00:07:41+05:30,"I keep forgetting, what is the Pythagorean theorem used for?",llama3.2:3b,True,False,2,2.212,28.057,685.201,0.25,0.35
+2026-05-30T00:07:43+05:30,Explain the Pythagorean theorem formula (a^2 + b^2 = c^2) to me.,llama3.2:3b,False,False,0.224175632,2.457,35.619,5499.33,0.15,0.35
+2026-05-30T00:07:50+05:30,"I keep forgetting, what is the Binomial theorem used for?",llama3.2:3b,False,False,0.574874162674,2.165,26.58,5710.78,0.15,0.35
+2026-05-30T00:07:56+05:30,Algebra help! Solve for x in this equation: 2x + 5 = 15.,llama3.2:3b,False,False,0.741538822651,2.746,31.599,5514.924,0.15,0.35
+2026-05-30T00:08:03+05:30,Algebra help! Solve for x in this equation: 2x + 5 = 15.,llama3.2:3b,True,False,2,1.62,30.817,694.675,0.15,0.35
+2026-05-30T00:08:05+05:30,"If 2 times x plus 5 equals 15, what is the value of x?",llama3.2:3b,False,True,0.197486042976,2.159,28.836,589.699,0.25,0.15
+2026-05-30T00:08:06+05:30,Algebra help! Solve for y in this equation: 2y + 5 = 15.,llama3.2:3b,False,False,0.211009204388,2.811,31.7,5425.574,0.15,0.35
+2026-05-30T00:08:13+05:30,Geometry question: what is the area of a perfect circle if the radius is 5?,llama3.2:3b,False,False,0.570813417435,2.217,32.891,5571.918,0.25,0.15
+2026-05-30T00:08:20+05:30,Geometry question: what is the area of a perfect circle if the radius is 5?,llama3.2:3b,True,False,2,2.208,27.553,811.865,0.25,0.15
+2026-05-30T00:08:21+05:30,How do I calculate the area of a circle that has a radius of 5 units?,llama3.2:3b,False,True,0.20654886961,1.91,31.996,697.767,0.25,0.15
+2026-05-30T00:08:23+05:30,Geometry question: what is the circumference of a perfect circle if the radius is 5?,llama3.2:3b,False,True,0.102734029293,3.068,45.414,705.189,0.25,0.15
+2026-05-30T00:08:25+05:30,"Just checking, how do you calculate the factorial of 10?",llama3.2:3b,False,False,0.487835168839,2.393,29.133,4748.619,0.15,0.15
+2026-05-30T00:08:31+05:30,"Just checking, how do you calculate the factorial of 10?",llama3.2:3b,True,False,2,2.775,30.222,680.314,0.15,0.35
+2026-05-30T00:08:32+05:30,What is the mathematical value of 10! (10 factorial)?,llama3.2:3b,False,True,0.10768610239,2.149,28.909,584.877,0.25,0.15
+2026-05-30T00:08:34+05:30,"Just checking, how do you calculate the factorial of 9?",llama3.2:3b,False,True,0.110034048557,2.261,29.714,639.196,0.15,0.35
+2026-05-30T00:08:36+05:30,What exactly is the Fibonacci sequence and how does it start?,llama3.2:3b,False,False,0.635736703873,2.243,31.924,5510.414,0.25,0.35
+2026-05-30T00:08:43+05:30,What exactly is the Fibonacci sequence and how does it start?,llama3.2:3b,True,False,2,1.686,24.788,759.471,0.25,0.35
+2026-05-30T00:08:44+05:30,Explain how the numbers in the Fibonacci sequence are generated.,llama3.2:3b,False,True,0.133067071438,2.176,28.304,687.579,0.15,0.15
+2026-05-30T00:08:46+05:30,What exactly is the Lucas sequence and how does it start?,llama3.2:3b,False,False,0.428107380867,2.662,29.995,5577.744,0.25,0.15
+2026-05-30T00:08:53+05:30,I need to find the roots of the quadratic equation x^2 - 4x + 4 = 0.,llama3.2:3b,False,False,0.58735871315,1.616,37.816,5626.431,0.25,0.15
+2026-05-30T00:08:59+05:30,I need to find the roots of the quadratic equation x^2 - 4x + 4 = 0.,llama3.2:3b,True,False,2,3.039,30.863,655.51,0.25,0.15
+2026-05-30T00:09:01+05:30,Can you solve the quadratic polynomial x^2 - 4x + 4 = 0 for me?,llama3.2:3b,False,True,0.136565089226,1.704,32.841,703.74,0.15,0.15
+2026-05-30T00:09:03+05:30,I need to find the roots of the quadratic equation x^2 + 4x + 4 = 0.,llama3.2:3b,False,True,0.0306149125099,1.799,31.953,594.353,0.25,0.15
+2026-05-30T00:09:04+05:30,Quick math: what is the total sum of the first 100 positive integers?,llama3.2:3b,False,False,0.711320638657,1.544,35.675,5409.564,0.15,0.15
+2026-05-30T00:09:11+05:30,Quick math: what is the total sum of the first 100 positive integers?,llama3.2:3b,True,False,2,2.593,30.303,709.274,0.15,0.15
+2026-05-30T00:09:13+05:30,"If I add up all numbers from 1 to 100, what is the sum?",llama3.2:3b,False,False,0.189927220345,1.61,27.128,5660.578,0.15,0.15
+2026-05-30T00:09:20+05:30,Quick math: what is the total sum of the first 50 positive integers?,llama3.2:3b,False,True,0.174545645714,1.649,28.853,755.83,0.25,0.15
+2026-05-30T00:09:21+05:30,Calculus 101: calculate the derivative of sin(x) for me.,llama3.2:3b,False,False,0.481052458286,2.284,27.835,5587.78,0.15,0.15
+2026-05-30T00:09:28+05:30,Calculus 101: calculate the derivative of sin(x) for me.,llama3.2:3b,True,False,2,1.969,28.305,819.76,0.15,0.15
+2026-05-30T00:09:30+05:30,What is the mathematical derivative of the sine function?,llama3.2:3b,False,False,0.260072886944,2.178,25.682,3736.256,0.25,0.15
+2026-05-30T00:09:35+05:30,Calculus 101: calculate the derivative of cos(x) for me.,llama3.2:3b,False,False,0.242926955223,2.301,34.275,5525.807,0.15,0.15
+2026-05-30T00:09:41+05:30,What is the indefinite integral of 1/x? I'm stuck on my homework.,llama3.2:3b,False,False,0.461216807365,2.39,31.526,5606.013,0.15,0.35
+2026-05-30T00:09:48+05:30,What is the indefinite integral of 1/x? I'm stuck on my homework.,llama3.2:3b,True,False,2,1.659,29.895,699.788,0.15,0.35
+2026-05-30T00:09:50+05:30,"If you integrate 1 over x with respect to x, what is the answer?",llama3.2:3b,False,False,0.262753427029,2.17,26.933,3930.715,0.25,0.15
+2026-05-30T00:09:55+05:30,What is the mathematical derivative of 1/x? I'm stuck on my homework.,llama3.2:3b,False,False,0.303068161011,1.988,19.763,6654.556,0.15,0.15
+2026-05-30T00:10:03+05:30,How the heck do I find the determinant of a 3x3 matrix?,llama3.2:3b,False,False,0.463650584221,1.82,49.439,5779.8,0.25,0.35
+2026-05-30T00:10:09+05:30,How the heck do I find the determinant of a 3x3 matrix?,llama3.2:3b,True,False,2,2.808,29.88,684.173,0.25,0.35
+2026-05-30T00:10:11+05:30,What's the formula or method to calculate a 3x3 matrix determinant?,llama3.2:3b,False,True,0.0999767184258,1.657,28.826,738.235,0.25,0.15
+2026-05-30T00:10:14+05:30,How the heck do I find the inverse of a 3x3 matrix?,llama3.2:3b,False,False,0.279953896999,2.487,55.788,6424.822,0.25,0.35
+2026-05-30T00:10:21+05:30,"Remind me, what is the standard quadratic formula used for?",llama3.2:3b,False,False,0.44066286087,1.591,26.452,5880.034,0.25,0.35
+2026-05-30T00:10:28+05:30,"Remind me, what is the standard quadratic formula used for?",llama3.2:3b,True,False,2,1.983,35.609,738.934,0.25,0.35
+2026-05-30T00:10:30+05:30,Can you write out the quadratic formula and explain it?,llama3.2:3b,False,True,0.183739602566,2.034,47.544,796.282,0.25,0.15
+2026-05-30T00:10:32+05:30,"Remind me, what is the standard cubic formula used for?",llama3.2:3b,False,False,0.340483546257,2.479,32.799,5689.4,0.15,0.15
+2026-05-30T00:10:38+05:30,I have a basic algebra equation to solve for x: 3x - 7 = 8.,llama3.2:3b,False,False,0.396307647228,1.947,28.045,5697.938,0.15,0.35
+2026-05-30T00:10:46+05:30,I have a basic algebra equation to solve for x: 3x - 7 = 8.,llama3.2:3b,True,False,2,2.3,32.169,1183.586,0.15,0.35
+2026-05-30T00:10:47+05:30,"If 3x minus 7 is equal to 8, what does x equal?",llama3.2:3b,False,True,0.228714764118,1.852,30.147,718.762,0.25,0.15
+2026-05-30T00:10:49+05:30,I have a basic algebra equation to solve for x: 3x + 7 = 8.,llama3.2:3b,False,True,0.0251100063324,2.943,29.789,734.936,0.15,0.15
+2026-05-30T00:10:51+05:30,Does anyone know if there is water on Mars?,llama3.2:3b,False,False,0.672511994839,2.137,28.865,5910.943,0.25,0.35
+2026-05-30T00:10:58+05:30,Does anyone know if there is water on Mars?,llama3.2:3b,True,False,2,1.59,29.888,767.224,0.25,0.35
+2026-05-30T00:11:00+05:30,Has water ever been discovered on the planet Mars?,llama3.2:3b,False,True,0.150875270367,1.806,25.588,729.276,0.25,0.15
+2026-05-30T00:11:02+05:30,Does anyone know if there is water on Venus?,llama3.2:3b,False,False,0.268117427826,2.259,25.981,5565.273,0.25,0.35
+2026-05-30T00:11:08+05:30,"I'm totally new, how do I start a Docker container?",llama3.2:3b,False,False,0.743172645569,2.223,32.226,5658.334,0.25,0.35
+2026-05-30T00:11:15+05:30,"I'm totally new, how do I start a Docker container?",llama3.2:3b,True,False,2,2.162,30.451,687.829,0.25,0.35
+2026-05-30T00:11:17+05:30,What's the command to run a new container in Docker?,llama3.2:3b,False,True,0.238583385944,2.155,27.367,730.26,0.25,0.15
+2026-05-30T00:11:19+05:30,"I'm totally new, how do I stop a Docker container?",llama3.2:3b,False,False,0.289717972279,2.047,28.324,5422.126,0.15,0.35
+2026-05-30T00:11:25+05:30,"Pls help, what exactly is a Kubernetes pod?",llama3.2:3b,False,False,0.660550475121,2.344,32.208,5475.728,0.15,0.35
+2026-05-30T00:11:32+05:30,"Pls help, what exactly is a Kubernetes pod?",llama3.2:3b,True,False,2,1.634,25.181,678.619,0.15,0.35
+2026-05-30T00:11:33+05:30,Can someone explain the concept of a Pod in K8s?,llama3.2:3b,False,True,0.168242752552,1.781,33.636,648.174,0.25,0.35
+2026-05-30T00:11:35+05:30,"Pls help, what exactly is a Kubernetes node?",llama3.2:3b,False,False,0.154821753502,2.364,28.487,5387.37,0.15,0.35
+2026-05-30T00:11:41+05:30,Math homework: what is the integral of x squared?,llama3.2:3b,False,False,0.395701885223,1.677,31.478,5375.849,0.15,0.15
+2026-05-30T00:11:48+05:30,Math homework: what is the integral of x squared?,llama3.2:3b,True,False,2,2.199,29.743,653.697,0.15,0.15
+2026-05-30T00:11:50+05:30,Can you integrate x^2 with respect to x for me?,llama3.2:3b,False,False,0.260882616043,2.476,32.224,5487.261,0.25,0.15
+2026-05-30T00:11:56+05:30,Math homework: what is the derivative of x squared?,llama3.2:3b,False,False,0.315445661545,1.612,30.163,5425.037,0.25,0.15
+2026-05-30T00:12:03+05:30,How do I find the transpose of a 3x3 matrix?,llama3.2:3b,False,False,0.295051574707,1.641,29.368,5576.592,0.25,0.15
+2026-05-30T00:12:09+05:30,How do I find the transpose of a 3x3 matrix?,llama3.2:3b,True,False,2,3.116,36.677,773.366,0.25,0.15
+2026-05-30T00:12:11+05:30,What are the steps to transpose a 3 by 3 matrix?,llama3.2:3b,False,True,0.12900352478,1.665,28.15,771.699,0.25,0.15
+2026-05-30T00:12:13+05:30,How do I find the inverse of a 3x3 matrix?,llama3.2:3b,False,True,0.0140402317047,2.211,47.202,708.617,0.25,0.15
+2026-05-30T00:12:15+05:30,"Quick geography question, what's the capital of Canada?",llama3.2:3b,False,False,0.430034279823,2.214,31.785,1456.637,0.15,0.35
+2026-05-30T00:12:17+05:30,"Quick geography question, what's the capital of Canada?",llama3.2:3b,True,False,2,2.177,30.78,683.602,0.15,0.35
+2026-05-30T00:12:19+05:30,What city is the official capital of Canada?,llama3.2:3b,False,True,0.158707499504,3.173,35.254,539.807,0.25,0.35
+2026-05-30T00:12:21+05:30,"Quick geography question, what's the capital of Mexico?",llama3.2:3b,False,False,0.426154375076,1.593,27.077,2017.186,0.15,0.35
+2026-05-30T00:12:24+05:30,"I'm visiting soon, what is the capital of Japan?",llama3.2:3b,False,False,0.374229490757,3.705,34.802,2820.024,0.25,0.35
+2026-05-30T00:12:28+05:30,"I'm visiting soon, what is the capital of Japan?",llama3.2:3b,True,False,2,3.58,34.893,691.601,0.25,0.35
+2026-05-30T00:12:30+05:30,Name the capital city of Japan for me.,llama3.2:3b,False,True,0.189333021641,2.497,25.314,1502.86,0.25,0.35
+2026-05-30T00:12:32+05:30,"I'm visiting soon, what is the capital of China?",llama3.2:3b,False,False,0.318358123302,2.856,38.238,1486.162,0.25,0.35
+2026-05-30T00:12:35+05:30,History test tomorrow! What year did World War 2 end?,llama3.2:3b,False,False,0.589168310165,4.399,31.674,5499.723,0.25,0.35
+2026-05-30T00:12:41+05:30,History test tomorrow! What year did World War 2 end?,llama3.2:3b,True,False,2,2.271,28.826,693.266,0.25,0.35
+2026-05-30T00:12:43+05:30,In what year did the Second World War officially finish?,llama3.2:3b,False,True,0.245523333549,1.67,27.656,627.489,0.25,0.35
+2026-05-30T00:12:45+05:30,History test tomorrow! What year did World War 1 end?,llama3.2:3b,False,True,0.0505135059357,1.86,28.714,644.809,0.25,0.35
+2026-05-30T00:12:46+05:30,When exactly did humans first land on the moon?,llama3.2:3b,False,False,0.481524705887,2.799,29.093,5560.886,0.25,0.15
+2026-05-30T00:12:53+05:30,When exactly did humans first land on the moon?,llama3.2:3b,True,False,2,3.935,25.958,772.306,0.25,0.35
+2026-05-30T00:12:55+05:30,What date did the Apollo 11 moon landing happen?,llama3.2:3b,False,False,0.311526060104,1.704,30.722,2031.633,0.25,0.35
+2026-05-30T00:12:58+05:30,When exactly did humans first land on Mars?,llama3.2:3b,False,False,0.262570798397,1.135,30.267,5979.899,0.25,0.35
+2026-05-30T00:13:05+05:30,"I'm hungry, what's the secret to fluffy scrambled eggs?",llama3.2:3b,False,False,0.620968639851,2.127,35.964,5507.793,0.15,0.35
+2026-05-30T00:13:12+05:30,"I'm hungry, what's the secret to fluffy scrambled eggs?",llama3.2:3b,True,False,2,2.148,25.287,681.862,0.15,0.35
+2026-05-30T00:13:13+05:30,"How do you make the best, fluffiest scrambled eggs?",llama3.2:3b,False,False,0.184547543526,1.724,27.121,5588.251,0.15,0.35
+2026-05-30T00:13:20+05:30,"I'm hungry, what's the secret to fluffy boiled eggs?",llama3.2:3b,False,True,0.0879643559456,2.839,36.221,705.813,0.15,0.35
+2026-05-30T00:13:22+05:30,Biology question: what does DNA stand for?,llama3.2:3b,False,False,0.713402867317,2.792,31.526,2870.746,0.15,0.35
+2026-05-30T00:13:26+05:30,Biology question: what does DNA stand for?,llama3.2:3b,True,False,2,2.141,25.591,680.538,0.15,0.35
+2026-05-30T00:13:27+05:30,What is the full scientific name for DNA?,llama3.2:3b,False,True,0.230862140656,1.612,40.657,685.767,0.25,0.15
+2026-05-30T00:13:29+05:30,Biology question: what does RNA stand for?,llama3.2:3b,False,False,0.30850058794,2.968,29.23,1600.863,0.15,0.35
+2026-05-30T00:13:32+05:30,What is the very first element on the periodic table?,llama3.2:3b,False,False,0.694884300232,2.525,37.562,2540.331,0.25,0.15
+2026-05-30T00:13:36+05:30,What is the very first element on the periodic table?,llama3.2:3b,True,False,2,1.645,32.879,811.512,0.25,0.15
+2026-05-30T00:13:40+05:30,Name element number 1 on the periodic table.,llama3.2:3b,False,True,0.175589442253,2.284,24.252,3589.754,0.25,0.35
+2026-05-30T00:13:42+05:30,What is the very last element on the periodic table?,llama3.2:3b,False,True,0.131780803204,2.17,27.431,626.888,0.25,0.35
+2026-05-30T00:13:44+05:30,"I keep hearing about it, what actually is a blockchain?",llama3.2:3b,False,False,0.692955732346,3.2,33.21,5517.93,0.25,0.35
+2026-05-30T00:13:50+05:30,"I keep hearing about it, what actually is a blockchain?",llama3.2:3b,True,False,2,1.779,33.908,698.917,0.25,0.35
+2026-05-30T00:13:52+05:30,Explain the concept of blockchain technology simply.,llama3.2:3b,False,False,0.262395918369,4.448,35.359,5426.892,0.15,0.35
+2026-05-30T00:13:59+05:30,"I keep hearing about it, what actually is a cryptocurrency?",llama3.2:3b,False,False,0.337588965893,2.963,35.819,5540.483,0.15,0.35
+2026-05-30T00:14:05+05:30,Art history: why did Vincent Van Gogh cut off his ear?,llama3.2:3b,False,False,0.589603304863,2.2,39.311,5552.585,0.15,0.35
+2026-05-30T00:14:12+05:30,Art history: why did Vincent Van Gogh cut off his ear?,llama3.2:3b,True,False,2,2.261,30.406,681.775,0.15,0.35
+2026-05-30T00:14:13+05:30,What's the real story behind Van Gogh losing his ear?,llama3.2:3b,False,True,0.147189557552,2.816,34.002,633.439,0.25,0.35
+2026-05-30T00:14:15+05:30,Art history: why did Vincent Van Gogh paint sunflowers?,llama3.2:3b,False,False,0.349016785622,2.416,32.009,5553.862,0.15,0.35
+2026-05-30T00:14:22+05:30,How often are the Summer Olympic games held?,llama3.2:3b,False,False,0.75230050087,2.302,30.102,5539.909,0.15,0.15
+2026-05-30T00:14:28+05:30,How often are the Summer Olympic games held?,llama3.2:3b,True,False,2,1.642,26.862,693.976,0.15,0.35
+2026-05-30T00:14:30+05:30,What is the time gap between each Summer Olympics?,llama3.2:3b,False,True,0.243780791759,1.637,25.453,747.466,0.25,0.15
+2026-05-30T00:14:32+05:30,How often are the Winter Olympic games held?,llama3.2:3b,False,True,0.113715529442,2.201,24.372,520.443,0.15,0.15

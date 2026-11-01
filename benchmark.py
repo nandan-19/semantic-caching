@@ -1,80 +1,130 @@
+import json
 import subprocess
 import time
+import argparse
+import csv
+import sys
 
-prompts = [
-    # --- CONVERSATIONAL (Low Entropy -> Loose Threshold, Semantic Hits Expected) ---
-    "How do I play chess?",
-    "What are the rules of chess?",
-    "Explain chess to a beginner.",
-    "Explain chess to a beginner.",
-    "Who won the last football world cup?",
-    "Tell me about the football world cup.",
-    "What is the capital of France?",
-    "Tell me the capital of France.",
-    "How do you properly boil an egg?",
-    "What's the best way to boil eggs?",
-    "What's the best way to boil eggs?",
-    "Who wrote the play Romeo and Juliet?",
-    "Give me a summary of Romeo and Juliet.",
-    # --- HIGH-PRECISION / CODE (High Entropy -> Strict Threshold) ---
-    "Write a quick swap function in C++",
-    "How to write a quick swap function in C?",
-    "Implement variable swap in golang",
-    "gRPC unary interceptor golang example",
-    "How to build an interceptor in gRPC Go",
-    "How to implement a singleton pattern in Java?",
-    "Java singleton design pattern example",
-    "What is the difference between a mutex and a semaphore?",
-    "Mutex vs semaphore in operating systems",
-    "Docker compose volume mapping syntax",
-    "How to mount a volume in docker-compose.yml",
-    "Explain B-tree vs Hash index in databases",
-    # --- SEMANTIC TRAPS (Proves why AST is mandatory!) ---
-    "Write a python script to sort an array",
-    "Write a golang script to sort an array",
-    "Show me a recursive Fibonacci function in C",
-    "Iterative Fibonacci sequence in C",
-    "How to reverse a string in JavaScript",
-    "How to reverse a string in JavaScript",
-    "JavaScript string reversal method",
-    # --- MATH / FORMULAIC (High Entropy -> Strict Threshold) ---
-    "Calculate derivative of 4x^3 + 2x",
-    "Find the integral of x squared",
-    "O(n log n) sorting algorithm python",
-    "Quick sort complexity analysis",
-    "What is the Pythagorean theorem?",
-    "Formula for the area of a circle",
-    "Calculate the eigenvalues of a 2x2 identity matrix",
-    "How to solve a quadratic equation",
-    # --- EXACT DUPLICATES (Forces Track A to fire O(1) Hits) ---
-    "How do I play chess?",
-    "Write a quick swap function in C++",
-    "gRPC unary interceptor golang example",
-    "What is the difference between a mutex and a semaphore?",
-    "How do you properly boil an egg?",
-    "Formula for the area of a circle",
-    "Calculate derivative of 4x^3 + 2x",
-    "Explain chess to a beginner.",
-    "Tell me about the football world cup.",
-    "Docker compose volume mapping syntax",
-    "How to mount a volume in docker-compose.yml",
-    "How to implement a singleton pattern in Java?",
-    "Calculate the eigenvalues of a 2x2 identity matrix",
-    "Write a python script to sort an array",
+
+# Small gold labels are passed as gRPC metadata so Go telemetry can be matched
+# back to the exact dataset row without changing the request protobuf.
+LABEL_METADATA = [
+    ("sample_id", "x-sample-id"),
+    ("category", "x-category"),
+    ("domain_category", "x-domain-category"),
+    ("topic", "x-topic"),
+    ("scenario_id", "x-scenario-id"),
+    ("scenario_role", "x-scenario-role"),
+    ("expected_cache_outcome", "x-expected-cache-outcome"),
+    ("expected_cache_method", "x-expected-cache-method"),
+    ("expected_candidate_id", "x-expected-candidate-id"),
+    ("expected_candidate_relation", "x-expected-candidate-relation"),
+    ("annotation_confidence", "x-annotation-confidence"),
+    ("freshness_sensitive", "x-freshness-sensitive"),
+    ("answer_stability", "x-answer-stability"),
+    ("reuse_risk", "x-reuse-risk"),
 ]
 
-print(f"🚀 Launching Benchmark Matrix: {len(prompts)} queries...\n")
 
-for i, query in enumerate(prompts):
-    print(f"[{i + 1}/{len(prompts)}] Sending: '{query[:40]}...'")
+def main():
+    parser = argparse.ArgumentParser(description="Run FSCgRPC Benchmark Suite")
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="qwen2.5:1.5b",
+        help="Ollama model used for generation fallback",
+    )
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        default="dataset.csv",
+        help="Path to dataset CSV. Requires a query column; gold-label columns are optional.",
+    )
+    parser.add_argument(
+        "--delay", type=float, default=1.0, help="Delay between requests in seconds"
+    )
+    parser.add_argument(
+        "--limit", type=int, default=None, help="Limit number of prompts to run"
+    )
+    parser.add_argument(
+        "--offset", type=int, default=0, help="Skip first N dataset rows"
+    )
+    parser.add_argument(
+        "--no-label-metadata",
+        action="store_true",
+        help="Send only the query; do not forward dataset labels to telemetry",
+    )
+    args = parser.parse_args()
 
-    cmd = f"""grpcurl -plaintext -import-path ../proto -proto api.proto -d '{{"text": "{query}"}}' localhost:50051 semantic_cache.CoreAppService/ProcessQuery"""
+    try:
+        with open(args.dataset, "r", encoding="utf-8-sig", newline="") as f:
+            reader = csv.DictReader(f)
+            if not reader.fieldnames or "query" not in reader.fieldnames:
+                raise ValueError("CSV must contain a column named exactly 'query'.")
+            rows = [row for row in reader if (row.get("query") or "").strip()]
+    except Exception as exc:
+        print(f"Failed to load dataset: {exc}")
+        sys.exit(1)
 
-    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    if args.offset:
+        rows = rows[args.offset :]
+    if args.limit is not None:
+        rows = rows[: args.limit]
+    if not rows:
+        print("Dataset is empty or contains no non-empty query values.")
+        sys.exit(1)
 
-    if result.returncode != 0:
-        print(f"  ❌ execution failure: {result.stderr.strip()}")
+    label_columns = {column for column, _ in LABEL_METADATA}
+    available_labels = label_columns.intersection(rows[0].keys())
+    print("Launching benchmark")
+    print(f"  Dataset: {args.dataset}")
+    print(f"  Model: {args.model}")
+    print(f"  Queries: {len(rows)}")
+    print(
+        f"  Gold label metadata: {'off' if args.no_label_metadata else len(available_labels)} columns detected"
+    )
+    print(f"  Delay: {args.delay}s")
 
-    time.sleep(2.0)
+    for index, row in enumerate(rows, start=1):
+        query = row["query"].strip()
+        print(
+            f"[{index}/{len(rows)}] Sending sample={row.get('sample_id', 'n/a')}: {query[:55]!r}"
+        )
+        cmd = [
+            "grpcurl",
+            "-plaintext",
+            "-import-path",
+            "./proto",
+            "-proto",
+            "api.proto",
+            "-H",
+            f"x-model-name: {args.model}",
+        ]
+        if not args.no_label_metadata:
+            for column, header in LABEL_METADATA:
+                value = str(row.get(column, "") or "").strip()
+                if value:
+                    # Dataset label fields are short ASCII identifiers/enums, suitable for metadata.
+                    cmd.extend(["-H", f"{header}: {value}"])
+        cmd.extend(
+            [
+                "-d",
+                json.dumps({"text": query}, ensure_ascii=False),
+                "localhost:50051",
+                "semantic_cache.CoreAppService/ProcessQuery",
+            ]
+        )
+        result = subprocess.run(
+            cmd, capture_output=True, text=True, encoding="utf-8", errors="replace"
+        )
+        if result.returncode != 0:
+            print(f"  grpcurl failed: {result.stderr.strip()}")
+        time.sleep(args.delay)
 
-print("\n✅ Benchmark Complete. Check Dashboard.")
+    print(
+        "Benchmark complete. Check the telemetry CSV for predictions and expected labels."
+    )
+
+
+if __name__ == "__main__":
+    main()
